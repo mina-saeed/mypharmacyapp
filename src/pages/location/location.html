@@ -1,0 +1,49 @@
+<!--
+  Generated template for the LocationPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <!-- NO CSS DONE -->
+  <!-- just to test the img -->
+  <ion-img width="100" height="100" src="https://rfclipart.com/image/big/ff-dd-e3/cartoon-pills-Download-Royalty-free-Vector-File-EPS-1567.jpg"></ion-img>
+
+  <h1>- Enter Your Location -</h1>
+  <form (ngSubmit)="locationSubmit()">
+      <ion-item>
+        <ion-label>City</ion-label>
+        <ion-input type="text" [(ngModel)]="loc.city" name="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Location</ion-label>
+        <ion-input type="text" [(ngModel)]="loc.location" name="location"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Street</ion-label>
+        <ion-input type="text" [(ngModel)]="loc.street" name="street"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>App</ion-label>
+        <ion-input type="text" [(ngModel)]="loc.app" name="app"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Floor</ion-label>
+        <ion-input type="text" [(ngModel)]="loc.floor" name="floor"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tel</ion-label>
+        <ion-input type="tel" [(ngModel)]="loc.tel" name="tel"></ion-input>
+      </ion-item>
+
+      <button ion-button type="submit" block>Submit</button>
+    </form>
+</ion-content>
