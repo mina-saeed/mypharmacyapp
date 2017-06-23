@@ -21,29 +21,32 @@
   <form (ngSubmit)="locationSubmit()">
       <ion-item>
         <ion-label>City</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.city" name="city"></ion-input>
+        <ion-input type="text" [(ngModel)]="loc.location.city" name="city"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Location</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.location" name="location"></ion-input>
+        <ion-input type="text" [(ngModel)]="loc.location.location" name="location"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Street</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.street" name="street"></ion-input>
+        <ion-input type="text" [(ngModel)]="loc.location.street" name="street"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>App</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.app" name="app"></ion-input>
+        <ion-input type="text" [(ngModel)]="loc.location.App_no" name="app"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Floor</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.floor" name="floor"></ion-input>
+        <ion-input type="text" [(ngModel)]="loc.location.floor" name="floor"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label>Tel</ion-label>
-        <ion-input type="tel" [(ngModel)]="loc.tel" name="tel"></ion-input>
+        <ion-input type="tel" [(ngModel)]="loc.telephone" name="tel"></ion-input>
       </ion-item>
-
+      <ion-item>
+        <ion-label>Mobile</ion-label>
+        <ion-input type="tel" [(ngModel)]="loc.mobile" name="tel"></ion-input>
+      </ion-item>
       <button ion-button type="submit" block>Submit</button>
     </form>
 </ion-content>

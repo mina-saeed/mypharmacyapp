@@ -4,11 +4,14 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { LocationPage } from '../pages/location/location';
+import { Http, Headers, HttpModule} from '@angular/http';
 
 
 import { Camera, CameraOptions } from '@ionic-native/camera';;
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ImagePicker } from '@ionic-native/image-picker';
+import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -26,6 +29,7 @@ import { CameraPage } from '../pages/camera/camera';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -38,7 +42,7 @@ import { CameraPage } from '../pages/camera/camera';
   ],
   providers: [
     StatusBar,
-    SplashScreen, Camera, BarcodeScanner, ImagePicker,
+    SplashScreen, Camera, BarcodeScanner, ImagePicker, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
