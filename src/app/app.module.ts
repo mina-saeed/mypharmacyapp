@@ -4,6 +4,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { LocationPage } from '../pages/location/location';
+import { UpdateLocationPage } from '../pages/update-location/update-location';
 import { Http, Headers, HttpModule} from '@angular/http';
 
 
@@ -25,7 +26,8 @@ import { CameraPage } from '../pages/camera/camera';
     HomePage,
     LocationPage,
     TabsPage,
-    CameraPage
+    CameraPage,
+    UpdateLocationPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { CameraPage } from '../pages/camera/camera';
     HomePage,
     LocationPage,
     TabsPage,
-    CameraPage
+    CameraPage,
+    UpdateLocationPage
   ],
   providers: [
     StatusBar,
