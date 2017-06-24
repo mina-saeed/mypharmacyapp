@@ -5,6 +5,9 @@ import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
+import { Http, Headers, RequestOptions} from '@angular/http';
+import 'rxjs/add/operator/map';
+
 /**
  * Generated class for the CameraPage page.
  *
@@ -18,16 +21,21 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 })
 export class CameraPage {
 
-    //**** NO ERROR HANDLING DONES
+    //**** NO ERROR HANDLING DONE
 
     public photos: any;
     public base64Image: string;
+           url:string;
     //options: BarcodeScannerOptions;
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera,
         private alertCtrl: AlertController,
         private barcodeScanner: BarcodeScanner,
-        private imagePicker: ImagePicker) {}
+        private imagePicker: ImagePicker,
+        public http:Http) {
+
+          this.url = 'http://207.154.240.16:3003/';
+        }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad CameraPage');
@@ -75,12 +83,20 @@ export class CameraPage {
 
     }
     scanBarcode() {
-        this.barcodeScanner.scan().then((barcodeData) => {
+
+
+
+       this.barcodeScanner.scan().then((barcodeData) => {
             // Success! Barcode data is here
-            alert(barcodeData.text);
+            //alert(barcodeData.text);
+            this.http.get(this.url + 'search/barcode/'+ barcodeData.text, new RequestOptions({headers: this.setGetHeaders()}))
+            .map(res => res).subscribe(data => {
+              alert(barcodeData.text); 
+              console.log(data);
+            });
         }, (err) => {
             // An error occurred
-            alert("failed");
+            alert("Cannot scan barcodes");
         });
     }
     deletePhoto(index) {
@@ -107,4 +123,39 @@ export class CameraPage {
          }*/
         this.photos.splice(index, 1);
     }
+
+    setGetHeaders(){
+      let headers = new Headers();
+      headers.append('Content-Type', 'application/json');
+      headers.append('Access-Control-Allow-Origin', '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+      headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
+
+      return headers;
+    }
+
+
+    searchByCategory(ev) {
+
+      this.http.get(this.url + 'search/category/'+ ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
+      .map(res => res).subscribe(data => {
+      //  alert(ev.target.value.toString());  //just for testing
+        alert(data);  //just for testing
+        console.log(data);
+      });
+    }
+    searchByName(ev) {
+      this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
+      .map(res => res).subscribe(data => {
+      //  alert(ev.target.value.toString());  //just for testing
+        alert(data);  //just for testing
+        console.log(data);
+      });
+    }
+
+
+
+
+
+
 }
