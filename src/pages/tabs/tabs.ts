@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { LocationPage } from '../location/location';
+import { UpdateLocationPage } from '../update-location/update-location';
 import { HomePage } from '../home/home';
 import { CameraPage } from '../camera/camera';
 
@@ -23,6 +24,7 @@ export class TabsPage {
 
   homePage = HomePage;
   locationPage = LocationPage;
+  updateLocationPage = UpdateLocationPage;
   cameraPage = CameraPage;
 
 }
