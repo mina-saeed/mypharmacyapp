@@ -14,12 +14,17 @@
 
 
 <ion-content padding>
- 
+
   <!--(search) event when enter is pressed-->
   <ion-searchbar primary [(ngModel)]="searchQuery"
                (search)="searchByCategory($event)"
                show-cancel="true"
-               placeholder="Search">
+               placeholder="Search By Category">
+</ion-searchbar>
+<ion-searchbar primary [(ngModel)]="searchQuery2"
+             (search)="searchByName($event)"
+             show-cancel="true"
+             placeholder="Search By Name">
 </ion-searchbar>
 
 <button ion-button full (click)="scanBarcode()">
