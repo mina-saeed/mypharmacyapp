@@ -1,7 +1,10 @@
 <!-- dont know the tabs!!-->
 <ion-tabs>
-  <ion-tab [root]="homePage" tabTitle="Home" tabIcon="star"></ion-tab>
-  <ion-tab [root]="locationPage" tabTitle="Location?" tabIcon="book"></ion-tab>
-  <ion-tab [root]="cameraPage" tabTitle="Camera" tabIcon="camera"></ion-tab>
-    <ion-tab [root]="updateLocationPage" tabTitle="Update Location" tabIcon="book"></ion-tab>
+    <!-- later custom icons -->
+    <ion-tab [root]="homePage" tabTitle="Home" tabIcon="homeCustom"  src="assets/icon/logo.png"></ion-tab>
+      <ion-tab [root]="medicinePage" tabTitle="Medicine" tabIcon="medicineCustom"></ion-tab>
+      <ion-tab [root]="callPage" tabTitle="" tabIcon="callCustom"></ion-tab>
+    <ion-tab [root]="updateLocationPage" tabTitle="Account" tabIcon="personCustom"></ion-tab>
+    <!-- account should be changed later!! with accounts page, inside it update location -->
+    <ion-tab [root]="settingsPage" tabTitle="Settings" tabIcon="settingsCustom"></ion-tab>
 </ion-tabs>

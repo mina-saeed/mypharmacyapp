@@ -18,6 +18,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { CameraPage } from '../pages/camera/camera';
+import { WelcomePage } from '../pages/welcome/welcome';
+import { OrderPage } from '../pages/order/order';
 
 
 @NgModule({
@@ -27,7 +29,9 @@ import { CameraPage } from '../pages/camera/camera';
     LocationPage,
     TabsPage,
     CameraPage,
-    UpdateLocationPage
+    UpdateLocationPage,
+    WelcomePage,
+    OrderPage
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,9 @@ import { CameraPage } from '../pages/camera/camera';
     LocationPage,
     TabsPage,
     CameraPage,
-    UpdateLocationPage
+    UpdateLocationPage,
+    WelcomePage,
+    OrderPage
   ],
   providers: [
     StatusBar,

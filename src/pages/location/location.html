@@ -13,40 +13,49 @@
 
 <ion-content padding>
 
-  <!-- NO CSS DONE -->
-  <!-- just to test the img -->
-  <ion-img width="100" height="100" src="https://rfclipart.com/image/big/ff-dd-e3/cartoon-pills-Download-Royalty-free-Vector-File-EPS-1567.jpg"></ion-img>
+                <img class="image" src="assets/icon/logo.png"/>
 
-  <h1>- Enter Your Location -</h1>
+  <h3 class="header"><span>ENTER YOUR LOCATION</span></h3>
   <form (ngSubmit)="locationSubmit()">
-      <ion-item>
-        <ion-label>City</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.location.city" name="city"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Location</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.location.location" name="location"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Street</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.location.street" name="street"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>App</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.location.App_no" name="app"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Floor</ion-label>
-        <ion-input type="text" [(ngModel)]="loc.location.floor" name="floor"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Tel</ion-label>
-        <ion-input type="tel" [(ngModel)]="loc.telephone" name="tel"></ion-input>
-      </ion-item>
-      <ion-item>
-        <ion-label>Mobile</ion-label>
-        <ion-input type="tel" [(ngModel)]="loc.mobile" name="tel"></ion-input>
-      </ion-item>
-      <button ion-button type="submit" block>Submit</button>
+    <ion-item>
+        <ion-label class="text">City</ion-label>
+        <ion-input class="oval" type="text" [(ngModel)]="loc.location.city" name="city"></ion-input>
+        </ion-item>
+
+        <ion-item>
+        <ion-label class = "text">Location</ion-label>
+        <ion-input class="oval" type="text"  [(ngModel)]="loc.location.location" name="location"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-label class = "text">Street</ion-label>
+        <ion-input class="oval" type="text"  [(ngModel)]="loc.location.street" name="street"></ion-input>
+        </ion-item>
+        <div class="wid">
+        <ion-item>
+        <ion-label class = "text">App</ion-label>
+        <ion-input class="small oval" type="text" [(ngModel)]="loc.location.App_no" name="app"></ion-input>
+
+         </ion-item>
+         </div>
+         <div class="wid second">
+         <ion-item>
+         <ion-label class = "text s">Floor</ion-label>
+
+        <ion-input class="small oval" type="text"  [(ngModel)]="loc.location.floor" name="floor"></ion-input>
+
+        </ion-item>
+        </div>
+        <ion-item>
+        <ion-label class = "text">Tel</ion-label>
+        <ion-input class="oval" type="tel" [(ngModel)]="loc.telephone" name="tel"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-label class = "text">Mobile</ion-label>
+        <ion-input class="oval" type="tel"  [(ngModel)]="loc.mobile" name="Mobile"></ion-input>
+        </ion-item>
+      <button ion-button type="submit" class = "dark-button">Submit</button>
+
     </form>
+
+
 </ion-content>

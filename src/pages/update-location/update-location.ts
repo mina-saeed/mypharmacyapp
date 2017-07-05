@@ -70,15 +70,21 @@ export class UpdateLocationPage {
         App_no: this.loc.location.App_no,
         floor: this.loc.location.floor
 
-      }
+      },
+          mobile: this.loc.mobile
     };
 
     this.http.post(this.url + 'user/editLocation', JSON.stringify(body), new RequestOptions({headers:headers}))
-    .map(res => res.json()).subscribe(data => {
-      alert('LOG: ' +data);
+    .map(res => res).subscribe(data => {
+      alert(data);
 
       console.log(data);
-      console.log("success");
+
+      //code snippet, get status code, anything from response
+      let obj = JSON.parse(JSON.stringify(data)); //now this is in console type OBJECT
+      console.log(obj["_body"]);
+      console.log(obj["status"]);
+      
     });
 
 

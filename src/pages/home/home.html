@@ -1,13 +1,53 @@
+<!--
+  Generated template for the WelcomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+
+    <!-- missing ion nav back button-->
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title class="navTitle">
+      HOME
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="options"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+
 <ion-header>
 
 </ion-header>
 
 <ion-content padding>
-  <ion-item>
-    <ion-input type="search" placeholder="Search"></ion-input>
-  </ion-item>
+    <ion-input class="oval" type="search">
+    <img class="image" src="assets/icon/White Loop.png"/>
+    </ion-input>
   <hr>
-  <button ion-button>Upload</button>
-  <button ion-button>Search by illness</button>
+  <button ion-button class="round presc" (click)="goCamera()"><p>Upload prescription</p></button>
+  <button ion-button class="round medi"><p>Search by illness</p></button>
+  <hr>
 
+  <ion-label class="round discount text">30% Discount</ion-label>
+  <ion-label class="round products text">Products area</ion-label>
 </ion-content>

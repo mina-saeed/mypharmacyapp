@@ -6,17 +6,17 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>cameraPage</ion-title>
-  </ion-navbar>
 
 </ion-header>
 
 
+
 <ion-content padding>
 
+  <!-- better styling later-->
+  <h3 class="header" style="margin-top: 30px;">><span>Upload Prescription</span></h3>
   <!--(search) event when enter is pressed-->
-  <ion-searchbar primary [(ngModel)]="searchQuery"
+<!--  <ion-searchbar primary [(ngModel)]="searchQuery"
                (search)="searchByCategory($event)"
                show-cancel="true"
                placeholder="Search By Category">
@@ -25,9 +25,9 @@
              (search)="searchByName($event)"
              show-cancel="true"
              placeholder="Search By Name">
-</ion-searchbar>
+</ion-searchbar>-->
 
-<button ion-button full (click)="scanBarcode()">
+<button ion-button class = "dark-button dark-button-smaller" full (click)="scanBarcode()">
   <ion-icon name="barcode"> Scan Barcode</ion-icon>
 </button>
 <div *ngIf="results">
@@ -35,10 +35,10 @@
   <p>{{results.format}}</p>
   <p>{{results.cancelled}}</p>
 </div>
-<button ion-button full (click)="takePhoto()">
+<button ion-button class = "dark-button dark-button-smaller" full (click)="takePhoto()">
   <ion-icon name="camera"> Take Photo</ion-icon>
 </button>
-<button ion-button full (click)="pickPhoto()">
+<button ion-button class = "dark-button dark-button-smaller" full (click)="pickPhoto()">
   <ion-icon name="image"> Pick From Gallery</ion-icon>
 </button>
 

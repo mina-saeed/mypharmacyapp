@@ -5,6 +5,7 @@ import { LocationPage } from '../location/location';
 import { UpdateLocationPage } from '../update-location/update-location';
 import { HomePage } from '../home/home';
 import { CameraPage } from '../camera/camera';
+import { OrderPage } from '../order/order';
 
 /**
  * Generated class for the TabsPage page.
@@ -26,5 +27,6 @@ export class TabsPage {
   locationPage = LocationPage;
   updateLocationPage = UpdateLocationPage;
   cameraPage = CameraPage;
+  orderPage = OrderPage;
 
 }

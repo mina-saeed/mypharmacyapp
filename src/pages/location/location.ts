@@ -5,6 +5,8 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
+
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the LocationPage page.
  *
@@ -47,24 +49,6 @@ export class LocationPage {
     //naddaf el file
 
     console.log('ionViewDidLoad LocationPage');
-
-    //********** CODE SNIPPER, when loading this page check if device id is registered!
-
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
-    //add more, eli homa device id w kol 7aga
-  //  let body = new FormData();
-  //  body.append("deviceID", "50");
-
-    this.http.get(this.url + 'userHome/50', new RequestOptions({headers:headers}))
-    .map(res => res.json()).subscribe(data => {
-      alert(data); //jason return, if data returned go to order page, else go to login as guest
-                    //the form is post request, like the old code with body.. this one needs no body
-      console.log(data)
-    });
   }
 
 
@@ -97,12 +81,23 @@ export class LocationPage {
 
 
     this.http.post(this.url + 'user/submit', JSON.stringify(body), new RequestOptions({headers:headers}))
-    .map(res => res.json()).subscribe(data => {
+    .map(res => res).subscribe(data => {
+
+      //so: res==respond... if res lwa7daha then the respond is respond!, if res.json() then respond is [OBJECT]
+      // SO USE RES only without json() to treat it like in update location page, and get data from it
+
       alert('LOG: ' +data);
 
-      console.log(data)
+      //code snippet, get status code, anything from response
+      let obj = JSON.parse(JSON.stringify(data)); //now this is in console type OBJECT
+      console.log(obj["_body"]);
+      var bodyArray = obj["_body"].split(',');
+      console.log(bodyArray[1]); //got deviceID, just an exmaple
+
+
     });
 
+    this.navCtrl.push(TabsPage); //to test, change it accordingly
     //just to test
   //  alert(this.deviceID);
   /*console.log(this.url);

@@ -14,3 +14,31 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+/*.tabs-md .tab-button {
+  color: white !important;
+}*/
+
+
+.tabs-md, .tabs-ios{
+  border-radius: 0px; //discovered the problem, the problem is that it applies the border
+  //radius on all tabs page, not the bar below!!
+  //  color: white !important;
+}
+ //selected color --later
+ /*.tabs-md .tab-button[aria-selected=true] {
+  color: #ffffff !important;
+}*/
+
+.tab-button {
+    color: white !important;
+  //  background-color: #000000;
+}
+
+.md .navTitle{ //only for android
+  text-align: center;
+  margin-left: 60px; //modiy better experience
+
+}
+
+//buttons,inputs w kda

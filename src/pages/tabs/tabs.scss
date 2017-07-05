@@ -1,3 +1,29 @@
 page-tabs {
 
+  .ion-ios-homeCustom-outline,
+  .ion-ios-homeCustom,.ion-md-homeCustom,.ion-md-homeCustom-outline {
+    content: url('../assets/icon/white HOME.png');
+    max-width: 30px;
+  }
+
+  .ion-ios-medicineCustom-outline,
+  .ion-ios-medicineCustom,.ion-md-medicineCustom,.ion-md-medicineCustom-outline {
+    content: url('../assets/icon/White pill.png');
+    max-width: 54px; //not accurate, change later
+  }
+  .ion-ios-callCustom-outline,
+  .ion-ios-callCustom,.ion-md-callCustom,.ion-md-callCustom-outline {
+    content: url('../assets/icon/phone circle white.png');
+    max-width: 70%;
+  }
+  .ion-ios-personCustom-outline,
+  .ion-ios-personCustom,.ion-md-personCustom,.ion-md-personCustom-outline {
+    content: url('../assets/icon/White my account.png');
+    max-width: 30px;
+  }
+  .ion-ios-settingsCustom-outline,
+  .ion-ios-settingsCustom,.ion-md-settingsCustom,.ion-md-settingsCustom-outline {
+    content: url('../assets/icon/settingss.png');
+    max-width: 30px;
+  }
 }

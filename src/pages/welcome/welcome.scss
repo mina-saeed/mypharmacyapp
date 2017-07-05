@@ -1,0 +1,62 @@
+page-welcome {
+
+  .body{
+  	margin: 0;
+  	padding: 0;
+  }
+  @font-face {
+      font-family: Highland;
+      src: url(../assets/fonts/HighlandGothicLightFLF.ttf);
+  }
+
+  .header{
+  	text-align: center;
+  	color: #3CABE3 ;
+  	font-family: Highland;
+  	border-bottom: 3px solid #3CABE3;
+     	line-height: 0.1em;
+     	margin-bottom: 44px;
+     	margin-left: 5%;
+     	margin-right: 5%;
+  }
+  .header span{
+  	width: 90%;
+  	background: #fff ;
+  	padding-top: 0;
+  	padding-left: 15px;
+  	padding-right: 15px;
+  }
+  .dark-button{
+  	width:90%;
+  	height: 9%;
+  	display: block;
+  	margin-right: auto;
+  	margin-left: auto;
+  	background-color: #0F6196;
+  	color: white;
+  	border-radius: 22px;
+  	font-family: "Helvetica";
+  	font-size: 20px;
+  	letter-spacing: 0.5px;
+
+  }
+  .image{
+  	max-width: 300px;
+  	height: auto;
+  	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+  	margin-top: 30px;
+  }
+  .text {
+  	text-align: center;
+  	color: gray;
+  	margin-left: 10%;
+  	margin-right: 10%;
+  	font-family: "Helvetica";
+  	font-size: 15px;
+  	margin-bottom: 26px;
+  	margin-top: 26px;
+  }
+
+}

@@ -91,7 +91,7 @@ export class CameraPage {
             //alert(barcodeData.text);
             this.http.get(this.url + 'search/barcode/'+ barcodeData.text, new RequestOptions({headers: this.setGetHeaders()}))
             .map(res => res).subscribe(data => {
-              alert(barcodeData.text); 
+              alert(barcodeData.text);
               console.log(data);
             });
         }, (err) => {
