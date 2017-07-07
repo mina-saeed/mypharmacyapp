@@ -19,9 +19,12 @@
 <ion-item *ngFor="let order of orderData.order">
   <h1>{{ order.name }}</h1>
   <p>Item small Description</p>
-  <p>{{ order.qty}}</p>
+  <p>Price: {{ order.price }}$</p>
+  <p>QTY: {{ order.qty}}</p>
   <button ion-button (click)="deleteButton(order.id)">Delete</button>
 </ion-item>
+
+<h2>Total Price: {{ totalPrice }}$</h2>
 
 <button ion-button (click)="confirm()">Confirm</button>
 </ion-content>

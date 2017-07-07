@@ -27,19 +27,21 @@ export class BasketPage {
     },
     order:[
 
-      {id:1, name:"medicine1", qty:3},
+      {id:1, name:"medicine1", price:4, qty:3},
 
-      {id:2, name:"medicine2", qty:5},
+      {id:2, name:"medicine2", price:5, qty:5},
 
-      {id:3, name:"medicine3", qty:1},
+      {id:3, name:"medicine3", price:2, qty:1},
 
     ]};
 
   url:string;
+  totalPrice = 0;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
 
     this.url = 'http://146.185.148.66:3000/';
+    this.setTotalPrice();
   }
 
   ionViewDidLoad() {
@@ -68,18 +70,26 @@ export class BasketPage {
 
     }
 
-    removeByID(i){ //cant make it work
-      console.log();
+    removeByID(i){
       for(var x = 0; x<this.orderData.order.length; x++){
         if(this.orderData.order[x]["id"] == i){
 
           this.orderData.order.splice(x,1); //proper way to remove by index
+          this.setTotalPrice();
           break;
         }
       }
     }
+    setTotalPrice(){
+      //needs a better, more efficient implementation
+      //instad, get total price! and not calling it each time in each function
+      var current = this.orderData.order;
+      for(var x = 0; x<current.length; x++){
+        this.totalPrice = this.totalPrice + (current[x]["price"] * current[x]["qty"]);
+      }
+    }
     deleteButton(id){
       this.removeByID(id);
-      console.log(this.orderData);
+      this.setTotalPrice();
     }
 }
