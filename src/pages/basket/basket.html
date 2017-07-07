@@ -15,4 +15,13 @@
 
 <ion-content padding>
 
+<!--loop of each item in my basket -->
+<ion-item *ngFor="let order of orderData.order">
+  <h1>{{ order.name }}</h1>
+  <p>Item small Description</p>
+  <p>{{ order.qty}}</p>
+  <button ion-button (click)="deleteButton(order.id)">Delete</button>
+</ion-item>
+
+<button ion-button (click)="confirm()">Confirm</button>
 </ion-content>

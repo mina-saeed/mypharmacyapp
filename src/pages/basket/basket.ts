@@ -58,6 +58,28 @@ export class BasketPage {
       console.log(err);
     });
     console.log("done");*/
+
+
   }
 
+
+  //everything is done! now confirm order
+    confirm(){
+
+    }
+
+    removeByID(i){ //cant make it work
+      console.log();
+      for(var x = 0; x<this.orderData.order.length; x++){
+        if(this.orderData.order[x]["id"] == i){
+
+          this.orderData.order.splice(x,1); //proper way to remove by index
+          break;
+        }
+      }
+    }
+    deleteButton(id){
+      this.removeByID(id);
+      console.log(this.orderData);
+    }
 }
