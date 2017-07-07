@@ -26,7 +26,7 @@ export class WelcomePage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http,
               private uniqueDeviceID: UniqueDeviceID) {
-                this.url = 'http://207.154.240.16:3000/';
+                this.url = 'http://146.185.148.66:3000/';
                 this.uniqueDeviceID.get()
               .then((uuid: any) => this.deviceID = uuid)
               .catch((error: any) => console.log(error));

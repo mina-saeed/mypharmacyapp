@@ -38,7 +38,7 @@ export class UpdateLocationPage {
     constructor(public navCtrl: NavController, public navParams: NavParams,
       private uniqueDeviceID: UniqueDeviceID, public http:Http) {
 
-        this.url = 'http://207.154.240.16:3000/';
+        this.url = 'http://146.185.148.66:3000/';
         this.uniqueDeviceID.get()
         .then((uuid: any) => this.deviceID = uuid)
         .catch((error: any) => console.log(error));
@@ -84,7 +84,7 @@ export class UpdateLocationPage {
       let obj = JSON.parse(JSON.stringify(data)); //now this is in console type OBJECT
       console.log(obj["_body"]);
       console.log(obj["status"]);
-      
+
     });
 
 

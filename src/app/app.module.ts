@@ -20,6 +20,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { CameraPage } from '../pages/camera/camera';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { OrderPage } from '../pages/order/order';
+import { BasketPage } from '../pages/basket/basket';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { OrderPage } from '../pages/order/order';
     CameraPage,
     UpdateLocationPage,
     WelcomePage,
-    OrderPage
+    OrderPage,
+    BasketPage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +49,8 @@ import { OrderPage } from '../pages/order/order';
     CameraPage,
     UpdateLocationPage,
     WelcomePage,
-    OrderPage
+    OrderPage,
+    BasketPage
   ],
   providers: [
     StatusBar,

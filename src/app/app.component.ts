@@ -8,12 +8,13 @@ import { HomePage } from '../pages/home/home';
 //import { LocationPage } from '../pages/location/location';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { BasketPage } from '../pages/basket/basket';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = WelcomePage; //change to TabsPage to test anything
+  rootPage:any = BasketPage; //change to TabsPage to test anything
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

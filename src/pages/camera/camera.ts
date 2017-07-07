@@ -34,7 +34,7 @@ export class CameraPage {
         private imagePicker: ImagePicker,
         public http:Http) {
 
-          this.url = 'http://207.154.240.16:3003/';
+          this.url = 'http://146.185.148.66:3003/';
         }
 
     ionViewDidLoad() {

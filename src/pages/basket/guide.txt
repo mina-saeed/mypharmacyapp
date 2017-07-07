@@ -1,0 +1,38 @@
+//////HOW TO DEAL WITH this
+
+orderData = {
+  userInfo: {
+    userID: 4654,
+    location : {
+      city : "cairo",
+      street : "streetvalue",
+      location: "zamalek" ,
+    }
+  },
+  order:[
+
+    {id:1, name:"medicine1", qty:3},
+
+    {id:2, name:"medicine2", qty:5},
+
+    {id:3, name:"medicine3", qty:1},
+
+  ]};
+
+
+  -----///
+
+  console.log(this.orderData["order"]);
+  console.log(this.orderData);
+  this.orderData.order.push({
+    id: 4, name: "medicine4", qty:3
+  });
+  console.log(this.orderData);
+
+  this.orderData.order.pop();
+  console.log(this.orderData);
+  console.log(this.orderData.order["0"]["id"]); //best way OR ["0"] ONLY
+  this.orderData.order["0"]["id"] = 7;
+  console.log(this.orderData.order["0"]["id"]); //best way to modify something
+  console.log(this.orderData.order[0]["id"]); //or this
+  console.log(this.orderData.order.length);
