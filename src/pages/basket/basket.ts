@@ -41,12 +41,74 @@ export class BasketPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
 
     this.url = 'http://146.185.148.66:3000/';
-    this.setTotalPrice();
+    this.updateTotalPrice();
   }
 
   ionViewDidLoad() {
 
-/*   let headers = new Headers();
+  }
+
+  //code rewritten beta3 getIndex... 3shan msh 3aref a7oto f function, always return undefined
+  //get index of array, by the order ID
+  removeByID(i){
+    for(var x = 0; x<this.orderData.order.length; x++){
+      if(this.orderData.order[x]["id"] == i){
+
+        this.orderData.order.splice(x,1); //proper way to remove by index
+        this.updateTotalPrice();
+        break;
+      }
+    }
+  }
+  updateTotalPrice(){ //rename it, let it updateTotalPrice
+    //needs a better, more efficient implementation
+    //instad, get total price! and not calling it each time in each function
+
+    this.totalPrice = 0; //reset it to recalculate
+    var current = this.orderData.order;
+    for(var x = 0; x<current.length; x++){
+      this.totalPrice = this.totalPrice + (current[x]["price"] * current[x]["qty"]);
+    }
+  }
+  deleteButton(id){
+    this.removeByID(id);
+    this.updateTotalPrice();
+  }
+  increment(id){
+
+    //i know this loop is repeated so many times, bas msh la2i 7al
+    var current = this.orderData.order;
+    for(var x = 0; x<current.length; x++){
+      if(current[x]["id"] == id){
+
+        current[x]["qty"]++;
+        this.updateTotalPrice(); //udate the price
+        break;
+      }
+    }
+
+  }
+  decrement(id){
+    //check if qty == 1, either make it removeByID or no more decrement
+
+    var current = this.orderData.order;
+    for(var x = 0; x<current.length; x++){
+      if(current[x]["id"] == id){
+        if(current[x]["qty"] == 1){
+          console.log("cannot decrement below 1!");
+          break;
+        }else{
+          current[x]["qty"]--;
+          this.updateTotalPrice(); //udate the price
+          break;
+        }
+      }
+    }
+  }
+  //everything is done! now confirm order
+  confirm(){
+
+    let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Access-Control-Allow-Origin', '*');
     headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
@@ -59,39 +121,6 @@ export class BasketPage {
     }, err => {
       console.log(err);
     });
-    console.log("done");*/
-
-
+    console.log("done");
   }
-
-
-  //everything is done! now confirm order
-    confirm(){
-
-    }
-
-    removeByID(i){
-      for(var x = 0; x<this.orderData.order.length; x++){
-        if(this.orderData.order[x]["id"] == i){
-
-          this.orderData.order.splice(x,1); //proper way to remove by index
-          this.setTotalPrice();
-          break;
-        }
-      }
-    }
-    setTotalPrice(){
-      //needs a better, more efficient implementation
-      //instad, get total price! and not calling it each time in each function
-
-      this.totalPrice = 0; //reset it to recalculate
-      var current = this.orderData.order;
-      for(var x = 0; x<current.length; x++){
-        this.totalPrice = this.totalPrice + (current[x]["price"] * current[x]["qty"]);
-      }
-    }
-    deleteButton(id){
-      this.removeByID(id);
-      this.setTotalPrice();
-    }
 }

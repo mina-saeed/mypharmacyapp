@@ -21,6 +21,10 @@
   <p>Item small Description</p>
   <p>Price: {{ order.price }}$</p>
   <p>QTY: {{ order.qty}}</p>
+  <div>
+    <button ion-button (click)="increment(order.id)">Increment</button>
+    <button ion-button (click)="decrement(order.id)">Decrement</button>
+  </div>
   <button ion-button (click)="deleteButton(order.id)">Delete</button>
 </ion-item>
 
