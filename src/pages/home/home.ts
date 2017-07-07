@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { CameraPage } from '../camera/camera';
+import { BasketPage } from '../basket/basket';
 
 
 @Component({
@@ -17,6 +18,9 @@ export class HomePage {
   }
   goCamera(){
     this.navCtrl.push(CameraPage);
+  }
+  goBasket(){
+    this.navCtrl.push(BasketPage);
   }
   openModal(){
     alert("This features has not been implemented yet!")
