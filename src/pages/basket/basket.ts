@@ -83,6 +83,8 @@ export class BasketPage {
     setTotalPrice(){
       //needs a better, more efficient implementation
       //instad, get total price! and not calling it each time in each function
+
+      this.totalPrice = 0; //reset it to recalculate
       var current = this.orderData.order;
       for(var x = 0; x<current.length; x++){
         this.totalPrice = this.totalPrice + (current[x]["price"] * current[x]["qty"]);
