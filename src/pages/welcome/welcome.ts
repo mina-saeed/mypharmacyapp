@@ -5,6 +5,8 @@ import { OrderPage } from '../order/order';
 import { TabsPage } from '../tabs/tabs';
 
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
+
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -25,7 +27,7 @@ export class WelcomePage {
   deviceID:string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http,
-              private uniqueDeviceID: UniqueDeviceID) {
+              private uniqueDeviceID: UniqueDeviceID, private iab: InAppBrowser) {
                 this.url = 'http://146.185.148.66:3000/';
                 this.uniqueDeviceID.get()
               .then((uuid: any) => this.deviceID = uuid)
@@ -77,22 +79,35 @@ export class WelcomePage {
 
   //  this.navCtrl.push(LocationPage);
   }
-  signInFB(){
-
+  async signInFB(){
     //********** CODE SNIPPET, when loading this page check if device id is registered!
 
     let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
     this.http.get(this.url + 'login/facebook', new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
 
+      //this is using in app browser tab, we can use push instead
+      const browser = this.iab.create(data["url"]);
 
 
-      console.log(data);
+      browser.show(); //page show kda f sanya w troo7 a7sn mn el flicker
+      console.log(data["url"]); //54
+
+      if(data["_body"] == "success")
+      {
+       browser.close();
+       console.log("closed");
+       this.navCtrl.push(TabsPage);
+     }
+
+     console.log(data); //55
+
+     //bugs
+    //when first logging in, after succes it requires to manually close the window and press again facebook button!!
+     //window open then sigin in normally, could be improved by a timer but NOT ANY IONIC FUNCTION
+
+
 
     }, err => {
       //no data, go to registeration form!!
@@ -101,6 +116,9 @@ export class WelcomePage {
     });
 
   //  this.navCtrl.push(LocationPage);
+
+     console.log("all login done");
   }
+
 
 }

@@ -12,6 +12,7 @@ import { Camera, CameraOptions } from '@ionic-native/camera';;
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 
 
 import { MyApp } from './app.component';
@@ -54,7 +55,7 @@ import { BasketPage } from '../pages/basket/basket';
   ],
   providers: [
     StatusBar,
-    SplashScreen, Camera, BarcodeScanner, ImagePicker, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
