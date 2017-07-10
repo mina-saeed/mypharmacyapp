@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>basket</ion-title>
+    <ion-title style="text-align: center;">Cart</ion-title> <!-- CSS later -->
   </ion-navbar>
 
 </ion-header>
@@ -39,7 +39,16 @@
 
 </div>
 <hr>
-<h2>Total Price: {{ totalPrice }}$</h2>
 
-<button ion-button (click)="confirm()">Confirm</button>
+<div class="priceLastStep">
+    <p class="beforePriceAndDelivery"><ion-icon name="cash"></ion-icon> Price: {{ totalPrice }} EGP</p>
+    <p class="beforePriceAndDelivery"><ion-icon name="cash"></ion-icon> Delivery: 10 EGP</p>
+    <p class="totalPrice">TOTAL: {{ totalPrice }} EGP</p>
+    <hr>
+    <p class="estimatedTime">ESTIMATED DELIVERY TIME</p>
+    <p class="estimatedTime">30 MINUTES</p>
+</div>
+
+
+<button ion-button class = "dark-button" (click)="confirm()">Confirm</button>
 </ion-content>

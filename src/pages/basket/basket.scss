@@ -32,15 +32,64 @@ page-basket {
     text-align: center;
   }
   hr{
+      background-color:white !important;
   	  width:97%;
       display: block;
       height: 1px;
       border: 0;
       border-top: 2px solid #0F6196;
+      //border-bottom: white;
       margin: 1em 0;
       padding: 0;
+      padding-bottom: 1.8rem;
       margin-left: 2%;
 
 
+  }
+  .dark-button{
+    width:90%;
+    height: 9%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: #0F6196;
+    color: white;
+    border-radius: 22px;
+    font-family: "Helvetica";
+    font-size: 20px;
+    letter-spacing: 0.5px;
+
+  }
+  .priceLastStep{
+    text-align: center;
+    //padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+  }
+  .totalPrice{
+    color: #0C4366;
+    display: block;
+    font-size: 1.9em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+  }
+  .estimatedTime{
+    color: #0C4366;
+    font-size: 1.5em;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  .beforePriceAndDelivery{
+    color: #0C4366;
+    display: block;
+    font-size: 1.4em;
+    margin-top: 0em;
+    margin-bottom: 0.4em;
+    margin-left: 0;
+    margin-right: 0;
+  //  font-weight: bold;
   }
 }
