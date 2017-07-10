@@ -3,19 +3,19 @@ page-basket {
     display: flex;
   }
   .firstChildDiv{
-    background-color: yellow;
+  //  background-color: yellow;
     float: left;
     margin-right: auto;
     order: 1;
     padding: 15.9px;
-//    margin-bottom: auto;
+    margin-bottom: auto;
   }
   .secondChildDiv{
-    background-color: green;
+  //  background-color: green;
     float: right;
     margin-right: auto;
     order: 2;
-//    margin-bottom: auto;
+   margin-bottom: auto;
   }
   .thirdChildDiv{
     order: 3;
@@ -30,5 +30,17 @@ page-basket {
   }
   .centerHorizontal{
     text-align: center;
+  }
+  hr{
+  	  width:97%;
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 2px solid #0F6196;
+      margin: 1em 0;
+      padding: 0;
+      margin-left: 2%;
+
+
   }
 }
