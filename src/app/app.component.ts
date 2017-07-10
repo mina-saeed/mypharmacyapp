@@ -14,7 +14,7 @@ import { BasketPage } from '../pages/basket/basket';
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = WelcomePage; //change to TabsPage to test anything
+  rootPage:any = BasketPage; //change to TabsPage to test anything
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {

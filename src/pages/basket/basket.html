@@ -16,17 +16,27 @@
 <ion-content padding>
 
 <!--loop of each item in my basket -->
-<ion-item *ngFor="let order of orderData.order">
-  <h1>{{ order.name }}</h1>
-  <p>Item small Description</p>
-  <p>Price: {{ order.price }}$</p>
-  <p>QTY: {{ order.qty}}</p>
-  <div>
-    <button ion-button (click)="increment(order.id)">Increment</button>
-    <button ion-button (click)="decrement(order.id)">Decrement</button>
+<div class="parentdiv" *ngFor="let order of orderData.order">
+  <div class="firstChildDiv centerHorizontal">
+    <h1>{{ order.name }}</h1>
+    <p>Item small Description</p>
   </div>
-  <button ion-button (click)="deleteButton(order.id)">Delete</button>
-</ion-item>
+  <div class="secondChildDiv centerHorizontal">
+      <ion-icon style="padding-top: 50%" name="cash"> {{ order.price }} EGP</ion-icon>
+  </div>
+  <div class="thirdChildDiv centerHorizontal">
+    <ion-icon name="arrow-dropup" (click)="increment(order.id)"></ion-icon>
+    <p>{{ order.qty }}</p>
+    <ion-icon name="arrow-dropdown" (click)="decrement(order.id)"></ion-icon>
+  </div>
+
+  <div class="fourthChildDiv centerHorizontal">
+
+    <ion-icon class="centerVertical" name="trash" (click)="deleteButton(order.id)"></ion-icon>
+
+  </div>
+
+</div>
 
 <h2>Total Price: {{ totalPrice }}$</h2>
 

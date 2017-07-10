@@ -80,7 +80,6 @@ export class WelcomePage {
   //  this.navCtrl.push(LocationPage);
   }
   async signInFB(){
-    //********** CODE SNIPPET, when loading this page check if device id is registered!
 
     let headers = new Headers();
 
@@ -98,7 +97,7 @@ export class WelcomePage {
       {
        browser.close();
        console.log("closed");
-       this.navCtrl.push(TabsPage);
+       this.navCtrl.push(TabsPage); //parameters should be passed, device id
      }
 
      console.log(data); //55
