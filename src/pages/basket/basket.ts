@@ -27,11 +27,11 @@ export class BasketPage {
     },
     order:[
 
-      {id:1, name:"medicine1", price:4, qty:3},
+      {id:1, name:"Medicine1", price:4, qty:3},
 
-      {id:2, name:"medicine2", price:5, qty:5},
+      {id:2, name:"Medicine2", price:5, qty:5},
 
-      {id:3, name:"medicine3", price:2, qty:1},
+      {id:3, name:"Medicine3", price:2, qty:1},
 
     ]};
 
