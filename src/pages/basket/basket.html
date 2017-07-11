@@ -14,23 +14,23 @@
 
 
 <ion-content padding>
-
+<!-- custom color applied for all classes.. changed accordingly -->
 <!--loop of each item in my basket -->
 <div class="parentdiv" *ngFor="let order of orderData.order">
-  <div class="firstChildDiv centerHorizontal">
+  <div class="firstChildDiv centerHorizontal customColor">
     <h1>{{ order.name }}</h1>
     <p>Item small Description</p>
   </div>
-  <div class="secondChildDiv centerHorizontal">
+  <div class="secondChildDiv centerHorizontal customColor">
       <ion-icon style="padding-top: 50%" name="cash"> {{ order.price }} EGP</ion-icon>
   </div>
-  <div class="thirdChildDiv centerHorizontal">
+  <div class="thirdChildDiv centerHorizontal customColor">
     <ion-icon name="arrow-dropup" (click)="increment(order.id)"></ion-icon>
     <p>{{ order.qty }}</p>
     <ion-icon name="arrow-dropdown" (click)="decrement(order.id)"></ion-icon>
   </div>
 
-  <div class="fourthChildDiv centerHorizontal">
+  <div class="fourthChildDiv centerHorizontal customColor">
 
     <ion-icon class="centerVertical" name="trash" (click)="deleteButton(order.id)"></ion-icon>
 
@@ -38,7 +38,7 @@
 
 
 </div>
-<hr>
+<!--<hr> -->
 
 <div class="priceLastStep">
     <p class="beforePriceAndDelivery"><ion-icon name="cash"></ion-icon> Price: {{ totalPrice }} EGP</p>

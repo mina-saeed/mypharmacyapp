@@ -1,13 +1,19 @@
 page-basket {
   .parentdiv{
+    border-bottom: 2px solid #0F6196;
     display: flex;
+    margin-bottom: 10%;
+    padding-bottom: 5%;
   }
-  .firstChildDiv{
+  .firstChildDiv{ //max width for other divs
   //  background-color: yellow;
+    border-right: 2px solid #0F6196;
     float: left;
     margin-right: auto;
     order: 1;
     padding: 15.9px;
+    padding-bottom: 0;
+    max-width: 46%;
     margin-bottom: auto;
   }
   .secondChildDiv{
@@ -15,7 +21,7 @@ page-basket {
     float: right;
     margin-right: auto;
     order: 2;
-   margin-bottom: auto;
+    margin-bottom: auto;
   }
   .thirdChildDiv{
     order: 3;
@@ -33,16 +39,16 @@ page-basket {
   }
   hr{
       background-color:white !important;
-  	  width:97%;
+  	  width:100%;
       display: block;
       height: 1px;
       border: 0;
       border-top: 2px solid #0F6196;
       //border-bottom: white;
-      margin: 1em 0;
+    //  margin: 1em 0;
       padding: 0;
       padding-bottom: 1.8rem;
-      margin-left: 2%;
+    //  margin-left: 2%;
 
 
   }
@@ -91,5 +97,8 @@ page-basket {
     margin-left: 0;
     margin-right: 0;
   //  font-weight: bold;
+  }
+  .customColor{ //should be changed by a variable
+    color: #073654;
   }
 }
