@@ -6,29 +6,38 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { LocationPage } from '../pages/location/location';
 import { UpdateLocationPage } from '../pages/update-location/update-location';
 import { Http, Headers, HttpModule} from '@angular/http';
-
+import {TranslateModule} from 'ng2-translate/ng2-translate';    
+import { TranslateLoader, TranslateStaticLoader } from 'ng2-translate/src/translate.service';
+//import { NavController } from 'ionic-angular';
 
 import { Camera, CameraOptions } from '@ionic-native/camera';;
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
+import { IonicStorageModule } from '@ionic/storage';
 
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { LanguagePage } from '../pages/language/language';
 import { CameraPage } from '../pages/camera/camera';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { OrderPage } from '../pages/order/order';
 import { BasketPage } from '../pages/basket/basket';
+import { LocalStorageModule } from 'angular-2-local-storage';
+import { TestStorageProvider } from './test-storage';
 
-
+export function createTranslateLoader(http: Http) {   
+    return new TranslateStaticLoader(http, 'assets/i18n', '.json');   
+  }
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LocationPage,
+    LanguagePage,
     TabsPage,
     CameraPage,
     UpdateLocationPage,
@@ -37,15 +46,26 @@ import { BasketPage } from '../pages/basket/basket';
     BasketPage
   ],
   imports: [
+  LocalStorageModule.withConfig({
+            prefix: 'my-app',
+            storageType: 'localStorage'
+        }),
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    TranslateModule.forRoot({    
+        provide: TranslateLoader,   
+        useFactory: (createTranslateLoader),    
+        deps: [Http]    
+      }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
     LocationPage,
+    LanguagePage,
     TabsPage,
     CameraPage,
     UpdateLocationPage,
@@ -56,7 +76,7 @@ import { BasketPage } from '../pages/basket/basket';
   providers: [
     StatusBar,
     SplashScreen, Camera, BarcodeScanner, ImagePicker,InAppBrowser, UniqueDeviceID,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider
   ]
 })
 export class AppModule {}

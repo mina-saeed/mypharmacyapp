@@ -4,9 +4,14 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { Camera, CameraOptions } from '@ionic-native/camera';
 import { ImagePicker } from '@ionic-native/image-picker';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { TestStorageProvider } from '../../app/test-storage';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { TranslateService } from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { Globalization } from 'ionic-native';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the CameraPage page.
@@ -27,15 +32,17 @@ export class CameraPage {
     public base64Image: string;
            url:string;
     //options: BarcodeScannerOptions;
-
-    constructor(public navCtrl: NavController, public navParams: NavParams, private camera: Camera,
+    private translate: TranslateService;
+    constructor(translate: TranslateService, public navCtrl: NavController, public lang: TestStorageProvider,public navParams: NavParams, private camera: Camera,
         private alertCtrl: AlertController,
         private barcodeScanner: BarcodeScanner,
         private imagePicker: ImagePicker,
         public http:Http) {
-
+          this.translate = translate;
+          //this.url = 'http://207.154.240.16:3003/';
           this.url = 'http://146.185.148.66:3003/';
         }
+
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad CameraPage');
@@ -96,7 +103,13 @@ export class CameraPage {
             });
         }, (err) => {
             // An error occurred
-            alert("Cannot scan barcodes");
+            console.log(this.translate.currentLang =='en');
+            if (this.translate.currentLang =='en') {
+              alert("Cannot scan barcodes");
+            }
+            else {
+            alert("لا يستطيع مسح الباركود");
+            }
         });
     }
     deletePhoto(index) {

@@ -4,10 +4,18 @@ page-basket {
     display: flex;
     margin-bottom: 10%;
     padding-bottom: 5%;
+    margin-right: auto;
+
+  }
+  .engLine{
+    border-right: 2px solid #0F6196;
+  }
+  .arLine{
+     border-left: 2px solid #0F6196;
+    // margin-right: -9px;
   }
   .firstChildDiv{ //max width for other divs
   //  background-color: yellow;
-    border-right: 2px solid #0F6196;
     float: left;
     margin-right: auto;
     order: 1;
@@ -15,6 +23,7 @@ page-basket {
     padding-bottom: 0;
     max-width: 46%;
     margin-bottom: auto;
+
   }
   .secondChildDiv{
   //  background-color: green;
@@ -32,7 +41,7 @@ page-basket {
     margin-right: auto;
   }
   .centerVertical{
-    padding:100%; //let it 50% 3shan betbooz fl devices
+    padding:50%; //let it 50% 3shan betbooz fl devices
   }
   .centerHorizontal{
     text-align: center;

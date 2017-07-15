@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-
+import { TranslateService } from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { Globalization } from 'ionic-native';
+import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
-
 import { TabsPage } from '../tabs/tabs';
+import { Storage } from '@ionic/storage';
+import { TestStorageProvider } from '../../app/test-storage';
+
 /**
  * Generated class for the LocationPage page.
  *
@@ -19,7 +23,13 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'location.html',
 })
 export class LocationPage {
+ /* languages = availableLanguages;
+  selectedLanguage = sysOptions.systemLanguage;
 
+  param = { value: 'world' };
+
+  private translate: TranslateService;
+  */
   url:string;
   deviceID:string;
 
@@ -35,16 +45,23 @@ export class LocationPage {
       telephone: "",
       mobile: ""
     }
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http,
+  private translate: TranslateService;
+  constructor( translate: TranslateService, public lang: TestStorageProvider,public navCtrl: NavController, public navParams: NavParams, public http:Http,
               private uniqueDeviceID: UniqueDeviceID) {
+                this.translate = translate;
+
+                //this.url = 'http://207.154.240.16:3000/';
                 this.url = 'http://146.185.148.66:3000/';
                 this.uniqueDeviceID.get()
               .then((uuid: any) => this.deviceID = uuid)
               .catch((error: any) => console.log(error));
 
   }
-
+/*
+  applyLanguage() {
+    this.translate.use(this.selectedLanguage);
+  }
+*/
   ionViewDidLoad() {
     //naddaf el file
 
@@ -96,7 +113,9 @@ export class LocationPage {
 
 
     });
-
+            if(this.lang.load() !== undefined){
+        this.translate.use(this.lang.load());
+        }
     this.navCtrl.push(TabsPage); //to test, change it accordingly
     //just to test
   //  alert(this.deviceID);

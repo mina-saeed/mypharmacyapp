@@ -1,7 +1,13 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
+//import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { TranslateService } from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { Globalization } from 'ionic-native';
+import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the BasketPage page.
@@ -15,7 +21,9 @@ import 'rxjs/add/operator/map';
   templateUrl: 'basket.html',
 })
 export class BasketPage {
+ // languages = availableLanguages;
 
+  selectedLanguage = sysOptions.systemLanguage;
   orderData = {
     userInfo: {
       userID: 4654,
@@ -37,9 +45,10 @@ export class BasketPage {
 
   url:string;
   totalPrice = 0;
+  private translate: TranslateService;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
-
+  constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+    this.translate = translate;
     this.url = 'http://146.185.148.66:3000/';
     this.updateTotalPrice();
   }

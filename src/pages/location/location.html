@@ -12,48 +12,47 @@
 
 
 <ion-content padding>
+    <img class="image" src="assets/icon/logo.png"/>
 
-                <img class="image" src="assets/icon/logo.png"/>
-
-  <h3 class="header"><span>ENTER YOUR LOCATION</span></h3>
+  <h3 class="header"><span>{{ "LOCATION" | translate}}</span></h3>
   <form (ngSubmit)="locationSubmit()">
-    <ion-item>
-        <ion-label class="text">City</ion-label>
-        <ion-input class="oval" type="text" [(ngModel)]="loc.location.city" name="city"></ion-input>
+    <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class="text" side = "left">{{ "CITY" | translate}}</ion-label>
+        <ion-input class="oval" type="text" side = "right" [(ngModel)]="loc.location.city" name="city"></ion-input>
         </ion-item>
 
-        <ion-item>
-        <ion-label class = "text">Location</ion-label>
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "LOC" | translate}}</ion-label>
         <ion-input class="oval" type="text"  [(ngModel)]="loc.location.location" name="location"></ion-input>
         </ion-item>
-        <ion-item>
-        <ion-label class = "text">Street</ion-label>
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "STREET" | translate}}</ion-label>
         <ion-input class="oval" type="text"  [(ngModel)]="loc.location.street" name="street"></ion-input>
         </ion-item>
-        <div class="wid">
-        <ion-item>
-        <ion-label class = "text">App</ion-label>
-        <ion-input class="small oval" type="text" [(ngModel)]="loc.location.App_no" name="app"></ion-input>
+        <div class="wid APPA" >
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "APPA" | translate}}</ion-label>
+        <ion-input class="small oval AP" type="text" [(ngModel)]="loc.location.App_no" name="app"></ion-input>
 
          </ion-item>
          </div>
          <div class="wid second">
-         <ion-item>
-         <ion-label class = "text s">Floor</ion-label>
+         <ion-item dir="{{'LANG_DIR' | translate}}">
+         <ion-label class = "text s">{{ "FLOOR" | translate}}</ion-label>
 
-        <ion-input class="small oval" type="text"  [(ngModel)]="loc.location.floor" name="floor"></ion-input>
+        <ion-input class="small oval FL" type="text"  [(ngModel)]="loc.location.floor" name="floor"></ion-input>
 
         </ion-item>
         </div>
-        <ion-item>
-        <ion-label class = "text">Tel</ion-label>
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "TEL" | translate}}</ion-label>
         <ion-input class="oval" type="tel" [(ngModel)]="loc.telephone" name="tel"></ion-input>
         </ion-item>
-        <ion-item>
-        <ion-label class = "text">Mobile</ion-label>
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "MOB" | translate}}</ion-label>
         <ion-input class="oval" type="tel"  [(ngModel)]="loc.mobile" name="Mobile"></ion-input>
         </ion-item>
-      <button ion-button type="submit" class = "dark-button">Submit</button>
+      <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
 
     </form>
 

@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TranslateService } from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { Globalization } from 'ionic-native';
+import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
+import { Storage } from '@ionic/storage';
+import { TestStorageProvider } from '../../app/test-storage';
 
 import { LocationPage } from '../location/location';
 import { UpdateLocationPage } from '../update-location/update-location';
@@ -19,8 +25,10 @@ import { OrderPage } from '../order/order';
   templateUrl: 'tabs.html',
 })
 export class TabsPage {
+  private translate: TranslateService;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor( translate: TranslateService,public lang: TestStorageProvider, public navCtrl: NavController, public navParams: NavParams) {
+      this.translate = translate;
   }
 
   homePage = HomePage;

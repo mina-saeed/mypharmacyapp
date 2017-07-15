@@ -17,7 +17,7 @@
     </ion-buttons>
 
     <ion-title class="navTitle">
-      HOME
+      {{"HOMEPAGE" | translate }}
     </ion-title>
 
     <ion-buttons right>
@@ -33,21 +33,15 @@
 </ion-header>
 
 
-
-
-<ion-header>
-
-</ion-header>
-
-<ion-content padding>
+<ion-content padding stule = "margin-bottom:2px">
     <ion-input class="oval" type="search">
     <img class="image" src="assets/icon/White Loop.png"/>
     </ion-input>
   <hr>
-  <button ion-button class="round presc" (click)="goCamera()"><p>Upload prescription</p></button>
-  <button ion-button class="round medi"><p>Search by illness</p></button>
+  <button ion-button class="round presc" (click)="goCamera()"><p>{{"PRESCRIPTION" | translate }}</p></button>
+  <button ion-button class="round medi"><p>{{ "SEARCH" | translate }}</p></button>
   <hr>
 
-  <ion-label class="round discount text">30% Discount</ion-label>
-  <ion-label class="round products text">Products area</ion-label>
+  <ion-label class="round discount text">{{ "DISCOUNT" | translate }}</ion-label>
+  <ion-label class="round products text">{{ "PRODUCTS" | translate }}</ion-label>
 </ion-content>

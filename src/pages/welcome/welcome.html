@@ -7,30 +7,18 @@
         Ionic pages and navigation.
       -->
       <head>
-          <script src="js/app.js"></script>
       </head>
       <ion-header>
-
 
 
       </ion-header>
 
 
-
-
-         <!--   <ion-header-bar class="bar-stable">
-              <h1 class="title">Ionic beboooooo Starter</h1>
-
-            </ion-header-bar> -->
-
             <ion-content>
-      <!--      <h3>Network<h3><h1 color="head">{{status}}</h1> -->
-              <!--image style changed later in scss-->
-
               <img class="image" src="assets/icon/logo.png"/>
-              <h3 class="header"><span>CONTINUE AS GUEST</span></h3>
-              <button ion-button class = "dark-button" (click)="signIn()">Continue</button>
-              <p class= "text">By tapping continue, you agree to the Terms of Service and privacy Policy</p>
-              <h3 class="header"><span>OR</span></h3>
-              <button ion-button class = "dark-button" (click)="signInFB()">Facebook</button>
+              <h3 class="header"><span>{{ 'GUEST' | translate }}</span></h3>
+              <button ion-button class = "dark-button" (click)="signIn()">{{ 'CONTINUE' | translate }}</button>
+              <p class= "text">{{ 'TERMS' | translate }}</p>
+              <h3 class="header"><span>{{ 'OR' | translate }}</span></h3>
+              <button ion-button class = "dark-button">{{ 'FACEBOOK' | translate }}</button>
             </ion-content>

@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { Storage } from '@ionic/storage';
+import { TestStorageProvider } from '../../app/test-storage';
+import { TranslateService } from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { Globalization } from 'ionic-native';
+import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
@@ -34,10 +39,10 @@ export class UpdateLocationPage {
       telephone: "",
       mobile: ""
     }
-
-    constructor(public navCtrl: NavController, public navParams: NavParams,
+  private translate: TranslateService;
+    constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams,
       private uniqueDeviceID: UniqueDeviceID, public http:Http) {
-
+        this.translate=translate;
         this.url = 'http://146.185.148.66:3000/';
         this.uniqueDeviceID.get()
         .then((uuid: any) => this.deviceID = uuid)

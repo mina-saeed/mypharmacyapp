@@ -1,15 +1,10 @@
-page-welcome {
+page-language {
 
   .body{
   	margin: 0;
   	padding: 0;
   }
-/*  @font-face {
-      font-family: Highland;
-      src: url('../fonts/HighlandGothicLightFLF.ttf')  format('ttf');;
 
-  }
-*/
   .header{
   	text-align: center;
   	color: #3CABE3 ;
@@ -39,6 +34,7 @@ page-welcome {
   	font-family: "Helvetica";
   	font-size: 20px;
   	letter-spacing: 0.5px;
+  	
 
   }
   .image{
@@ -48,16 +44,6 @@ page-welcome {
   	margin-left: auto;
   	margin-right: auto;
   	margin-top: 30px;
-  }
-  .text {
-  	text-align: center;
-  	color: gray;
-  	margin-left: 10%;
-  	margin-right: 10%;
-  	font-family: "Helvetica";
-  	font-size: 15px;
-  	margin-bottom: 26px;
-  	margin-top: 26px;
   }
 
 }
