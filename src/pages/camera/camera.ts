@@ -13,6 +13,9 @@ import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { Globalization } from 'ionic-native';
 import { Storage } from '@ionic/storage';
 
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+//import { File } from '@ionic-native/file';
+
 /**
  * Generated class for the CameraPage page.
  *
@@ -37,7 +40,8 @@ export class CameraPage {
         private alertCtrl: AlertController,
         private barcodeScanner: BarcodeScanner,
         private imagePicker: ImagePicker,
-        public http:Http) {
+        public http:Http,
+        private transfer: FileTransfer) {
           this.translate = translate;
           //this.url = 'http://207.154.240.16:3003/';
           this.url = 'http://146.185.148.66:3003/';
@@ -167,8 +171,38 @@ export class CameraPage {
     }
 
 
+    fileTransfer: FileTransferObject = this.transfer.create();
+         upload() {
 
 
+           let headers = new Headers();
+           //headers.append('Content-Type', 'multipart/form-data');
+           headers.append('Access-Control-Allow-Origin', '*');
+           headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+           headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
+
+           let options: FileUploadOptions = {
+             fileKey: 'file',
+             fileName: 'name.jpg',
+             headers: headers
+
+           }
+
+           this.fileTransfer.upload(this.photos[0], this.url + 'uploadPrescription', options)
+            .then((data) => {
+              // success
+              alert(this.photos[0])
+              console.log(this.photos[0])
+              console.log(data);
+              alert(data);
+            }, (err) => {
+              // error
+              alert(this.photos[0])
+              console.log(this.photos[0])
+              console.log(err);
+              alert(err);
+            })
+     }
 
 }

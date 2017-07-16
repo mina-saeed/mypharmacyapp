@@ -12,15 +12,19 @@ import { LocationPage } from '../pages/location/location';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { BasketPage } from '../pages/basket/basket';
-import { LanguagePage } from '../pages/language/language';    
+import { LanguagePage } from '../pages/language/language';
 import { CameraPage } from '../pages/camera/camera';
+
+import { RegisterEmailPage } from '../pages/register-email/register-email';
+import { LoginEmailPage } from '../pages/login-email/login-email';
+
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
  // //change to TabsPage to test anything
     url:string;
-    deviceID:string;  
+    deviceID:string;
     rootPage:any;
     //local: LocalStorageService;
   constructor(platform: Platform,  statusBar: StatusBar, splashScreen: SplashScreen,public http:Http, private uniqueDeviceID: UniqueDeviceID){
@@ -46,7 +50,7 @@ export class MyApp {
     this.http.post(this.url + 'userHome',JSON.stringify(body), new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       //this.navCtrl.push(WelcomePage);
-      this.rootPage = WelcomePage; 
+      this.rootPage = WelcomePage;
 
       console.log(data);
       console.log(this.url + 'userHome/50');

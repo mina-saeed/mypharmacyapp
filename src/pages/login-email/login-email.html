@@ -1,0 +1,23 @@
+
+
+<ion-content padding>
+
+  <img class="image" src="assets/icon/logo.png"/>
+
+  <h3 class="header"><span>Login</span></h3>
+  <form (ngSubmit)="login()">
+
+        <ion-item>
+        <ion-label class = "text">Email:</ion-label>
+        <ion-input class="oval" type="text"  [(ngModel)]="userData.email" name="location"></ion-input>
+        </ion-item>
+        <ion-item>
+        <ion-label class = "text">Password</ion-label>
+        <ion-input class="oval" type="text"  [(ngModel)]="userData.password" name="street"></ion-input>
+        </ion-item>
+      <button ion-button type="submit" class = "dark-button">Submit</button>
+
+    </form>
+
+
+</ion-content>

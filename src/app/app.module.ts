@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { LocationPage } from '../pages/location/location';
 import { UpdateLocationPage } from '../pages/update-location/update-location';
 import { Http, Headers, HttpModule} from '@angular/http';
-import {TranslateModule} from 'ng2-translate/ng2-translate';    
+import {TranslateModule} from 'ng2-translate/ng2-translate';
 import { TranslateLoader, TranslateStaticLoader } from 'ng2-translate/src/translate.service';
 //import { NavController } from 'ionic-angular';
 
@@ -16,6 +16,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { IonicStorageModule } from '@ionic/storage';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 
 
 import { MyApp } from './app.component';
@@ -26,11 +27,14 @@ import { CameraPage } from '../pages/camera/camera';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { OrderPage } from '../pages/order/order';
 import { BasketPage } from '../pages/basket/basket';
+import { RegisterEmailPage } from '../pages/register-email/register-email';
+import { LoginEmailPage } from '../pages/login-email/login-email';
+
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { TestStorageProvider } from './test-storage';
 
-export function createTranslateLoader(http: Http) {   
-    return new TranslateStaticLoader(http, 'assets/i18n', '.json');   
+export function createTranslateLoader(http: Http) {
+    return new TranslateStaticLoader(http, 'assets/i18n', '.json');
   }
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ export function createTranslateLoader(http: Http) {
     UpdateLocationPage,
     WelcomePage,
     OrderPage,
-    BasketPage
+    BasketPage,
+    RegisterEmailPage,
+    LoginEmailPage
   ],
   imports: [
   LocalStorageModule.withConfig({
@@ -54,10 +60,10 @@ export function createTranslateLoader(http: Http) {
     HttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    TranslateModule.forRoot({    
-        provide: TranslateLoader,   
-        useFactory: (createTranslateLoader),    
-        deps: [Http]    
+    TranslateModule.forRoot({
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [Http]
       }),
   ],
   bootstrap: [IonicApp],
@@ -71,11 +77,13 @@ export function createTranslateLoader(http: Http) {
     UpdateLocationPage,
     WelcomePage,
     OrderPage,
-    BasketPage
+    BasketPage,
+    RegisterEmailPage,
+    LoginEmailPage
   ],
   providers: [
     StatusBar,
-    SplashScreen, Camera, BarcodeScanner, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner,FileTransfer, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider
   ]
 })
