@@ -45,6 +45,7 @@
         "cordova-plugin-file": "^4.3.3",
         "cordova-plugin-file-transfer": "^1.6.3",
         "cordova-plugin-globalization": "^1.0.7",
+        "cordova-plugin-image-picker": "^1.1.3",
         "cordova-plugin-inappbrowser": "^1.7.1",
         "cordova-plugin-splashscreen": "^4.0.3",
         "cordova-plugin-statusbar": "^2.2.3",
@@ -77,15 +78,13 @@
             "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
             "cordova-plugin-camera": {},
-            "com.synconset.imagepicker": {
-                "PHOTO_LIBRARY_USAGE_DESCRIPTION": "your usage message"
-            },
             "phonegap-plugin-barcodescanner": {},
             "cordova-plugin-uniquedeviceid": {},
             "cordova-plugin-inappbrowser": {},
             "cordova-plugin-globalization": {},
             "cordova-sqlite-storage": {},
-            "cordova-plugin-file-transfer": {}
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-image-picker": {}
         },
         "platforms": [
             "android",
