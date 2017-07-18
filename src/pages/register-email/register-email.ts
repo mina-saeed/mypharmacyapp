@@ -19,6 +19,7 @@ import 'rxjs/add/operator/map';
 })
 export class RegisterEmailPage {
 
+  confirmPassword:string;
   url:string;
   userData = {
       name: "",
@@ -26,6 +27,7 @@ export class RegisterEmailPage {
       password: "",
       token: "",
     }
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
   public http:Http) {
@@ -56,15 +58,19 @@ export class RegisterEmailPage {
     };
 
 
+    if(this.userData.password != this.confirmPassword){
+        alert("Passwords must match!")
+    }else{
+      this.http.post(this.url + 'register', JSON.stringify(body), new RequestOptions({headers:headers}))
+      .map(res => res).subscribe(data => {
 
-    this.http.post(this.url + 'register', JSON.stringify(body), new RequestOptions({headers:headers}))
-    .map(res => res).subscribe(data => {
+        console.log(data);
+        this.navCtrl.push(LocationPage); //roo7 kamel el form beta3t el 3enwan
 
-      console.log(data);
-      this.navCtrl.push(LocationPage); //roo7 kamel el form beta3t el 3enwan
+      },  err =>{
+        console.log(err);
+      });
+    }
 
-    },  err =>{
-      console.log(err);
-    });
   }
 }
