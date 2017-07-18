@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
+import { RegisterEmailPage } from '../register-email/register-email';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -69,5 +70,8 @@ export class LoginEmailPage {
 
 
     //logout get request... /logout
+  }
+  register(){
+    this.navCtrl.push(RegisterEmailPage);
   }
 }

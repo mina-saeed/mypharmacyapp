@@ -4,20 +4,22 @@
 
   <img class="image" src="assets/icon/logo.png"/>
 
-  <h3 class="header"><span>Login</span></h3>
+  <h3 class="header"><span>{{ "LOGIN" | translate}}</span></h3>
   <form (ngSubmit)="login()">
 
-        <ion-item>
-        <ion-label class = "text">Email:</ion-label>
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "Email" | translate}}:</ion-label>
         <ion-input class="oval" type="text"  [(ngModel)]="userData.email" name="location"></ion-input>
         </ion-item>
-        <ion-item>
-        <ion-label class = "text">Password</ion-label>
-        <ion-input class="oval" type="text"  [(ngModel)]="userData.password" name="street"></ion-input>
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "Password" | translate}}:</ion-label>
+        <ion-input class="oval" type="password"  [(ngModel)]="userData.password" name="street"></ion-input>
         </ion-item>
-      <button ion-button type="submit" class = "dark-button">Submit</button>
+      <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
+      <br>
+      <h3 class="header"><span>{{ "OR" | translate}}</span></h3>
+      <button ion-button (click)="register()" class = "dark-button">{{ "REGISTER" | translate}}</button>
 
     </form>
-
 
 </ion-content>

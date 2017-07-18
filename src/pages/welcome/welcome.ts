@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
 import { LocationPage } from '../location/location';
 import { OrderPage } from '../order/order';
 import { TabsPage } from '../tabs/tabs';
+import { LoginEmailPage } from '../login-email/login-email';
+
 import { Storage } from '@ionic/storage';
 import { Events } from 'ionic-angular';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
@@ -11,9 +13,9 @@ import { TestStorageProvider } from '../../app/test-storage';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
-import { TranslateService } from 'ng2-translate';   
-import { TranslateModule } from 'ng2-translate/ng2-translate';    
-import { Globalization } from 'ionic-native';   
+import { TranslateService } from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { Globalization } from 'ionic-native';
 import { defaultLanguage, availableLanguages, sysOptions } from './welcome.constants';
 import { LocalStorageService } from 'angular-2-local-storage';
 /**
@@ -28,13 +30,13 @@ import { LocalStorageService } from 'angular-2-local-storage';
   templateUrl: 'welcome.html',
 })
 export class WelcomePage {
-  languages = availableLanguages;   
-    selectedLanguage = sysOptions.systemLanguage;   
+  languages = availableLanguages;
+    selectedLanguage = sysOptions.systemLanguage;
     //alert(storage.get('language'));
-    param = { value: 'world' };   
-    private translate: TranslateService;  
+    param = { value: 'world' };
+    private translate: TranslateService;
     url:string;
-    deviceID:string;  
+    deviceID:string;
     storage:Storage;
 
     constructor(platform: Platform, translate: TranslateService,  public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, public http:Http, private uniqueDeviceID: UniqueDeviceID,private iab: InAppBrowser) {
@@ -46,64 +48,64 @@ export class WelcomePage {
    // this.storage=storage;
    // this.translate.use(this.storage.get('language'));
    // this.translate.use(this.getLanguage());
-      console.log("welcooooooome");   
-   /*   platform.ready().then(() => {   
-          // this language will be used as a fallback when a translation isn't found in the current language    
-          translate.setDefaultLang(defaultLanguage);    
-      
-          if ((<any>window).cordova) {    
-      
-            Globalization.getPreferredLanguage().then(result => {   
-              var language = this.getSuitableLanguage(result.value);    
-              console.log(language);    
-              //alert(language);    
-              translate.use(language);    
-              sysOptions.systemLanguage = language;   
-            });   
-          } else {    
-            let browserLanguage = translate.getBrowserLang() || defaultLanguage;    
-            var language = this.getSuitableLanguage(browserLanguage);   
-            //alert(language);    
-            translate.use(language);    
-            sysOptions.systemLanguage = language;   
-          }   
-        }   
+      console.log("welcooooooome");
+   /*   platform.ready().then(() => {
+          // this language will be used as a fallback when a translation isn't found in the current language
+          translate.setDefaultLang(defaultLanguage);
+
+          if ((<any>window).cordova) {
+
+            Globalization.getPreferredLanguage().then(result => {
+              var language = this.getSuitableLanguage(result.value);
+              console.log(language);
+              //alert(language);
+              translate.use(language);
+              sysOptions.systemLanguage = language;
+            });
+          } else {
+            let browserLanguage = translate.getBrowserLang() || defaultLanguage;
+            var language = this.getSuitableLanguage(browserLanguage);
+            //alert(language);
+            translate.use(language);
+            sysOptions.systemLanguage = language;
+          }
+        }
       );    */
      this.url = 'http://146.185.148.66:3000/';
-     this.uniqueDeviceID.get()    
-        .then((uuid: any) => this.deviceID = uuid)    
-         .catch((error: any) => console.log(error));   
-     //this.apply();     
-    }   
+     this.uniqueDeviceID.get()
+        .then((uuid: any) => this.deviceID = uuid)
+         .catch((error: any) => console.log(error));
+     //this.apply();
+    }
     apply(){
     alert(this.lang.load());
     return this.lang.load();
     }
-      
+
 /*
-    getSuitableLanguage(language) {   
-      language = language.substring(0, 2).toLowerCase();    
-      return availableLanguages.some(x => x.code == language) ? 'ar' : 'ar';    
-    }   
+    getSuitableLanguage(language) {
+      language = language.substring(0, 2).toLowerCase();
+      return availableLanguages.some(x => x.code == language) ? 'ar' : 'ar';
+    }
     */
-  /*    
-    constructor(translate: TranslateService, private lang: Language, public navCtrl: NavController, public navParams: NavParams, public http:Http, private uniqueDeviceID: UniqueDeviceID) {    
-      this.translate = translate;   
+  /*
+    constructor(translate: TranslateService, private lang: Language, public navCtrl: NavController, public navParams: NavParams, public http:Http, private uniqueDeviceID: UniqueDeviceID) {
+      this.translate = translate;
       this.translate.use(getLanguage());
-      //this.url = 'http://207.154.240.16:3000/'; 
+      //this.url = 'http://207.154.240.16:3000/';
      //this.url = 'http://146.185.148.66:3000/';
-  
-     this.uniqueDeviceID.get()    
-        .then((uuid: any) => this.deviceID = uuid)    
-         .catch((error: any) => console.log(error));    
-    }   
-      
-    applyLanguage() {   
-      this.translate.use(this.selectedLanguage);    
-    }   
+
+     this.uniqueDeviceID.get()
+        .then((uuid: any) => this.deviceID = uuid)
+         .catch((error: any) => console.log(error));
+    }
+
+    applyLanguage() {
+      this.translate.use(this.selectedLanguage);
+    }
   */
 
- 
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad WelcomePage');
@@ -198,5 +200,8 @@ export class WelcomePage {
      console.log("all login done");
   }
 
+  signInEmail(){
+    this.navCtrl.push(LoginEmailPage);
+  }
 
 }
