@@ -12,7 +12,7 @@
   "SEARCH": "Search by illness",
   "DISCOUNT": "30% Discount",
   "PRODUCTS": "Products area",
-  "LOCATION": "ENTER YOUR LOCATION",
+  "LOCATION": "LOCATION",
   "CITY": "City",
   "LOC": "Location",
   "STREET": "Street",
@@ -39,13 +39,15 @@
   "MEDICINE": "Medicine",
   "ACCOUNT": "Account",
   "SETTINGS": "Settings",
-  "UPDATE": "UPDATE YOUR LOCATION",
+  "UPDATE": "LOCATION",
   "TRACKORDER": "TRACK ORDER",
   "EMAIL" : "EMAIL",
   "LOGIN" : "LOGIN",
   "REGISTER" : "REGISTER",
   "Email" : "Email",
   "Name" : "Name",
-  "Password" : "Password"
+  "Password" : "Password",
+  "EMPTY_FIELDS": "Do not leave any field empty!",
+  "PASSWORDS_MATCH":"Passwords must match!"
 
 }

@@ -46,6 +46,8 @@
   "REGISTER" : "تسجيل",
   "Email" : "البريد الإلكتروني",
   "Name" : "الاسم",
-  "Password" : "كلمه السر"
+  "Password" : "كلمه السر",
+  "EMPTY_FIELDS": "",
+  "PASSWORDS_MATCH":""
 
 }

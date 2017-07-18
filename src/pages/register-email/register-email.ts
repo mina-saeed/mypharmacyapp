@@ -57,8 +57,10 @@ export class RegisterEmailPage {
       token: "aadsffsfv",
     };
 
-
-    if(this.userData.password != this.confirmPassword){
+    if(this.userData.email == "" || this.userData.password == "")
+    {
+      alert("Do not leave any field empty!");
+    }else if (this.userData.password != this.confirmPassword){
         alert("Passwords must match!")
     }else{
       this.http.post(this.url + 'register', JSON.stringify(body), new RequestOptions({headers:headers}))

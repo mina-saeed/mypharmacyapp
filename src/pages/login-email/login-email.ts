@@ -57,16 +57,21 @@ export class LoginEmailPage {
     };
 
 
+    if(this.userData.email == "" || this.userData.password == "")
+    {
+      alert("Do not leave any field empty!");
+    }else{
+      this.http.post(this.url + 'login', JSON.stringify(body), new RequestOptions({headers:headers}))
+      .map(res => res).subscribe(data => {
 
-    this.http.post(this.url + 'login', JSON.stringify(body), new RequestOptions({headers:headers}))
-    .map(res => res).subscribe(data => {
+        console.log(data);
+        this.navCtrl.push(TabsPage);
 
-      console.log(data);
-      this.navCtrl.push(TabsPage);
+      }, err =>{
+        console.log(err);
+      });
+    }
 
-    }, err =>{
-      console.log(err);
-    });
 
 
     //logout get request... /logout
