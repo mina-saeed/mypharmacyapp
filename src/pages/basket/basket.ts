@@ -8,6 +8,7 @@ import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { Globalization } from 'ionic-native';
 import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { Storage } from '@ionic/storage';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 /**
  * Generated class for the BasketPage page.
@@ -47,10 +48,16 @@ export class BasketPage {
   totalPrice = 0;
   private translate: TranslateService;
 
-  constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+  constructor(translate: TranslateService,
+               public navCtrl: NavController,
+               public navParams: NavParams,
+               public http:Http,
+               private nativeStorage: NativeStorage) {
     this.translate = translate;
     this.url = 'http://146.185.148.66:3000/';
     this.updateTotalPrice();
+    this.saveOrder();
+    this.getOrder();
   }
 
   ionViewDidLoad() {
@@ -131,5 +138,22 @@ export class BasketPage {
       console.log(err);
     });
     console.log("done");
+  }
+  saveOrder(){  //save to local storage, //later, save each time add to cart,and deleter w kda
+        this.nativeStorage.setItem('order', this.orderData)
+        .then(
+          () => console.log('Stored item!'),
+          error => console.error('Error storing item', error)
+        );
+  }
+  getOrder(){ //get from local sotrage
+          this.nativeStorage.getItem('order')
+        .then(data =>{
+                  console.log(data);
+                  //console.log("got data 5alas: ",data);
+                  //alert(data);
+                  } ,
+          error => console.error(error)
+        );
   }
 }

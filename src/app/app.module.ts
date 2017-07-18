@@ -17,7 +17,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { IonicStorageModule } from '@ionic/storage';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
-
+import { NativeStorage } from '@ionic-native/native-storage';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -83,7 +83,7 @@ export function createTranslateLoader(http: Http) {
   ],
   providers: [
     StatusBar,
-    SplashScreen, Camera, BarcodeScanner,FileTransfer, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider
   ]
 })
