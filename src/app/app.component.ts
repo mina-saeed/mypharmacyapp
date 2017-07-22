@@ -17,6 +17,7 @@ import { CameraPage } from '../pages/camera/camera';
 
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
+import { MapTestPage } from '../pages/map-test/map-test';
 
 @Component({
   templateUrl: 'app.html'

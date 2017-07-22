@@ -16,7 +16,7 @@
   <!-- better styling later-->
   <h3 class="header" style="margin-top: 30px;">><span>{{ "PRESCRIPTION" | translate}}</span></h3>
   <!--(search) event when enter is pressed-->
-<!--  <ion-searchbar primary [(ngModel)]="searchQuery"
+ <ion-searchbar primary [(ngModel)]="searchQuery"
                (search)="searchByCategory($event)"
                show-cancel="true"
                placeholder="Search By Category">
@@ -25,7 +25,7 @@
              (search)="searchByName($event)"
              show-cancel="true"
              placeholder="Search By Name">
-</ion-searchbar>-->
+</ion-searchbar>
 
 <button ion-button class = "dark-button dark-button-smaller" full (click)="scanBarcode()" dir="{{'LANG_DIR' | translate}}">
   <ion-icon name="barcode"> {{ "SCAN" | translate }} </ion-icon>

@@ -29,9 +29,11 @@ import { OrderPage } from '../pages/order/order';
 import { BasketPage } from '../pages/basket/basket';
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
+import { MapTestPage } from '../pages/map-test/map-test';
 
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { TestStorageProvider } from './test-storage';
+import { Geolocation } from '@ionic-native/geolocation';
 
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -49,7 +51,8 @@ export function createTranslateLoader(http: Http) {
     OrderPage,
     BasketPage,
     RegisterEmailPage,
-    LoginEmailPage
+    LoginEmailPage,
+    MapTestPage
   ],
   imports: [
   LocalStorageModule.withConfig({
@@ -79,11 +82,12 @@ export function createTranslateLoader(http: Http) {
     OrderPage,
     BasketPage,
     RegisterEmailPage,
-    LoginEmailPage
+    LoginEmailPage,
+    MapTestPage
   ],
   providers: [
     StatusBar,
-    SplashScreen, Camera, BarcodeScanner,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner, Geolocation, FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider
   ]
 })
