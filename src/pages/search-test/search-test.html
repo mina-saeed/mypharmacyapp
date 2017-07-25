@@ -1,0 +1,33 @@
+<!--
+  Generated template for the SearchTestPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>searchTest</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-searchbar primary [(ngModel)]="searchQuery2"
+               (search)="searchByName($event)"
+               (keyup)="updateListByName($event)"
+               (ionCancel)="onCancelByName($event)"
+               show-cancel="true"
+               showCancelButton="true"
+               placeholder="Search By Name">
+  </ion-searchbar>
+
+
+<ion-list *ngIf="showList">
+  <ion-item  *ngFor = "let order of orderTest.data" >
+    {{order.name}}
+  </ion-item>
+</ion-list>
+
+</ion-content>

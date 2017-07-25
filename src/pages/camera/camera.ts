@@ -31,6 +31,20 @@ export class CameraPage {
 
     //**** NO ERROR HANDLING DONE
 
+
+    orderTest= {
+
+      data: [
+
+      {id:1, name:"Medicine1", price:4, qty:3},
+
+      {id:2, name:"Medicine2", price:5, qty:5},
+
+      {id:3, name:"Medicine3", price:2, qty:1},
+
+    ]};
+
+
     public photos: any;
     public base64Image: string;
            url:string;
@@ -57,10 +71,11 @@ export class CameraPage {
     }
     takePhoto() {
         const options: CameraOptions = {
-            quality: 50, //original 100!
+            quality: 100, //original 100!
             destinationType: this.camera.DestinationType.DATA_URL,
             encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE
+            mediaType: this.camera.MediaType.PICTURE,
+            saveToPhotoAlbum: true
         }
 
         this.camera.getPicture(options).then((imageData) => {
@@ -162,14 +177,18 @@ export class CameraPage {
       });
     }
     searchByName(ev) {
-      this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
+    /*  this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
       .map(res => res).subscribe(data => {
       //  alert(ev.target.value.toString());  //just for testing
+      console.log(this.url + 'search/' + ev.target.value.toString());
         alert(data);  //just for testing
         console.log(data);
-      });
+      });*/
     }
-
+    updateListByName(ev) {
+      console.log(ev.target.value);
+      console.log(this.orderTest["data"][0]["name"]);
+    }
 
     fileTransfer: FileTransferObject = this.transfer.create();
          upload() {

@@ -23,6 +23,7 @@
 </ion-searchbar>
 <ion-searchbar primary [(ngModel)]="searchQuery2"
              (search)="searchByName($event)"
+             (keyup)="updateListByName($event)"
              show-cancel="true"
              placeholder="Search By Name">
 </ion-searchbar>

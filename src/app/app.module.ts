@@ -30,6 +30,7 @@ import { BasketPage } from '../pages/basket/basket';
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
 import { MapTestPage } from '../pages/map-test/map-test';
+import { SearchTestPage } from '../pages/search-test/search-test';
 
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { TestStorageProvider } from './test-storage';
@@ -52,7 +53,8 @@ export function createTranslateLoader(http: Http) {
     BasketPage,
     RegisterEmailPage,
     LoginEmailPage,
-    MapTestPage
+    MapTestPage,
+    SearchTestPage
   ],
   imports: [
   LocalStorageModule.withConfig({
@@ -83,7 +85,8 @@ export function createTranslateLoader(http: Http) {
     BasketPage,
     RegisterEmailPage,
     LoginEmailPage,
-    MapTestPage
+    MapTestPage,
+    SearchTestPage
   ],
   providers: [
     StatusBar,

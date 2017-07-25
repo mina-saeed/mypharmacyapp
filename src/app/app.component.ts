@@ -18,6 +18,7 @@ import { CameraPage } from '../pages/camera/camera';
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
 import { MapTestPage } from '../pages/map-test/map-test';
+import { SearchTestPage } from '../pages/search-test/search-test';
 
 @Component({
   templateUrl: 'app.html'
@@ -59,7 +60,7 @@ export class MyApp {
       //no data, go to registeration form!!
       console.log(err);
       //this.navCtrl.push(LanguagePage);
-      this.rootPage = LanguagePage; //w wadilo device id as parameter
+      this.rootPage = SearchTestPage; //w wadilo device id as parameter
     });
     });
   }
