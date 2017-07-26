@@ -60,7 +60,7 @@ export class MyApp {
       //no data, go to registeration form!!
       console.log(err);
       //this.navCtrl.push(LanguagePage);
-      this.rootPage = SearchTestPage; //w wadilo device id as parameter
+      this.rootPage = TabsPage; //w wadilo device id as parameter
     });
     });
   }

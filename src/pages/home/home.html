@@ -34,9 +34,29 @@
 
 
 <ion-content padding stule = "margin-bottom:2px">
-    <ion-input class="oval" type="search">
+  <!--  <ion-input class="oval" type="search">
+
     <img class="image" src="assets/icon/White Loop.png"/>
-    </ion-input>
+  </ion-input> -->
+    <ion-searchbar primary [(ngModel)]="searchQuery2"
+                  class="oval"
+                 
+                 (keyup)="updateListByName($event)"
+                 (ionCancel)="onCancelByName($event)"
+                 show-cancel="true"
+                 showCancelButton="true"
+                 placeholder="Search By Name">
+
+    </ion-searchbar>
+
+
+    <ion-list *ngIf="showSearchResult">
+      <ion-item  *ngFor = "let order of orderTest.data" >
+        {{order.name}}
+      </ion-item>
+    </ion-list>
+
+    <div *ngIf="showPage">
   <hr>
   <button ion-button class="round presc" (click)="goCamera()"><p>{{"PRESCRIPTION" | translate }}</p></button>
   <button ion-button class="round medi"><p>{{ "SEARCH" | translate }}</p></button>
@@ -44,4 +64,5 @@
 
   <ion-label class="round discount text">{{ "DISCOUNT" | translate }}</ion-label>
   <ion-label class="round products text">{{ "PRODUCTS" | translate }}</ion-label>
+</div>
 </ion-content>
