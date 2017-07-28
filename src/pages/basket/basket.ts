@@ -139,6 +139,12 @@ export class BasketPage {
     });
     console.log("done");
   }
+
+
+  //the concept may be: first when app loaded initialize the local storage order with empties with device id
+  //if it is empty!! if not empty mate3mlsh initialize
+  //then when continue guest, get the data, update it then set the order local storage back
+  //smae when new order, get it, push an order to the array and put it back
   saveOrder(){  //save to local storage, //later, save each time add to cart,and deleter w kda
         this.nativeStorage.setItem('order', this.orderData)
         .then(

@@ -40,7 +40,7 @@
   </ion-input> -->
     <ion-searchbar primary [(ngModel)]="searchQuery2"
                   class="oval"
-                 
+
                  (keyup)="updateListByName($event)"
                  (ionCancel)="onCancelByName($event)"
                  show-cancel="true"
@@ -51,8 +51,8 @@
 
 
     <ion-list *ngIf="showSearchResult">
-      <ion-item  *ngFor = "let order of orderTest.data" >
-        {{order.name}}
+      <ion-item  *ngFor = "let res of searchResults.data" >
+        {{res.name}} <ion-icon name="add-circle" (click)="addToCart(res)"></ion-icon>
       </ion-item>
     </ion-list>
 
