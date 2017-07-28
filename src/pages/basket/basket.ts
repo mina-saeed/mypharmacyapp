@@ -27,11 +27,11 @@ export class BasketPage {
   selectedLanguage = sysOptions.systemLanguage;
   orderData = {
     userInfo: {
-      userID: 4654,
+      userID: -1,
       location : {
-        city : "cairo",
-        street : "streetvalue",
-        location: "zamalek" ,
+        city : "",
+        street : "",
+        location: "" ,
       }
     },
     order:[
@@ -55,9 +55,10 @@ export class BasketPage {
                private nativeStorage: NativeStorage) {
     this.translate = translate;
     this.url = 'http://146.185.148.66:3000/';
-    this.updateTotalPrice();
-    this.saveOrder();
+    //this.updateTotalPrice();
+    //this.saveOrder();
     this.getOrder();
+    this.updateTotalPrice();
   }
 
   ionViewDidLoad() {
@@ -72,6 +73,7 @@ export class BasketPage {
 
         this.orderData.order.splice(x,1); //proper way to remove by index
         this.updateTotalPrice();
+        this.saveOrder();
         break;
       }
     }
@@ -89,6 +91,7 @@ export class BasketPage {
   deleteButton(id){
     this.removeByID(id);
     this.updateTotalPrice();
+    this.saveOrder();
   }
   increment(id){
 
@@ -99,6 +102,7 @@ export class BasketPage {
 
         current[x]["qty"]++;
         this.updateTotalPrice(); //udate the price
+        this.saveOrder();
         break;
       }
     }
@@ -116,6 +120,7 @@ export class BasketPage {
         }else{
           current[x]["qty"]--;
           this.updateTotalPrice(); //udate the price
+          this.saveOrder();
           break;
         }
       }
@@ -155,6 +160,7 @@ export class BasketPage {
   getOrder(){ //get from local sotrage
           this.nativeStorage.getItem('order')
         .then(data =>{
+          this.orderData = data;
                   console.log(data);
                   //console.log("got data 5alas: ",data);
                   //alert(data);

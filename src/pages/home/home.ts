@@ -27,12 +27,26 @@ export class HomePage {
 
   ]};
 
+  emptyOrderData = {
+     //unique id and evey data
+    userInfo: {
+    userID: 4654,
+      location : {
+        city : "cairo",
+        street : "streetvalue",
+        location: "zamalek" ,
+      }
+    },
+    order:[]};
+
   public showSearchResult: boolean;
   public showPage: boolean;
   url:string;
 
   private translate: TranslateService;
   constructor(translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
+
+    this.getOrder();//to initalize if empty
     this.translate = translate;
 
     this.showSearchResult = false;  //initialise things to be visible
@@ -42,6 +56,9 @@ export class HomePage {
   /*applyLanguage() {
     this.translate.use(this.selectedLanguage);
   }*/
+  ionViewDidLoad(){
+    //    this.getOrder();_//to initalize if empty
+  }
 
   goCamera(){
           if(this.lang.load() !== undefined){
@@ -132,6 +149,7 @@ export class HomePage {
               this.saveOrder(data);
 
 
+              //just to test
               this.nativeStorage.getItem('order')
               .then(data =>{
                         console.log("now in local", data);
@@ -170,13 +188,16 @@ export class HomePage {
         );
   }
   getOrder(){ //get from local sotrage
-        return  this.nativeStorage.getItem('order')
+         this.nativeStorage.getItem('order')
         .then(data =>{
                   console.log(data);
                   //console.log("got data 5alas: ",data);
                   //alert(data);
                   } ,
-          error => console.error(error)
+          error => {
+            this.saveOrder(this.emptyOrderData);
+            console.log("initialized order!");
+          }
         );
   }
 }
