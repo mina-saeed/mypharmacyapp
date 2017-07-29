@@ -20,6 +20,7 @@ import { LoginEmailPage } from '../pages/login-email/login-email';
 import { MapTestPage } from '../pages/map-test/map-test';
 import { SearchTestPage } from '../pages/search-test/search-test';
 import { RatePage } from '../pages/rate/rate';
+import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
 
 @Component({
   templateUrl: 'app.html'

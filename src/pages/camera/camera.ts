@@ -13,6 +13,8 @@ import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { Globalization } from 'ionic-native';
 import { Storage } from '@ionic/storage';
 
+import { DetailedProductPage } from '../detailed-product/detailed-product';
+
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 //import { File } from '@ionic-native/file';
 
@@ -115,11 +117,28 @@ export class CameraPage {
        this.barcodeScanner.scan().then((barcodeData) => {
             // Success! Barcode data is here
             //alert(barcodeData.text);
-            this.http.get(this.url + 'search/barcode/'+ barcodeData.text, new RequestOptions({headers: this.setGetHeaders()}))
-            .map(res => res).subscribe(data => {
-              alert(barcodeData.text);
-              console.log(data);
+
+            //  alert(barcodeData.text);
+
+            this.http.get(this.url + 'searchBarcode/' + barcodeData.text, new RequestOptions({headers: this.setGetHeaders()}))
+            .map(res => res).subscribe(pdata => {
+                console.log(pdata);
+              //  console.log("yey no error", pdata);
+              //the error depends on mahmoud result, error in response wala body fih no results
+                if(pdata["_body"] == "No medicines match this barcode" || pdata["_body"] == "sorry , no results match this barcode"){
+                  alert("Invalid barcode!")
+                }else{
+                  console.log(JSON.parse(pdata["_body"]));
+                  this.navCtrl.push(DetailedProductPage, {_body: pdata["_body"]});
+                }
+
+            },err =>{
+              alert("Invalid barcode!");
             });
+
+
+
+
         }, (err) => {
             // An error occurred
             console.log(this.translate.currentLang =='en');
@@ -130,7 +149,7 @@ export class CameraPage {
             alert("لا يستطيع مسح الباركود");
             }
         });
-    }
+   }
     deletePhoto(index) {
 
         /*  let confirm = this.alertCtrl.create({

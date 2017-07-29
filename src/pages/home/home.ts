@@ -8,6 +8,8 @@ import { Storage } from '@ionic/storage';
 import { TestStorageProvider } from '../../app/test-storage';
 import { NativeStorage } from '@ionic-native/native-storage';
 
+import { DetailedProductPage } from '../detailed-product/detailed-product';
+
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -200,4 +202,23 @@ export class HomePage {
           }
         );
   }
+
+
+  detailedProduct(id){
+    this.http.get(this.url + 'searchID/'+id, new RequestOptions({headers: this.setGetHeaders()}))
+    .map(res => res).subscribe(pdata => {
+      //  console.log(data);
+      //  console.log("yey no error", pdata);
+        if(pdata["_body"] == "no data"){
+          alert("Invalid barcode!")
+        }else{
+          console.log(JSON.parse(pdata["_body"]));
+          this.navCtrl.push(DetailedProductPage, {_body: pdata["_body"]});
+        }
+
+    },err =>{
+      alert("Invalid barcode!");
+    });
+  }
+
 }
