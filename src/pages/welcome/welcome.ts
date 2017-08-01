@@ -78,7 +78,7 @@ export class WelcomePage {
      //this.apply();
     }
     apply(){
-    alert(this.lang.load());
+    //alert(this.lang.load());
     return this.lang.load();
     }
 

@@ -8,15 +8,48 @@
 
   <ion-navbar>
     <ion-title>detailedProduct</ion-title>
+
+
+    <ion-buttons left>
+      <button ion-button icon-only>
+        <ion-icon name="back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title class="navTitle">
+      <!--<p class= "title"> -->
+     <p class="{{'TITLELANG' | translate}} title"> {{"MEDICINE" | translate }} </p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only >
+        <ion-icon name="setting"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <div  *ngFor = "let res of product.data" >
-    <p>Name: {{res.name_en}}</p>
-    <p>Description: {{res.description_en}}</p>
-     <button ion-button name="add-circle" (click)="addToCart(res)">Add To Cart</button>
+<ion-content padding style = "margin-bottom:2px">
+    <ion-input class="oval" type="search">
+    <img class="image" src="assets/icon/White Loop.png"/>
+    </ion-input>
+    <div  *ngFor = "let res of product.data" >
+    <h3>{{res.name_en}}</h3>
+    <img class="medicine-image" src = "assets/icon/panadol.jpg"/>
+    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+    <hr>
+
+    <p class="text">Description: {{res.description_en}}</p>
+  <hr>
+
+     <h4>Panadol Extra-Effect</h4>
   </div>
+	
 </ion-content>

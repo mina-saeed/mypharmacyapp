@@ -71,6 +71,7 @@ hr{
 }
 .oval{
 	width:97%;
+	padding-left: 10px;
 	background-image: url("../assets/icon/White Loop.png") ;
 	background-size: 10% 80%;
 	background-repeat: no-repeat;
@@ -174,6 +175,20 @@ li{
 	margin-left: 0px;
 	max-width: 40px;
 	max-height: 150px;
+}
+.ion-ios-back-outline,
+.ion-ios-back,.ion-md-back,.ion-md-back-outline {
+  content: url('../assets/icon/Blue Back.png');
+  max-width: 28px;
+  max-height: 130px;
+}
+
+.ion-ios-setting-outline,
+.ion-ios-setting,.ion-md-setting,.ion-md-setting-outline {
+  content: url('../assets/icon/deactivated menu.png');
+  margin-left: 0px;
+  max-width: 35px;
+  max-height: 150px;
 }
 
 }

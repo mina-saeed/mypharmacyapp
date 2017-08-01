@@ -26,6 +26,14 @@ page-location {
   padding-right: 15px;
 }
 
+.validation-errors{
+    margin-left: 7%;
+    margin-right: 7%;
+    }
+  .error-message
+  {
+    color: red;
+  }
 .header{
   text-align: center;
   color: #3CABE3 ;
@@ -58,9 +66,27 @@ page-location {
   letter-spacing: 0.5px;
 
 }
-div{
+.div{
   display: inline-block;
   margin-right: 0px;
+}
+.floor {
+    position: absolute;
+    margin: auto;
+    left: 55%;
+}
+.floorAr {
+   left: 69%;
+}
+.appAr {
+  margin-left: 25%;
+}
+.apart{
+  margin: 0px;
+ // margin-left: 7%;
+}
+.apart2{
+  // margin-left: 7%;
 }
 .wid{
   width: 53%;
@@ -119,5 +145,16 @@ div{
   margin-right: auto;
   margin-top: -10px;
   margin-bottom: -10px;
+}
+@media (max-width:413px) and (min-width:321px) {
+    h3 {
+        font-size: 1.9rem;
+    }
+
+}
+@media (max-width:320px) {
+    h3 {
+        font-size: 1.7rem;
+    }
 }
 }

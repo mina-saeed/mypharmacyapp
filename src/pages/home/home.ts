@@ -7,6 +7,7 @@ import { TranslateService } from 'ng2-translate';
 import { Storage } from '@ionic/storage';
 import { TestStorageProvider } from '../../app/test-storage';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { MenuPage } from '../menu/menu';
 
 import { DetailedProductPage } from '../detailed-product/detailed-product';
 
@@ -73,6 +74,9 @@ export class HomePage {
         this.translate.use(this.lang.load());
         }
     this.navCtrl.push(BasketPage);
+  }
+  goMenu(){
+    this.navCtrl.push(MenuPage);
   }
   openModal(){
     alert("This features has not been implemented yet!")

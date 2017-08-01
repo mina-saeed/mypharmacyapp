@@ -1,0 +1,61 @@
+page-menu {
+
+.ion-ios-cartCustom-outline,
+.ion-ios-cartCustom,.ion-md-cartCustom,.ion-md-cartCustom-outline {
+  content: url('../assets/icon/deactivited cart.png');
+  margin-left: 0px;
+  max-width: 35px;
+  max-height: 150px;
+}
+.ion-ios-back-outline,
+.ion-ios-back,.ion-md-back,.ion-md-back-outline {
+  content: url('../assets/icon/Blue Back.png');
+  max-width: 28px;
+  max-height: 130px;
+}
+
+.ion-ios-setting-outline,
+.ion-ios-setting,.ion-md-setting,.ion-md-setting-outline {
+  content: url('../assets/icon/deactivated menu.png');
+  margin-left: 0px;
+  max-width: 35px;
+  max-height: 150px;
+}
+p{
+ display: block;
+
+}
+.oval{
+line-height: 2;
+  text-align: center;
+  color:#3CABE3;
+    max-width: 85%;
+  margin-right:auto;
+  margin-left:auto;
+  padding: 0px;
+  margin-top: 0px;
+  margin-bottom: 4%;
+  background-color: #CFEAF8;
+  border-radius: 50px;
+  display: inline-block;
+  font-family: "Helvetica";
+  font-size: 20px;
+  height: 40px;
+}
+.title{
+  font-size:23px;
+  text-transform: uppercase;
+}
+hr {
+    display: block;
+   // margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 1.5px;
+    border-top: 2px solid #3CABE3;
+    width: 80%;
+    margin-top: -4%;
+}
+
+}

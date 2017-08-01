@@ -1,3 +1,107 @@
 page-detailed-product {
 
+h3,h4 {
+  font-family: Highland;
+  text-align: center;
+
+  margin-top: 7%;
+}
+h3 {
+   color: #0F6196 ;
+}
+h4 {
+	color: #0F6193;
+    margin-top: 10%;
+}
+.title {
+
+    font-weight: 500;
+    font-family: Highland; 
+    font-size: 2.2rem;
+    margin-left: -14%;
+    }
+ .titleAr{
+ 	font-size: 3.2rem;
+
+ }
+ .titleEn{
+     font-size: 2.2rem;
+     margin-left: -14%;
+
+ }
+.oval{
+	width:97%;
+	background-image: url("../assets/icon/White Loop.png") ;
+	background-size: 10% 80%;
+	background-repeat: no-repeat;
+	background-position: 95%;
+	margin-left: 2%;
+	background-color: #cdebf9;
+	border-radius: 50px;
+	display: inline-block;
+	font-family: "Helvetica";
+	font-size: 20px;
+}
+.image{
+	width: 15%;
+}
+.medicine-image{
+	display: block;
+	margin: auto;
+	width: 45%;
+}
+.ion-ios-addCart-outline,
+.ion-ios-addCart,.ion-md-addCart,.ion-md-addCart-outline {
+	content: url('../assets/icon/ADD to activated.png');
+	margin: auto;
+	max-width: 50px;
+	max-height: 150px;
+}
+.ion-ios-back-outline,
+.ion-ios-back,.ion-md-back,.ion-md-back-outline {
+	content: url('../assets/icon/Blue Back.png');
+	margin-left: 20px;
+	max-width: 28px;
+	max-height: 130px;
+}
+
+.ion-ios-cartCustom-outline,
+.ion-ios-cartCustom,.ion-md-cartCustom,.ion-md-cartCustom-outline {
+	content: url('../assets/icon/deactivited cart.png');
+	margin-left: 0px;
+	max-width: 35px;
+	max-height: 150px;
+}
+.ion-ios-setting-outline,
+.ion-ios-setting,.ion-md-setting,.ion-md-setting-outline {
+	content: url('../assets/icon/deactivated menu.png');
+	margin-left: 0px;
+	max-width: 35px;
+	max-height: 150px;
+}
+.cart {
+	display: block;
+	background-color: #fff;
+	max-width: 12%;
+	margin: auto;
+}
+.text {
+	text-align: center;
+  	color: #0F6193;
+  	margin-left: 10%;
+  	margin-right: 10%;
+  	font-family: "Helvetica";
+  	font-size: 18.2px;
+    letter-spacing: 0.25px;
+}
+hr {
+	display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-width: 1.5px;
+    border-top: 2px solid #0F6196;
+    width: 55%;
+}
 }

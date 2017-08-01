@@ -12,6 +12,11 @@ import { UpdateLocationPage } from '../update-location/update-location';
 import { HomePage } from '../home/home';
 import { CameraPage } from '../camera/camera';
 import { OrderPage } from '../order/order';
+import { SettingsPage } from '../settings/settings';
+import { MenuPage } from '../menu/menu';
+import { AccountPage } from '../account/account';
+
+import { DetailedProductPage } from '../detailed-product/detailed-product';
 
 /**
  * Generated class for the TabsPage page.
@@ -36,5 +41,7 @@ export class TabsPage {
   updateLocationPage = UpdateLocationPage;
   cameraPage = CameraPage;
   orderPage = OrderPage;
-
+  settingsPage = SettingsPage;
+  accountPage = AccountPage;
+  detailedProductPage=DetailedProductPage;
 }

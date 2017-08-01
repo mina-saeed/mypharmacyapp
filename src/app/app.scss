@@ -18,7 +18,8 @@
 /*.tabs-md .tab-button {
   color: white !important;
 }*/
-
+//@import "../pages/languages/languages";
+//@import "../components/loading-modal/loading-modal";
 
 .tabs-md, .tabs-ios{
   border-radius: 0px; //discovered the problem, the problem is that it applies the border

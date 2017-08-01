@@ -101,4 +101,5 @@ export class LanguagePage {
     console.log('ionViewDidLoad LanguagePage');
 
 }
+
 }

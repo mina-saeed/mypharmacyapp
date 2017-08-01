@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" 
 <head>
   <script data-ionic="inject">
     (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.4.2';i.angular='4.1.3';i.ionicNative='^2.9.0';i.staticDir='build/';})(window);
@@ -13,7 +13,7 @@
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
- 
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
   <!-- cordova.js required for cordova apps -->
   <script src="cordova.js"></script>
 
@@ -25,12 +25,14 @@
         .catch(err => console.error('Error', err));
     }
   </script>-->
+  <script src="lib/ionic/js/ionic.bundle.js"></script>
 
   <link href="build/main.css" rel="stylesheet">
-
+  <!--<script src= "track-order.js"></script>
+-->
 </head>
-<body ng-app= "starter">
-
+<!--<body  ng-app="starter" ng-controller="timerCtrl">-->
+<body>
   <!-- Ionic's root component and where the app will load -->
   <ion-app></ion-app>
 
@@ -39,6 +41,17 @@
 
   <!-- The bundle js is generated during the build process -->
   <script src="build/main.js"></script>
+  <ion-radial-progress timer="60" color="'#ff0000'" backgroundColor="'#00ffff'"></ion-radial-progress>
+<!-- <ion-content padding style = "margin-bottom:2px">
+    <div id = "countdown">{{ myTimer }}</div>
+    <button ng-click = "start()">Start</button>
+    <button ng-click = "stop()">Stop</button>
+    <ion-input class="oval" type="search">
+    <img class="image" src="assets/icon/White Loop.png"/>
+    </ion-input>
 
+    <ion-label class="round discount text">Seif Pharmacy</ion-label>
+
+</ion-content> -->
 </body>
 </html>

@@ -3,6 +3,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { BasketPage } from '../basket/basket';
+import { TranslateService } from 'ng2-translate';
+import { TranslateModule } from 'ng2-translate/ng2-translate';
+import { Globalization } from 'ionic-native';
+import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 
 /**
  * Generated class for the DetailedProductPage page.
@@ -36,11 +41,14 @@ export class DetailedProductPage {
 
     ]};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
-  public http:Http, private nativeStorage: NativeStorage) {
-        this.url = 'http://146.185.148.66:3003/';
+
+  private translate: TranslateService;
+  constructor( translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http, private nativeStorage: NativeStorage) {
+   this.translate = translate;
+           this.url = 'http://146.185.148.66:3003/';
         this.product.data = JSON.parse(this.navParams.get("_body")); //nav controller
         console.log(this.product.data);
+   //this.translate.use('en'); // to be commented
   }
 
   ionViewDidLoad() {
@@ -125,6 +133,14 @@ export class DetailedProductPage {
     headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
     return headers;
+  }
+
+
+    goBasket(){
+        /*  if(this.lang.load() !== undefined){
+        this.translate.use(this.lang.load());
+        }*/
+    this.navCtrl.push(BasketPage);
   }
 
 }

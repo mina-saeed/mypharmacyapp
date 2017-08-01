@@ -1,0 +1,16 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { TrackOrderPage } from './track-order';
+
+@NgModule({
+  declarations: [
+    TrackOrderPage,
+  ],
+  imports: [
+    IonicPageModule.forChild(TrackOrderPage),
+  ],
+  exports: [
+    TrackOrderPage
+  ]
+})
+export class TrackOrderPageModule {}
