@@ -1,11 +1,4 @@
-{
-  "AWSAccessKeyId": "AKIAJKHWACTQWHB7VTXA",
-  "AWSSecretAccessKey": "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",
-  "mandrill_user":"postmaster@sandbox1c2bb2a0c4734be78aff1853aa7bb1ba.mailgun.org",
-  "mandrill_password":"97da72dc73ab763e92b685f81bb25fff",
-  "analyticsSettings": {
-      "Google Analytics" : {"trackingId": "Your tracking ID"}
-    },
+
  "public" : { "cities": [{"name":"Cairo"}, {"name":"Giza"}, 
 {"name":"Alexandria"}, {"name":"Suez"}, {"name":"Ismailia"}, 
 {"name":"Port Said"}, {"name":"Damietta"}, {"name":"Sharqia"}, 
