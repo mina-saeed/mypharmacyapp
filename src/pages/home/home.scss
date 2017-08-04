@@ -21,7 +21,9 @@ page-home {
 }
 
 .round{
-	padding: 21%;
+	padding-top: 15%;
+	padding-bottom: 12%;
+	//padding-right: 5%;
 	font-family: "Helvetica";
 	font-size: 12px;
 	font-weight: bold;
@@ -40,17 +42,17 @@ page-home {
 
 
 .medi{
-	margin-left:5.5%;
-	margin-right: 2%;
-	width: 35%;
+	margin-left:0%;
+	//margin-right: 2%;
+	width: 33%;
 	background-image: url('../assets/icon/medi.png');
 	background-position: 10% 21%;
 	background-size: 104%;
 	background-repeat: no-repeat;
 }
 .presc{
-	margin-left:5%;
-	width: 35%;
+	margin-left:-3.5%;
+	width: 33%;
 	background-image: url('../assets/icon/presc.png');
 	background-position: 50% 30%;
 	background-size: 50%;
@@ -70,13 +72,13 @@ hr{
 
 }
 .oval{
-	width:97%;
+	width:107%;
 	padding-left: 10px;
 	background-image: url("../assets/icon/White Loop.png") ;
 	background-size: 10% 80%;
 	background-repeat: no-repeat;
 	background-position: 95%;
-	margin-left: 2%;
+	margin-left: -3%;
 	background-color: #cdebf9;
 	border-radius: 50px;
 	display: inline-block;
@@ -121,7 +123,7 @@ li{
 	text-align: center;
 }
 p{
-	padding-top: 70px;
+	padding-top: 55px;
 	text-transform: none;
 	font-size: 11px;
 }
@@ -189,6 +191,17 @@ li{
   margin-left: 0px;
   max-width: 35px;
   max-height: 150px;
+}
+.container{
+	width: 105%;
+}
+@media (min-width:768px) {
+    p {
+    padding-top: 180px;
+    text-transform: none;
+    font-size: 25px;
+    }
+
 }
 
 }

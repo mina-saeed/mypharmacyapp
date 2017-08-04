@@ -91,7 +91,7 @@ export class LocationPage {
   constructor( private selector: WheelSelector,private remoteService : RemoteServiceProvider, translate: TranslateService, public lang: TestStorageProvider,public navCtrl: NavController, public navParams: NavParams, public http:Http,
               private uniqueDeviceID: UniqueDeviceID,public formBuilder: FormBuilder) {
                 this.translate = translate;
-                // this.translate.use('en');
+                this.translate.use('en');
            this.translate.get('CITYVAL').subscribe((result: string) => {
                 this.validation_messages.city[0].message = result;
           });

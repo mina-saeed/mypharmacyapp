@@ -49,7 +49,7 @@
   "Name" : "Name",
   "Password" : "Password",
   "EMPTY_FIELDS": "Do not leave any field empty!",
-  "PASSWORDS_MATCH":"Passwords must match!",
+  "PASSWORDS_MATCH": "Passwords must match!",
   "TITLELANG": "titleEn",
   "MEDICINE": "MEDICINE",
   "CITYVAL": "City is required",
@@ -77,6 +77,8 @@
   "PHONE": "Phone",
   "ADDRESS":"Address",
   "ORDERS":"Orders History",
-  "LOGOUT": "Log Out"
+  "LOGOUT": "Log Out",
+  "CATEGORIES": "Categories",
+  "RECEIPT": "RECEIPT"
 
 }

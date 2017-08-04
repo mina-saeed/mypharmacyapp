@@ -15,6 +15,7 @@ import { OrderPage } from '../order/order';
 import { SettingsPage } from '../settings/settings';
 import { MenuPage } from '../menu/menu';
 import { AccountPage } from '../account/account';
+import { CategoriesPage } from '../categories/categories';
 
 import { DetailedProductPage } from '../detailed-product/detailed-product';
 
@@ -34,6 +35,7 @@ export class TabsPage {
 
   constructor( translate: TranslateService,public lang: TestStorageProvider, public navCtrl: NavController, public navParams: NavParams) {
       this.translate = translate;
+     // this.translate.use('en');
   }
 
   homePage = HomePage;
@@ -44,4 +46,6 @@ export class TabsPage {
   settingsPage = SettingsPage;
   accountPage = AccountPage;
   detailedProductPage=DetailedProductPage;
+  categoriesPage = CategoriesPage;
+
 }

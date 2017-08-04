@@ -50,14 +50,17 @@
 
     <ion-list *ngIf="showSearchResult">
       <ion-item  *ngFor = "let res of searchResults.data">
-        <p  style="margin:0; padding:0"(click)="detailedProduct(res.id)">{{res.name}}</p> <ion-icon name="add-circle" (click)="addToCart(res)"></ion-icon>
+        <p  style="margin:0; padding:0"(click)="detailedProduct(res.id)">{{res.description}}</p> <ion-icon name="add-circle" (click)="addToCart(res)"></ion-icon>
       </ion-item>
     </ion-list>
 
     <div *ngIf="showPage">
   <hr>
+  <div class="container">
   <button ion-button class="round presc" (click)="goCamera()"><p>{{"PRESCRIPTION" | translate }}</p></button>
+  <button ion-button class="round medi"><p>{{ "SCAN" | translate }}</p></button>
   <button ion-button class="round medi"><p>{{ "SEARCH" | translate }}</p></button>
+  </div>
   <hr>
 
   <ion-label class="round discount text">{{ "DISCOUNT" | translate }}</ion-label>

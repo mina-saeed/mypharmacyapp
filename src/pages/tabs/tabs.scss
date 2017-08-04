@@ -10,6 +10,7 @@ page-tabs {
   .ion-ios-medicineCustom,.ion-md-medicineCustom,.ion-md-medicineCustom-outline {
     content: url('../assets/icon/White pill.png');
     max-width: 54px; //not accurate, change later
+    //margin-left: 15%;
   }
   .ion-ios-callCustom-outline,
   .ion-ios-callCustom,.ion-md-callCustom,.ion-md-callCustom-outline {
@@ -25,5 +26,20 @@ page-tabs {
   .ion-ios-settingsCustom,.ion-md-settingsCustom,.ion-md-settingsCustom-outline {
     content: url('../assets/icon/settingss.png');
     max-width: 30px;
+
   }
+.tab-button:nth-child(2) {
+    padding-left: 3px;
+    padding-right: 3px;}
+.tab-item.tab-item-active, .tab-item.active, .tab-item.activated {
+    opacity: 0;
+     activator: none;
+}
+.ios,
+.md,
+.wp {
+    .disable-ripple ion-tab-effect {
+       display: none;
+    }
+}
 }

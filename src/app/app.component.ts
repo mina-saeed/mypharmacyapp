@@ -8,7 +8,7 @@ import { IonicPage,Platform} from 'ionic-angular';
 
 //import { LocalStorageService } from 'angular-2-local-storage';
 //import { HomePage } from '../pages/home/home';
-//import { LocationPage } from '../pages/location/location';
+//import { UpdateLocationPage } from '../pages/update-location/update-location';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
 //import { BasketPage } from '../pages/basket/basket';
@@ -16,16 +16,18 @@ import { LanguagePage } from '../pages/language/language';
 //import { CameraPage } from '../pages/camera/camera';
 //import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
 //import { TrackOrderPage } from '../pages/track-order/track-order';
-import { AccountPage } from '../pages/account/account';
-import { SettingsPage } from '../pages/settings/settings';
-import { MenuPage } from '../pages/menu/menu';
+//import { AccountPage } from '../pages/account/account';
+//import { SettingsPage } from '../pages/settings/settings';
+//import { MenuPage } from '../pages/menu/menu';
+import { CategoriesPage } from '../pages/categories/categories';
+import { ReceiptPage } from '../pages/receipt/receipt';
 
-import { RegisterEmailPage } from '../pages/register-email/register-email';
-import { LoginEmailPage } from '../pages/login-email/login-email';
-import { MapTestPage } from '../pages/map-test/map-test';
-import { SearchTestPage } from '../pages/search-test/search-test';
-import { RatePage } from '../pages/rate/rate';
-import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
+//import { RegisterEmailPage } from '../pages/register-email/register-email';
+//import { LoginEmailPage } from '../pages/login-email/login-email';
+//import { MapTestPage } from '../pages/map-test/map-test';
+//import { SearchTestPage } from '../pages/search-test/search-test';
+//import { RatePage } from '../pages/rate/rate';
+//import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
 
 
 @Component({
@@ -68,7 +70,7 @@ export class MyApp {
       //no data, go to registeration form!!
       console.log(err);
       //this.navCtrl.push(LanguagePage);
-      this.rootPage = LanguagePage; //w wadilo device id as parameter
+      this.rootPage = TabsPage; //w wadilo device id as parameter
 
     //  this.rootPage = SettingsPage; //w wadilo device id as parameter
     });

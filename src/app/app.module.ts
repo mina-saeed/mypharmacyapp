@@ -42,13 +42,15 @@ import { AccountPage } from '../pages/account/account';
 import { SettingsPage } from '../pages/settings/settings';
 import { MenuPage } from '../pages/menu/menu'
 import { TestPage } from '../pages/test/test';
+import { CategoriesPage } from '../pages/categories/categories';
+import { ReceiptPage } from '../pages/receipt/receipt';
 
 import { TestStorageProvider } from './test-storage';
 import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
 import { WheelSelector } from '@ionic-native/wheel-selector';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
-
-
+import { IonRating } from '../components/ion-rating/ion-rating';
+import { Ionic2RatingModule } from 'ionic2-rating';
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, 'assets/i18n', '.json');
   }
@@ -74,7 +76,10 @@ export function createTranslateLoader(http: Http) {
     SettingsPage,
     MenuPage,
     AccountPage,
-    LoginEmailPage
+    LoginEmailPage,
+    CategoriesPage,
+    ReceiptPage,
+    IonRating
   ],
   imports: [
   LocalStorageModule.withConfig({
@@ -83,7 +88,16 @@ export function createTranslateLoader(http: Http) {
         }),RoundProgressModule,
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonIcon: 'ios-arrow-back',
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'ios-transition',
+
+    }
+  ), Ionic2RatingModule,
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
         provide: TranslateLoader,
@@ -95,25 +109,13 @@ export function createTranslateLoader(http: Http) {
   entryComponents: [
     MyApp,
     HomePage,
-    LocationPage,
     LanguagePage,
-    TabsPage,
-    CameraPage,
-    UpdateLocationPage,
     WelcomePage,
-    OrderPage,
     BasketPage,
-    TrackOrderPage,
-    DetailedProductPage,
-    RegisterEmailPage,
-    LoginEmailPage,
-    MapTestPage,
-    SearchTestPage,
-    RatePage,
-    DetailedProductPage,
+    CategoriesPage,
+    AccountPage,
     SettingsPage,
-    MenuPage,
-    AccountPage
+    TabsPage
   ],
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
@@ -123,6 +125,6 @@ export function createTranslateLoader(http: Http) {
     MenuPage,
     AccountPage
   ],
-
+  
 })
 export class AppModule {}

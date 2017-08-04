@@ -1,0 +1,40 @@
+<!--
+  Generated template for the ReceiptPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+<ion-content padding>
+     <h3 class="{{'TITLELANG' | translate}} title"> {{"RECEIPT" | translate }} </h3>
+	<ion-label class="round products">
+		<h3 class="header" style="margin-top: 4%;"><span>JULY 18, 09:32 PM</span></h3>
+		<div class="from">
+    		<ion-icon name="location"></ion-icon>
+    		<h4>From</h4>
+    		<ion-label class="oval">Seif Pharmacy</ion-label>
+		</div>
+		<hr class="space">
+		<div>
+			<p class="spaceRight">Price</p><p>150 LE</p>
+		</div>
+		<div class="bold">
+			<p class="spaceRight">Total</p><p>160 LE</p>
+		</div>
+		<hr class="spaceTop">
+	</ion-label>
+	<ion-label class="round products rate">
+
+		<h3 class="header" style="margin-top: 4%;margin-bottom: 8%;"><span class="span">RATE YOUR PHARMACY</span></h3>
+		<rating  [(ngModel)]="rate" 
+        readOnly="false"
+        max="5"
+        emptyStarIconName="star-outline"
+        halfStarIconName="star-half"
+        starIconName="star" 
+        nullable="false" ></rating>
+	</ion-label>
+
+
+</ion-content>

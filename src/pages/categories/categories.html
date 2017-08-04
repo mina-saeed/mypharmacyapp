@@ -1,0 +1,77 @@
+<!--
+  Generated template for the CategoriesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="back"></ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title"> {{"CATEGORIES" | translate }} </p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
+                 (keyup)="updateListByName($event)"
+                 (ionCancel)="onCancelByName($event)"
+                 show-cancel="true"
+                 showCancelButton="true"
+                 placeholder="Search By Name">
+   <img class="image" src="assets/icon/White Loop.png"/>
+    </ion-input>
+<ion-label class="round products pharm">
+	<ion-label lign="middle" class="roundPharm products heightPharm" style="display: inline-block; margin-left: -14%">
+		<img class="img first" src="assets/toBeRemoved/seif.png"/>
+	</ion-label>
+	<ion-label lign="middle" class="roundPharm products heightPharm" style="display: inline-block;">
+		<img class="img" src="assets/toBeRemoved/elezaby.png"/>
+
+	</ion-label>
+	<ion-label lign="middle" class="roundPharm products heightPharm" style="display: inline-block;">
+		<img class="img" src="assets/toBeRemoved/Almasry.png"/>
+
+	</ion-label>
+</ion-label>
+<ion-label class="round products paddingLeft">
+		<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+			<img class="img" src="assets/toBeRemoved/shampoo.png"/>
+			<p class="p">Shampoo</p>
+		</ion-label>
+		<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+			<img class="img" src="assets/toBeRemoved/perfume.png"/>
+			<p class="p">Perfums</p>
+		</ion-label>
+</ion-label>
+<ion-label class="round products paddingLeft">
+		<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+			<img class="img" src="assets/toBeRemoved/makeup.png"/>
+			<p class="p">Make up</p>
+		</ion-label>
+	<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+		<img class="img" src="assets/toBeRemoved/cream.png">
+		<p class="p">Creams</p>
+	</ion-label>
+</ion-label>
+
+</ion-content>
