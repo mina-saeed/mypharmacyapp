@@ -21,6 +21,7 @@ export class MenuPage {
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
      this.translate = translate;
    // this.translate.use('ar');
+
   }
     goBasket(){
 
@@ -29,6 +30,8 @@ export class MenuPage {
     goMenu(){
     this.navCtrl.push(MenuPage);
   }
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad MenuPage');
   }

@@ -40,6 +40,7 @@
     </ion-input>
     <div  *ngFor = "let res of product.data" >
     <h3>{{res.name_en}}</h3>
+
     <img class="medicine-image" src = "assets/icon/panadol.jpg"/>
     <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
      <img src="assets/icon/ADD to activated.png">

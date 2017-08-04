@@ -55,6 +55,7 @@ export class HomePage {
     this.showSearchResult = false;  //initialise things to be visible
     this.showPage = true;
     this.url = 'http://146.185.148.66:3003/';
+
 }
   /*applyLanguage() {
     this.translate.use(this.selectedLanguage);
@@ -70,9 +71,6 @@ export class HomePage {
     this.navCtrl.push(CameraPage);
   }
   goBasket(){
-          if(this.lang.load() !== undefined){
-        this.translate.use(this.lang.load());
-        }
     this.navCtrl.push(BasketPage);
   }
   goMenu(){
@@ -81,9 +79,6 @@ export class HomePage {
   openModal(){
     alert("This features has not been implemented yet!")
   }
-
-
-
 
   updateListByName(ev) {
     this.showPage = false;
@@ -226,3 +221,5 @@ export class HomePage {
   }
 
 }
+
+

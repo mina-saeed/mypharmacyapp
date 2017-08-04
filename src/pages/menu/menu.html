@@ -8,7 +8,6 @@
 
   <ion-navbar>
 
-
     <ion-title class="navTitle">
      <p class="{{'TITLELANG' | translate}} title"> {{"MENU" | translate }} </p>
     </ion-title>
@@ -19,6 +18,8 @@
       </button>
       <button ion-button icon-only (click)="goMenu()">
         <ion-icon name="setting"></ion-icon>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="options"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -39,4 +40,5 @@
 <p class="oval " style="display: block;">{{ "PRIVACY" | translate}}</p>
 
 </div>
+
 </ion-content>

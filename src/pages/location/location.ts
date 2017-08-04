@@ -92,6 +92,7 @@ export class LocationPage {
               private uniqueDeviceID: UniqueDeviceID,public formBuilder: FormBuilder) {
                 this.translate = translate;
                 this.translate.use('en');
+
            this.translate.get('CITYVAL').subscribe((result: string) => {
                 this.validation_messages.city[0].message = result;
           });

@@ -97,8 +97,11 @@
             "cordova-sqlite-storage": {},
             "cordova-plugin-file-transfer": {},
             "cordova-plugin-image-picker": {},
+<<<<<<< Updated upstream
             "cordova-plugin-nativestorage": {},
             "cordova-plugin-geolocation": {},
+=======
+>>>>>>> Stashed changes
             "cordova-wheel-selector-plugin": {}
         },
         "platforms": [

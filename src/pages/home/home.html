@@ -9,7 +9,6 @@
 
   <ion-navbar>
 
-    <!-- missing ion nav back button-->
     <ion-buttons left>
       <button ion-button icon-only (click)="openModal()">
         <ion-icon name="back"></ion-icon>
@@ -36,6 +35,10 @@
 <ion-content padding stule = "margin-bottom:2px">
   <!--  <ion-input class="oval" type="search">
 
+=======
+<ion-content padding style = "margin-bottom:2px">
+    <ion-input class="oval" type="search">
+>>>>>>> Stashed changes
     <img class="image" src="assets/icon/White Loop.png"/>
   </ion-input> -->
     <ion-input class="oval" primary [(ngModel)]="searchQuery2"
@@ -67,3 +70,4 @@
   <ion-label class="round products text">{{ "PRODUCTS" | translate }}</ion-label>
 </div>
 </ion-content>
+

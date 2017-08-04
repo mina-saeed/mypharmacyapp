@@ -5,6 +5,7 @@ import { Storage } from '@ionic/storage';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
 
+
 /**
  * Generated class for the SettingsPage page.
  *
@@ -21,7 +22,8 @@ export class SettingsPage {
 
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
      this.translate = translate;
-    //this.translate.use('ar');
+
+    this.translate.use('en');
   }
     goBasket(){
     this.navCtrl.push(BasketPage);
@@ -29,6 +31,8 @@ export class SettingsPage {
     goMenu(){
     this.navCtrl.push(MenuPage);
   }
+
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad SettingsPage');
   }
