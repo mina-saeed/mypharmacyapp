@@ -9,9 +9,6 @@ import { TestStorageProvider } from '../../app/test-storage';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { Globalization } from 'ionic-native';
-import { Storage } from '@ionic/storage';
 
 import { DetailedProductPage } from '../detailed-product/detailed-product';
 

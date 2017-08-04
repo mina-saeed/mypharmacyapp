@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { IonRating } from '../../components/ion-rating/ion-rating';
 
 /**
  * Generated class for the ReceiptPage page.

@@ -1,20 +1,13 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { Globalization } from 'ionic-native';
 import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { WelcomePage } from '../welcome/welcome';
-import { Storage } from '@ionic/storage';
-import { Injectable } from '@angular/core';
-import { Events } from 'ionic-angular';
-import { LocalStorageService } from 'angular-2-local-storage';
 import { TestStorageProvider } from '../../app/test-storage';
 import 'rxjs/add/operator/toPromise';
 
-import { RegisterEmailPage } from '../register-email/register-email';
-import { LoginEmailPage } from '../login-email/login-email';
 /**
  * Generated class for the LanguagePage page.
  *

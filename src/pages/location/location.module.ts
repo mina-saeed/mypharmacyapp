@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule, IonicModule, Platform } from 'ionic-angular';
+import { IonicPageModule, Platform } from 'ionic-angular';
 import { LocationPage } from './location';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TranslateService } from 'ng2-translate';

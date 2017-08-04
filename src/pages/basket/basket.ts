@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 //import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { Globalization } from 'ionic-native';
-import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
-import { Storage } from '@ionic/storage';
+import { sysOptions } from '../welcome/welcome.constants';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 /**

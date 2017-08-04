@@ -16,7 +16,7 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { IonicStorageModule } from '@ionic/storage';
-import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
+import { FileTransfer} from '@ionic-native/file-transfer';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -24,13 +24,10 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { LanguagePage } from '../pages/language/language';
 import { CameraPage } from '../pages/camera/camera';
 import { WelcomePage } from '../pages/welcome/welcome';
-import { OrderPage } from '../pages/order/order';
 import { BasketPage } from '../pages/basket/basket';
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
-import { MapTestPage } from '../pages/map-test/map-test';
 import { SearchTestPage } from '../pages/search-test/search-test';
-import { RatePage } from '../pages/rate/rate';
 import { LocalStorageModule } from 'angular-2-local-storage';
 import { Geolocation } from '@ionic-native/geolocation';
 import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
@@ -39,7 +36,6 @@ import { TrackOrderPage } from '../pages/track-order/track-order';
 import { AccountPage } from '../pages/account/account';
 import { SettingsPage } from '../pages/settings/settings';
 import { MenuPage } from '../pages/menu/menu'
-import { TestPage } from '../pages/test/test';
 import { CategoriesPage } from '../pages/categories/categories';
 import { ReceiptPage } from '../pages/receipt/receipt';
 
@@ -49,7 +45,6 @@ import { WheelSelector } from '@ionic-native/wheel-selector';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 
-import { IonRating } from '../components/ion-rating/ion-rating';
 import { Ionic2RatingModule } from 'ionic2-rating';
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, 'assets/i18n', '.json');
@@ -64,14 +59,11 @@ export function createTranslateLoader(http: Http) {
     CameraPage,
     UpdateLocationPage,
     WelcomePage,
-    OrderPage,
     BasketPage,
     DetailedProductPage,
     TrackOrderPage,
     RegisterEmailPage,
-    MapTestPage,
     SearchTestPage,
-    RatePage,
     DetailedProductPage,
     SettingsPage,
     MenuPage,
@@ -79,7 +71,6 @@ export function createTranslateLoader(http: Http) {
     LoginEmailPage,
     CategoriesPage,
     ReceiptPage,
-    IonRating,
     AccountPage,
     LoginEmailPage
   ],
@@ -112,6 +103,8 @@ export function createTranslateLoader(http: Http) {
     MyApp,
     HomePage,
     LanguagePage,
+    LocationPage,
+    UpdateLocationPage,
     WelcomePage,
     BasketPage,
     CategoriesPage,

@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
-import { Http, Headers, RequestOptions} from '@angular/http';
+import { Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { BasketPage } from '../basket/basket';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { Globalization } from 'ionic-native';
-import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 
 /**
  * Generated class for the DetailedProductPage page.

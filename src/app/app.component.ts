@@ -3,38 +3,14 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-import { IonicPage,Platform} from 'ionic-angular';
-//import { Events } from 'ionic-angular';
-
-//import { LocalStorageService } from 'angular-2-local-storage';
-//import { HomePage } from '../pages/home/home';
-//import { UpdateLocationPage } from '../pages/update-location/update-location';
+import { Platform} from 'ionic-angular';
 
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
-//import { BasketPage } from '../pages/basket/basket';
 import { LanguagePage } from '../pages/language/language';
-//import { CameraPage } from '../pages/camera/camera';
-//import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
-//import { TrackOrderPage } from '../pages/track-order/track-order';
-//import { AccountPage } from '../pages/account/account';
-//import { SettingsPage } from '../pages/settings/settings';
-//import { MenuPage } from '../pages/menu/menu';
-import { CategoriesPage } from '../pages/categories/categories';
-import { ReceiptPage } from '../pages/receipt/receipt';
 
-//import { RegisterEmailPage } from '../pages/register-email/register-email';
-//import { LoginEmailPage } from '../pages/login-email/login-email';
-//import { MapTestPage } from '../pages/map-test/map-test';
-//import { SearchTestPage } from '../pages/search-test/search-test';
-//import { RatePage } from '../pages/rate/rate';
-//import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
-import { AccountPage } from '../pages/account/account';
-import { SettingsPage } from '../pages/settings/settings';
-import { MenuPage } from '../pages/menu/menu';
 
-import { RegisterEmailPage } from '../pages/register-email/register-email';
-//import { LoginEmailPage } from '../pages/login-email/login-email';
+
 
 @Component({
   templateUrl: 'app.html'
@@ -77,7 +53,7 @@ export class MyApp {
       console.log(err);
       //this.navCtrl.push(LanguagePage);
 
-      this.rootPage = TabsPage; //w wadilo device id as parameter
+      this.rootPage = LanguagePage; //w wadilo device id as parameter
     });
     });
   }

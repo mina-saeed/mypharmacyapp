@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
 import { LocationPage } from '../location/location';
-import { OrderPage } from '../order/order';
 import { TabsPage } from '../tabs/tabs';
 import { LoginEmailPage } from '../login-email/login-email';
 
 import { Storage } from '@ionic/storage';
-import { Events } from 'ionic-angular';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { TestStorageProvider } from '../../app/test-storage';
@@ -14,10 +12,7 @@ import { TestStorageProvider } from '../../app/test-storage';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { Globalization } from 'ionic-native';
-import { defaultLanguage, availableLanguages, sysOptions } from './welcome.constants';
-import { LocalStorageService } from 'angular-2-local-storage';
+import {  availableLanguages, sysOptions } from './welcome.constants';
 /**
  * Generated class for the WelcomePage page.
  *

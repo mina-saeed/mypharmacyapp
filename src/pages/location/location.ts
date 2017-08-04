@@ -1,17 +1,12 @@
-
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
+import { IonicPage, NavController, NavParams} from 'ionic-angular';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { Globalization } from 'ionic-native';
-import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { TabsPage } from '../tabs/tabs';
-import { Storage } from '@ionic/storage';
 import { TestStorageProvider } from '../../app/test-storage';
-import { PatternValidator,Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
 import { WheelSelector } from '@ionic-native/wheel-selector';
 /**

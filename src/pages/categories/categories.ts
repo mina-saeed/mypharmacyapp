@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { Storage } from '@ionic/storage';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
 /**

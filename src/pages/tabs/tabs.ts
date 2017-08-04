@@ -1,19 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { Globalization } from 'ionic-native';
-import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
-import { Storage } from '@ionic/storage';
 import { TestStorageProvider } from '../../app/test-storage';
-
 import { LocationPage } from '../location/location';
 import { UpdateLocationPage } from '../update-location/update-location';
 import { HomePage } from '../home/home';
-import { CameraPage } from '../camera/camera';
-import { OrderPage } from '../order/order';
 import { SettingsPage } from '../settings/settings';
-import { MenuPage } from '../menu/menu';
 import { AccountPage } from '../account/account';
 import { CategoriesPage } from '../categories/categories';
 
@@ -42,8 +34,6 @@ export class TabsPage {
   homePage = HomePage;
   locationPage = LocationPage;
   updateLocationPage = UpdateLocationPage;
-  cameraPage = CameraPage;
-  orderPage = OrderPage;
   settingsPage = SettingsPage;
   accountPage = AccountPage;
   detailedProductPage=DetailedProductPage;

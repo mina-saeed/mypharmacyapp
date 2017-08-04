@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Storage } from '@ionic/storage';
-import { TestStorageProvider } from '../../app/test-storage';
 import { TranslateService } from 'ng2-translate';
-import { TranslateModule } from 'ng2-translate/ng2-translate';
-import { Globalization } from 'ionic-native';
-import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-import { PatternValidator,Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
 import { WheelSelector } from '@ionic-native/wheel-selector';
 import { Http, Headers, RequestOptions} from '@angular/http';
