@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { Storage } from '@ionic/storage';
 import { BasketPage } from '../basket/basket';
-<<<<<<< Updated upstream
 import { MenuPage } from '../menu/menu';
 
 

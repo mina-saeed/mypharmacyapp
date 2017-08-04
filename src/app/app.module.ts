@@ -16,12 +16,8 @@ import { ImagePicker } from '@ionic-native/image-picker';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { IonicStorageModule } from '@ionic/storage';
-<<<<<<< Updated upstream
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer';
 import { NativeStorage } from '@ionic-native/native-storage';
-
-import { FileTransfer} from '@ionic-native/file-transfer';
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
@@ -46,26 +42,13 @@ import { MenuPage } from '../pages/menu/menu'
 import { TestPage } from '../pages/test/test';
 import { CategoriesPage } from '../pages/categories/categories';
 import { ReceiptPage } from '../pages/receipt/receipt';
-import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
-import { TrackOrderPage } from '../pages/track-order/track-order';
-//import { Serviceprovider } from '../pages/serviceprovider/serviceprovider';
-import { AccountPage } from '../pages/account/account';
-import { SettingsPage } from '../pages/settings/settings';
-import { MenuPage } from '../pages/menu/menu'
-import { TestPage } from '../pages/test/test';
-
-
-import { LocalStorageModule } from 'angular-2-local-storage';
-import { TestStorageProvider } from './test-storage';
-import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
-import { WheelSelector } from '@ionic-native/wheel-selector';
-import {RoundProgressModule} from 'angular-svg-round-progressbar';
-
 
 import { TestStorageProvider } from './test-storage';
 import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
 import { WheelSelector } from '@ionic-native/wheel-selector';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
+
+
 import { IonRating } from '../components/ion-rating/ion-rating';
 import { Ionic2RatingModule } from 'ionic2-rating';
 export function createTranslateLoader(http: Http) {

@@ -12,7 +12,6 @@ import { UpdateLocationPage } from '../update-location/update-location';
 import { HomePage } from '../home/home';
 import { CameraPage } from '../camera/camera';
 import { OrderPage } from '../order/order';
-<<<<<<< Updated upstream
 import { SettingsPage } from '../settings/settings';
 import { MenuPage } from '../menu/menu';
 import { AccountPage } from '../account/account';
@@ -49,6 +48,4 @@ export class TabsPage {
   accountPage = AccountPage;
   detailedProductPage=DetailedProductPage;
   categoriesPage = CategoriesPage;
-
-  detailedProductPage=DetailedProductPage;
 }
