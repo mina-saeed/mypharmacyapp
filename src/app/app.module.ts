@@ -123,9 +123,11 @@ export function createTranslateLoader(http: Http) {
 
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
-    SplashScreen, Camera, BarcodeScanner,FileTransfer, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner, Geolocation, FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider,
-    RemoteServiceProvider
+    SettingsPage,
+    MenuPage,
+    AccountPage
   ]
 })
 export class AppModule {}

@@ -77,7 +77,7 @@ export class MyApp {
       console.log(err);
       //this.navCtrl.push(LanguagePage);
 
-      this.rootPage = SettingsPage; //w wadilo device id as parameter
+      this.rootPage = TabsPage; //w wadilo device id as parameter
     });
     });
   }
