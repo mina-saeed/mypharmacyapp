@@ -18,7 +18,6 @@ export class CategoriesPage {
   private translate: TranslateService;
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
   this.translate=translate;
-  this.translate.use('en');
   }
   goBasket(){
     this.navCtrl.push(BasketPage);

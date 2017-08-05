@@ -49,7 +49,7 @@ export class HomePage {
 
     this.getOrder();//to initalize if empty
     this.translate = translate;
-    this.translate.use('en');
+    //this.translate.use('en');
     this.showSearchResult = false;  //initialise things to be visible
     this.showPage = true;
     this.url = 'http://146.185.148.66:3003/';

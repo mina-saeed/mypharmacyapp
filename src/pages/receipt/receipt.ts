@@ -18,7 +18,6 @@ export class ReceiptPage {
 
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
        this.translate = translate;
-   	 this.translate.use('en');
   }
 
   ionViewDidLoad() {

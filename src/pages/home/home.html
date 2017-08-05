@@ -16,7 +16,7 @@
     </ion-buttons>
 
     <ion-title class="navTitle">
-      {{"HOMEPAGE" | translate }}
+    <p class="{{'TITLELANG' | translate}} title"> {{"HOMEPAGE" | translate }} </p>
     </ion-title>
 
     <ion-buttons right>
@@ -53,16 +53,23 @@
 
     <ion-list *ngIf="showSearchResult">
       <ion-item  *ngFor = "let res of searchResults.data">
-        <p  style="margin:0; padding:0"(click)="detailedProduct(res.id)">{{res.description}}</p> <ion-icon name="add-circle" (click)="addToCart(res)"></ion-icon>
+      <h3>{{res.name}}</h3>
+    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+    <hr class="hrDetails">
+    <p class="p textDetails">Description: {{res.description}}</p>
+  <hr class="hrDetails">
+
       </ion-item>
     </ion-list>
 
     <div *ngIf="showPage">
   <hr>
   <div class="container">
-  <button ion-button class="round presc" (click)="goCamera()"><p>{{"PRESCRIPTION" | translate }}</p></button>
-  <button ion-button class="round medi"><p>{{ "SCAN" | translate }}</p></button>
-  <button ion-button class="round medi"><p>{{ "SEARCH" | translate }}</p></button>
+  <button ion-button class="round presc" (click)="goCamera()"><p class="p">{{"PRESCRIPTION" | translate }}</p></button>
+  <button ion-button class="round medi"><p class="p">{{ "SCAN" | translate }}</p></button>
+  <button ion-button class="round medi"><p class="p">{{ "SEARCH" | translate }}</p></button>
   </div>
   <hr>
 

@@ -22,7 +22,6 @@ export class SettingsPage {
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
      this.translate = translate;
 
-    this.translate.use('en');
   }
     goBasket(){
     this.navCtrl.push(BasketPage);
