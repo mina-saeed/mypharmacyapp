@@ -8,13 +8,13 @@
 <ion-header>
 
   <ion-navbar>
-
+<!--
     <ion-buttons left>
       <button ion-button icon-only (click)="openModal()">
         <ion-icon name="back"></ion-icon>
       </button>
     </ion-buttons>
-
+-->
     <ion-title class="navTitle">
     <p class="{{'TITLELANG' | translate}} title"> {{"HOMEPAGE" | translate }} </p>
     </ion-title>
@@ -53,6 +53,8 @@
 
     <ion-list *ngIf="showSearchResult">
       <ion-item  *ngFor = "let res of searchResults.data">
+      <img class="medicine-image" src = "assets/icon/panadol.jpg"/> <!-- static to be updated -->
+
       <h3>{{res.name}}</h3>
     <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
      <img src="assets/icon/ADD to activated.png">

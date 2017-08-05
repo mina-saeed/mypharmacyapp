@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Navbar} from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
+import {OnInit, ViewChild} from '@angular/core';
 
 
 /**
@@ -18,6 +19,7 @@ import { MenuPage } from '../menu/menu';
 })
 export class SettingsPage {
   private translate: TranslateService;
+  @ViewChild(Navbar) navBar:Navbar;
 
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
      this.translate = translate;
@@ -30,9 +32,11 @@ export class SettingsPage {
     this.navCtrl.push(MenuPage);
   }
 
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SettingsPage');
-  }
+      ionViewDidLoad() {
+    /*    this.navBar.backButtonClick = (e:UIEvent) => {
+            console.log("Back button clicked");
+            this.navCtrl.parent.viewCtrl.dismiss();
+         }; */
+      }
 
 }

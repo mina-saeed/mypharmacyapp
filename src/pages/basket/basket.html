@@ -8,6 +8,14 @@
 
   <ion-navbar>
     <ion-title style="text-align: center;">{{ "CART" | translate }}</ion-title> <!-- CSS later -->
+      <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>

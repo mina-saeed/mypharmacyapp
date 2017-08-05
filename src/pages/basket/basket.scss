@@ -1,1 +1,128 @@
-page-basket{.parentdiv{border-bottom:2px solid #0F6196;display:flex;margin-bottom:10%;padding-bottom:5%;margin-right:auto}.engLine{border-right:2px solid #0F6196}.arLine{border-left:2px solid #0F6196}.firstChildDiv{float:left;margin-right:auto;order:1;padding:15.9px;padding-bottom:0;max-width:46%;margin-bottom:auto}.secondChildDiv{float:right;margin-right:auto;order:2;margin-bottom:auto}.thirdChildDiv{order:3;margin-right:auto}.fourthChildDiv{order:4;margin-right:auto}.centerVertical{padding:50%}.centerHorizontal{text-align:center}hr{background-color:white!important;width:100%;display:block;height:1px;border:0;border-top:2px solid #0F6196;padding:0;padding-bottom:1.8rem}.dark-button{width:90%;height:9%;display:block;margin-right:auto;margin-left:auto;background-color:#0F6196;color:white;border-radius:22px;font-family:"Helvetica";font-size:20px;letter-spacing:.5px}.priceLastStep{text-align:center;padding-bottom:1.8rem}.totalPrice{color:#0C4366;display:block;font-size:1.9em;margin-top:.67em;margin-bottom:.67em;margin-left:0;margin-right:0;font-weight:700}.estimatedTime{color:#0C4366;font-size:1.5em;margin:0;padding:0;font-weight:700}.beforePriceAndDelivery{color:#0C4366;display:block;font-size:1.4em;margin-top:0em;margin-bottom:.4em;margin-left:0;margin-right:0}.customColor{color:#073654}}
+page-basket {
+    .parentdiv {
+        border-bottom: 2px solid #0F6196;
+        display: flex;
+        margin-bottom: 10%;
+        padding-bottom: 5%;
+        margin-right: auto
+    }
+    .engLine {
+        border-right: 2px solid #0F6196
+    }
+    .arLine {
+        border-left: 2px solid #0F6196
+    }
+    .firstChildDiv {
+        float: left;
+        margin-right: auto;
+        order: 1;
+        padding: 15.9px;
+        padding-bottom: 0;
+        max-width: 46%;
+        margin-bottom: auto
+    }
+    .secondChildDiv {
+        float: right;
+        margin-right: auto;
+        order: 2;
+        margin-bottom: auto
+    }
+    .thirdChildDiv {
+        order: 3;
+        margin-right: auto
+    }
+    .fourthChildDiv {
+        order: 4;
+        margin-right: auto
+    }
+    .centerVertical {
+        padding: 50%
+    }
+    .centerHorizontal {
+        text-align: center
+    }
+    hr {
+        background-color: white!important;
+        width: 100%;
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 2px solid #0F6196;
+        padding: 0;
+        padding-bottom: 1.8rem
+    }
+    .dark-button {
+        width: 90%;
+        height: 9%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #0F6196;
+        color: white;
+        border-radius: 22px;
+        font-family: "Helvetica";
+        font-size: 20px;
+        letter-spacing: .5px
+    }
+    .priceLastStep {
+        text-align: center;
+        padding-bottom: 1.8rem
+    }
+    .totalPrice {
+        color: #0C4366;
+        display: block;
+        font-size: 1.9em;
+        margin-top: .67em;
+        margin-bottom: .67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: 700
+    }
+    .estimatedTime {
+        color: #0C4366;
+        font-size: 1.5em;
+        margin: 0;
+        padding: 0;
+        font-weight: 700
+    }
+    .beforePriceAndDelivery {
+        color: #0C4366;
+        display: block;
+        font-size: 1.4em;
+        margin-top: 0em;
+        margin-bottom: .4em;
+        margin-left: 0;
+        margin-right: 0
+    }
+    .customColor {
+        color: #073654
+    }
+
+
+    .ion-ios-cartCustom-outline,
+    .ion-ios-cartCustom,
+    .ion-md-cartCustom,
+    .ion-md-cartCustom-outline {
+        content: url('../assets/icon/ACTIVE blue Basket.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    .ion-ios-back-outline,
+    .ion-ios-back,
+    .ion-md-back,
+    .ion-md-back-outline {
+        content: url('../assets/icon/Blue Back.png');
+        max-width: 28px;
+        max-height: 130px
+    }
+    .ion-ios-setting-outline,
+    .ion-ios-setting,
+    .ion-md-setting,
+    .ion-md-setting-outline {
+        content: url('../assets/icon/deactivated menu.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    }

@@ -7,7 +7,7 @@ import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { WelcomePage } from '../welcome/welcome';
 import { TestStorageProvider } from '../../app/test-storage';
 import 'rxjs/add/operator/toPromise';
-
+import { NativeStorage } from '@ionic-native/native-storage';
 /**
  * Generated class for the LanguagePage page.
  *
@@ -26,7 +26,7 @@ export class LanguagePage {
   private translate: TranslateService;
   LANGUAGE = 'language';
   //storage: Storage;
-  constructor(platform: Platform,translate: TranslateService,public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, private uniqueDeviceID: UniqueDeviceID) {
+  constructor(private nativeStorage: NativeStorage,platform: Platform,translate: TranslateService,public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, private uniqueDeviceID: UniqueDeviceID) {
   this.translate = translate;
   platform.ready().then(() => {
            // this language will be used as a fallback when a translation isn't found in the current language
@@ -48,13 +48,14 @@ export class LanguagePage {
             translate.use(language);
             sysOptions.systemLanguage = language;
           }
+
         }
       );
 
     }
    /*
   setLanguage(language: string): void {
-    this.storage.set('language', language);
+    //this.storage.set('language', language);
   };
 */
 /*
@@ -69,23 +70,15 @@ export class LanguagePage {
 
 
   applyLanguage(value) {
-  	//alert(value);
-  	//this.setLanguage(value);
-    //this.setLanguage(value);
-    //this.lang.save(value);
-    this.translate.use(value);
-    this.lang.save(value);
-    //alert(this.lang);
-    //alert(this.lang.load() == undefined);
-    //this.lang.save(value).then(() => this.navCtrl.push('welcomePage'));
-    //alert(this.lang.load());
-   // alert(this.load());
- 	//alert(this.storage.get('language'));
- 	//alert(this.getLanguage());
-    //this.translate.use(this.getLanguage());
 
+ 
+            this.nativeStorage.setItem('language', value)
+        .then(
+          () => console.log(value),
+          error => console.error('Error storing item', error)
+        );
+     this.translate.use(value);
  	  this.navCtrl.push(WelcomePage);
-   	//this.navCtrl.push(RegisterEmailPage);
    }
 
   ionViewDidLoad() {

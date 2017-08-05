@@ -99,7 +99,7 @@ export class WelcomePage {
 
 
     let body = {
-      deviceID: 5000
+      deviceID: this.deviceID
     };
     this.http.post(this.url + 'userHome',JSON.stringify(body), new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {

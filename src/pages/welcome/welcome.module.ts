@@ -3,7 +3,7 @@ import { IonicPageModule, Platform } from 'ionic-angular';
 import { WelcomePage } from './welcome';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TranslateService } from 'ng2-translate';
-import { defaultLanguage, availableLanguages, sysOptions } from './welcome.constants';
+import { defaultLanguage, availableLanguages } from './welcome.constants';
 
 @NgModule({
   declarations: [

@@ -74,7 +74,7 @@ export class HomePage {
   openModal(){
     alert("This features has not been implemented yet!")
   }
-
+  
   updateListByName(ev) {
     this.showPage = false;
     this.showSearchResult = true; //when start searching, show the list

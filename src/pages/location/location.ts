@@ -9,6 +9,7 @@ import { TestStorageProvider } from '../../app/test-storage';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
 import { WheelSelector } from '@ionic-native/wheel-selector';
+
 /**
  * Generated class for the LocationPage page.
  *
