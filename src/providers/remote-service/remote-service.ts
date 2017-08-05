@@ -22,8 +22,8 @@ export class RemoteServiceProvider {
   }
 
 getPosts() {
-
-    return this.http.get('http://146.185.148.66/locations/settings.json')
+//http://146.185.148.66/locations/settings.json
+    return this.http.get('settings.json')
 			.do((res : Response ) => console.log(res.json()))
             .map((res : Response ) => res.json());
 

@@ -44,28 +44,7 @@ export class WelcomePage {
    // this.translate.use(this.storage.get('language'));
    // this.translate.use(this.getLanguage());
       console.log("welcooooooome");
-   /*   platform.ready().then(() => {
-          // this language will be used as a fallback when a translation isn't found in the current language
-          translate.setDefaultLang(defaultLanguage);
 
-          if ((<any>window).cordova) {
-
-            Globalization.getPreferredLanguage().then(result => {
-              var language = this.getSuitableLanguage(result.value);
-              console.log(language);
-              //alert(language);
-              translate.use(language);
-              sysOptions.systemLanguage = language;
-            });
-          } else {
-            let browserLanguage = translate.getBrowserLang() || defaultLanguage;
-            var language = this.getSuitableLanguage(browserLanguage);
-            //alert(language);
-            translate.use(language);
-            sysOptions.systemLanguage = language;
-          }
-        }
-      );    */
      this.url = 'http://146.185.148.66:3000/';
      this.uniqueDeviceID.get()
         .then((uuid: any) => this.deviceID = uuid)

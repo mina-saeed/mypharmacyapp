@@ -4,7 +4,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { Platform} from 'ionic-angular';
-
+import {CategoriesPage} from '../pages/categories/categories';
 import { TabsPage } from '../pages/tabs/tabs';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LanguagePage } from '../pages/language/language';
@@ -53,7 +53,7 @@ export class MyApp {
       console.log(err);
       //this.navCtrl.push(LanguagePage);
 
-      this.rootPage = LanguagePage; //w wadilo device id as parameter
+      this.rootPage = TabsPage; //w wadilo device id as parameter
     });
     });
   }

@@ -3,7 +3,6 @@ import { IonicPageModule, Platform } from 'ionic-angular';
 import { WelcomePage } from './welcome';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TranslateService } from 'ng2-translate';
-import { Globalization } from 'ionic-native';
 import { defaultLanguage, availableLanguages, sysOptions } from './welcome.constants';
 
 @NgModule({
@@ -23,7 +22,7 @@ export class WelcomePageModule {
 		platform.ready().then(() => {
 				// this language will be used as a fallback when a translation isn't found in the current language
 				translate.setDefaultLang(defaultLanguage);
-
+/*
 				if ((<any>window).cordova) {
 
 					Globalization.getPreferredLanguage().then(result => {
@@ -39,7 +38,7 @@ export class WelcomePageModule {
 					//alert(language);
 					translate.use(language);
 					sysOptions.systemLanguage = language;
-				}
+				} */
 			}
 		);
 	}

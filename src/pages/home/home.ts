@@ -63,9 +63,6 @@ export class HomePage {
   }
 
   goCamera(){
-          if(this.lang.load() !== undefined){
-        this.translate.use(this.lang.load());
-        }
     this.navCtrl.push(CameraPage);
   }
   goBasket(){

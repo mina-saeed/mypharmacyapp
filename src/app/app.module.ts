@@ -110,6 +110,7 @@ export function createTranslateLoader(http: Http) {
     CategoriesPage,
     AccountPage,
     SettingsPage,
+    CameraPage,
     TabsPage
   ],
   
