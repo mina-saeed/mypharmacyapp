@@ -1,1 +1,133 @@
-page-receipt{.title{font-size:23px;text-transform:uppercase;text-align:center;color:#0F6196;;font-family:Highland}.products{margin-left:-4%;width:108%;margin-top:4%;padding:5%}.round{font-family:"Helvetica";font-size:12px;font-weight:700;color:#0F6196;border-radius:22px;background-color:#EBF7FC}.oval{width:55%;margin-right:10px;padding-top:10px;padding-left:-1%;margin-top:0;margin-bottom:0;background-color:#cdebf9;border-radius:50px;display:inline-block;font-family:"Helvetica";font-size:15px;font-weight:800;color:#0F6196;height:40px;vertical-align:middle;text-align:center}h4{display:inline-block;color:#0F6196;vertical-align:middle;margin-right:4%;font-weight:600}.from{margin-top:10%;margin-left:8%}.ion-ios-location-outline,.ion-ios-location,.ion-md-location,.ion-md-location-outline{content:url('../assets/icon/Location blue.png');margin-left:0;max-width:35px;max-height:150px;display:inline-block;vertical-align:middle;margin-right:2%}hr{display:block;margin-bottom:.5em;margin-left:auto;margin-right:auto;border-top:1.5px solid #3CABE3;width:70%;margin-top:5%}.header{text-align:center;color:#3CABE3;font-size:18px;font-family:Highland;border-bottom:3px solid #3CABE3;line-height:.1em;margin-bottom:44px;margin-left:5%;margin-right:5%}.header span{width:90%;background:#EBF7FC;padding-top:0;padding-left:15px;padding-right:15px;margin-top:4%}div{text-align:center;font-size:18px}p{display:inline-block}.spaceRight{margin-right:20%}.bold{font-weight:800;margin-top:-5%}.spaceTop{margin-top:1%}.rate{background-color:#0F6196}.header .span{background:#0F6196;margin-top:5%}@media (min-width:768px){.bold{margin-top:0%}}ul{padding:0;&.rating li{padding:5px 10px!important;background:none;color:#FFF;ion-icon{font-size:30px}}}}
+page-receipt {
+    .title {
+        font-size: 23px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #0F6196;
+        ;
+        font-family: Highland
+    }
+    .products {
+        margin-left: -4%;
+        width: 108%;
+        margin-top: 4%;
+        padding: 5%
+    }
+    .round {
+        font-family: "Helvetica";
+        font-size: 12px;
+        font-weight: 700;
+        color: #0F6196;
+        border-radius: 22px;
+        background-color: #EBF7FC
+    }
+    .oval {
+        width: 55%;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-left: -1%;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: #cdebf9;
+        border-radius: 50px;
+        display: inline-block;
+        font-family: "Helvetica";
+        font-size: 15px;
+        font-weight: 800;
+        color: #0F6196;
+        height: 40px;
+        vertical-align: middle;
+        text-align: center
+    }
+    h4 {
+        display: inline-block;
+        color: #0F6196;
+        vertical-align: middle;
+        margin-right: 4%;
+        font-weight: 600
+    }
+    .from {
+        margin-top: 10%;
+        margin-left: 8%
+    }
+    .ion-ios-location-outline,
+    .ion-ios-location,
+    .ion-md-location,
+    .ion-md-location-outline {
+        content: url('../assets/icon/Location blue.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 2%
+    }
+    hr {
+        display: block;
+        margin-bottom: .5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 1.5px solid #3CABE3;
+        width: 70%;
+        margin-top: 5%
+    }
+    .header {
+        text-align: center;
+        color: #3CABE3;
+        font-size: 18px;
+        font-family: Highland;
+        border-bottom: 3px solid #3CABE3;
+        line-height: .1em;
+        margin-bottom: 44px;
+        margin-left: 5%;
+        margin-right: 5%
+    }
+    .header span {
+        width: 90%;
+        background: #EBF7FC;
+        padding-top: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-top: 4%
+    }
+    div {
+        text-align: center;
+        font-size: 18px
+    }
+    p {
+        display: inline-block
+    }
+    .spaceRight {
+        margin-right: 20%
+    }
+    .bold {
+        font-weight: 800;
+        margin-top: -5%
+    }
+    .spaceTop {
+        margin-top: 1%
+    }
+    .rate {
+        background-color: #0F6196
+    }
+    .header .span {
+        background: #0F6196;
+        margin-top: 5%
+    }
+    @media (min-width:768px) {
+        .bold {
+            margin-top: 0%
+        }
+    }
+    ul {
+        padding: 0;
+        &.rating li {
+            padding: 5px 10px!important;
+            background: none;
+            color: #FFF;
+            ion-icon {
+                font-size: 30px
+            }
+        }
+    }
+}

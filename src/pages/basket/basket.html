@@ -7,7 +7,10 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title style="text-align: center;">{{ "CART" | translate }}</ion-title> <!-- CSS later -->
+     <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title"> {{"CART" | translate }} </p>
+    </ion-title>
+  <!--  <ion-title style="text-align: center;">{{ "CART" | translate }}</ion-title> -->
       <ion-buttons right>
       <button ion-button icon-only (click)="goBasket()">
         <ion-icon name="cartCustom"></ion-icon>
@@ -22,10 +25,42 @@
 
 
 <ion-content padding>
+    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
+                 (keyup)="updateListByName($event)"
+                 (ionCancel)="onCancelByName($event)"
+                 show-cancel="true"
+                 showCancelButton="true">
+   <img class="image" src="assets/icon/White Loop.png"/>
+    </ion-input>
 <!-- custom color applied for all classes.. changed accordingly -->
 <!--loop of each item in my basket -->
 <div class="parentdiv" *ngFor="let order of orderData.order" dir="{{'LANG_DIR' | translate}}">
+<ion-label class="round products paddingLeft">
+<div class="image">
+   <img class="medicine-image" src = "assets/icon/panadol.png"/>
+   </div>
+   <div class="details">
+     <p class="name">EXCEDRIN</p>
+     <p class="description">Back & Body</p>
+   </div>
+   <div class="price">
+     <ion-icon class="money" name="money"> {{ order.price }} {{ "EGP" | translate }}</ion-icon>
+     <p class="cash">50 {{ "EGP" | translate }}</p>
+
+   </div>
+   <div class="amount">
+   <ion-icon name="inc" (click)="increment(order.id)"></ion-icon>
+    <p class=" quant">{{ order.qty }}</p>
+    <ion-icon name="dec" (click)="decrement(order.id)"></ion-icon>
+    </div>
+   <ion-icon class="centerVertical" name="delete" (click)="deleteButton(order.id)"></ion-icon>
+
+</ion-label>
+
+<!--
   <div class="firstChildDiv centerHorizontal customColor {{ 'VERTLINE' | translate}}" >
+      <img class="medicine-image" src = "assets/icon/panadol.jpg"/> 
+
     <h1>{{ order.name }}</h1>
     <p>{{ "DESCRIPTION" | translate }}</p>
   </div>
@@ -43,11 +78,27 @@
     <ion-icon class="centerVertical" name="trash" (click)="deleteButton(order.id)"></ion-icon>
 
   </div>
-
+-->
 
 </div>
-<!--<hr> -->
+  <ion-label>
 
+    <hr class="space">
+    <div class="center">
+      <p class="p spaceRight">Price</p><p class="p">150 LE</p>
+    </div>
+    <div class="center bold">
+      <p class="total p spaceRight">Total</p><p class="p total">160 LE</p>
+    </div>
+    <hr class="spaceTop">
+        <div class="to">
+        <ion-icon name="location"></ion-icon>
+        <h4>To</h4>
+        <ion-label class="oval3">3 ebn elkassir, Giza</ion-label>
+    </div>
+  </ion-label>
+<!--<hr> -->
+<!--
 <div class="priceLastStep">
     <p class="beforePriceAndDelivery"><ion-icon name="cash"></ion-icon> {{ "PRICE" | translate }} {{ totalPrice }} {{ "EGP" | translate }}</p>
     <p class="beforePriceAndDelivery"><ion-icon name="cash"></ion-icon> {{ "DELIVERY" | translate }}</p>
@@ -57,6 +108,6 @@
     <p class="estimatedTime">{{ "TIMEVAL" | translate }}</p>
 </div>
 
-
+-->
 <button ion-button class = "dark-button" (click)="confirm()">{{ "CONFIRM" | translate }}</button>
 </ion-content>
