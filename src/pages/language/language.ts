@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,Platform } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
-import { Globalization } from 'ionic-native';
+import { Globalization } from '@ionic-native/globalization';
 import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { WelcomePage } from '../welcome/welcome';
@@ -26,7 +26,7 @@ export class LanguagePage {
   private translate: TranslateService;
   LANGUAGE = 'language';
   //storage: Storage;
-  constructor(private nativeStorage: NativeStorage,platform: Platform,translate: TranslateService,public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, private uniqueDeviceID: UniqueDeviceID) {
+  constructor(private Globalization: Globalization, private nativeStorage: NativeStorage,platform: Platform,translate: TranslateService,public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, private uniqueDeviceID: UniqueDeviceID) {
   this.translate = translate;
   platform.ready().then(() => {
            // this language will be used as a fallback when a translation isn't found in the current language
@@ -71,7 +71,7 @@ export class LanguagePage {
 
   applyLanguage(value) {
 
- 
+
             this.nativeStorage.setItem('language', value)
         .then(
           () => console.log(value),

@@ -38,7 +38,8 @@ import { SettingsPage } from '../pages/settings/settings';
 import { MenuPage } from '../pages/menu/menu'
 import { CategoriesPage } from '../pages/categories/categories';
 import { ReceiptPage } from '../pages/receipt/receipt';
-
+import { TestFeaturesPage } from '../pages/test-features/test-features';
+import { Globalization } from '@ionic-native/globalization';
 import { TestStorageProvider } from './test-storage';
 import { RemoteServiceProvider } from '../providers/remote-service/remote-service';
 import { WheelSelector } from '@ionic-native/wheel-selector';
@@ -72,7 +73,8 @@ export function createTranslateLoader(http: Http) {
     CategoriesPage,
     ReceiptPage,
     AccountPage,
-    LoginEmailPage
+    LoginEmailPage,
+    TestFeaturesPage
   ],
   imports: [
   LocalStorageModule.withConfig({
@@ -112,13 +114,14 @@ export function createTranslateLoader(http: Http) {
     SettingsPage,
     CameraPage,
     MenuPage,
-    TabsPage
+    TabsPage,
+    TestFeaturesPage
   ],
-  
+
 
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
-    SplashScreen, Camera, BarcodeScanner, Geolocation, FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider,
     SettingsPage,
     MenuPage,

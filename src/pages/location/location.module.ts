@@ -3,7 +3,7 @@ import { IonicPageModule, Platform } from 'ionic-angular';
 import { LocationPage } from './location';
 import { TranslateModule } from 'ng2-translate/ng2-translate';
 import { TranslateService } from 'ng2-translate';
-import { Globalization } from 'ionic-native';
+import { Globalization } from '@ionic-native/globalization';
 import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 
 
@@ -20,7 +20,7 @@ import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welc
 })
 export class LocationPageModule {
 
-		constructor(platform: Platform, translate: TranslateService) {
+		constructor(private Globalization: Globalization, platform: Platform, translate: TranslateService) {
 		console.log("locationModule");
 		platform.ready().then(() => {
 				// this language will be used as a fallback when a translation isn't found in the current language
