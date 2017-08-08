@@ -6,6 +6,8 @@ import 'rxjs/add/operator/map';
 import { TranslateService } from 'ng2-translate';
 import { sysOptions } from '../welcome/welcome.constants';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { TrackOrderPage } from '../track-order/track-order';
+
 
 /**
  * Generated class for the BasketPage page.
@@ -25,11 +27,11 @@ export class BasketPage {
   orderData = {
     userInfo: {
       userID: -1,
-      location : {
+      //different from all the app
         city : "",
         street : "",
         location: "" ,
-      }
+
     },
     order:[
 
@@ -51,10 +53,12 @@ export class BasketPage {
                public http:Http,
                private nativeStorage: NativeStorage) {
     this.translate = translate;
-    this.url = 'http://146.185.148.66:3000/';
+    this.url = 'http://146.185.148.66:3009/';
     //this.updateTotalPrice();
     //this.saveOrder();
-    this.getOrder();
+
+    //do it later!
+//    this.getOrder();
     this.updateTotalPrice();
   }
 
@@ -132,10 +136,13 @@ export class BasketPage {
     headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
     headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
+console.log(this.orderData);
 
     this.http.post(this.url + 'order/submit', JSON.stringify(this.orderData), new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
+
+      this.navCtrl.push(TrackOrderPage, this.orderData);
     }, err => {
       console.log(err);
     });

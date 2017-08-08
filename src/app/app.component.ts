@@ -30,7 +30,7 @@ export class MyApp {
           this.rootPage=WelcomePage;
                   } ,
           error => {
-          this.rootPage=LanguagePage;
+          this.rootPage=TabsPage;
           }
         );
 

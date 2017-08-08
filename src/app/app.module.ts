@@ -74,7 +74,8 @@ export function createTranslateLoader(http: Http) {
     ReceiptPage,
     AccountPage,
     LoginEmailPage,
-    TestFeaturesPage
+    TestFeaturesPage,
+    TrackOrderPage
   ],
   imports: [
   LocalStorageModule.withConfig({
@@ -124,7 +125,8 @@ export function createTranslateLoader(http: Http) {
     ReceiptPage,
     AccountPage,
     LoginEmailPage,
-    TestFeaturesPage
+    TestFeaturesPage,
+    TrackOrderPage
   ],
 
 
