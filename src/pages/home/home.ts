@@ -6,6 +6,7 @@ import { TranslateService } from 'ng2-translate';
 import { TestStorageProvider } from '../../app/test-storage';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { MenuPage } from '../menu/menu';
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
 import { DetailedProductPage } from '../detailed-product/detailed-product';
 
@@ -45,7 +46,7 @@ export class HomePage {
   url:string;
 
   private translate: TranslateService;
-  constructor(translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
+  constructor( private barcodeScanner: BarcodeScanner,translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
 
     this.getOrder();//to initalize if empty
     this.translate = translate;
@@ -55,6 +56,46 @@ export class HomePage {
     this.url = 'http://146.185.148.66:3003/';
 
 }
+    scanBarcode() {
+
+
+
+       this.barcodeScanner.scan().then((barcodeData) => {
+            // Success! Barcode data is here
+            //alert(barcodeData.text);
+
+            //  alert(barcodeData.text);
+
+            this.http.get(this.url + 'searchBarcode/' + barcodeData.text, new RequestOptions({headers: this.setGetHeaders()}))
+            .map(res => res).subscribe(pdata => {
+                console.log(pdata);
+              //  console.log("yey no error", pdata);
+              //the error depends on mahmoud result, error in response wala body fih no results
+                if(pdata["_body"] == "No medicines match this barcode" || pdata["_body"] == "sorry , no results match this barcode"){
+                  alert("Invalid barcode!")
+                }else{
+                  console.log(JSON.parse(pdata["_body"]));
+                  this.navCtrl.push(DetailedProductPage, {_body: pdata["_body"]});
+                }
+
+            },err =>{
+              alert("Invalid barcode!");
+            });
+
+
+
+
+        }, (err) => {
+            // An error occurred
+            console.log(this.translate.currentLang =='en');
+            if (this.translate.currentLang =='en') {
+              alert("Cannot scan barcodes");
+            }
+            else {
+            alert("لا يستطيع مسح الباركود");
+            }
+        });
+   }
   /*applyLanguage() {
     this.translate.use(this.selectedLanguage);
   }*/

@@ -79,6 +79,8 @@
   "ORDERS":"Orders History",
   "LOGOUT": "Log Out",
   "CATEGORIES": "Categories",
-  "RECEIPT": "RECEIPT"
-
+  "RECEIPT": "RECEIPT",
+  "SPACELANG": "spaceRight",
+  "TO" : "To",
+  "MARGINLANG":"toEn"
 }

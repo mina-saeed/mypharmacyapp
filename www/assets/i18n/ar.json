@@ -81,6 +81,13 @@
   "ORDERS":"الطلبات السابقة",   
   "LOGOUT": "الخروج",
   "CATEGORIES": "الأقسام",
-  "RECEIPT": "الفاتورة"
+  "RECEIPT": "الفاتورة",
+  "SPACELANG": "spaceLeft",
+  "TO" : "إلى",
+  "MARGINLANG":"toAr",
+  "CASHLANG": "cashAr",
+  "AR": "ar",
+  "AMOUNTAR": "amountAr",
+  "QUANTAR": "quantAr"
 
 }

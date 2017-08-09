@@ -12,7 +12,7 @@
     </ion-title>
   <!--  <ion-title style="text-align: center;">{{ "CART" | translate }}</ion-title> -->
       <ion-buttons right>
-      <button ion-button icon-only (click)="goBasket()">
+      <button ion-button icon-only>
         <ion-icon name="cartCustom"></ion-icon>
       </button>
       <button ion-button icon-only (click)="goMenu()">
@@ -20,12 +20,13 @@
       </button>
     </ion-buttons>
   </ion-navbar>
+    <hr >
 
 </ion-header>
 
 
-<ion-content padding>
-    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
+<ion-content padding dir=" {{'LANG_DIR' | translate}}">
+    <ion-input class="oval marg" primary [(ngModel)]="searchQuery2"
                  (keyup)="updateListByName($event)"
                  (ionCancel)="onCancelByName($event)"
                  show-cancel="true"
@@ -41,21 +42,22 @@
    </div>
    <div class="details">
      <p class="name">{{order.name}}</p>
-     <p class="description">Back & Body</p>
+     <p class="description">{{order.description}} Back & Body</p>   <!-- no description returned -->
    </div>
-   <div class="price">
-     <ion-icon class="money" name="money"> {{ order.price }} {{ "EGP" | translate }}</ion-icon>
-     <p class="cash">50 {{ "EGP" | translate }}</p>
+   <div class="price {{ 'AR' | translate }}">
+     <ion-icon class="money" name="money"></ion-icon>
+     <p class="cash {{ 'CASHLANG' | translate }}">{{ order.price }} {{ "EGP" | translate }}</p>
 
    </div>
-   <div class="amount">
+   <div class="amount {{ 'AMOUNTAR' | translate }}">
    <ion-icon name="inc" (click)="increment(order.id)"></ion-icon>
-    <p class=" quant">{{ order.qty }}</p>
+    <p class=" quant {{ 'QUANTAR' | translate }}">{{ order.qty }}</p>
     <ion-icon name="dec" (click)="decrement(order.id)"></ion-icon>
     </div>
    <ion-icon class="centerVertical" name="delete" (click)="deleteButton(order.id)"></ion-icon>
 
 </ion-label>
+
 
 <!--
   <div class="firstChildDiv centerHorizontal customColor {{ 'VERTLINE' | translate}}" >
@@ -81,22 +83,24 @@
 -->
 
 </div>
-  <ion-label>
+<div dir="{{'LANG_DIR' | translate}}">
+  <ion-label >
 
-    <hr class="space">
+    <hr class="space hr">
     <div class="center">
-      <p class="p spaceRight">Price</p><p class="p">150 LE</p>
+      <p class="p {{'SPACELANG' | translate}}">{{ "PRICE" | translate }}</p><p class="p">{{ totalPrice }} {{ "EGP" | translate }}</p>
     </div>
     <div class="center bold">
-      <p class="total p spaceRight">Total</p><p class="p total">160 LE</p>
+      <p class="total p {{'SPACELANG' | translate}}">{{ "TOTAL" | translate }}</p><p class="p total">{{ totalPrice }} {{ "EGP" | translate }}</p>
     </div>
-    <hr class="spaceTop">
-        <div class="to">
+    <hr class="spaceTop hr">
+        <div class="{{'MARGINLANG' | translate}}" dir="{{'LANG_DIR' | translate}}">
         <ion-icon name="location"></ion-icon>
-        <h4>To</h4>
+        <h4>{{ "TO" | translate }}</h4>
         <ion-label class="oval3">3 ebn elkassir, Giza</ion-label>
     </div>
   </ion-label>
+  </div>
 <!--<hr> -->
 <!--
 <div class="priceLastStep">

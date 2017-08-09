@@ -53,6 +53,7 @@ export class BasketPage {
                public http:Http,
                private nativeStorage: NativeStorage) {
     this.translate = translate;
+     //this.translate.use('en');
     this.url = 'http://146.185.148.66:3009/';
     //this.updateTotalPrice();
     //this.saveOrder();
