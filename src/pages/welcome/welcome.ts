@@ -34,6 +34,8 @@ export class WelcomePage {
     deviceID:string;
     storage:Storage;
 
+    disableButton:boolean = false;
+
     constructor(platform: Platform, translate: TranslateService,  public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, public http:Http, private uniqueDeviceID: UniqueDeviceID,private iab: InAppBrowser) {
     //alert(translate);
     this.translate= translate;
@@ -84,7 +86,9 @@ export class WelcomePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad WelcomePage');
   }
-  signIn(){
+    signIn(){ //guest
+
+      this.disableButton = true;
 
     //********** CODE SNIPPET, when loading this page check if device id is registered!
 
@@ -101,6 +105,13 @@ export class WelcomePage {
     let body = {
       deviceID: this.deviceID
     };
+
+
+//should check internet connection and other errors
+//if any error keep in this page and enable button again
+//otherwise error of no userId.. go to locationpage aw ayan kan
+//try to use async and await for better performance
+
     this.http.post(this.url + 'userHome',JSON.stringify(body), new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
 
@@ -120,6 +131,7 @@ export class WelcomePage {
         }
 
       this.navCtrl.push(TabsPage);
+      this.disableButton = false; //raga3ha lel state el tabi3ya 3shan law daas back msln
 
       console.log(data);
       console.log(this.url + 'userHome/50');
@@ -130,6 +142,7 @@ export class WelcomePage {
         this.translate.use(this.lang.load());
         }
       this.navCtrl.push(LocationPage); //w wadilo device id as parameter
+      this.disableButton = false; //raga3ha lel state el tabi3ya
     });
 
   //  this.navCtrl.push(LocationPage);
