@@ -58,8 +58,8 @@ export class BasketPage {
     //this.updateTotalPrice();
     //this.saveOrder();
 
-    //do it later!
-//    this.getOrder();
+
+    //this.getOrder();
     this.updateTotalPrice();
   }
 

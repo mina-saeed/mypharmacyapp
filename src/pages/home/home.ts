@@ -115,12 +115,20 @@ export class HomePage {
   openModal(){
     alert("This features has not been implemented yet!")
   }
-  
+
   updateListByName(ev) {
     this.showPage = false;
     this.showSearchResult = true; //when start searching, show the list
     //if statement make it false when deleted all characters!!
     //break if backspace and emtpy 3shan el requests
+
+    if(ev.keyCode == 8)
+    {
+      if(ev.target.value.toString() == ""){
+        this.showSearchResult = false; //and true to show other components
+        this.showPage = true;
+      }
+    }
 
     this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
       .map(res => res).subscribe(data => {
@@ -257,5 +265,3 @@ export class HomePage {
   }
 
 }
-
-

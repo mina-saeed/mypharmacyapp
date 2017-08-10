@@ -34,7 +34,7 @@ export class MyApp {
                   } ,
           error => {
 
-          this.rootPage=TrackOrderPage;
+          this.rootPage=TabsPage;
 
           }
         );
