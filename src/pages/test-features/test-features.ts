@@ -20,7 +20,7 @@ export class TestFeaturesPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
 
-        this.url = 'http://146.185.148.66:3000/';
+        this.url = 'http://146.185.148.66:3007/';
   }
 
   ionViewDidLoad() {

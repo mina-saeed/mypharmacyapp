@@ -5,10 +5,13 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 //import {CategoriesPage} from '../pages/categories/categories';
 import { TabsPage } from '../pages/tabs/tabs';
+import { TestFeaturesPage } from '../pages/test-features/test-features';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { LanguagePage } from '../pages/language/language';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { TranslateService } from 'ng2-translate';
+
+import { TrackOrderPage } from '../pages/track-order/track-order';
 
 
 
@@ -30,7 +33,9 @@ export class MyApp {
           this.rootPage=WelcomePage;
                   } ,
           error => {
-          this.rootPage=LanguagePage;
+
+          this.rootPage=TrackOrderPage;
+
           }
         );
 
