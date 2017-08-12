@@ -59,7 +59,7 @@ export class BasketPage {
     //this.saveOrder();
 
 
-    //this.getOrder();
+    this.getOrder();
     this.updateTotalPrice();
   }
 

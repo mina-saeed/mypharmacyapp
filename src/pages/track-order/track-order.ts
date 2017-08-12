@@ -35,16 +35,25 @@ export class TrackOrderPage {
       console.log(this.orderData);
 
 
-      this.socket = io.connect(this.socketHost);
+      this.socket = io.connect(this.socketHost, {'force new connection': true});
       this.zone = new NgZone({enableLongStackTrace: false});
       console.log("Before listening to event");
 
+      console.log("socket1: ", this.socket);
+
       this.socket.on("pharmacyConfirmed", (data) =>{
+        console.log("data response outside zone: ", data);
+        console.log("ahlaaan");
+        alert(data);
+
         this.zone.run(() =>{
-        //  console.log(data);
+         console.log("data response inside zone", data);
         //do something
         })
       });
+
+      console.log("socket2: ", this.socket);
+
 
   }
 
