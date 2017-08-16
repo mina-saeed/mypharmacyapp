@@ -4,7 +4,7 @@
 
   <ion-navbar>
 
-    <ion-title class="navTitle">
+    <ion-title class="navTitle" style="margin-left: 0px">
       {{"TRACKORDER" | translate }}
     </ion-title>
 
@@ -12,7 +12,7 @@
       <button ion-button icon-only (click)="goBasket()">
         <ion-icon name="cartCustom"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="openModal()">
+      <button ion-button icon-only (click)="goMenu()">
         <ion-icon name="setting"></ion-icon>
       </button>
     </ion-buttons>
@@ -35,7 +35,7 @@
     <ion-label class="oval">Seif Pharmacy</ion-label>
 </div>
 <div style="max-width:85%;position: relative;margin-left:auto;margin-right: auto; margin-top: 6%;margin-bottom: -10%;">
-<round-progress style="max-width:65%;margin: auto; z-index:-1;background-image: url('../assets/icon/White pill.png'); background-size: 80% 80%;"
+<round-progress style="max-width:65%;margin: auto; z-index:-1; background-size: 80% 80%;"
     [current]="20"
     [max]="50"
     [color]="'#0F6196'"
@@ -50,7 +50,7 @@
     [animation]="'easeInOutQuart'"
     [animationDelay]="0"
     ></round-progress>
-    <div style="position: absolute;top:14%;opacity: 0.5;left:15%;z-index:10; margin: auto; width: 85%;height: 90% ;margin: auto;background-image: url('../assets/icon/logo.png'); background-repeat:no-repeat;background-size: 80% 80%;"></div>
+    <div class="logo"></div>
 </div>
 <p class="text">15 mins away</p>
 </ion-content>

@@ -39,7 +39,7 @@ export class WelcomePage {
     constructor(platform: Platform, translate: TranslateService,  public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, public http:Http, private uniqueDeviceID: UniqueDeviceID,private iab: InAppBrowser) {
     //alert(translate);
     this.translate= translate;
-   // this.translate.use(this.apply());
+    //this.translate.use('en');
     //alert(this.lang.load());
     this.apply();
    // this.storage=storage;

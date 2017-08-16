@@ -170,7 +170,7 @@ page-home {
     .ion-ios-cartCustom,
     .ion-md-cartCustom,
     .ion-md-cartCustom-outline {
-        content: url('../assets/icon/Blue Cart.png');
+        content: url('../assets/icon/deactivited Cart.png');
         margin-left: 0;
         max-width: 40px;
         max-height: 150px
@@ -252,5 +252,31 @@ page-home {
         border-width: 1.5px;
         border-top: 2px solid #0F6196;
         width: 55%
+    }
+        .toolbar-background-md{
+    background: #fff;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+    margin-bottom:0px;
+    }
+    .toolbar-background{
+    height: 60%;
+    }
+    .scroll-content  {
+    margin-top: 55px !important
+    }
+        .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+    background: #fff;
+    }
+        @media (min-width: 760px){
+        .oval{
+        width: 102%;
+        margin-left: -1%;
+        }
+    }
+    .toolbar .toolbar-ios{
+    padding-top: 10px;
     }
 }

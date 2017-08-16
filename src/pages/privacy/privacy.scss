@@ -1,0 +1,56 @@
+page-privacy {
+    .title {
+        font-size: 23px;
+        text-transform: uppercase;
+        padding-top:10px;
+
+    }
+        .image {
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -35px
+    }
+        p{
+    text-align: center;
+    font-size: 16px;
+    font-family: "Helvetica";
+    color: #0b43a4;
+        margin-top: -2%;
+    }
+        .toolbar-background-md{
+    background: #fff;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+    }
+    .toolbar-background{
+    height: 60%;
+    }
+            hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        padding: 0;
+        padding-bottom: 1.8rem;
+        margin-bottom: -5%;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 1.5px solid #3CABE3;
+        width: 70%;
+        margin-top: -1%
+    }
+        .toolbar-title{
+     padding-left: 10%;
+    margin-top: 4%;
+    margin-left: -60px;
+    }
+    .toolbar-title-ios{
+                margin-top: 4%;
+
+        margin-left: 0px;
+
+    }
+}

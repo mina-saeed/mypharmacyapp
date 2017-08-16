@@ -17,23 +17,43 @@
   <img class="image" src="assets/icon/logo.png"/>
 
   <h3 class="header"><span>{{ "REGISTER" | translate}}</span></h3>
-  <form (ngSubmit)="register()">
+  <form [formGroup]="validations_form" (ngSubmit)="register()">
     <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class="text">{{ "Name" | translate}}:</ion-label>
-        <ion-input class="oval" type="text" [(ngModel)]="userData.name" name="city"></ion-input>
+        <ion-input class="oval" type="text" [(ngModel)]="userData.name" formControlName="name"></ion-input>
         </ion-item>
-
+     <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
+      <ng-container *ngFor="let validation of validation_messages.name">
+        <div class="error-message" *ngIf="validations_form.get('name').hasError(validation.type) && (validations_form.get('name').touched || validations_form.get('email').touched || validations_form.get('password').touched || validations_form.get('confirm').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class = "text">{{ "Email" | translate}}:</ion-label>
-        <ion-input class="oval" type="text"  [(ngModel)]="userData.email" name="location"></ion-input>
+        <ion-input class="oval" type="text"  [(ngModel)]="userData.email" formControlName="email" required email></ion-input>
         </ion-item>
+     <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div class="error-message" *ngIf="validations_form.get('email').hasError(validation.type) && (validations_form.get('password').touched || validations_form.get('confirm').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+        <ion-item dir="{{'LANG_DIR' | translate}}">
+        <ion-label class = "text">{{ "Password" | translate}}: </ion-label>
+        <ion-input class="oval" required="required" type="password"  [(ngModel)]="userData.password" formControlName="password"></ion-input>
+        </ion-item>
+             <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div class="error-message" *ngIf="validations_form.get('password').hasError(validation.type) && (validations_form.get('confirm').touched)">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class = "text">{{ "Password" | translate}}:</ion-label>
-        <ion-input class="oval" required="required" type="password"  [(ngModel)]="userData.password" name="street"></ion-input>
-        </ion-item>
-        <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "Password" | translate}}:</ion-label>
-        <ion-input class="oval"required="required" type="password"  [(ngModel)]="confirmPassword" name="confirm"></ion-input>
+        <ion-input class="oval" required="required" type="password"  [(ngModel)]="confirmPassword" formControlName="confirm"></ion-input>
       </ion-item>
       <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
 

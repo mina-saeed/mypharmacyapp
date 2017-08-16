@@ -7,6 +7,7 @@ import { TranslateService } from 'ng2-translate';
 import { sysOptions } from '../welcome/welcome.constants';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { TrackOrderPage } from '../track-order/track-order';
+import { MenuPage } from '../menu/menu';
 
 
 /**
@@ -172,5 +173,8 @@ console.log(this.orderData);
                   } ,
           error => console.error(error)
         );
+  }
+    goMenu(){
+    this.navCtrl.push(MenuPage);
   }
 }

@@ -60,8 +60,18 @@ page-categories {
         font-size: 20px;
         margin-left: 4.5%
     }
+    .imgP {
+        margin-top: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40%
+    }
     .img {
-        align: middle;
+        margin-top: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
         height: 55%
     }
     .title {
@@ -161,5 +171,87 @@ page-categories {
         padding-top: 6%;
         padding-bottom: -2%
     }
+    }
+    .toolbar-background-md{
+    background: #fff;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+    margin-bottom:0px;
+    }
+    .toolbar-background{
+    height: 60%;
+    }
+    .scroll-content  {
+    margin-top: 55px !important
+    }
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+    background: #fff;
+    }
+    @media (min-width: 760px){
+        .imgP {
+        height: 55%;
+        margin-top: 0%;
+        }
+        .img{
+        margin-top: 0%;
+        height: 60%;
+        }
+        .oval{
+        width: 89%;
+        margin-left: 6.5%;
+        }
+    }
+        h3,
+    h4 {
+     //   font-family: Highland;
+        text-align: center;
+        margin-top: 7%
+    }
+    h3 {
+        color: #0F6196
+    }
+    .medicine-image {
+        display: block;
+        margin: auto;
+        width: 15%
+    }
+    .ion-ios-addCart-outline,
+    .ion-ios-addCart,.ion-md-addCart,.ion-md-addCart-outline {
+    content: url('../assets/icon/ADD to activated.png');
+    margin: auto;
+    max-width: 50px;
+    max-height: 150px;
+}
+    .cart {
+        display: block;
+        background-color: #fff;
+        max-width: 8%;
+        margin-bottom: .5%;
+        margin: auto;
+    }
+    .button-md{
+        box-shadow: none;
+    }
+    .textDetails {
+        text-align: center;
+        padding-top: 0;
+        color: #0F6193;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: "Helvetica";
+        font-size: 18.2px;
+        letter-spacing: .25px
+    }
+    .hrDetails {
+        display: block;
+        margin-top: .5%;
+        margin-bottom: 0%;
+        margin-left: auto;
+        margin-right: auto;
+        border-width: 1.5px;
+        border-top: 2px solid #0F6196;
+        width: 55%
     }
 }

@@ -25,6 +25,10 @@ import { LanguagePage } from '../pages/language/language';
 import { CameraPage } from '../pages/camera/camera';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { BasketPage } from '../pages/basket/basket';
+import { ContactusPage } from '../pages/contactus/contactus';
+import { TermsPage } from '../pages/terms/terms';
+import { PrivacyPage } from '../pages/privacy/privacy';
+
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
 import { SearchTestPage } from '../pages/search-test/search-test';
@@ -45,8 +49,15 @@ import { RemoteServiceProvider } from '../providers/remote-service/remote-servic
 import { WheelSelector } from '@ionic-native/wheel-selector';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
-
 import { Ionic2RatingModule } from 'ionic2-rating';
+import { NgCalendarModule  } from 'ionic2-calendar';
+import { CalendarComponent } from 'ionic2-calendar/calendar';
+import { MonthViewComponent } from 'ionic2-calendar/monthview';
+import { WeekViewComponent } from 'ionic2-calendar/weekview';
+import { DayViewComponent } from 'ionic2-calendar/dayview';
+
+import { CalendarModule } from 'angular-calendar';
+import { Calendar } from '@ionic-native/calendar';
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, 'assets/i18n', '.json');
   }
@@ -75,9 +86,13 @@ export function createTranslateLoader(http: Http) {
     AccountPage,
     LoginEmailPage,
     TestFeaturesPage,
+    ContactusPage,
+    TermsPage,
+    PrivacyPage,
     TrackOrderPage
   ],
   imports: [
+    NgCalendarModule,
   LocalStorageModule.withConfig({
             prefix: 'my-app',
             storageType: 'localStorage'
@@ -85,7 +100,7 @@ export function createTranslateLoader(http: Http) {
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp, {
-      backButtonIcon: 'ios-arrow-back',
+      backButtonIcon: 'arrow-back',
       iconMode: 'ios',
       modalEnter: 'modal-slide-in',
       modalLeave: 'modal-slide-out',
@@ -93,7 +108,8 @@ export function createTranslateLoader(http: Http) {
       pageTransition: 'ios-transition',
 
     }
-  ), Ionic2RatingModule,
+  ), CalendarModule.forRoot(),
+ Ionic2RatingModule,
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
         provide: TranslateLoader,
@@ -126,13 +142,16 @@ export function createTranslateLoader(http: Http) {
     AccountPage,
     LoginEmailPage,
     TestFeaturesPage,
+    ContactusPage,
+    TermsPage,
+    PrivacyPage,
     TrackOrderPage
   ],
 
 
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
-    SplashScreen, Camera, BarcodeScanner, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera,Calendar, BarcodeScanner, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider,
     SettingsPage,
     MenuPage,

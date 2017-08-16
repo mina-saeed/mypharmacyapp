@@ -32,6 +32,17 @@
 
 
 <ion-content padding>
+<!-- <div class="calendar-comp">
+  <template #headerTemp>
+    <div class="cal-cell-row">
+      <div class="cal-cell cal-past columnHeader" *ngFor="let label of days_label">
+         {{label}} 
+      </div>
+    </div>
+  </template>
+  <mwl-calendar-month-view [viewDate]="date" [headerTemplate]="headerTemp">
+  </mwl-calendar-month-view>
+</div> -->
     <ion-input class="oval" primary [(ngModel)]="searchQuery2"
                  (keyup)="updateListByName($event)"
                  (ionCancel)="onCancelByName($event)"
@@ -40,16 +51,32 @@
                  placeholder="Search By Name">
    <img class="image" src="assets/icon/White Loop.png"/>
     </ion-input>
+        <ion-list *ngIf="showSearchResult">
+      <ion-item  *ngFor = "let res of searchResults.data">
+      <img class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
+
+      <h3>{{res.name}}</h3>
+    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+    <hr class="hrDetails">
+    <p class="p textDetails">Description: {{res.description}}</p>
+  <hr class="hrDetails">
+
+      </ion-item>
+    </ion-list>
+        <div *ngIf="showPage">
+
 <ion-label class="round products pharm">
 	<ion-label lign="middle" class="first roundPharm products heightPharm pharmacy" style="display: inline-block;">
-		<img class="img" src="assets/toBeRemoved/seif.png"/>
+		<img class="imgP" src="assets/toBeRemoved/seif.png"/>
 	</ion-label>
 	<ion-label lign="middle" class="roundPharm products heightPharm pharmacy" style="display: inline-block;">
-		<img class="img" src="assets/toBeRemoved/elezaby.png"/>
+		<img class="imgP" src="assets/toBeRemoved/elezaby.png"/>
 
 	</ion-label>
 	<ion-label lign="middle" class="roundPharm products heightPharm pharmacy" style="display: inline-block;">
-		<img class="img" src="assets/toBeRemoved/Almasry.png"/>
+		<img class="imgP" src="assets/toBeRemoved/Almasry.png"/>
 
 	</ion-label>
 </ion-label>
@@ -73,5 +100,6 @@
 		<p class="p">Creams</p>
 	</ion-label>
 </ion-label>
+</div>
 
 </ion-content>

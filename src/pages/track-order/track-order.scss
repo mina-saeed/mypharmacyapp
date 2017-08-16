@@ -1,1 +1,114 @@
-page-track-order{body{text-align:center}.oval{width:55%;margin-right:10px;padding-top:10px;padding-left:4%;margin-top:0;margin-bottom:0;background-color:#cdebf9;border-radius:50px;display:inline-block;font-family:"Helvetica";font-size:15px;font-weight:800;color:#0F6196;height:40px;vertical-align:middle}.image{width:15%}h4{display:inline-block;color:#0F6196;vertical-align:middle;margin-right:4%}.ion-ios-cartCustom-outline,.ion-ios-cartCustom,.ion-md-cartCustom,.ion-md-cartCustom-outline{content:url('../assets/icon/Blue Cart.png');margin-left:0;max-width:40px;max-height:150px}.ion-ios-setting-outline,.ion-ios-setting,.ion-md-setting,.ion-md-setting-outline{content:url('../assets/icon/deactivated menu.png');margin-left:0;max-width:40px;max-height:150px}.ion-ios-location-outline,.ion-ios-location,.ion-md-location,.ion-md-location-outline{content:url('../assets/icon/Location blue.png');margin-left:0;max-width:40px;max-height:150px;display:inline-block;vertical-align:middle;margin-right:2%}.from{margin-top:10%;margin-left:8%}.search{width:97%;background-image:url("../assets/icon/White Loop.png");background-size:10% 80%;background-repeat:no-repeat;background-position:95%;margin-left:2%;background-color:#cdebf9;border-radius:50px;display:inline-block;font-family:"Helvetica";font-size:20px}.text{text-align:center;font-size:22px;color:#0F6196;font-family:Highland}}
+page-track-order {
+    body {
+        text-align: center
+    }
+    .oval {
+        width: 55%;
+        margin-right: 10px;
+        padding-top: 10px;
+        padding-left: 4%;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: #cdebf9;
+        border-radius: 50px;
+        display: inline-block;
+        font-family: "Helvetica";
+        font-size: 15px;
+        font-weight: 800;
+        color: #0F6196;
+        height: 40px;
+        vertical-align: middle
+    }
+    .image {
+        width: 15%
+    }
+    h4 {
+        display: inline-block;
+        color: #0F6196;
+        vertical-align: middle;
+        margin-right: 4%
+    }
+    .ion-ios-cartCustom-outline,
+    .ion-ios-cartCustom,
+    .ion-md-cartCustom,
+    .ion-md-cartCustom-outline {
+        content: url('../assets/icon/Blue Cart.png');
+        margin-left: 0;
+        max-width: 40px;
+        max-height: 150px
+    }
+    .ion-ios-setting-outline,
+    .ion-ios-setting,
+    .ion-md-setting,
+    .ion-md-setting-outline {
+        content: url('../assets/icon/deactivated menu.png');
+        margin-left: 0;
+        max-width: 40px;
+        max-height: 150px
+    }
+    .ion-ios-location-outline,
+    .ion-ios-location,
+    .ion-md-location,
+    .ion-md-location-outline {
+        content: url('../assets/icon/Location blue.png');
+        margin-left: 0;
+        max-width: 40px;
+        max-height: 150px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 2%
+    }
+    .from {
+        margin-top: 10%;
+        margin-left: 8%
+    }
+    .search {
+        width: 97%;
+        background-image: url("../assets/icon/White Loop.png");
+        background-size: 10% 80%;
+        background-repeat: no-repeat;
+        background-position: 95%;
+        margin-left: 2%;
+        background-color: #cdebf9;
+        border-radius: 50px;
+        display: inline-block;
+        font-family: "Helvetica";
+        font-size: 20px
+    }
+    .text {
+        text-align: center;
+        font-size: 22px;
+        color: #0F6196;
+        font-family: Highland
+    }
+    .logo{
+    position: absolute;
+    top:14%;
+    opacity: 0.5;
+    left:15%;
+    z-index:10;
+     margin: auto;
+      width: 85%;
+      height: 90% ;
+      margin: auto;
+      background-image: url('../assets/icon/logo.png');
+       background-repeat:no-repeat;
+       background-size: 80% 80%;
+    }
+        .toolbar-background-md{
+    background: #fff;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+    margin-bottom:0px;
+    }
+    .toolbar-background{
+    height: 60%;
+    }
+    .scroll-content  {
+    margin-top: 30px !important
+    }
+.md .navTitle {
+    margin-left: 0px !important
+    }
+}

@@ -28,9 +28,6 @@
              placeholder="Search By Name">
 </ion-searchbar>
 -->
-<button ion-button class = "dark-button dark-button-smaller" full (click)="scanBarcode()" dir="{{'LANG_DIR' | translate}}">
-  <ion-icon name="barcode"> {{ "SCAN" | translate }} </ion-icon>
-</button>
 <div *ngIf="results">
   <p>{{results.text}}</p>
   <p>{{results.format}}</p>

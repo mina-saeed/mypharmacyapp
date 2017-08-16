@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
+import { ContactusPage } from '../contactus/contactus';
+import { TermsPage } from '../terms/terms';
+import { PrivacyPage } from '../privacy/privacy';
 
 /**
  * Generated class for the MenuPage page.
@@ -26,8 +29,17 @@ export class MenuPage {
 
     this.navCtrl.push(BasketPage);
   }
-    goMenu(){
-    this.navCtrl.push(MenuPage);
+    goContact(){
+
+    this.navCtrl.push(ContactusPage);
+  }
+    goTerms(){
+
+    this.navCtrl.push(TermsPage);
+  }
+    goPrivacy(){
+
+    this.navCtrl.push(PrivacyPage);
   }
 
 

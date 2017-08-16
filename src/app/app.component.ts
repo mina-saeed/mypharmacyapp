@@ -10,6 +10,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { LanguagePage } from '../pages/language/language';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { TranslateService } from 'ng2-translate';
+import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
 
 import { TrackOrderPage } from '../pages/track-order/track-order';
 
@@ -34,7 +35,7 @@ export class MyApp {
                   } ,
           error => {
 
-          this.rootPage=TabsPage;
+          this.rootPage=LanguagePage;
 
           }
         );

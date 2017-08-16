@@ -4,15 +4,16 @@ page-tabs {
     .ion-md-homeCustom,
     .ion-md-homeCustom-outline {
         content: url('../assets/icon/white HOME.png');
-        max-width: 30px
+        max-width: 30px;
+      //  margin-top: 20px;
     }
     .ion-ios-medicineCustom-outline,
     .ion-ios-medicineCustom,
     .ion-md-medicineCustom,
     .ion-md-medicineCustom-outline {
         content: url('../assets/icon/White pill.png');
-        max-width: 60px;
-        font-size: 12px
+        max-width: 70px;
+        margin-top: -5px;
     }
     .ion-ios-callCustom-outline,
     .ion-ios-callCustom,
@@ -40,7 +41,9 @@ page-tabs {
         padding-right: 3px
     }
     .tab-button-text {
-        font-size: 10px
+        font-size: 10px;
+            width: 100%;
+
     }
     @media (max-width:320px) {
         span .tab-button-text {

@@ -2,9 +2,10 @@ import { Component, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { TranslateService } from 'ng2-translate';
+import { BasketPage } from '../basket/basket';
+import { MenuPage } from '../menu/menu';
 
-
-import * as io from 'socket.io-client';
+//import * as io from 'socket.io-client';
 
 /**
  * Generated class for the TrackOrderPage page.
@@ -31,9 +32,11 @@ export class TrackOrderPage {
 
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
       this.translate=translate;
+      this.translate.use("en");
       this.orderData = this.navParams.data;
       console.log(this.orderData);
 
+/*
 
       this.socket = io.connect(this.socketHost, {'force new connection': true});
       this.zone = new NgZone({enableLongStackTrace: false});
@@ -51,14 +54,16 @@ export class TrackOrderPage {
         //do something
         })
       });
-
-      console.log("socket2: ", this.socket);
-
-
+*/
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad TrackOrderPage');
   }
-
+  goBasket(){
+    this.navCtrl.push(BasketPage);
+  }
+  goMenu(){
+    this.navCtrl.push(MenuPage);
+  }
 }

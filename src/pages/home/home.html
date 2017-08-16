@@ -53,7 +53,7 @@
 
     <ion-list *ngIf="showSearchResult">
       <ion-item  *ngFor = "let res of searchResults.data">
-      <img class="medicine-image" src = "assets/icon/panadol.jpg"/> <!-- static to be updated -->
+      <img class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
 
       <h3>{{res.name}}</h3>
     <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">

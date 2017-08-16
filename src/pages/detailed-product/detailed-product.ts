@@ -3,9 +3,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
-import { BasketPage } from '../basket/basket';
 import { TranslateService } from 'ng2-translate';
-
+import { BasketPage } from '../basket/basket';
+import { MenuPage } from '../menu/menu';
 /**
  * Generated class for the DetailedProductPage page.
  *
@@ -134,10 +134,9 @@ export class DetailedProductPage {
 
 
     goBasket(){
-        /*  if(this.lang.load() !== undefined){
-        this.translate.use(this.lang.load());
-        }*/
     this.navCtrl.push(BasketPage);
   }
-
+  goMenu(){
+    this.navCtrl.push(MenuPage);
+  }
 }
