@@ -151,7 +151,7 @@ export function createTranslateLoader(http: Http) {
 
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
-    SplashScreen, Camera,Calendar, BarcodeScanner, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider,
     SettingsPage,
     MenuPage,
