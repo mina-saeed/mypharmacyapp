@@ -36,7 +36,7 @@
   <template #headerTemp>
     <div class="cal-cell-row">
       <div class="cal-cell cal-past columnHeader" *ngFor="let label of days_label">
-         {{label}} 
+         {{label}}
       </div>
     </div>
   </template>
@@ -53,9 +53,9 @@
     </ion-input>
         <ion-list *ngIf="showSearchResult">
       <ion-item  *ngFor = "let res of searchResults.data">
-      <img class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
+      <img (click)="detailedProduct(res.id)" class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
 
-      <h3>{{res.name}}</h3>
+      <h3 (click)="detailedProduct(res.id)">{{res.name}}</h3>
     <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
      <img src="assets/icon/ADD to activated.png">
   </button>

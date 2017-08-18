@@ -31,11 +31,11 @@ export class MyApp {
           //this.language = data;
           this.translate = translate;
           translate.use(data);
-          this.rootPage=WelcomePage;
+          this.rootPage=TabsPage;
                   } ,
           error => {
 
-          this.rootPage=LanguagePage;
+          this.rootPage=TabsPage;
 
           }
         );
