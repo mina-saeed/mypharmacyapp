@@ -15,4 +15,10 @@
 
 <ion-content padding>
 
+  <div *ngFor = "let res of categories">
+    <img [attr.src]="res.CategoryImage" style="width:200px; height:200px"/>
+    <p *ngIf = "currentLanguage == 'en'">{{res.name_en}}</p>
+    <p *ngIf = "currentLanguage == 'ar'">{{res.name_ar}}</p>
+  </div>
+
 </ion-content>
