@@ -23,7 +23,7 @@ import { MenuPage } from '../menu/menu';
 })
 export class BasketPage {
  // languages = availableLanguages;
-
+  public promo: boolean;
   selectedLanguage = sysOptions.systemLanguage;
   orderData = {
     userInfo: {
@@ -54,7 +54,8 @@ export class BasketPage {
                public http:Http,
                private nativeStorage: NativeStorage) {
     this.translate = translate;
-     //this.translate.use('en');
+    this.promo=false;
+    //this.translate.use('ar');
     this.url = 'http://146.185.148.66:3009/';
     //this.updateTotalPrice();
     //this.saveOrder();
@@ -176,5 +177,11 @@ console.log(this.orderData);
   }
     goMenu(){
     this.navCtrl.push(MenuPage);
+  }
+  openPromo(){
+    this.promo=true;
+  }
+  openCart(){
+    this.promo=false;
   }
 }

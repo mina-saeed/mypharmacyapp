@@ -11,7 +11,8 @@ import { LanguagePage } from '../pages/language/language';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { TranslateService } from 'ng2-translate';
 import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
-
+import {SubCategoriesPage} from '../pages/sub-categories/sub-categories';
+import { ReceiptPage } from '../pages/receipt/receipt';
 
 
 @Component({

@@ -108,7 +108,8 @@ page-receipt {
         margin-top: 1%
     }
     .rate {
-        background-color: #0F6196
+        background-color: #0F6196;
+        margin-bottom: 35px;
     }
     .header .span {
         background: #0F6196;
@@ -129,5 +130,38 @@ page-receipt {
                 font-size: 30px
             }
         }
+    }
+        .pharmacy {
+     display: block;
+     margin-right: auto;
+     margin-top: auto;
+     margin-left: auto;
+     padding-left: 4%;
+     padding-right: 4%;
+     border-radius: 22px;
+     background-color: #cdebf9;
+     width: 50%;
+     height: 110px;
+    }
+    .imgP {
+        margin-top: 18%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+        @media (min-width: 760px){
+        .imgP {
+        margin-top: 0%;
+        }
+
+    }
+            @media (min-width: 760px){
+        .pharmacy{
+        height: 140px;
+        }
+        .imgP {
+        margin-top: 5%;
+        }
+
     }
 }

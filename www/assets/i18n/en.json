@@ -94,6 +94,10 @@
   "SENDLOGIN": "Send Login Link",
   "HELP": "Need more help ?",
   "POINTS": "Points",
-  "POINT": "pt"
+  "POINT": "pt",
+  "PROMO": "Add Promo/Gift Code",
+  "ENTERPROMO": "Enter your promo/gift code",
+  "CANCEL": "CANCEL",
+  "ADD": "ADD"
 
 }

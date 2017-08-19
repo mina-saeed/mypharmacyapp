@@ -100,4 +100,33 @@ page-register-email {
     .error-message {
         color: red
     }
+   .pharmacy {
+     margin-top: 30px;
+     display: block;
+     margin-right: auto;
+     //margin-top: auto;
+     margin-left: auto;
+     //padding-left: 0%;
+     //padding-right: 2%;
+     border-radius: 22px;
+     background-color: #cdebf9;
+     width: 35%;
+     height: 90px;
+    }
+    .imgP {
+        margin-top: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+        @media (min-width: 760px){
+        .pharmacy{
+        height: 120px;
+        }
+        .imgP {
+        margin-top: 5%;
+        }
+
+    }
 }

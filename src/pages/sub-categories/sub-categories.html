@@ -1,5 +1,5 @@
 <!--
-  Generated template for the SubCategoriesPage page.
+  Generated template for the CategoriesPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,12 +7,88 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>sub-categories</ion-title>
+<!--
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="back"></ion-icon>
+      </button>
+    </ion-buttons>
+-->
+    <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title"> {{"CATEGORIES" | translate }} </p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+<!-- <div class="calendar-comp">
+  <template #headerTemp>
+    <div class="cal-cell-row">
+      <div class="cal-cell cal-past columnHeader" *ngFor="let label of days_label">
+         {{label}}
+      </div>
+    </div>
+  </template>
+  <mwl-calendar-month-view [viewDate]="date" [headerTemplate]="headerTemp">
+  </mwl-calendar-month-view>
+</div> -->
+    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
+                 (keyup)="updateListByName($event)"
+                 (ionCancel)="onCancelByName($event)"
+                 show-cancel="true"
+                 showCancelButton="true"
+                 placeholder="Search By Name">
+   <img class="image" src="assets/icon/White Loop.png"/>
+    </ion-input>
+        <div >
+
+<ion-label class="round products paddingLeft">
+		<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+			<img class="img" src="assets/toBeRemoved/s1.png"/>
+			<p class="p">Garnier</p>
+			<p>30 LE</p>
+			    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+		</ion-label>
+		<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+			<img class="img" src="assets/toBeRemoved/s2.png"/>
+			<p class="p">Semme</p>
+			<p>30 LE</p>
+    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+		</ion-label>
+</ion-label>
+<ion-label class="round products paddingLeft">
+		<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+			<img class="img" src="assets/toBeRemoved/s3.png"/>
+			<p class="p">Johnson</p>
+			<p>30 LE</p>
+    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+		</ion-label>
+	<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+		<img class="img" src="assets/toBeRemoved/s4.png">
+		<p class="p">Dove</p>
+		<p>30 LE</p>
+    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+	</ion-label>
+</ion-label>
+</div>
 
 </ion-content>

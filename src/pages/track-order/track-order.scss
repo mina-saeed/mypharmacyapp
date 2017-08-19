@@ -111,4 +111,45 @@ page-track-order {
 .md .navTitle {
     margin-left: 0px !important
     }
+        .pharmacy {
+     display: block;
+     margin-right: auto;
+     margin-top: auto;
+     margin-left: auto;
+     padding-left: 2%;
+     padding-right: 2%;
+     border-radius: 22px;
+     background-color: #cdebf9;
+     width: 45%;
+     height: 95px;
+    }
+    .imgP {
+        margin-top: 15%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+        @media (min-width: 760px){
+        .pharmacy{
+        height: 140px;
+        }
+        .imgP {
+        margin-top: 5%;
+        }
+
+    }
+    @media (min-width: 375){
+    .toolbar-title-ios{
+        font-size: 2.1rem;
+    }
+    }
+        .toolbar-background{
+    height: 60%;
+    }
+
+        .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+    background: #fff;
+    }
 }
