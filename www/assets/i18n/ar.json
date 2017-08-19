@@ -48,6 +48,7 @@
   "Email" : "البريد الإلكتروني",
   "Name" : "الاسم",
   "Password" : "كلمه السر",
+  "CONFIRMPASS": "تأكيد كلمة السر",
   "EMPTY_FIELDS": "",
   "PASSWORDS_MATCH":"",
   "MEDICINE": "دواء", 
@@ -70,7 +71,7 @@
   "FLOORAR": "floorAr",   
   "APPAR": "appAr",   
   "MYACCOUNT" : "حسابى",    
-  "REDEEM": "اسنبدال النقاط",   
+  "REDEEM": "استبدال النقاط",   
   "OFFERS": "عروض",   
   "CONTACT": "اتصل بنا",    
   "TERMS1": "الشروط",   
@@ -94,6 +95,12 @@
   "CASHLANG": "cashAr",
   "AR": "ar",
   "AMOUNTAR": "amountAr",
-  "QUANTAR": "quantAr"
+  "QUANTAR": "quantAr",
+  "TROUBLE": "لديك مشكلة في تسجيل الدخول ؟",
+  "ENTEREMAIL": "أدخل بريدك الإلكتروني وسنرسل إليك رابطا للعودة إلى حسابك",
+  "SENDLOGIN": "إرسال رابط تسجيل الدخول",
+  "HELP": "تريد المزيد من المساعدة ؟",
+  "POINTS": "النقاط",
+  "POINT": "نقطة"
 
 }

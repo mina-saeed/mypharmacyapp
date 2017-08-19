@@ -1,5 +1,5 @@
 <!--
-  Generated template for the AccountPage page.
+  Generated template for the RedeemPointsPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,16 +7,8 @@
 <ion-header>
 
   <ion-navbar>
-
- <!--   <ion-buttons left>
-      <button ion-button icon-only (click)="openModal()">
-        <ion-icon name="back"></ion-icon>
-
-      </button>
-    </ion-buttons>
--->
     <ion-title class="navTitle">
-     <p class="{{'TITLELANG' | translate}} title"> {{"MYACCOUNT" | translate }}</p>
+     <p class="{{'TITLELANG' | translate}} title"> {{"POINTS" | translate }}</p>
     </ion-title>
 
     <ion-buttons right>
@@ -29,20 +21,18 @@
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
+
 
 <ion-content padding>
 <hr>
-<h2>Mina Ezzat</h2> <!-- static to be updated -->
+<h1>Mina Ezzat</h1> <!-- static to be updated -->
 <ion-label dir="{{ 'LANG_DIR' | translate }}" class = "dark-button">16 {{ 'POINT' | translate }}</ion-label> <!-- 16 static to be updated -->
-<hr>
-<div style="margin-top: 10%;">
+<p class="oval" style="display: block;">{{ "REDEEM" | translate}}</p>
 
-<p class="oval" style="display: block;">{{ "PHONE" | translate}}</p>
-<p class="oval" style="display: block;">{{ "ADDRESS" | translate}}</p>
-<p class="oval" style="display: block;">{{ "ORDERS" | translate}}</p>
-<p class="oval " style="display: block;">{{ "LOGOUT" | translate}}</p>
-</div>
+<hr style= "margin-top: 25px;margin-bottom: 25px;">
+	<ion-label align="middle" class="pharmacy">
+		<img class="imgP" src="assets/toBeRemoved/elezaby.png"/>
 
+	</ion-label>
 </ion-content>

@@ -1,4 +1,4 @@
-    page-account {
+page-redeem-points {
     .ion-ios-cartCustom-outline,
     .ion-ios-cartCustom,
     .ion-md-cartCustom,
@@ -28,26 +28,10 @@
     p {
         display: block
     }
-    .oval {
-        line-height: 2;
-        text-align: center;
-        color: #3CABE3;
-        max-width: 85%;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 0;
-        margin-top: 0;
-        margin-bottom: 4%;
-        background-color: #CFEAF8;
-        border-radius: 50px;
-        display: inline-block;
-        font-family: "Helvetica";
-        font-size: 20px;
-        height: 40px
-    }
     .title {
         font-size: 23px;
-        text-transform: uppercase
+        font-family: Highland;
+        font-weight: 500;
     }
     hr {
         display: block;
@@ -56,8 +40,8 @@
         margin-right: auto;
         border-width: 1.5px;
         border-top: 2px solid #3CABE3;
-        width: 80%;
-        margin-top: 1%
+        width: 92%;
+        margin-top: 10px;
     }
 
     .toolbar-background-md{
@@ -81,15 +65,62 @@
  	.content-ios hr{
  	margin-top: -5%;
  	}
-    h2{
-    text-align: center;
-    color: #0F6196;
-    font-weight: 700;
+ 	h1{
+ 	text-align: center;
+ 	color: #0F6196;
+ 	font-weight: 700;
+ 	}
+
+    .pharmacy {
+     display: block;
+     margin-right: auto;
+     margin-top: auto;
+     margin-left: auto;
+     padding-left: 10%;
+     padding-right: 10%;
+     border-radius: 22px;
+     background-color: #cdebf9;
+     width: 62%;
+     height: 150px;
     }
-        .dark-button {
-        width: 25%;
-        height: 30px;
+    .imgP {
+        margin-top: 15%;
         display: block;
+        margin-left: auto;
+        margin-right: auto;
+       // height: 40%;
+        transform: translateY(25px);
+    }
+        @media (min-width: 760px){
+        .imgP {
+        //height: 55%;
+        margin-top: 0%;
+        }
+
+    }
+        .oval {
+        line-height: 2;
+        text-align: center;
+        color: #3CABE3;
+        max-width: 94%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 4%;
+        background-color: #CFEAF8;
+        border-radius: 50px;
+        display: inline-block;
+        font-family: "Helvetica";
+        font-size: 20px;
+        height: 40px
+    }
+    .dark-button {
+        width: 32%;
+        height: 40px;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
         background-color: #0F6196;
         color: white;
         border-radius: 13px;
@@ -98,7 +129,8 @@
         letter-spacing: .5px;
         text-transform: lowercase;
         font-weight: 600;
-        line-height: 1.5;
+        margin-bottom: 45px;
+        line-height: 2;
         text-align: center;
     }
 }

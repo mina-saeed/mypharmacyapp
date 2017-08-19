@@ -12,9 +12,6 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { TranslateService } from 'ng2-translate';
 import { DetailedProductPage } from '../pages/detailed-product/detailed-product';
 
-import { TrackOrderPage } from '../pages/track-order/track-order';
-import { CategoriesPage } from '../pages/categories/categories';
-
 
 
 @Component({
@@ -33,11 +30,11 @@ export class MyApp {
           //this.language = data;
           this.translate = translate;
           translate.use(data);
-          this.rootPage=TestFeaturesPage;
+          this.rootPage=WelcomePage;
                   } ,
           error => {
 
-          this.rootPage=TestFeaturesPage;
+          this.rootPage=LanguagePage;
 
           }
         );

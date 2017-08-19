@@ -42,12 +42,12 @@
   "SETTINGS": "Settings",
   "UPDATE": "UPDATE YOUR LOCATION",
   "TRACKORDER": "TRACK ORDER",
-  "EMAIL" : "EMAIL",
   "LOGIN" : "LOGIN",
   "REGISTER" : "REGISTER",
   "Email" : "Email",
   "Name" : "Name",
   "Password" : "Password",
+  "CONFIRMPASS": "Confirm Password",
   "EMPTY_FIELDS": "Do not leave any field empty!",
   "PASSWORDS_MATCH": "Passwords must match!",
   "TITLELANG": "titleEn",
@@ -88,5 +88,12 @@
   "RECEIPT": "RECEIPT",
   "SPACELANG": "spaceRight",
   "TO" : "To",
-  "MARGINLANG":"toEn"
+  "MARGINLANG":"toEn",
+  "TROUBLE": "TROUBLE LOGGING IN ?",
+  "ENTEREMAIL": "Enter your email and we'll send you a link to get back into your account",
+  "SENDLOGIN": "Send Login Link",
+  "HELP": "Need more help ?",
+  "POINTS": "Points",
+  "POINT": "pt"
+
 }

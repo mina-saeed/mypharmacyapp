@@ -5,6 +5,7 @@ import { BasketPage } from '../basket/basket';
 import { ContactusPage } from '../contactus/contactus';
 import { TermsPage } from '../terms/terms';
 import { PrivacyPage } from '../privacy/privacy';
+import { RedeemPointsPage } from '../redeem-points/redeem-points';
 
 /**
  * Generated class for the MenuPage page.
@@ -28,6 +29,10 @@ export class MenuPage {
     goBasket(){
 
     this.navCtrl.push(BasketPage);
+  }
+  goRedeem(){
+
+    this.navCtrl.push(RedeemPointsPage);
   }
     goContact(){
 

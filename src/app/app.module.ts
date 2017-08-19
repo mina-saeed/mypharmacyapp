@@ -51,10 +51,8 @@ import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
 import { NgCalendarModule  } from 'ionic2-calendar';
-import { CalendarComponent } from 'ionic2-calendar/calendar';
-import { MonthViewComponent } from 'ionic2-calendar/monthview';
-import { WeekViewComponent } from 'ionic2-calendar/weekview';
-import { DayViewComponent } from 'ionic2-calendar/dayview';
+import { ForgetPasswordPage } from '../pages/forget-password/forget-password';
+import { RedeemPointsPage } from '../pages/redeem-points/redeem-points';
 
 import { CalendarModule } from 'angular-calendar';
 import { Calendar } from '@ionic-native/calendar';
@@ -89,7 +87,9 @@ export function createTranslateLoader(http: Http) {
     ContactusPage,
     TermsPage,
     PrivacyPage,
-    TrackOrderPage
+    TrackOrderPage,
+    ForgetPasswordPage,
+    RedeemPointsPage
   ],
   imports: [
     NgCalendarModule,
@@ -145,7 +145,9 @@ export function createTranslateLoader(http: Http) {
     ContactusPage,
     TermsPage,
     PrivacyPage,
-    TrackOrderPage
+    TrackOrderPage,
+    ForgetPasswordPage,
+    RedeemPointsPage
   ],
 
 

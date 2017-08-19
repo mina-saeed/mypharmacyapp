@@ -56,7 +56,7 @@ export class RegisterEmailPage {
   public http:Http,public formBuilder: FormBuilder) {
     this.url = 'http://146.185.148.66:3000/';
                     this.translate = translate;
-
+                    //this.translate.use('ar');
                this.translate.get('NAMEVAL').subscribe((result: string) => {
                 this.validation_messages.name[0].message = result;
           });
