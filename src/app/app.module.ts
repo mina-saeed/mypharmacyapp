@@ -41,6 +41,7 @@ import { AccountPage } from '../pages/account/account';
 import { SettingsPage } from '../pages/settings/settings';
 import { MenuPage } from '../pages/menu/menu'
 import { CategoriesPage } from '../pages/categories/categories';
+import { AddressesPage } from '../pages/addresses/addresses';
 import { SubCategoriesPage } from '../pages/sub-categories/sub-categories';
 
 import { ReceiptPage } from '../pages/receipt/receipt';
@@ -92,7 +93,8 @@ export function createTranslateLoader(http: Http) {
     PrivacyPage,
     TrackOrderPage,
     ForgetPasswordPage,
-    RedeemPointsPage
+    RedeemPointsPage,
+    AddressesPage
   ],
   imports: [
     NgCalendarModule,
@@ -151,7 +153,8 @@ export function createTranslateLoader(http: Http) {
     PrivacyPage,
     TrackOrderPage,
     ForgetPasswordPage,
-    RedeemPointsPage
+    RedeemPointsPage,
+    AddressesPage
   ],
 
 

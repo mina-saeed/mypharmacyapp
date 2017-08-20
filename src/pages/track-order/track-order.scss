@@ -152,4 +152,17 @@ page-track-order {
     border-style: none;
     background: #fff;
     }
+    .dark-button {
+        width: 90%;
+        height: 9%;
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        background-color: #0F6196;
+        color: white;
+        border-radius: 22px;
+        font-family: "Helvetica";
+        font-size: 20px;
+        letter-spacing: .5px
+    }
 }

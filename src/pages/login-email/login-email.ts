@@ -69,6 +69,7 @@ export class LoginEmailPage {
 
       }, err =>{
         console.log(err);
+        alert(err["_body"]);
       });
     }
 
