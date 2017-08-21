@@ -25,8 +25,8 @@ export class SettingsPage {
      this.translate = translate;
 
   }
-    goBasket(){
-    this.navCtrl.push(BasketPage);
+  goBasket(){
+    this.navCtrl.push(BasketPage, {defaultOrNot: 0}); //kda hatly el default!! hwa ma3mlsh select
   }
     goMenu(){
     this.navCtrl.push(MenuPage);

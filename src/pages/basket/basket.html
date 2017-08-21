@@ -7,6 +7,7 @@
 <ion-header>
 
   <ion-navbar>
+    
      <ion-title class="navTitle">
      <p class="{{'TITLELANG' | translate}} title"> {{"CART" | translate }} </p>
     </ion-title>
@@ -107,7 +108,7 @@
         <div class="{{'MARGINLANG' | translate}}" dir="{{'LANG_DIR' | translate}}">
         <ion-icon name="location"></ion-icon>
         <h4>{{ "TO" | translate }}</h4>
-        <ion-label class="oval3">3 ebn elkassir, Giza</ion-label>
+        <ion-label (click)="changeAddress()" class="oval3">{{ currentAddress }}</ion-label>
     </div>
   </ion-label>
   </div>

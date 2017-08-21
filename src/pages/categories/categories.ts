@@ -69,7 +69,7 @@ export class CategoriesPage implements OnInit{
 
   }
   goBasket(){
-    this.navCtrl.push(BasketPage);
+    this.navCtrl.push(BasketPage, {defaultOrNot: 0}); //kda hatly el default!! hwa ma3mlsh select
   }
   goMenu(){
     this.navCtrl.push(MenuPage);

@@ -36,7 +36,7 @@ export class MyApp {
                   } ,
           error => {
 
-          this.rootPage=AddressesPage;
+          this.rootPage=TabsPage;
 
           }
         );

@@ -29,6 +29,7 @@ import { ContactusPage } from '../pages/contactus/contactus';
 import { TermsPage } from '../pages/terms/terms';
 import { PrivacyPage } from '../pages/privacy/privacy';
 
+import { DetailedAddressPage } from '../pages/detailed-address/detailed-address';
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
 import { SearchTestPage } from '../pages/search-test/search-test';
@@ -94,7 +95,8 @@ export function createTranslateLoader(http: Http) {
     TrackOrderPage,
     ForgetPasswordPage,
     RedeemPointsPage,
-    AddressesPage
+    AddressesPage,
+    DetailedAddressPage
   ],
   imports: [
     NgCalendarModule,
@@ -154,7 +156,8 @@ export function createTranslateLoader(http: Http) {
     TrackOrderPage,
     ForgetPasswordPage,
     RedeemPointsPage,
-    AddressesPage
+    AddressesPage,
+    DetailedAddressPage
   ],
 
 

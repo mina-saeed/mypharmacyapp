@@ -8,7 +8,7 @@ import { sysOptions } from '../welcome/welcome.constants';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { TrackOrderPage } from '../track-order/track-order';
 import { MenuPage } from '../menu/menu';
-
+import { AddressesPage } from '../addresses/addresses';
 
 /**
  * Generated class for the BasketPage page.
@@ -32,6 +32,7 @@ export class BasketPage {
         city : "",
         street : "",
         location: "" ,
+        writtenAddress: ""
 
     },
     order:[
@@ -46,6 +47,7 @@ export class BasketPage {
 
   url:string;
   totalPrice = 0;
+  currentAddress:string;
   private translate: TranslateService;
 
   constructor(translate: TranslateService,
@@ -57,6 +59,13 @@ export class BasketPage {
     this.promo=false;
     //this.translate.use('ar');
     this.url = 'http://146.185.148.66:3009/';
+    if(this.navParams.get('defaultOrNot') == 1){ //kda hwa selected an addres
+      this.currentAddress = this.navParams.get('currentAddress');
+    }else{ //hatly el default
+      this.currentAddress = "Default Address";
+    }
+
+    console.log(this.currentAddress);
     //this.updateTotalPrice();
     //this.saveOrder();
 
@@ -132,6 +141,7 @@ export class BasketPage {
   }
   //everything is done! now confirm order
   confirm(){
+    this.orderData.userInfo.writtenAddress = this.currentAddress;
 
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
@@ -183,5 +193,8 @@ console.log(this.orderData);
   }
   openCart(){
     this.promo=false;
+  }
+  changeAddress(){
+    this.navCtrl.push(AddressesPage); //kda hatly el default!! hwa ma3mlsh select
   }
 }

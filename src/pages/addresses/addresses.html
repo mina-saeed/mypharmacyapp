@@ -14,8 +14,16 @@
 
 
 <ion-content padding>
+
+
   <div *ngFor = "let res of addresses">
-    <p>{{res.address}}</p>
+    <p>{{res}}</p>
+
+      <button ion-button (click)="selectAddress(res)">Select</button>
+      <button ion-button (click)="editAddresses(res)">Edit</button>
+
+
+
   </div>
 
   <form (ngSubmit)="addAddress()">
@@ -24,6 +32,7 @@
         <ion-label class = "text">{{ "Address" | translate}}:</ion-label>
         <ion-input class="oval" type="text"  [(ngModel)]="userData.address" name="street"></ion-input>
         </ion-item>
+
       <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
       <br>
       </form>
