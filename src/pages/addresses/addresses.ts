@@ -119,7 +119,7 @@ export class AddressesPage {
       //this.navCtrl.pop();
       //this.navCtrl.popToRoot();
       //his.navCtrl.setRoot(TabsPage);
-      this.navCtrl.setRoot(BasketPage, {currentAddress: this.selectedAddress, defaultOrNot: 1});
+      this.navCtrl.push(BasketPage, {currentAddress: this.selectedAddress, defaultOrNot: 1});
 
       //set da lel default?
     }
