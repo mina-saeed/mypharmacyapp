@@ -59,6 +59,9 @@ import { Ionic2RatingModule } from 'ionic2-rating';
 import { NgCalendarModule  } from 'ionic2-calendar';
 import { ForgetPasswordPage } from '../pages/forget-password/forget-password';
 import { RedeemPointsPage } from '../pages/redeem-points/redeem-points';
+import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/reminders-medicines-list';
+import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-medicines-list/detailed-reminders-medicines-list';
+
 
 import { CalendarModule } from 'angular-calendar';
 import { Calendar } from '@ionic-native/calendar';
@@ -99,7 +102,9 @@ export function createTranslateLoader(http: Http) {
     RedeemPointsPage,
     AddressesPage,
     DetailedAddressPage,
-    ReminderPage
+    ReminderPage,
+    RemindersMedicinesListPage,
+    DetailedRemindersMedicinesListPage
   ],
   imports: [
     NgCalendarModule,
@@ -161,7 +166,9 @@ export function createTranslateLoader(http: Http) {
     RedeemPointsPage,
     AddressesPage,
     DetailedAddressPage,
-    ReminderPage
+    ReminderPage,
+    RemindersMedicinesListPage,
+    DetailedRemindersMedicinesListPage
   ],
 
 

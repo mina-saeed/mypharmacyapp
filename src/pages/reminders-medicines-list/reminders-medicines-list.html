@@ -1,5 +1,5 @@
 <!--
-  Generated template for the ReminderPage page.
+  Generated template for the RemindersMedicinesListPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,23 +7,26 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>reminder</ion-title>
+    <ion-title>remindersMedicinesList</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <div *ngFor="let res of members">
-    <p (click)="goToMedicines(res)">{{res.name}}</p>
-    <button ion-button (click)="deleteReminder(res)">Delete</button>
+
+  <div *ngFor="let res of currentMember.medicinces">
+    <p (click)="goToMedicineReminder(res)">{{res.name}}</p>
+    <button ion-button (click)="deleteMedicine(res)">Delete</button>
   </div>
 
-  <form (ngSubmit)="addPatient()">
+
+
+  <form (ngSubmit)="addMedicine()">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class = "text">{{ "Name" | translate}}:</ion-label>
-        <ion-input class="oval" type="text"  [(ngModel)]="patient" name="patient"></ion-input>
+        <ion-input class="oval" type="text"  [(ngModel)]="medicine" name="patient"></ion-input>
         </ion-item>
 
       <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>

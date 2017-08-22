@@ -16,6 +16,9 @@ import { ReceiptPage } from '../pages/receipt/receipt';
 import { AddressesPage } from '../pages/addresses/addresses';
 import { ReminderPage } from '../pages/reminder/reminder';
 import { TrackOrderPage } from '../pages/track-order/track-order';
+import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/reminders-medicines-list';
+import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-medicines-list/detailed-reminders-medicines-list';
+
 
 @Component({
   templateUrl: 'app.html'
