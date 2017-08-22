@@ -14,5 +14,9 @@
 
 
 <ion-content padding>
-
+  <p>{{currentMedicine.name}}</p>
+  <p>Remind me every: {{currentMedicine.remindEvery}}</p>
+  <button ion-button (click)="addReminder('Daily')">Daily</button>
+  <button ion-button (click)="addReminder('Weekly')">Weekly</button>
+  <button ion-button (click)="addReminder('Monthly')">Monthly</button>
 </ion-content>

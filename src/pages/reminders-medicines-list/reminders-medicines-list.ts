@@ -43,7 +43,7 @@ export class RemindersMedicinesListPage {
 
 
   addMedicine(){
-    if(this.medicine != "")
+    if(this.medicine != null)
     {
       if (this.checkDuplicates(this.currentMember["medicinces"], this.medicine.toString())){
         alert("Name already in the list");
@@ -51,7 +51,8 @@ export class RemindersMedicinesListPage {
         let body = {
           name: this.medicine,  //should check to be unique
           remindEvery: "no reminder yet",
-          remindID: -1
+          remindID: -1,
+          remindObject: null
         }
         this.medicine = "";
         this.currentMember["medicinces"].push(body);
@@ -87,8 +88,8 @@ export class RemindersMedicinesListPage {
   }
   goToMedicineReminder(res){
   //  console.log(this.currentMember["medicinces"].indexOf(res));
-    //console.log(res);
-    this.navCtrl.push(DetailedRemindersMedicinesListPage, {current: res, index: this.currentMember["medicinces"].indexOf(res)});
+    console.log(res);
+    this.navCtrl.push(DetailedRemindersMedicinesListPage, {indexOfMember:this.index, all:this.members, current: res, indexOfMedicine: this.currentMember["medicinces"].indexOf(res)});
   }
 
 }

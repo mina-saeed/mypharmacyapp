@@ -17,6 +17,7 @@ import { RemindersMedicinesListPage } from '../reminders-medicines-list/reminder
 })
 export class ReminderPage {
 
+  maxReminderID = 0;
   patient: string;
 
   members= [{
@@ -29,14 +30,12 @@ export class ReminderPage {
   }]
 
   constructor(private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams, private localNotifications: LocalNotifications) {
-    this.nativeStorage.getItem('reminders')
-    .then(
-      data => {this.members = data
-      console.log("got items", data)},   //if yes there's data, set members = el data di el object eli foo2
 
-      error => {console.error("setting item", error)
-      this.nativeStorage.setItem('reminders', this.members)} //if no lssa mafeesh, e3ml new one! tkoon members fadya 5ales
-  );
+
+    this.getOrSetReminders();
+    this.getOrSetMaxReminderID();
+
+
   }
 
   ionViewDidLoad() {
@@ -53,7 +52,7 @@ export class ReminderPage {
   }
 
   addPatient(){
-    if(this.patient != "")
+    if(this.patient != null)
     {
       if (this.checkDuplicates(this.members, this.patient.toString())){
         alert("Name already in the list");
@@ -94,6 +93,29 @@ export class ReminderPage {
   deleteReminder(res){
     this.members.splice(this.members.indexOf(res), 1);
     this.nativeStorage.setItem('reminders', this.members);
+  }
+
+  getOrSetMaxReminderID(){
+    //max reminder id to keep track of every id of every notification, to be able to modify or delete
+    this.nativeStorage.getItem('maxReminderID')
+    .then(
+      data => {this.maxReminderID = data
+      console.log("got items", data)},   //if yes there's data, set members = el data di el object eli foo2
+
+      error => {console.error("setting item", error)
+      this.nativeStorage.setItem('maxReminderID', this.maxReminderID)} //if no lssa mafeesh, e3ml new one! tkoon members fadya 5ales
+    );
+
+  }
+  getOrSetReminders(){
+    this.nativeStorage.getItem('reminders')
+    .then(
+      data => {this.members = data
+      console.log("got items", data)},   //if yes there's data, set members = el data di el object eli foo2
+
+      error => {console.error("setting item", error)
+      this.nativeStorage.setItem('reminders', this.members)} //if no lssa mafeesh, e3ml new one! tkoon members fadya 5ales
+  );
   }
 
 }
