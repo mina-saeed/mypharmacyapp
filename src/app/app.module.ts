@@ -10,6 +10,7 @@ import {TranslateModule} from 'ng2-translate/ng2-translate';
 import { TranslateLoader, TranslateStaticLoader } from 'ng2-translate/src/translate.service';
 //import { NavController } from 'ionic-angular';
 
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { Camera } from '@ionic-native/camera';;
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { ImagePicker } from '@ionic-native/image-picker';
@@ -44,6 +45,7 @@ import { MenuPage } from '../pages/menu/menu'
 import { CategoriesPage } from '../pages/categories/categories';
 import { AddressesPage } from '../pages/addresses/addresses';
 import { SubCategoriesPage } from '../pages/sub-categories/sub-categories';
+import { ReminderPage } from '../pages/reminder/reminder';
 
 import { ReceiptPage } from '../pages/receipt/receipt';
 import { TestFeaturesPage } from '../pages/test-features/test-features';
@@ -96,7 +98,8 @@ export function createTranslateLoader(http: Http) {
     ForgetPasswordPage,
     RedeemPointsPage,
     AddressesPage,
-    DetailedAddressPage
+    DetailedAddressPage,
+    ReminderPage
   ],
   imports: [
     NgCalendarModule,
@@ -157,13 +160,14 @@ export function createTranslateLoader(http: Http) {
     ForgetPasswordPage,
     RedeemPointsPage,
     AddressesPage,
-    DetailedAddressPage
+    DetailedAddressPage,
+    ReminderPage
   ],
 
 
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
-    SplashScreen, Camera, BarcodeScanner, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera, BarcodeScanner, LocalNotifications, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider,
     SettingsPage,
     MenuPage,

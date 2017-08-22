@@ -14,6 +14,7 @@ import { DetailedProductPage } from '../pages/detailed-product/detailed-product'
 import {SubCategoriesPage} from '../pages/sub-categories/sub-categories';
 import { ReceiptPage } from '../pages/receipt/receipt';
 import { AddressesPage } from '../pages/addresses/addresses';
+import { ReminderPage } from '../pages/reminder/reminder';
 import { TrackOrderPage } from '../pages/track-order/track-order';
 
 @Component({
@@ -32,11 +33,11 @@ export class MyApp {
           //this.language = data;
           this.translate = translate;
           translate.use(data);
-          this.rootPage=WelcomePage;
+          this.rootPage=ReminderPage;
                   } ,
           error => {
 
-          this.rootPage=TabsPage;
+          this.rootPage=ReminderPage;
 
           }
         );
