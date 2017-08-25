@@ -7,7 +7,7 @@ import { MenuPage } from '../menu/menu';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
-//import * as io from 'socket.io-client';
+import * as io from 'socket.io-client';
 
 /**
  * Generated class for the TrackOrderPage page.
@@ -41,25 +41,24 @@ export class TrackOrderPage {
       this.currentOrderID="598694efbb7e505fed75be5";
       console.log(this.orderData);
 
-/*
+
 
       this.socket = io.connect(this.socketHost, {'force new connection': true});
       this.zone = new NgZone({enableLongStackTrace: false});
       console.log("Before listening to event");
 
-      console.log("socket1: ", this.socket);
+    //  console.log("socket1: ", this.socket);
 
       this.socket.on("pharmacyConfirmed", (data) =>{
-        console.log("data response outside zone: ", data);
-        console.log("ahlaaan");
+        console.log("recieved data ", data);
         alert(data);
 
         this.zone.run(() =>{
-         console.log("data response inside zone", data);
+         console.log("recieved data", data);
         //do something
         })
       });
-*/
+
   }
 
   ionViewDidLoad() {

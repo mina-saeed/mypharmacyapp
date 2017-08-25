@@ -9,6 +9,7 @@ import { TestStorageProvider } from '../../app/test-storage';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { RemoteServiceProvider } from '../../providers/remote-service/remote-service';
 import { WheelSelector } from '@ionic-native/wheel-selector';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 /**
  * Generated class for the LocationPage page.
@@ -84,7 +85,7 @@ export class LocationPage {
     ],
     };
 
-  constructor( private selector: WheelSelector,private remoteService : RemoteServiceProvider, translate: TranslateService, public lang: TestStorageProvider,public navCtrl: NavController, public navParams: NavParams, public http:Http,
+  constructor( private nativeStorage: NativeStorage, private selector: WheelSelector,private remoteService : RemoteServiceProvider, translate: TranslateService, public lang: TestStorageProvider,public navCtrl: NavController, public navParams: NavParams, public http:Http,
               private uniqueDeviceID: UniqueDeviceID,public formBuilder: FormBuilder) {
                 this.translate = translate;
 
@@ -130,7 +131,7 @@ export class LocationPage {
       mobile: new FormControl('', Validators.compose([
         Validators.required,Validators.minLength(11),Validators.maxLength(11),Validators.pattern('[0]{1}[1]{1}[0-2]{1}[0-9]{8}')]))
 });
-               
+
 
 //alert(Object.keys(this.x));
 /* this.translate.get("MEDICINE").subscribe({
@@ -151,7 +152,7 @@ export class LocationPage {
      result => {
        console.log(result[0].name);
        this.selectedCity = result[0].name;
-     },  
+     },
      err => console.log('Error: ', err)
      );
 
@@ -176,7 +177,7 @@ export class LocationPage {
      result => {
        console.log(result[0].name);
        this.selectedLocation = result[0].name;
-     },  
+     },
      err => console.log('Error: ', err)
      );
 }
@@ -206,7 +207,7 @@ export class LocationPage {
     //add more, eli homa device id w kol 7aga
     let body = {
       //deviceID: this.deviceID,   //if device!
-      deviceID: 50,
+      deviceID: this.deviceID,
       location: {
         city: this.loc.location.city,
         location: this.loc.location.location,
@@ -241,6 +242,13 @@ export class LocationPage {
             if(this.lang.load() !== undefined){
         this.translate.use(this.lang.load());
         }
+
+
+        this.nativeStorage.setItem('rememberUser', body)
+      .then(
+        () => console.log('Stored item!'),
+        error => console.error('Error storing item', error)
+      );
     this.navCtrl.push(TabsPage); //to test, change it accordingly
     //just to test
   //  alert(this.deviceID);
@@ -251,8 +259,3 @@ export class LocationPage {
 
   }
 }
-
-
-
-
- 

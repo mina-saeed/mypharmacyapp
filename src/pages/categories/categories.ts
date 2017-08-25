@@ -6,6 +6,7 @@ import { MenuPage } from '../menu/menu';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { DetailedProductPage } from '../detailed-product/detailed-product';
+import { SubCategoriesPage } from '../sub-categories/sub-categories';
 
 /* import { NgCalendarModule  } from 'ionic2-calendar';
 import { CalendarComponent } from 'ionic2-calendar/calendar';
@@ -30,6 +31,8 @@ import { CalendarEvent } from 'angular-calendar';
 export class CategoriesPage implements OnInit{
 //
 
+  categories:any;
+  subCategories:any;
   searchResults= {  //change default data according to mahmoud, or figure out a better way of doing deault ad empty values
 
     data: [
@@ -66,6 +69,7 @@ export class CategoriesPage implements OnInit{
   this.showSearchResult = false;  //initialise things to be visible
     this.showPage = true;
     this.url = 'http://146.185.148.66:3003/';
+    this.getCategories();
 
   }
   goBasket(){
@@ -227,4 +231,49 @@ export class CategoriesPage implements OnInit{
       alert("Invalid barcode!");
     });
   }
+
+  getCategories(){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
+    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
+
+    this.url = 'http://146.185.148.66:3007/';
+    this.http.get(this.url + 'all', new RequestOptions({headers:headers}))
+    .map(res => res).subscribe(data => {
+      console.log(data);
+      this.categories = JSON.parse(data["_body"]);
+    //  console.log(this.categories);
+    }, err => {
+      console.log(err);
+    });
+
+  }
+  getSubCategories(id){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
+    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
+
+    this.url = 'http://146.185.148.66:3007/';
+
+    this.http.get(this.url + 'allSubCategories/' + id, new RequestOptions({headers:headers}))
+    .map(res => res).subscribe(data => {
+      console.log(data);
+      this.subCategories = JSON.parse(data["_body"]);
+      console.log(this.subCategories);
+
+    }, err => {
+      console.log(err);
+    });
+
+  }
+
+  goToSubCategories(id){
+    this.getSubCategories(id);
+    this.navCtrl.push(SubCategoriesPage, this.subCategories);
+  }
+
 }

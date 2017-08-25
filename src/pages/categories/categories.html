@@ -80,6 +80,19 @@
 
 	</ion-label>
 </ion-label>
+
+
+<ion-label  class="round products paddingLeft">
+    <ng-container  *ngFor="let cat of categories; let i = index">
+    <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+			<img (click)="goToSubCategories(cat._id)" class="img" [attr.src]="cat.CategoryImage"/>
+			<p (click)="goToSubCategories(cat._id)" class="p">{{cat.name_en}}</p>
+		</ion-label>
+    <br *ngIf="i%2 != 0">
+  </ng-container>
+
+</ion-label>
+<!--
 <ion-label class="round products paddingLeft">
 		<ion-label align="middle" class="roundProd products height" style="display: inline-block;">
 			<img class="img" src="assets/toBeRemoved/shampoo.png"/>
@@ -99,7 +112,7 @@
 		<img class="img" src="assets/toBeRemoved/cream.png">
 		<p class="p">Creams</p>
 	</ion-label>
-</ion-label>
+</ion-label> !-->
 </div>
 
 </ion-content>

@@ -45,7 +45,7 @@ export class TestFeaturesPage {
 
     this.http.get(this.url + 'all', new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
-      console.log(data);
+  //    console.log(data);
       this.categories = JSON.parse(data["_body"]);
       console.log(this.categories);
     }, err => {
@@ -53,7 +53,7 @@ export class TestFeaturesPage {
     });
 
 
-    this.http.get(this.url + 'search/category/category1', new RequestOptions({headers:headers}))
+    this.http.get(this.url + 'allSubCategories/5989bb5d4aae0a6bd1c3792a', new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
 

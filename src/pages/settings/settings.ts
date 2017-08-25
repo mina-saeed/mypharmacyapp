@@ -4,6 +4,7 @@ import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
 import {OnInit, ViewChild} from '@angular/core';
+import { ReminderPage } from '../reminder/reminder';
 
 
 /**
@@ -30,6 +31,9 @@ export class SettingsPage {
   }
     goMenu(){
     this.navCtrl.push(MenuPage);
+  }
+  goToReminderPage(){
+    this.navCtrl.push(ReminderPage);
   }
 
       ionViewDidLoad() {

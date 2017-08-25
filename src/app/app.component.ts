@@ -33,14 +33,23 @@ export class MyApp {
     this.nativeStorage.getItem('language')
         .then(data =>{
 
+            this.translate = translate;
+              translate.use(data);
+
+          this.nativeStorage.getItem('rememberUser')
+          .then(
+          data => this.rootPage=TabsPage,
+          error => this.rootPage=WelcomePage
+        );
+
           //this.language = data;
-          this.translate = translate;
-          translate.use(data);
-          this.rootPage=ReminderPage;
+
+
+
                   } ,
           error => {
 
-          this.rootPage=ReminderPage;
+          this.rootPage=LanguagePage;
 
           }
         );
@@ -48,5 +57,8 @@ export class MyApp {
     });
   }
 
+  rememberMe(){
+
+  }
 
 }
