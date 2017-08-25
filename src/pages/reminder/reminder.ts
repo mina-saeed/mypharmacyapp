@@ -20,14 +20,15 @@ export class ReminderPage {
   maxReminderID = 0;
   patient: string;
 
-  members= [{
-    name: '',
-    medicinces: [
+  members= [//{
+  //  name: '',
+  //  medicinces: [
     //  {name:'', time: '', repeat:'daily', notificatioObject: '' },
       //{},
     //  {}
-    ]
-  }]
+    //]
+//  }
+]
 
   constructor(private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams, private localNotifications: LocalNotifications) {
 
