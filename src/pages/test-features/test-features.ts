@@ -53,7 +53,7 @@ export class TestFeaturesPage {
     });
 
 
-    this.http.get(this.url + 'allSubCategories/5989bb5d4aae0a6bd1c3792a', new RequestOptions({headers:headers}))
+    this.http.get(this.url + 'search/category/h', new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
 

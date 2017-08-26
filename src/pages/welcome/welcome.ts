@@ -4,6 +4,7 @@ import { LocationPage } from '../location/location';
 import { TabsPage } from '../tabs/tabs';
 import { LoginEmailPage } from '../login-email/login-email';
 
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { Storage } from '@ionic/storage';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
@@ -13,6 +14,7 @@ import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { TranslateService } from 'ng2-translate';
 import {  availableLanguages, sysOptions } from './welcome.constants';
+import { NativeStorage } from '@ionic-native/native-storage';
 /**
  * Generated class for the WelcomePage page.
  *
@@ -36,7 +38,7 @@ export class WelcomePage {
 
     disableButton:boolean = false;
 
-    constructor(platform: Platform, translate: TranslateService,  public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, public http:Http, private uniqueDeviceID: UniqueDeviceID,private iab: InAppBrowser) {
+    constructor(private nativeStorage: NativeStorage,private fb: Facebook, platform: Platform, translate: TranslateService,  public lang: TestStorageProvider,  public navCtrl: NavController, public navParams: NavParams, public http:Http, private uniqueDeviceID: UniqueDeviceID,private iab: InAppBrowser) {
     //alert(translate);
     this.translate= translate;
     //this.translate.use('en');
@@ -147,48 +149,27 @@ export class WelcomePage {
 
   //  this.navCtrl.push(LocationPage);
   }
-  async signInFB(){
+   signInFB(){
+    this.disableButton = true;
+    this.fb.login(['public_profile', 'user_friends', 'email'])
+  .then((res: FacebookLoginResponse) => {
 
-    let headers = new Headers();
-
-    this.http.get(this.url + 'login/facebook', new RequestOptions({headers:headers}))
-    .map(res => res).subscribe(data => {
-
-      //this is using in app browser tab, we can use push instead
-      const browser = this.iab.create(data["url"]);
-
-
-      browser.show(); //page show kda f sanya w troo7 a7sn mn el flicker
-      console.log(data["url"]); //54
-
-      if(data["_body"] == "success")
-      {
-       browser.close();
-       console.log("closed");
-       this.navCtrl.push(TabsPage); //parameters should be passed, device id
-     }
-
-     console.log(data); //55
-
-     //bugs
-    //when first logging in, after succes it requires to manually close the window and press again facebook button!!
-     //window open then sigin in normally, could be improved by a timer but NOT ANY IONIC FUNCTION
+    console.log('Logged into Facebook!', res);
+    this.navCtrl.push(LocationPage);
+    this.disableButton = false;
+    })
+  .catch(e => {console.log('Error logging into Facebook', e);
+this.disableButton = false;});
+  this.disableButton = false;
 
 
 
-    }, err => {
-      //no data, go to registeration form!!
-      console.log(err);
-      console.log("ERRROOOOR");
-    });
-
-  //  this.navCtrl.push(LocationPage);
-
-     console.log("all login done");
   }
 
   signInEmail(){
+    this.disableButton = true;
     this.navCtrl.push(LoginEmailPage);
+    this.disableButton = false;
   }
 
 }

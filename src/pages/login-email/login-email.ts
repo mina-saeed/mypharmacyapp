@@ -6,6 +6,7 @@ import { RegisterEmailPage } from '../register-email/register-email';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 /**
  * Generated class for the LoginEmailPage page.
@@ -28,7 +29,7 @@ export class LoginEmailPage {
   //    token: "",
     }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,
+  constructor(private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams,
   public http:Http) {
     this.url = 'http://146.185.148.66:3000/';
   }
@@ -65,6 +66,11 @@ export class LoginEmailPage {
       .map(res => res).subscribe(data => {
 
         console.log(data);
+        this.nativeStorage.setItem('rememberUser', body)
+      .then(
+        () => console.log('Stored item!'),
+        error => console.error('Error storing item', error)
+      );
         this.navCtrl.push(TabsPage);
 
       }, err =>{

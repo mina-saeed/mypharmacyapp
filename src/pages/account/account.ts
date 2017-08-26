@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,App} from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
-
+import { WelcomePage } from '../welcome/welcome';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 /**
  * Generated class for the AccountPage page.
@@ -19,7 +20,7 @@ import { MenuPage } from '../menu/menu';
 export class AccountPage {
   private translate: TranslateService;
 
-  constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private app: App,private nativeStorage: NativeStorage, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
    this.translate = translate;
     //this.translate.use('en');
   }
@@ -30,6 +31,13 @@ export class AccountPage {
     this.navCtrl.push(MenuPage);
   }
 
+  logout(){
+
+    this.nativeStorage.remove('rememberUser');
+  //  this.navCtrl.push(WelcomePage);
+    this.app.getRootNav().setRoot(WelcomePage);
+  //  this.ionicBootstrap(MyApp,null, {tabsHideOnSubPages:"true"});
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
   }
