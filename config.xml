@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.ionic.starter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.mypharmacy.test" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>My Pharmacy</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
@@ -102,8 +102,8 @@
     </plugin>
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
     <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
-        <variable name="APP_ID" value="2056604994568247" />
-        <variable name="APP_NAME" value="My Pharmacy" />
+        <variable name="APP_ID" value="1568720839858802" />
+        <variable name="APP_NAME" value="Mypharmacy" />
     </plugin>
     <plugin name="cordova-plugin-file-transfer" spec="^1.6.3" />
     <plugin name="cordova-plugin-geolocation" spec="^2.4.3">
@@ -111,7 +111,7 @@
     </plugin>
     <plugin name="cordova-plugin-globalization" spec="^1.0.7" />
     <plugin name="cordova-plugin-image-picker" spec="^1.1.3">
-        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value="Please pick an image" />
+        <variable name="PHOTO_LIBRARY_USAGE_DESCRIPTION" value=" " />
     </plugin>
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.1" />
     <plugin name="cordova-plugin-nativestorage" spec="^2.2.2" />
