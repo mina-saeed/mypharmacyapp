@@ -39,26 +39,9 @@
 <button ion-button class = "dark-button dark-button-smaller" full (click)="pickPhoto()" dir="{{'LANG_DIR' | translate}}">
   <ion-icon name="image">  {{ "GALLERY" | translate }}</ion-icon>
 </button>
-<button ion-button (click)="upload()">upload</button>
 
 
-
-<!-- camera tested on Android, iOS needs just an additional parameter when installing the plugin-->
-<!-- now I have an array of photos captured by the camera! use it anywhere-->
-<!-- will add functionality to add picture from gallery to this array! (many photos of 'rosheta')-->
-<ion-grid>
-  <ion-row>
-    <ion-col col-6 *ngFor="let photo of photos; let id=index">
-      <ion-card class="block">
-        <ion-icon name="trash" class="deleteIcon" (click)="deletePhoto()"></ion-icon>
-        <img [src]="photo" *ngIf="photo"/>
-
-      </ion-card>
-    </ion-col>
-  </ion-row>
-</ion-grid>
-
-
+<p>{{currentImageMessage}}</p>
 
 
 </ion-content>

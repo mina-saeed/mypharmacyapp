@@ -39,7 +39,7 @@ export class MyApp {
           this.nativeStorage.getItem('rememberUser')
           .then(
           data => this.rootPage=TabsPage,
-          error => this.rootPage=WelcomePage
+          error => this.rootPage=TabsPage
         );
 
           //this.language = data;
@@ -49,7 +49,7 @@ export class MyApp {
                   } ,
           error => {
 
-          this.rootPage=LanguagePage;
+          this.rootPage=TabsPage;
 
           }
         );

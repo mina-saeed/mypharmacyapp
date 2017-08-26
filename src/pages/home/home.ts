@@ -39,7 +39,8 @@ export class HomePage {
         location: "zamalek" ,
       }
     },
-    order:[]};
+    order:[],
+    prescription: null};
 
   public showSearchResult: boolean;
   public showPage: boolean;

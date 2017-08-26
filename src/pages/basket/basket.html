@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    
+
      <ion-title class="navTitle">
      <p class="{{'TITLELANG' | translate}} title"> {{"CART" | translate }} </p>
     </ion-title>
@@ -94,6 +94,9 @@
 -->
 
 </div>
+<p class="p {{'SPACELANG' | translate}}" *ngIf="empty == true">Empty Order</p>
+  <button ion-button class = "dark-button" (click)="clearPrescription()" *ngIf="empty == false">Clear All Prescriptions</button>
+
 <div dir="{{'LANG_DIR' | translate}}">
   <ion-label >
 

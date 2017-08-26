@@ -9,6 +9,7 @@ import { TestStorageProvider } from '../../app/test-storage';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { TranslateService } from 'ng2-translate';
+import { NativeStorage } from '@ionic-native/native-storage';
 
 import { DetailedProductPage } from '../detailed-product/detailed-product';
 
@@ -43,6 +44,8 @@ export class CameraPage {
 
     ]};
 
+    currentImageMessage: string;
+
 
     public photos: any;
     public base64Image: string;
@@ -54,10 +57,13 @@ export class CameraPage {
         private barcodeScanner: BarcodeScanner,
         private imagePicker: ImagePicker,
         public http:Http,
-        private transfer: FileTransfer) {
+        private transfer: FileTransfer,
+      private nativeStorage: NativeStorage) {
           this.translate = translate;
           //this.url = 'http://207.154.240.16:3003/';
           this.url = 'http://146.185.148.66:3003/';
+          this.getOrder();
+          this.currentImageMessage = "No prescription uploaded!";
         }
 
 
@@ -80,8 +86,7 @@ export class CameraPage {
         this.camera.getPicture(options).then((imageData) => {
 
             this.base64Image = 'data:image/jpeg;base64,' + imageData;
-            this.photos.push(this.base64Image);
-            this.photos.reverse();
+            this.currentImageMessage = "A prescription inserted from camera!";
         }, (err) => {
             // Handle error
         });
@@ -90,7 +95,7 @@ export class CameraPage {
 
 
       let options = {
-        maximumImagesCount: 3, //how many pictures to pick??!
+        maximumImagesCount: 1, //how many pictures to pick??!
         width: 300,
         height: 300,
         quality : 75
@@ -99,8 +104,13 @@ export class CameraPage {
       this.imagePicker.getPictures(options).then((results) => {
         for (var i = 0; i < results.length; i++) {
           this.base64Image = results[i];
-          this.photos.push(this.base64Image);
-          this.photos.reverse();
+          console.log('Image URI: ' + results[i]);
+          this.orderTest["prescription"] = results[i];
+          console.log(this.base64Image);
+          this.currentImageMessage = "A prescription inserted from gallery!";
+          this.nativeStorage.setItem('order', this.orderTest);
+        //  this.photos.push(this.base64Image);
+        //  this.photos.reverse();
         }
       }, (err) => { });
 
@@ -147,30 +157,7 @@ export class CameraPage {
             }
         });
    }
-    deletePhoto(index) {
 
-        /*  let confirm = this.alertCtrl.create({
-           title: 'Delete Photo?',
-           message: 'Do you want to delete this picture? ',
-           buttons: [
-             {
-               text: 'No',
-               handler: () => {
-              //   console.log('No');
-               }
-             },
-             {
-               text: 'Yes',
-               handler: () => {
-                 this.photos.splice(index,1);
-               }
-             }
-           ]
-         });
-         confirm.present();
-         }*/
-        this.photos.splice(index, 1);
-    }
 
     setGetHeaders(){
       let headers = new Headers();
@@ -182,62 +169,24 @@ export class CameraPage {
       return headers;
     }
 
-
-    searchByCategory(ev) {
-
-      this.http.get(this.url + 'search/category/'+ ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
-      .map(res => res).subscribe(data => {
-      //  alert(ev.target.value.toString());  //just for testing
-        alert(data);  //just for testing
-        console.log(data);
-      });
-    }
-    searchByName(ev) {
-    /*  this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
-      .map(res => res).subscribe(data => {
-      //  alert(ev.target.value.toString());  //just for testing
-      console.log(this.url + 'search/' + ev.target.value.toString());
-        alert(data);  //just for testing
-        console.log(data);
-      });*/
-    }
     updateListByName(ev) {
       console.log(ev.target.value);
       console.log(this.orderTest["data"][0]["name"]);
     }
 
-    fileTransfer: FileTransferObject = this.transfer.create();
-         upload() {
 
-
-           let headers = new Headers();
-           //headers.append('Content-Type', 'multipart/form-data');
-           headers.append('Access-Control-Allow-Origin', '*');
-           headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
-           headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
-
-
-           let options: FileUploadOptions = {
-             fileKey: 'file',
-             fileName: 'name.jpg',
-             headers: headers
-
-           }
-
-           this.fileTransfer.upload(this.photos[0], this.url + 'uploadPrescription', options)
-            .then((data) => {
-              // success
-              alert(this.photos[0])
-              console.log(this.photos[0])
-              console.log(data);
-              alert(data);
-            }, (err) => {
-              // error
-              alert(this.photos[0])
-              console.log(this.photos[0])
-              console.log(err);
-              alert(err);
-            })
+     getOrder(){ //get from local sotrage
+            this.nativeStorage.getItem('order')
+           .then(data =>{
+                     console.log(data);
+                     this.orderTest = data;
+                     //console.log("got data 5alas: ",data);
+                     //alert(data);
+                     } ,
+             error => {
+               console.log("Error getting orders!");
+             }
+           );
      }
 
 }

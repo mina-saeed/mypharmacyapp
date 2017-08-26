@@ -37,14 +37,11 @@ export class BasketPage {
     },
     order:[
 
-      {id:1, name:"Medicine1", price:4, qty:3},
+    ],
+  prescription: null};
 
-      {id:2, name:"Medicine2", price:5, qty:5},
 
-      {id:3, name:"Medicine3", price:2, qty:1},
-
-    ]};
-
+  empty: boolean;
   url:string;
   totalPrice = 0;
   currentAddress:string;
@@ -72,6 +69,7 @@ export class BasketPage {
 
     this.getOrder();
     this.updateTotalPrice();
+  //  this.checkEmptyOrder();
   }
 
   ionViewDidLoad() {
@@ -141,25 +139,31 @@ export class BasketPage {
   }
   //everything is done! now confirm order
   confirm(){
-    this.orderData.userInfo.writtenAddress = this.currentAddress;
+    if(this.empty == true){
+      alert("No orders to confirm");
+    }else
+    {
+      this.orderData.userInfo.writtenAddress = this.currentAddress;
 
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
-    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
+      let headers = new Headers();
+      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Access-Control-Allow-Origin', '*');
+      headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
+      headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
-console.log(this.orderData);
+  console.log(this.orderData);
 
-    this.http.post(this.url + 'order/submit', JSON.stringify(this.orderData), new RequestOptions({headers:headers}))
-    .map(res => res).subscribe(data => {
-      console.log(data);
+      this.http.post(this.url + 'order/submit', JSON.stringify(this.orderData), new RequestOptions({headers:headers}))
+      .map(res => res).subscribe(data => {
+        console.log(data);
 
-      this.navCtrl.push(TrackOrderPage, this.orderData);
-    }, err => {
-      console.log(err);
-    });
-    console.log("done");
+        this.navCtrl.push(TrackOrderPage, this.orderData);
+      }, err => {
+        console.log(err);
+      });
+      console.log("done");
+    }
+
   }
 
 
@@ -174,11 +178,12 @@ console.log(this.orderData);
           error => console.error('Error storing item', error)
         );
   }
-  getOrder(){ //get from local sotrage
+   getOrder(){ //get from local sotrage
           this.nativeStorage.getItem('order')
         .then(data =>{
           this.orderData = data;
                   console.log(data);
+                  this.checkEmptyOrder();
                   //console.log("got data 5alas: ",data);
                   //alert(data);
                   } ,
@@ -196,5 +201,21 @@ console.log(this.orderData);
   }
   changeAddress(){
     this.navCtrl.push(AddressesPage); //kda hatly el default!! hwa ma3mlsh select
+  }
+  checkEmptyOrder(){
+    console.log( "before checkig",this.orderData["prescription"]);
+    if(this.orderData.order.length == 0 && this.orderData["prescription"] == null)
+    {
+      this.empty = true;
+    }else{
+      this.empty = false;
+    }
+    console.log(this.empty);
+    console.log( "after checkig",this.orderData["prescription"]);
+  }
+  clearPrescription(){
+    this.orderData["prescription"] = null;
+    this.checkEmptyOrder();
+    this.saveOrder();
   }
 }
