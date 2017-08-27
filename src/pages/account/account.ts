@@ -5,6 +5,7 @@ import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
 import { WelcomePage } from '../welcome/welcome';
 import { NativeStorage } from '@ionic-native/native-storage';
+import { OrderHistoryPage } from '../order-history/order-history';
 
 /**
  * Generated class for the AccountPage page.
@@ -37,6 +38,9 @@ export class AccountPage {
   //  this.navCtrl.push(WelcomePage);
     this.app.getRootNav().setRoot(WelcomePage);
   //  this.ionicBootstrap(MyApp,null, {tabsHideOnSubPages:"true"});
+  }
+  goToHistory(){
+    this.navCtrl.push(OrderHistoryPage);
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');

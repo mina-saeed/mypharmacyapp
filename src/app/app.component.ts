@@ -18,7 +18,8 @@ import { ReminderPage } from '../pages/reminder/reminder';
 import { TrackOrderPage } from '../pages/track-order/track-order';
 import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/reminders-medicines-list';
 import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-medicines-list/detailed-reminders-medicines-list';
-
+import { OrderHistoryPage } from '../pages/order-history/order-history';
+import { AccountPage } from '../pages/account/account';
 
 @Component({
   templateUrl: 'app.html'
@@ -49,7 +50,7 @@ export class MyApp {
                   } ,
           error => {
 
-          this.rootPage=LanguagePage;
+          this.rootPage=TabsPage;
 
           }
         );

@@ -31,6 +31,7 @@ import { ContactusPage } from '../pages/contactus/contactus';
 import { TermsPage } from '../pages/terms/terms';
 import { PrivacyPage } from '../pages/privacy/privacy';
 
+import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { DetailedAddressPage } from '../pages/detailed-address/detailed-address';
 import { RegisterEmailPage } from '../pages/register-email/register-email';
 import { LoginEmailPage } from '../pages/login-email/login-email';
@@ -105,7 +106,8 @@ export function createTranslateLoader(http: Http) {
     DetailedAddressPage,
     ReminderPage,
     RemindersMedicinesListPage,
-    DetailedRemindersMedicinesListPage
+    DetailedRemindersMedicinesListPage,
+    OrderHistoryPage
   ],
   imports: [
     NgCalendarModule,
@@ -169,7 +171,8 @@ export function createTranslateLoader(http: Http) {
     DetailedAddressPage,
     ReminderPage,
     RemindersMedicinesListPage,
-    DetailedRemindersMedicinesListPage
+    DetailedRemindersMedicinesListPage,
+    OrderHistoryPage
   ],
 
 
