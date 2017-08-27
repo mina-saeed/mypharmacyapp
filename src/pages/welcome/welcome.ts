@@ -151,7 +151,7 @@ export class WelcomePage {
   }
    signInFB(){
     this.disableButton = true;
-    this.fb.login(['email'])
+    this.fb.login(['public_profile', 'email'])
   .then((res: FacebookLoginResponse) => {
 
     console.log('Logged into Facebook!', res);
