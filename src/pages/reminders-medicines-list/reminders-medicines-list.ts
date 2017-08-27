@@ -43,8 +43,12 @@ export class RemindersMedicinesListPage {
 
 
   addMedicine(){
-    if(this.medicine != null)
+    if(this.medicine == null || this.medicine == "")
     {
+            alert("cannot be empty");
+
+    }else{
+
       if (this.checkDuplicates(this.currentMember["medicinces"], this.medicine.toString())){
         alert("Name already in the list");
       }else{
@@ -61,9 +65,6 @@ export class RemindersMedicinesListPage {
         this.nativeStorage.setItem('reminders', this.members);
         console.log(this.members);
       }
-
-    }else{
-      alert("cannot be empty");
     }
 
   }

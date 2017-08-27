@@ -7,17 +7,36 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>remindersMedicinesList</ion-title>
+<!--
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="back"></ion-icon>
+      </button>
+    </ion-buttons>
+-->
+    <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title"> {{ "MEDICINES" | translate}} </p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <hr>
 
   <div *ngFor="let res of currentMember.medicinces">
-    <p (click)="goToMedicineReminder(res)">{{res.name}}</p>
-    <button ion-button (click)="deleteMedicine(res)">Delete</button>
+    <p class="text" (click)="goToMedicineReminder(res)">{{res.name}}</p>
+    <br><button class = "dark-button" ion-button (click)="deleteMedicine(res)">{{ "DELETE" | translate}}</button>
   </div>
 
 
@@ -29,7 +48,7 @@
         <ion-input class="oval" type="text"  [(ngModel)]="medicine" name="medicine"></ion-input>
         </ion-item>
 
-      <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
+      <button ion-button type="submit" class = "dark-button">{{ "ADD" | translate}}</button>
       <br>
   </form>
 </ion-content>

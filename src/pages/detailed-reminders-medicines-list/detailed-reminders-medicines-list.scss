@@ -1,3 +1,165 @@
 page-detailed-reminders-medicines-list {
+  .body {
+      margin: 0;
+      padding: 0
+  }
+  hr {
+      display: block;
+      margin-bottom: .5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-width: 1.5px;
+      border-top: 2px solid #3CABE3;
+      width: 80%;
+      margin-top: 1%
+  }
+  @font-face {
+      font-family: Highland;
+      src: url(../assets/fonts/HighlandGothicLightFLF.ttf)
+  }
+  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+  background-image: none;
+  margin-bottom:0px;
+  }
+  .toolbar-background{
+  height: 60%;
+  }
+  .scroll-content  {
+  margin-top: 55px !important
+  }
+  .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+  border-style: none;
+  background: #fff;
+  }
+  .header2 {
+      text-align: center;
+      color: #3CABE3;
+      font-family: Highland;
+      border-bottom: 3px solid #3CABE3;
+      line-height: .1em;
+      margin-bottom: 44px;
+      margin-left: 5%;
+      margin-right: 5%
+  }
+  .text-input {
+      margin-top: 0;
+      margin-bottom: 0;
+      line-height: 2
+  }
+  .header2 span {
+      width: 90%;
+      background: #fff;
+      padding-top: 0;
+      padding-left: 15px;
+      padding-right: 15px
+  }
+  .validation-errors {
+      margin-left: 7%;
+      margin-right: 7%
+  }
+  .error-message {
+      color: red
+  }
 
+  .header span {
+      width: 90%;
+      background: #fff;
+      padding-top: 0;
+      padding-left: 15px;
+      padding-right: 15px
+  }
+  .dark-button {
+      padding: 25px;
+      width: 90px;
+      height: 10px;
+    //display: block;
+      margin-right: auto;
+      margin-left: auto;
+      background-color: #0F6196;
+      color: white;
+      border-radius: 22px;
+      font-family: "Helvetica";
+      font-size: 20px;
+      letter-spacing: .5px
+  }
+  .div {
+      display: inline-block;
+      margin-right: 0
+  }
+  .floor {
+      position: absolute;
+      margin: auto;
+      left: 55%
+  }
+  .floorAr {
+      left: 69%
+  }
+  .appAr {
+      margin-left: 25%
+  }
+  .apart {
+      margin: 0
+  }
+  .wid {
+      width: 53%;
+      margin-right: -2%
+  }
+  .small {
+      max-width: 50%
+  }
+  .text {
+    //  margin-left: 10px;
+      display: inline-block;
+      margin-right: 8px;
+      font-family: "Helvetica";
+      font-size: 20px;
+      margin-bottom: 14px;
+      margin-top:0;
+  }
+  .s {
+      max-width: 45%;
+      margin-left: 0
+  }
+  .AP {
+      max-width: 80%
+  }
+  .FL {
+      max-width: 120%;
+      margin-right: 2%
+  }
+  .second {
+      margin-left: -15px;
+      width: 50%
+  }
+  .oval {
+      margin-right: 10px;
+      padding: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      background-color: #cdebf9;
+      border-radius: 50px;
+      //display: inline-block;
+      font-family: "Helvetica";
+      font-size: 20px;
+      height: 40px
+  }
+  .image {
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: -10px;
+      margin-bottom: -10px
+  }
+  @media (max-width:413px) and (min-width:321px) {
+      h3 {
+          font-size: 1.9rem
+      }
+  }
+  @media (max-width:320px) {
+      h3 {
+          font-size: 1.7rem
+      }
+  }
 }

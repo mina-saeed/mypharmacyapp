@@ -94,8 +94,8 @@
 -->
 
 </div>
-<p class="p {{'SPACELANG' | translate}}" *ngIf="empty == true">Empty Order</p>
-  <button ion-button class = "dark-button" (click)="clearPrescription()" *ngIf="empty == false">Clear All Prescriptions</button>
+<p class="p {{'SPACELANG' | translate}}" *ngIf="empty == true">{{ "EMPTY_ORDER" | translate}}</p>
+  <button ion-button class = "dark-button" (click)="clearPrescription()" *ngIf="empty == false">{{ "CLEAR_PRESC" | translate}}</button>
 
 <div dir="{{'LANG_DIR' | translate}}">
   <ion-label >

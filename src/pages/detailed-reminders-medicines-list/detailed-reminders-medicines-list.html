@@ -7,16 +7,34 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detailedRemindersMedicinesList</ion-title>
+<!--
+    <ion-buttons left>
+      <button ion-button icon-only (click)="openModal()">
+        <ion-icon name="back"></ion-icon>
+      </button>
+    </ion-buttons>
+-->
+    <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title"> {{ "REMINDER" | translate}} </p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
-  <p>{{currentMedicine.name}}</p>
-  <p>Remind me every: {{currentMedicine.remindEvery}}</p>
-  <button ion-button (click)="addReminder('Daily')">Daily</button>
-  <button ion-button (click)="addReminder('Weekly')">Weekly</button>
-  <button ion-button (click)="addReminder('Monthly')">Monthly</button>
+  <hr>
+  <p class="text">{{currentMedicine.name}}</p> <br>
+  <p class="text">{{ "REMIND_ME" | translate}}: {{currentMedicine.remindEvery}}</p><br>
+  <button class = "dark-button" ion-button (click)="addReminder('Daily')">{{ "DAILY" | translate}}</button>
+  <button class = "dark-button" ion-button (click)="addReminder('Weekly')">{{ "WEEKLY" | translate}}</button>
+  <button class = "dark-button" ion-button (click)="addReminder('Monthly')">{{ "MONTHLY" | translate}}</button>
 </ion-content>

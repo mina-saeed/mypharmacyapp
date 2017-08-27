@@ -51,7 +51,7 @@
   "EMPTY_FIELDS": "Do not leave any field empty!",
   "PASSWORDS_MATCH": "Passwords must match!",
   "TITLELANG": "titleEn",
-  "MEDICINE": "MEDICINE",
+  "MEDICINES": "Medicines",
   "CITYVAL": "City is required",
  "LOCATIONVAL": "Location is required",
   "STREETVAL": "Street is required",
@@ -76,7 +76,7 @@
   "MENU": "MENU",
   "NOTI":"Notifications",
   "COUPONS":"Offers and coupons",
-  "REMINDER":"Medicine Reminder",
+  "REMINDER":"Reminder",
   "PRIVPOLICY":"Privacy policy",
   "TANDCOND":"Terms and conditions",
   "SHARE":"Share this app",
@@ -98,6 +98,13 @@
   "PROMO": "Add Promo/Gift Code",
   "ENTERPROMO": "Enter your promo/gift code",
   "CANCEL": "CANCEL",
-  "ADD": "ADD"
+  "ADD": "Add",
+  "DELETE": "Delete",
+  "REMIND_ME": "Remind me",
+  "DAILY": "Daily",
+  "WEEKLY": "Weekly",
+  "MONTHLY": "Monthly",
+  "EMPTY_ORDER": "Empty Order",
+  "CLEAR_PRESC": "Clear Prescription"
 
 }
