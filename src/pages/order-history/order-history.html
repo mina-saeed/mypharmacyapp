@@ -7,12 +7,15 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>orderHistory</ion-title>
+    <ion-title>History</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div *ngFor="let order of orderHistory" class="round">
+    <p>{{order.order}}</p>
+    <p>{{order.location}}</p>
+  </div>
 </ion-content>

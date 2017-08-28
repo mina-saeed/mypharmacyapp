@@ -7,12 +7,20 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>subCategories</ion-title>
+    <ion-title>Categories</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+  <div *ngIf="zeroArr == true"  class="round">
+      <p (click)="goToMedicines(cat._id)">No categories found!</p>
+  </div>
+  <div *ngIf="zeroArr == false">
+    <div  *ngFor="let cat of subCategories" class="round">
+      <p (click)="goToMedicines(cat._id)">{{cat.name_en}}</p>
+      <p (click)="goToMedicines(cat._id)">{{cat.description_en}}</p>
+    </div>
+  </div>
 </ion-content>

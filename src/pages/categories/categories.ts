@@ -272,8 +272,8 @@ export class CategoriesPage implements OnInit{
   }
 
   goToSubCategories(id){
-    this.getSubCategories(id);
-    this.navCtrl.push(SubCategoriesPage, this.subCategories);
+  //  this.getSubCategories(id);
+    this.navCtrl.push(SubCategoriesPage, id);
   }
 
 }
