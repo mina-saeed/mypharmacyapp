@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 //import { UniqueDeviceID } from '@ionic-native/unique-device-id';
-import { Platform} from 'ionic-angular';
+import { Platform, AlertController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Network } from '@ionic-native/network';
+
 //import {CategoriesPage} from '../pages/categories/categories';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TestFeaturesPage } from '../pages/test-features/test-features';
@@ -28,7 +30,12 @@ import { IllnessPage } from '../pages/illness/illness';
 export class MyApp {
     rootPage:any;
     language:any;
-  constructor(statusBar: StatusBar,private translate: TranslateService, splashScreen: SplashScreen,private nativeStorage: NativeStorage,platform: Platform){
+  constructor(private alertCtrl: AlertController, private network: Network, statusBar: StatusBar,private translate: TranslateService, splashScreen: SplashScreen,private nativeStorage: NativeStorage,platform: Platform){
+
+
+    this.subscribeNoConnection();
+    this.subcribeConnection();
+
       statusBar.styleDefault();
       splashScreen.hide();
     platform.ready().then(() => {
@@ -61,6 +68,40 @@ export class MyApp {
 
   rememberMe(){
 
+  }
+  subscribeNoConnection(){
+    let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+    // alert('Network was disconnected!');
+      let alert = this.alertCtrl.create({
+    title: 'Network',
+    message: 'Network Disconnected',
+    buttons: [
+      {
+        text: 'Ok',
+
+      }
+    ]
+  });
+  alert.present();
+//      this.subcribeConnection();
+    });
+  }
+  subcribeConnection(){
+    let connectSubscription = this.network.onConnect().subscribe(() => {
+      console.log('network connected!');
+      let alert = this.alertCtrl.create({
+    title: 'Network',
+    message: 'Network Connected',
+    buttons: [
+      {
+        text: 'Ok',
+
+      }
+    ]
+  });
+  alert.present();
+    //  this.subscribeNoConnection();
+    });
   }
 
 }

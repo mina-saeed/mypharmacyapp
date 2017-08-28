@@ -9,6 +9,7 @@ import { Http, HttpModule} from '@angular/http';
 import {TranslateModule} from 'ng2-translate/ng2-translate';
 import { TranslateLoader, TranslateStaticLoader } from 'ng2-translate/src/translate.service';
 //import { NavController } from 'ionic-angular';
+import { Network } from '@ionic-native/network';
 
 import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook';
 import { LocalNotifications } from '@ionic-native/local-notifications';
@@ -186,7 +187,7 @@ export function createTranslateLoader(http: Http) {
 
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
-    SplashScreen, Camera,Facebook, BarcodeScanner, LocalNotifications, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera,Facebook, BarcodeScanner,Network, LocalNotifications, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider,
     SettingsPage,
     MenuPage,
