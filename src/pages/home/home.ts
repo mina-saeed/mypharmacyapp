@@ -7,7 +7,7 @@ import { TestStorageProvider } from '../../app/test-storage';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { MenuPage } from '../menu/menu';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
-
+import { IllnessPage } from '../illness/illness';
 import { DetailedProductPage } from '../detailed-product/detailed-product';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
@@ -264,5 +264,7 @@ export class HomePage {
       alert("Invalid barcode!");
     });
   }
-
+  goToIllness(){
+    this.navCtrl.push(IllnessPage);
+  }
 }

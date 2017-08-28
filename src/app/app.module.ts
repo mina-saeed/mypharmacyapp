@@ -64,6 +64,8 @@ import { RedeemPointsPage } from '../pages/redeem-points/redeem-points';
 import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/reminders-medicines-list';
 import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-medicines-list/detailed-reminders-medicines-list';
 import { MedicinesListPage } from '../pages/medicines-list/medicines-list';
+import { IllnessPage } from '../pages/illness/illness';
+import { IlnessListPage } from '../pages/ilness-list/ilness-list';
 
 import { CalendarModule } from 'angular-calendar';
 import { Calendar } from '@ionic-native/calendar';
@@ -108,7 +110,9 @@ export function createTranslateLoader(http: Http) {
     RemindersMedicinesListPage,
     DetailedRemindersMedicinesListPage,
     OrderHistoryPage,
-    MedicinesListPage
+    MedicinesListPage,
+    IllnessPage,
+    IlnessListPage
   ],
   imports: [
     NgCalendarModule,
@@ -174,7 +178,9 @@ export function createTranslateLoader(http: Http) {
     RemindersMedicinesListPage,
     DetailedRemindersMedicinesListPage,
     OrderHistoryPage,
-    MedicinesListPage
+    MedicinesListPage,
+    IllnessPage,
+    IlnessListPage
   ],
 
 

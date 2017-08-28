@@ -5,6 +5,7 @@ import { Globalization } from '@ionic-native/globalization';
 import { defaultLanguage, availableLanguages, sysOptions } from '../welcome/welcome.constants';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { WelcomePage } from '../welcome/welcome';
+import { TabsPage } from '../tabs/tabs';
 import { TestStorageProvider } from '../../app/test-storage';
 import 'rxjs/add/operator/toPromise';
 import { NativeStorage } from '@ionic-native/native-storage';
@@ -78,7 +79,12 @@ export class LanguagePage {
           error => console.error('Error storing item', error)
         );
      this.translate.use(value);
- 	  this.navCtrl.push(WelcomePage);
+     if(this.navParams.data == 1){
+       this.navCtrl.push(TabsPage);
+     }else{
+       this.navCtrl.push(WelcomePage);
+     }
+
    }
 
   ionViewDidLoad() {

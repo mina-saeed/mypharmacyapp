@@ -23,7 +23,7 @@ export class TestFeaturesPage {
     private translate: TranslateService;
   constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams, public http:Http) {
 
-        this.url = 'http://146.185.148.66:3007/';
+        this.url = 'http://146.185.148.66:3003/';
         this.translate = translate;
         if (this.translate.currentLang =='ar') {
           this.currentLanguage = "ar";
@@ -43,17 +43,9 @@ export class TestFeaturesPage {
     headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
     headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
-    this.http.get(this.url + 'all', new RequestOptions({headers:headers}))
-    .map(res => res).subscribe(data => {
-  //    console.log(data);
-      this.categories = JSON.parse(data["_body"]);
-      console.log(this.categories);
-    }, err => {
-      console.log(err);
-    });
 
-
-    this.http.get(this.url + 'search/category/h', new RequestOptions({headers:headers}))
+    //port 3003
+    this.http.get(this.url + 'search/category/AsthmaR', new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
 

@@ -20,6 +20,7 @@ import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/re
 import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-medicines-list/detailed-reminders-medicines-list';
 import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { AccountPage } from '../pages/account/account';
+import { IllnessPage } from '../pages/illness/illness';
 
 @Component({
   templateUrl: 'app.html'

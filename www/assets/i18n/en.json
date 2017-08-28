@@ -105,6 +105,7 @@
   "WEEKLY": "Weekly",
   "MONTHLY": "Monthly",
   "EMPTY_ORDER": "Empty Order",
-  "CLEAR_PRESC": "Clear Prescription"
+  "CLEAR_PRESC": "Clear Prescription",
+  "CHANGE_LANGUAGE": "Change Language"
 
 }
