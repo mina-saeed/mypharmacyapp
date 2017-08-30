@@ -9,6 +9,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { TrackOrderPage } from '../track-order/track-order';
 import { MenuPage } from '../menu/menu';
 import { AddressesPage } from '../addresses/addresses';
+import { PromoCodePage } from '../promo-code/promo-code';
 
 /**
  * Generated class for the BasketPage page.
@@ -24,6 +25,8 @@ import { AddressesPage } from '../addresses/addresses';
 export class BasketPage {
  // languages = availableLanguages;
   public promo: boolean;
+  promoMessage:string;
+  promoInput = "";
   selectedLanguage = sysOptions.systemLanguage;
   orderData = {
     userInfo: {
@@ -52,6 +55,7 @@ export class BasketPage {
                public navParams: NavParams,
                public http:Http,
                private nativeStorage: NativeStorage) {
+                 this.promoMessage = "No promocode added!";
     this.translate = translate;
     this.promo=false;
     //this.translate.use('ar');
@@ -194,7 +198,11 @@ export class BasketPage {
     this.navCtrl.push(MenuPage);
   }
   openPromo(){
-    this.promo=true;
+    //this.promo=true;
+    this.navCtrl.push(PromoCodePage);
+  }
+  addPromo(){
+  
   }
   openCart(){
     this.promo=false;

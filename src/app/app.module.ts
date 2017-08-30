@@ -67,6 +67,7 @@ import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-
 import { MedicinesListPage } from '../pages/medicines-list/medicines-list';
 import { IllnessPage } from '../pages/illness/illness';
 import { IlnessListPage } from '../pages/ilness-list/ilness-list';
+import { PromoCodePage } from '../pages/promo-code/promo-code';
 
 import { CalendarModule } from 'angular-calendar';
 import { Calendar } from '@ionic-native/calendar';
@@ -113,7 +114,8 @@ export function createTranslateLoader(http: Http) {
     OrderHistoryPage,
     MedicinesListPage,
     IllnessPage,
-    IlnessListPage
+    IlnessListPage,
+    PromoCodePage
   ],
   imports: [
     NgCalendarModule,
@@ -181,7 +183,8 @@ export function createTranslateLoader(http: Http) {
     OrderHistoryPage,
     MedicinesListPage,
     IllnessPage,
-    IlnessListPage
+    IlnessListPage,
+    PromoCodePage
   ],
 
 

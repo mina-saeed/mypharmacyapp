@@ -26,17 +26,8 @@
 
 
 <ion-content padding dir=" {{'LANG_DIR' | translate}}">
-<div *ngIf = "promo">
-<div class="promocode">
-      <ion-input dir="{{'LANG_DIR' | translate}}" class="text" placeholder="{{ 'ENTERPROMO' | translate }}" side = "right"></ion-input>
-      <hr>
-      <div style="text-align: center;margin-left:30px;margin-top: 40px">
-      <button class="add-cancel" ion-button (click)=openCart()>{{ 'CANCEL' | translate }}</button>
-      <button class="add-cancel" ion-button>{{ 'ADD' | translate }}</button>
-      </div>
-</div>
-</div>
-<div *ngIf="promo==false">
+
+<div>
     <ion-input class="oval marg" primary [(ngModel)]="searchQuery2"
                  (keyup)="updateListByName($event)"
                  (ionCancel)="onCancelByName($event)"
