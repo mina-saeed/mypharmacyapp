@@ -20,6 +20,8 @@ import 'rxjs/add/operator/map';
 })
 export class HomePage {
 
+  noResultsBool = false;
+
   searchResults= {  //change default data according to mahmoud, or figure out a better way of doing deault ad empty values
 
     data: [
@@ -137,8 +139,10 @@ export class HomePage {
 
         //this.orderTest["data"] = JSON.parse(data["_body"].toString());
         if(data["_body"].toString() == "No results found"){
+          this.noResultsBool = false;
           this.searchResults["data"] = [{id:-1, name:"No results found", description:"", category:"", barcode:-1, milligrams:0, price:0}]; //empty ot message
         }else{
+          this.noResultsBool = false;
           this.searchResults["data"] = JSON.parse(data["_body"].toString());
         }
         console.log(data);

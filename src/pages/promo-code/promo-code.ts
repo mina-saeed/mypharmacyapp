@@ -50,11 +50,19 @@ export class PromoCodePage {
     this.http.get(this.url, new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
-    //  this.promoMessage = "Promotion Added!";
-      alert("Promotion Added!")
-      this.promoInput = "";
-      this.promoValue = 20;
-      this.navCtrl.push(BasketPage, this.promoValue);
+
+      //this.navCtrl.push(BasketPage, this.promoValue);
+      if(data["_body"] == "Sorry , Code expired"){
+        alert("Promocode Expired!")
+      }else if(data["_body"] = null){
+        alert("Invalid Promocode!")
+      }else{
+        //  this.promoMessage = "Promotion Added!";
+          alert("Promotion Added!")
+          this.promoInput = "";
+          this.promoValue = JSON.parse(data["_body"]);
+          console.log(data["_body"]);
+      }
 
     //  this.navCtrl.push(TrackOrderPage, this.orderData);
     }, err => {

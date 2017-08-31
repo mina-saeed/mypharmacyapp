@@ -43,7 +43,7 @@ export class BasketPage {
     ],
   prescription: null};
 
-
+  disableButton:boolean = false;
   empty: boolean;
   url:string;
   totalPrice = 0;
@@ -202,7 +202,7 @@ export class BasketPage {
     this.navCtrl.push(PromoCodePage);
   }
   addPromo(){
-  
+
   }
   openCart(){
     this.promo=false;
@@ -215,8 +215,10 @@ export class BasketPage {
     if(this.orderData.order.length == 0 && this.orderData["prescription"] == null)
     {
       this.empty = true;
+      this.disableButton = true;
     }else{
       this.empty = false;
+      this.disableButton = false;
     }
     console.log(this.empty);
     console.log( "after checkig",this.orderData["prescription"]);

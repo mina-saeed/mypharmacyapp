@@ -18,8 +18,8 @@ export class RedeemPointsPage {
   private translate: TranslateService;
 
   constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
-       this.translate = translate;
-       this.translate.use('ar');
+    /////// this.translate = translate;
+       ///////////////this.translate.use('ar');
   }
 
   ionViewDidLoad() {

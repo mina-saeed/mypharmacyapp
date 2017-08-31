@@ -27,8 +27,12 @@ export class TabsPage {
   private translate: TranslateService;
 
   constructor( translate: TranslateService,public lang: TestStorageProvider, public navCtrl: NavController, public navParams: NavParams) {
-      this.translate = translate;
+
      // this.translate.use('en');
+
+      //this.translate = translate;
+    //  this.translate.use('en');
+    
      // navCtrl.setRoot(TabsPage);
   }
 
@@ -42,7 +46,7 @@ export class TabsPage {
       ionViewDidLoad() {
     //  this.navCtrl.setRoot(TabsPage);
   }
-    
+
 
 
 }

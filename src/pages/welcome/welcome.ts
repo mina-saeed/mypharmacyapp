@@ -132,7 +132,7 @@ export class WelcomePage {
         this.translate.use(this.lang.load());
         }
 
-      this.navCtrl.push(TabsPage);
+      this.navCtrl.setRoot(TabsPage);
       this.disableButton = false; //raga3ha lel state el tabi3ya 3shan law daas back msln
 
       console.log(data);

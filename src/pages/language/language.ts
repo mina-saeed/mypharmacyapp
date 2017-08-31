@@ -39,14 +39,18 @@ export class LanguagePage {
               var language = this.getSuitableLanguage(result.value);
               console.log(language);
               //alert(language);
-              translate.use(language);
+              if(this.navParams.data != 1){
+                translate.use(language);
+              }
               sysOptions.systemLanguage = language;
             });
           } else {
             let browserLanguage = translate.getBrowserLang() || defaultLanguage;
             var language = this.getSuitableLanguage(browserLanguage);
             //alert(language);
-            translate.use(language);
+            if(this.navParams.data != 1){
+              translate.use(language);
+            }
             sysOptions.systemLanguage = language;
           }
 

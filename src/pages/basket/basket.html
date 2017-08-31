@@ -120,6 +120,6 @@
 -->
 <p class="promo" (click)="openPromo()" style="display: block;">{{ "PROMO" | translate}}</p>
 
-<button ion-button class = "dark-button" (click)="confirm()">{{ "CONFIRM" | translate }}</button>
+<button ion-button [disabled]="disableButton" class = "dark-button" (click)="confirm()">{{ "CONFIRM" | translate }}</button>
 </div>
 </ion-content>
