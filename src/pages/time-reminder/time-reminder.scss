@@ -41,6 +41,7 @@ page-time-reminder {
     }
     .title {
         font-size: 23px;
+        letter-spacing: 1px;
         font-family: Highland;
         margin-left: 10px;
     }
@@ -111,12 +112,9 @@ page-time-reminder {
     }
     .name{
     margin-right: 28%;
-    margin-left: -10%;
+    vertical-align: middle;
     }
-    hr{
-    width: 110%;
-    margin-left: -12%;
-    }
+
     .input {
     width: 77.8px;
     line-height: 1;
@@ -125,6 +123,7 @@ page-time-reminder {
  @media (max-width:320px){
      .name{
     margin-right: 15%;
+    vertical-align: bottom;
     }
  }
   @media (min-width:700px){
@@ -141,5 +140,9 @@ page-time-reminder {
 	margin-left: 5%;
 	margin-right: 2%;
 	width: 22%;
+
+}
+.margin{
+    margin-bottom: -10px;
 }
 }
