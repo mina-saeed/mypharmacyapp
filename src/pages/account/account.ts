@@ -7,6 +7,7 @@ import { WelcomePage } from '../welcome/welcome';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { OrderHistoryPage } from '../order-history/order-history';
 
+
 /**
  * Generated class for the AccountPage page.
  *
@@ -31,7 +32,9 @@ export class AccountPage {
   goMenu(){
     this.navCtrl.push(MenuPage);
   }
-
+  goHistory(){
+      this.navCtrl.push(OrderHistoryPage);
+}
   logout(){
 
     this.nativeStorage.remove('rememberUser');
@@ -41,6 +44,7 @@ export class AccountPage {
   }
   goToHistory(){
     this.navCtrl.push(OrderHistoryPage);
+
   }
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');

@@ -3,6 +3,10 @@ import { IonicPage, NavController, NavParams, Navbar, App} from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
+import { RemindmePage } from '../remindme/remindme';
+import { RemindersMedicinesListPage } from '../reminders-medicines-list/reminders-medicines-list';
+import { MedicineReminderPage } from '../medicine-reminder/medicine-reminder';
+
 import {OnInit, ViewChild} from '@angular/core';
 import { ReminderPage } from '../reminder/reminder';
 import { LanguagePage } from '../language/language';
@@ -39,6 +43,13 @@ export class SettingsPage {
   goToLanguage(){
     //this.navCtrl.push(LanguagePage, 1);
       this.app.getRootNav().push(LanguagePage, 1);
+
+}
+    goRemindme(){
+    this.navCtrl.push(RemindmePage);
+  }
+    goMedicineReminder(){
+    this.navCtrl.push(MedicineReminderPage);
   }
 
       ionViewDidLoad() {

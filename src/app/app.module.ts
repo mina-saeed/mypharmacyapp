@@ -48,6 +48,9 @@ import { MenuPage } from '../pages/menu/menu'
 import { CategoriesPage } from '../pages/categories/categories';
 import { SubCategoriesPage } from '../pages/sub-categories/sub-categories';
 import { AddressesPage } from '../pages/addresses/addresses';
+
+import { RemindmePage } from '../pages/remindme/remindme';
+
 import { ReminderPage } from '../pages/reminder/reminder';
 
 import { ReceiptPage } from '../pages/receipt/receipt';
@@ -63,6 +66,10 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 import { ForgetPasswordPage } from '../pages/forget-password/forget-password';
 import { RedeemPointsPage } from '../pages/redeem-points/redeem-points';
 import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/reminders-medicines-list';
+import { MedicineReminderPage } from '../pages/medicine-reminder/medicine-reminder';    
+import { PersonReminderPage } from '../pages/person-reminder/person-reminder';    
+import { TimeReminderPage } from '../pages/time-reminder/time-reminder';    
+
 import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-medicines-list/detailed-reminders-medicines-list';
 import { MedicinesListPage } from '../pages/medicines-list/medicines-list';
 import { IllnessPage } from '../pages/illness/illness';
@@ -71,8 +78,9 @@ import { PromoCodePage } from '../pages/promo-code/promo-code';
 import { DatePicker } from '@ionic-native/date-picker';
 
 
-import { CalendarModule } from 'angular-calendar';
-import { Calendar } from '@ionic-native/calendar';
+//import { CalendarModule } from 'angular-calendar';
+//import { Calendar } from '@ionic-native/calendar';
+
 export function createTranslateLoader(http: Http) {
     return new TranslateStaticLoader(http, 'assets/i18n', '.json');
   }
@@ -110,6 +118,7 @@ export function createTranslateLoader(http: Http) {
     RedeemPointsPage,
     AddressesPage,
     DetailedAddressPage,
+    RemindmePage,
     ReminderPage,
     RemindersMedicinesListPage,
     DetailedRemindersMedicinesListPage,
@@ -117,7 +126,11 @@ export function createTranslateLoader(http: Http) {
     MedicinesListPage,
     IllnessPage,
     IlnessListPage,
-    PromoCodePage
+    PromoCodePage,
+    MedicineReminderPage,
+    PersonReminderPage,
+    TimeReminderPage
+
   ],
   imports: [
     NgCalendarModule,
@@ -136,7 +149,8 @@ export function createTranslateLoader(http: Http) {
       pageTransition: 'ios-transition',
 
     }
-  ), CalendarModule.forRoot(),
+  ),
+  // CalendarModule.forRoot(),
  Ionic2RatingModule,
     IonicStorageModule.forRoot(),
     TranslateModule.forRoot({
@@ -179,6 +193,7 @@ export function createTranslateLoader(http: Http) {
     RedeemPointsPage,
     AddressesPage,
     DetailedAddressPage,
+    RemindmePage,
     ReminderPage,
     RemindersMedicinesListPage,
     DetailedRemindersMedicinesListPage,
@@ -186,7 +201,11 @@ export function createTranslateLoader(http: Http) {
     MedicinesListPage,
     IllnessPage,
     IlnessListPage,
-    PromoCodePage
+    PromoCodePage,
+    MedicineReminderPage,
+    PersonReminderPage,
+    TimeReminderPage
+
   ],
 
 

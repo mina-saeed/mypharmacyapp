@@ -1,4 +1,4 @@
-    page-account {
+page-remindme {
     .ion-ios-cartCustom-outline,
     .ion-ios-cartCustom,
     .ion-md-cartCustom,
@@ -28,26 +28,13 @@
     p {
         display: block
     }
-    .oval {
-        line-height: 2;
-        text-align: center;
-        color: #3CABE3;
-        max-width: 85%;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 0;
-        margin-top: 0;
-        margin-bottom: 4%;
-        background-color: #CFEAF8;
-        border-radius: 50px;
-        display: inline-block;
-        font-family: "Helvetica";
-        font-size: 20px;
-        height: 40px
-    }
     .title {
         font-size: 23px;
-        text-transform: uppercase
+        text-transform: uppercase;
+        font-family: Highland;
+        text-align: center;
+        font-weight: 500;
+        color: #0F6196;
     }
     hr {
         display: block;
@@ -87,7 +74,7 @@
     font-weight: 700;
     }
         .dark-button {
-        width: 70px;
+        width: 25%;
         height: 30px;
         display: block;
         background-color: #0F6196;
@@ -98,18 +85,88 @@
         letter-spacing: .5px;
         text-transform: lowercase;
         font-weight: 600;
-        line-height: 1.8;
+        line-height: 1.5;
         text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        font-size: 16px;
-        font-style: oblique;
+        margin-left: 65%;
     }
     .content-ios hr {
        margin-top: 0%;
     }
     .toolbar-ios ion-title{
     width: 110%;
-    margin-left: -3%;
+    //margin-left: -3%;
     }
+    .promocode {
+        margin-left: -4%;
+        width: 108%;
+        margin-top: 4%;
+        padding: 5%;
+        font-family: "Helvetica";
+        font-size: 12px;
+        font-weight: 700;
+        color: #0F6196;
+        border-radius: 22px;
+        background-color: #EBF7FC;
+    }
+    .done{
+    width:30%;
+    height: 25px;
+    display: inline-block;
+    margin-left: 60%;
+    background-color: #0F6196;
+    color: white;
+    border-radius: 22px;
+    font-family: "Helvetica";
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    margin-right: 20px;
+  }
+    i {
+    border: solid #0F6196;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+.repeat{
+	display: inline-block;
+	background: #fff;
+	border-radius: 10px;
+    border-width: 1.2px;
+    border-style: solid;
+    border-color: #0F6196;
+    vertical-align: middle;
+}
+.none {
+	margin: 0px;
+    height: 100%;
+    line-height: 1;
+    display: inline-block;
+    vertical-align: middle;
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 10px;
+}
+.border{
+	background: #fff;
+	border-radius: 10px;
+    border-width: 1.2px;
+    border-style: solid;
+    border-color: #0F6196;
+    vertical-align: middle;
+}
+.arrows{
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -8px;
+}
 }

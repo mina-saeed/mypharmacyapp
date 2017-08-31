@@ -98,7 +98,6 @@
   "PROMO": "Add Promo/Gift Code",
   "ENTERPROMO": "Enter your promo/gift code",
   "CANCEL": "CANCEL",
-  "ADD": "Add",
   "DELETE": "Delete",
   "REMIND_ME": "Remind me",
   "DAILY": "Daily",
@@ -106,6 +105,8 @@
   "MONTHLY": "Monthly",
   "EMPTY_ORDER": "Empty Order",
   "CLEAR_PRESC": "Clear Prescription",
-  "CHANGE_LANGUAGE": "Change Language"
-
+  "CHANGE_LANGUAGE": "Change Language",
+  "REMINDME": "REMIND ME",
+  "DELETE": "Delete",
+  "ADD": "Add"
 }

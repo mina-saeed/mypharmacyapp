@@ -141,6 +141,35 @@ export class LocationPage {
 }); */
 //alert(JSON.stringify(this.x.value));
 }
+  simpleExample() {
+
+    let jsonData = {
+      numbers: [
+        { description: "1" },
+        { description: "2" },
+        { description: "3" }
+      ],
+      fruits: [
+        { description: "Apple" },
+        { description: "Banana" },
+        { description: "Tangerine" }
+      ],
+    };
+
+    this.selector.show({
+      title: "Select some Fruit",
+      items: [
+        [jsonData.numbers],
+        [jsonData.fruits]
+      ],
+    }).then(
+      result => {
+        console.log('Selected: ' + result[0].description + ' at index: ' + result[0].index
+          + ' and ' + result[1].description + ' at index: ' + result[1].index);
+      },
+      err => console.log('Error occurred while getting result: ', err)
+      );
+  }
   selectCity() {
    this.getPosts();
    this.selector.show({

@@ -28,7 +28,7 @@ export class TabsPage {
 
   constructor( translate: TranslateService,public lang: TestStorageProvider, public navCtrl: NavController, public navParams: NavParams) {
       this.translate = translate;
-      this.translate.use('en');
+     // this.translate.use('en');
      // navCtrl.setRoot(TabsPage);
   }
 

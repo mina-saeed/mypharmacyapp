@@ -24,6 +24,8 @@ import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { AccountPage } from '../pages/account/account';
 import { IllnessPage } from '../pages/illness/illness';
 
+import { LocationPage } from '../pages/location/location';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -52,20 +54,17 @@ export class MyApp {
         );
 
           //this.language = data;
-
-
-
-                  } ,
+                 } ,
           error => {
 
-          this.rootPage=TabsPage;
+          this.rootPage=LanguagePage;
+
 
           }
         );
 
     });
-  }
-
+}
   rememberMe(){
 
   }

@@ -15,7 +15,7 @@ import { WeekViewComponent } from 'ionic2-calendar/weekview';
 import { DayViewComponent } from 'ionic2-calendar/dayview'; */
 
 import {  OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { CalendarEvent } from 'angular-calendar';
+//import { CalendarEvent } from 'angular-calendar';
 
 /**
  * Generated class for the CategoriesPage page.
