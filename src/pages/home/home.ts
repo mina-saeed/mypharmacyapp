@@ -130,6 +130,7 @@ export class HomePage {
   }
 
   updateListByName(ev) {
+    //this.noResultsBool = true;
     this.showPage = false;
     this.showSearchResult = true; //when start searching, show the list
     //if statement make it false when deleted all characters!!
@@ -140,6 +141,7 @@ export class HomePage {
       if(ev.target.value.toString() == ""){
         this.showSearchResult = false; //and true to show other components
         this.showPage = true;
+
       }
     }
 
@@ -152,7 +154,7 @@ export class HomePage {
           this.noResultsBool = false;
           this.searchResults["data"] = [{id:-1, name:"No results found", description:"", category:"", barcode:-1, milligrams:0, price:0}]; //empty ot message
         }else{
-          this.noResultsBool = false;
+          this.noResultsBool = true;
           this.searchResults["data"] = JSON.parse(data["_body"].toString());
         }
         console.log(data);
