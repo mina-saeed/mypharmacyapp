@@ -6,6 +6,7 @@ import { MenuPage } from '../menu/menu';
 import { RemindmePage } from '../remindme/remindme';
 import { RemindersMedicinesListPage } from '../reminders-medicines-list/reminders-medicines-list';
 import { MedicineReminderPage } from '../medicine-reminder/medicine-reminder';
+import { TimeReminderPage } from '../time-reminder/time-reminder';
 
 import {OnInit, ViewChild} from '@angular/core';
 import { ReminderPage } from '../reminder/reminder';
@@ -35,7 +36,7 @@ export class SettingsPage {
     this.navCtrl.push(BasketPage, {defaultOrNot: 0}); //kda hatly el default!! hwa ma3mlsh select
   }
     goMenu(){
-    this.navCtrl.push(MenuPage);
+    this.navCtrl.push(TimeReminderPage);
   }
   goToReminderPage(){
     this.navCtrl.push(ReminderPage);
