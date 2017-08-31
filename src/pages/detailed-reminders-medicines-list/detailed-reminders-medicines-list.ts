@@ -41,8 +41,8 @@ export class DetailedRemindersMedicinesListPage {
   addReminder(duration){
 
 
-    this.localNotifications.clearAll();
-  console.log(this.localNotifications.getAll());
+    //this.localNotifications.clearAll();
+//  console.log(this.localNotifications.getAll());
   console.log("max Rem", this.maxReminderID);
 
   //TimestampConvert.com use this along with menna's work so that user decide which time in the day

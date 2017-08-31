@@ -51,4 +51,16 @@
   <hr>
   </div>
 
+
+  <h1>Schedule Order</h1>
+  <p>Date: {{chosenDate}}</p>
+  <button ion-button (click)="pickSchedule()">Pick Time</button>
+
+
+<div *ngIf="timePicked == true">
+  <button class = "dark-button" ion-button (click)="addSchedule('Daily')">{{ "DAILY" | translate}}</button>
+  <button class = "dark-button" ion-button (click)="addSchedule('Weekly')">{{ "WEEKLY" | translate}}</button>
+  <button class = "dark-button" ion-button (click)="addSchedule('Monthly')">{{ "MONTHLY" | translate}}</button>
+</div>
+
 </ion-content>

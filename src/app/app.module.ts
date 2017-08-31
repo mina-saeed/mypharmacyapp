@@ -68,6 +68,8 @@ import { MedicinesListPage } from '../pages/medicines-list/medicines-list';
 import { IllnessPage } from '../pages/illness/illness';
 import { IlnessListPage } from '../pages/ilness-list/ilness-list';
 import { PromoCodePage } from '../pages/promo-code/promo-code';
+import { DatePicker } from '@ionic-native/date-picker';
+
 
 import { CalendarModule } from 'angular-calendar';
 import { Calendar } from '@ionic-native/calendar';
@@ -190,7 +192,7 @@ export function createTranslateLoader(http: Http) {
 
   providers: [
     StatusBar,RemoteServiceProvider,WheelSelector,
-    SplashScreen, Camera,Facebook, BarcodeScanner,Network, LocalNotifications, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
+    SplashScreen, Camera,Facebook, DatePicker, BarcodeScanner,Network, LocalNotifications, Geolocation, Globalization,FileTransfer,NativeStorage, ImagePicker,InAppBrowser, UniqueDeviceID,
     {provide: ErrorHandler, useClass: IonicErrorHandler}, TestStorageProvider,
     SettingsPage,
     MenuPage,
