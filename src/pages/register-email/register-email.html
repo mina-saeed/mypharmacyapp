@@ -19,8 +19,7 @@
   <h3 class="header"><span>{{ "REGISTER" | translate}}</span></h3>
   <form [formGroup]="validations_form" (ngSubmit)="register()">
     <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class="text">{{ "Name" | translate}}:</ion-label>
-        <ion-input class="oval" type="text" [(ngModel)]="userData.name" formControlName="name"></ion-input>
+        <ion-input class="oval" type="text" [(ngModel)]="userData.name" formControlName="name" placeholder="{{ 'Name' | translate}}"></ion-input>
         </ion-item>
      <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
       <ng-container *ngFor="let validation of validation_messages.name">
@@ -30,8 +29,7 @@
       </ng-container>
     </div>
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "Email" | translate}}:</ion-label>
-        <ion-input class="oval" type="text"  [(ngModel)]="userData.email" formControlName="email" required email></ion-input>
+        <ion-input class="oval" type="text"  [(ngModel)]="userData.email" formControlName="email" required email placeholder="{{ 'Email' | translate}}"></ion-input>
         </ion-item>
      <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
       <ng-container *ngFor="let validation of validation_messages.email">
@@ -41,8 +39,7 @@
       </ng-container>
     </div>
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "Password" | translate}}: </ion-label>
-        <ion-input class="oval" required="required" type="password"  [(ngModel)]="userData.password" formControlName="password"></ion-input>
+        <ion-input class="oval" required="required" type="password"  [(ngModel)]="userData.password" formControlName="password" placeholder="{{ 'Password' | translate}}"></ion-input>
         </ion-item>
              <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
       <ng-container *ngFor="let validation of validation_messages.password">
@@ -52,8 +49,7 @@
       </ng-container>
     </div>
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "CONFIRMPASS" | translate}}:</ion-label>
-        <ion-input class="oval" required="required" type="password"  [(ngModel)]="confirmPassword" formControlName="confirm"></ion-input>
+        <ion-input class="oval" required="required" type="password"  [(ngModel)]="confirmPassword" formControlName="confirm" placeholder="{{ 'CONFIRMPASS' | translate}}"></ion-input>
       </ion-item>
       <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
 

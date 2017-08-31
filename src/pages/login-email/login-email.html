@@ -8,12 +8,10 @@
   <form (ngSubmit)="login()">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "Email" | translate}}:</ion-label>
-        <ion-input class="oval" type="text"  [(ngModel)]="userData.email" name="location"></ion-input>
+        <ion-input class="oval" type="text"  [(ngModel)]="userData.email" name="location" placeholder="{{ 'Email' | translate}}"></ion-input>
         </ion-item>
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "Password" | translate}}:</ion-label>
-        <ion-input class="oval" type="password"  [(ngModel)]="userData.password" name="street"></ion-input>
+        <ion-input class="oval" type="password"  [(ngModel)]="userData.password" name="street" placeholder="{{ 'Password' | translate}}"></ion-input>
         </ion-item>
       <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
       <br>

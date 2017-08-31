@@ -18,7 +18,7 @@
   <h3 class="header"><span>{{ "LOCATION" | translate}}</span></h3>
   <form class = "form" [formGroup]="validations_form" (ngSubmit)="locationSubmit()">
     <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-input disabled="true" class="oval" value="{{this.selectedCity}}" side = "right" [(ngModel)]="loc.location.city" formControlName="city" (click)="this.selectCity()" placeholder="{{ 'CITY' | translate}}"></ion-input>
+        <ion-input #myInput disabled="true" class="oval" value="{{this.selectedCity}}" side = "right" [(ngModel)]="loc.location.city" formControlName="city" (click)="this.selectCity()" placeholder="{{ 'CITY' | translate}}"></ion-input>
         </ion-item>
 
      <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
@@ -59,28 +59,24 @@
       </ng-container>
     </div>
     
-        <div class="div wid APPA" >
+        <!--<div class="div wid APPA" > -->
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-input class="small oval AP" type="number" min="1" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="loc.location.App_no" formControlName="app" placeholder="{{ 'APPA' | translate}}"></ion-input>
-
+        <ion-input  class="small oval FL" type="number" min="0" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="loc.location.floor" formControlName="floor" placeholder="{{ 'FLOOR' | translate}}"></ion-input>
          </ion-item>
 
-         </div>
-         <div class="div wid second" >
-         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-input  class="small oval FL" type="number" min="0" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="loc.location.floor" formControlName="floor" placeholder="{{ 'FLOOR' | translate}}"></ion-input>
-        </ion-item>
-        </div>
-       <div class="div validation-errors {{ 'APPAR' | translate}}" dir="{{'LANG_DIR' | translate}}">
+         <!-- </div> -->
+         <!-- <div class="div wid second" > -->
+ 
+        <!-- </div>-->
+      <div class="validation-errors {{ 'APPAR' | translate}}" dir="{{'LANG_DIR' | translate}}">
       <ng-container *ngFor="let validation of validation_messages.app">
-        <div class="error-message" *ngIf="validations_form.get('app').hasError(validation.type) && (validations_form.get('app').dirty || validations_form.get('mobile').touched || validations_form.get('tel').touched)">
+        <div style="display:inline-block; margin-right: 10px;" class="error-message" *ngIf="validations_form.get('app').hasError(validation.type) && (validations_form.get('app').dirty || validations_form.get('mobile').touched || validations_form.get('tel').touched)">
           {{ validation.message }}
         </div>
       </ng-container>
-      </div>
-      <div class="div floor {{ 'FLOORAR' | translate}} validation-errors" dir="{{'LANG_DIR' | translate}}">
-      <ng-container *ngFor="let validation of validation_messages.floor">
-        <div class="error-message" *ngIf="validations_form.get('floor').hasError(validation.type) && (validations_form.get('floor').dirty || validations_form.get('mobile').touched || validations_form.get('tel').touched)">
+        <ng-container *ngFor="let validation of validation_messages.floor">
+        <div style="display:inline-block;" class="error-message" *ngIf="validations_form.get('floor').hasError(validation.type) && (validations_form.get('floor').dirty || validations_form.get('mobile').touched || validations_form.get('tel').touched)">
           {{ validation.message }}
         </div>
       </ng-container>
