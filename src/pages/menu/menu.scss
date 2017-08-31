@@ -47,7 +47,7 @@ page-menu {
     }
     .title {
         font-size: 23px;
-        text-transform: uppercase
+        font-family: Highland;
     }
     hr {
         display: block;
@@ -78,5 +78,8 @@ page-menu {
     }
   .content-ios hr{
     margin-top: -5%;
+    }
+    .md,.navTitle {
+      margin-left: 0px !important;
     }
 }
