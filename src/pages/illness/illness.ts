@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { IlnessListPage } from '../ilness-list/ilness-list';
+import { TranslateService } from 'ng2-translate';
 
 /**
  * Generated class for the IllnessPage page.
@@ -20,8 +21,21 @@ export class IllnessPage {
       url:string;
       illnesses:any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+      currentLanguage:string;
+      private translate: TranslateService;
+
+  constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams, public http:Http) {
     this.url = 'http://146.185.148.66:3006/';
+
+    this.translate=translate;
+  if (this.translate.currentLang =='ar') {
+    this.currentLanguage = "ar";
+  }
+  else {
+    this.currentLanguage = "en";
+  }
+
+
     this.getIllness();
   }
 

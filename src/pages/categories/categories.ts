@@ -64,8 +64,17 @@ export class CategoriesPage implements OnInit{
   private translate: TranslateService;
     url:string;
 
+    currentLanguage:string;
   constructor(translate: TranslateService,public navCtrl: NavController, private nativeStorage: NativeStorage, public navParams: NavParams,public http:Http) {
-  this.translate=translate;
+
+      this.translate=translate;
+    if (this.translate.currentLang =='ar') {
+      this.currentLanguage = "ar";
+    }
+    else {
+      this.currentLanguage = "en";
+    }
+
   this.showSearchResult = false;  //initialise things to be visible
     this.showPage = true;
     this.url = 'http://146.185.148.66:3003/';

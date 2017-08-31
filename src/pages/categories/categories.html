@@ -48,7 +48,7 @@
                  (ionCancel)="onCancelByName($event)"
                  show-cancel="true"
                  showCancelButton="true"
-                 placeholder="Search By Name">
+                 placeholder="{{'SEARCH_NAME' | translate}}">
    <img class="image" src="assets/icon/White Loop.png"/>
     </ion-input>
         <ion-list *ngIf="showSearchResult">
@@ -60,7 +60,7 @@
      <img src="assets/icon/ADD to activated.png">
   </button>
     <hr class="hrDetails">
-    <p class="p textDetails">Description: {{res.description}}</p>
+    <p class="p textDetails">{{'DESCRIPTION' | translate}}: {{res.description}}</p>
   <hr class="hrDetails">
 
       </ion-item>
@@ -85,7 +85,8 @@
     <ng-container  *ngFor="let cat of categories; let i = index">
     <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
 			<img (click)="goToSubCategories(cat._id)" class="img" [attr.src]="cat.CategoryImage"/>
-			<p (click)="goToSubCategories(cat._id)" class="p">{{cat.name_en}}</p>
+			<p *ngIf="currentLanguage == 'en'" (click)="goToSubCategories(cat._id)" class="p">{{cat.name_en}}</p>
+      <p *ngIf="currentLanguage == 'ar'" (click)="goToSubCategories(cat._id)" class="p">{{cat.name_ar}}</p>
 		</ion-label>
     <br *ngIf="i%2 != 0">
   </ng-container>

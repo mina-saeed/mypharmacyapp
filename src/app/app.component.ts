@@ -23,6 +23,9 @@ import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-
 import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { AccountPage } from '../pages/account/account';
 import { IllnessPage } from '../pages/illness/illness';
+import { PersonReminderPage } from '../pages/person-reminder/person-reminder';
+
+import { RemindmePage } from '../pages/remindme/remindme';
 
 import { LocationPage } from '../pages/location/location';
 

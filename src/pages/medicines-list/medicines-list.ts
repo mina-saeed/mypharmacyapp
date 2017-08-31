@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
-
+import { TranslateService } from 'ng2-translate';
 /**
  * Generated class for the MedicinesListPage page.
  *
@@ -19,7 +19,19 @@ export class MedicinesListPage {
   subProdcuts: any;
     zeroArr:boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+    private translate: TranslateService;
+    currentLanguage:string;
+
+  constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+
+
+          this.translate=translate;
+        if (this.translate.currentLang =='ar') {
+          this.currentLanguage = "ar";
+        }
+        else {
+          this.currentLanguage = "en";
+        }
 
     this.url = 'http://146.185.148.66:3003/';
     this.id = this.navParams.data;

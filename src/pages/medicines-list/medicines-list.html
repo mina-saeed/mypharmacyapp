@@ -15,12 +15,16 @@
 
 <ion-content padding>
   <div *ngIf="zeroArr == true"  class="round">
-      <p>No medicines found in this category!</p>
+      <p *ngIf="currentLanguage == 'en'">No medicines found in this category</p>
+      <p *ngIf="currentLanguage == 'ar'">لا توجد أدوية في هذه الفئة</p>
   </div>
   <div *ngIf="zeroArr == false">
     <div  *ngFor="let cat of subProdcuts" class="round">
-      <p>{{cat.name_en}}</p>
-      <p>{{cat.description_en}}</p>
+      <p *ngIf="currentLanguage == 'en'">{{cat.name_en}}</p>
+      <p *ngIf="currentLanguage == 'en'" >{{cat.description_en}}</p>
+
+      <p *ngIf="currentLanguage == 'ar'">{{cat.name_ar}}</p>
+      <p *ngIf="currentLanguage == 'ar'" >{{cat.description_ar}}</p>
     </div>
   </div>
 </ion-content>

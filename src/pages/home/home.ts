@@ -48,8 +48,18 @@ export class HomePage {
   public showPage: boolean;
   url:string;
 
+  currentLanguage:string;
+
   private translate: TranslateService;
   constructor( private barcodeScanner: BarcodeScanner,translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
+
+    this.translate=translate;
+  if (this.translate.currentLang =='ar') {
+    this.currentLanguage = "ar";
+  }
+  else {
+    this.currentLanguage = "en";
+  }
 
     this.getOrder();//to initalize if empty
     this.translate = translate;

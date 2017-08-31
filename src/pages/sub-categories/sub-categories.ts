@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 
 import { MedicinesListPage } from '../medicines-list/medicines-list';
-
+import { TranslateService } from 'ng2-translate';
 /**
  * Generated class for the SubCategoriesPage page.
  *
@@ -22,7 +22,19 @@ export class SubCategoriesPage {
   id:any;
   zeroArr:boolean;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+  currentLanguage:string;
+  private translate: TranslateService;
+
+  constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+    this.translate=translate;
+  if (this.translate.currentLang =='ar') {
+    this.currentLanguage = "ar";
+  }
+  else {
+    this.currentLanguage = "en";
+  }
+
+
       this.url = 'http://146.185.148.66:3003/';
       this.id = this.navParams.data;
       this.zeroArr = true;

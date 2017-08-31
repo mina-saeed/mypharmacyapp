@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { DetailedProductPage } from '../detailed-product/detailed-product';
-
+import { TranslateService } from 'ng2-translate';
 /**
  * Generated class for the IlnessListPage page.
  *
@@ -20,8 +20,19 @@ export class IlnessListPage {
   id:any;
   medicines: any;
     zeroArr:boolean;
+    private translate: TranslateService;
+    currentLanguage:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+  constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+    this.url = 'http://146.185.148.66:3006/';
+
+    this.translate=translate;
+    if (this.translate.currentLang =='ar') {
+    this.currentLanguage = "ar";
+    }
+    else {
+    this.currentLanguage = "en";
+    }
 
     this.url = 'http://146.185.148.66:3003/';
     this.id = this.navParams.data;

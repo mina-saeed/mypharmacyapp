@@ -17,10 +17,27 @@
   <div *ngIf="zeroArr == true"  class="round">
       <p (click)="goToMedicines(cat._id)">No categories found!</p>
   </div>
+
+
   <div *ngIf="zeroArr == false">
-    <div  *ngFor="let cat of subCategories" class="round">
-      <p (click)="goToMedicines(cat._id)">{{cat.name_en}}</p>
-      <p (click)="goToMedicines(cat._id)">{{cat.description_en}}</p>
-    </div>
+  <!--  <div  *ngFor="let cat of subCategories" class="round">
+      <p (click)="goToMedicines(cat._id)" *ngIf="currentLanguage=='en'">{{cat.name_en}}</p>
+      <p (click)="goToMedicines(cat._id)" *ngIf="currentLanguage=='ar'">{{cat.name_ar}}</p>
+    </div> -->
+
+
+    <ion-label  class="round products paddingLeft">
+        <ng-container  *ngFor="let cat of subCategories; let i = index">
+        <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+    			<img (click)="goToMedicines(cat._id)"  class="img" [attr.src]="cat.subImage"/>
+    			<p *ngIf="currentLanguage == 'en'" (click)="goToMedicines(cat._id)"  class="p">{{cat.name_en}}</p>
+          <p *ngIf="currentLanguage == 'ar'" (click)="goToMedicines(cat._id)"  class="p">{{cat.name_ar}}</p>
+    		</ion-label>
+        <br *ngIf="i%2 != 0">
+      </ng-container>
+
+    </ion-label>
+
+
   </div>
 </ion-content>

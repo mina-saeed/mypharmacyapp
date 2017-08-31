@@ -46,7 +46,7 @@
                  (ionCancel)="onCancelByName($event)"
                  show-cancel="true"
                  showCancelButton="true"
-                 placeholder="Search By Name">
+                 placeholder="{{'SEARCH_NAME' | translate}}">
    <img class="image" src="assets/icon/White Loop.png"/>
     </ion-input>
 
@@ -63,12 +63,16 @@
      <img src="assets/icon/ADD to activated.png">
   </button>
     <hr class="hrDetails">
-    <p class="p textDetails">Description: {{res.description}}</p>
+    <p class="p textDetails">{{"DESCRIPTION" | translate }}: {{res.description_ar}}</p>
   <hr class="hrDetails">
   </div>
 
       </ion-item>
-        <h3 *ngIf="noResultsBool == false">No results found!</h3>
+
+
+        <h3 *ngIf="noResultsBool == false && currentLanguage=='en'">No results found!</h3>
+        <h3 *ngIf="noResultsBool == false && currentLanguage=='ar'">لا توجد نتائج</h3>
+
     </ion-list>
 
     <div *ngIf="showPage">
@@ -76,7 +80,7 @@
   <div class="container">
   <button ion-button class="round presc" (click)="goCamera()"><p class="p">{{"PRESCRIPTION" | translate }}</p></button>
   <button ion-button class="round scan" (click)="scanBarcode()"><p class="p">{{ "SCAN" | translate }}</p></button>
-  <button (click) ="goToIllness()"ion-button class="round medi"><p class="p">{{ "SEARCH" | translate }}</p></button>
+  <button (click) ="goToIllness()"ion-button class="round medi"><p class="p">{{ "SEARCH_ILLNESS" | translate }}</p></button>
   </div>
   <hr>
 
