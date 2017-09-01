@@ -13,6 +13,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'order-history.html',
 })
 export class OrderHistoryPage {
+ // private translate: TranslateService;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }

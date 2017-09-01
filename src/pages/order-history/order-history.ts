@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
-import 'rxjs/add/operator/map';
+import { TranslateService } from 'ng2-translate';
+import { BasketPage } from '../basket/basket';
+import { MenuPage } from '../menu/menu';
+//import 'rxjs/add/operator/map';
 
 /**
  * Generated class for the OrderHistoryPage page.
@@ -15,11 +18,14 @@ import 'rxjs/add/operator/map';
   templateUrl: 'order-history.html',
 })
 export class OrderHistoryPage {
+  private translate: TranslateService;
+
   userID:any;
   orderHistory = [];
   url:string;
 
-  constructor(public http:Http, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(translate: TranslateService,public http:Http, public navCtrl: NavController, public navParams: NavParams) {
+     this.translate = translate;
 
     this.url = 'http://146.185.148.66:3000/';
     this.userID = 50;
@@ -47,5 +53,10 @@ export class OrderHistoryPage {
     });
     console.log("done");
   }
-
+  goBasket(){
+    this.navCtrl.push(BasketPage, {defaultOrNot: 0}); 
+  }
+  goMenu(){
+    this.navCtrl.push(MenuPage);
+  }
 }

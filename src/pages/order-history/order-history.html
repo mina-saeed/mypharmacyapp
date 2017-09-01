@@ -7,14 +7,29 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>History</ion-title>
+
+    <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title">Orders History</p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
+
 <ion-content padding>
   <div *ngFor="let order of orderHistory" class="round">
+  <p>{{order}}</p>
     <p>{{order.order}}</p>
     <p>{{order.location}}</p>
   </div>
