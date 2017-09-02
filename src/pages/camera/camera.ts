@@ -64,6 +64,13 @@ export class CameraPage {
           this.url = 'http://146.185.148.66:3003/';
           this.getOrder();
           this.currentImageMessage = "No prescription uploaded!";
+          console.log(this.translate.currentLang =='en');
+          if (this.translate.currentLang =='en') {
+            this.currentImageMessage = "No prescription uploaded!";
+          }
+          else {
+        this.currentImageMessage = "لم يتم تحميل أي وصفة طبية";
+          }
         }
 
 
@@ -86,7 +93,13 @@ export class CameraPage {
         this.camera.getPicture(options).then((imageData) => {
 
             this.base64Image = 'data:image/jpeg;base64,' + imageData;
+          //  this.currentImageMessage = "A prescription inserted from camera!";
+          if (this.translate.currentLang =='en') {
             this.currentImageMessage = "A prescription inserted from camera!";
+          }
+          else {
+          this.currentImageMessage = "تم تحميل وصفة طبية";
+          }
         }, (err) => {
             // Handle error
         });
@@ -107,7 +120,13 @@ export class CameraPage {
           console.log('Image URI: ' + results[i]);
           this.orderTest["prescription"] = results[i];
           console.log(this.base64Image);
-          this.currentImageMessage = "A prescription inserted from gallery!";
+          //this.currentImageMessage = "A prescription inserted from gallery!";
+          if (this.translate.currentLang =='en') {
+            this.currentImageMessage = "A prescription inserted from gallery!";
+          }
+          else {
+          this.currentImageMessage = "تم تحميل وصفة طبية";
+          }
           this.nativeStorage.setItem('order', this.orderTest);
         //  this.photos.push(this.base64Image);
         //  this.photos.reverse();
@@ -140,10 +159,14 @@ export class CameraPage {
                 }
 
             },err =>{
-              alert("Invalid barcode!");
+              //alert("Invalid barcode!");
+              if (this.translate.currentLang =='en') {
+                alert("Invalid barcode!");
+              }
+              else {
+              alert("الباركود غير صحيحة");
+            }
             });
-
-
 
 
         }, (err) => {
