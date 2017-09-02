@@ -94,11 +94,11 @@ export class AddressesPage {
             .map(res => res).subscribe(data => {
 
               console.log(data);
-              alert(data["_body"]);
+            //  alert(data["_body"]);
 
             }, err =>{
               console.log(err);
-              alert(err["_body"]);
+            //  alert(err["_body"]);
             });
     }
     getAddresses(){

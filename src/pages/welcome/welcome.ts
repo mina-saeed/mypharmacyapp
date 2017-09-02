@@ -156,6 +156,11 @@ export class WelcomePage {
   .then((res: FacebookLoginResponse) => {
 
     console.log('Logged into Facebook!', res);
+
+
+    //end point, send res data to mahmoud
+
+
     this.navCtrl.push(LocationPage);
     this.disableButton = false;
     })

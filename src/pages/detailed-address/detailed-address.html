@@ -16,8 +16,8 @@
 <ion-content padding>
 <div dir="{{'LANG_DIR' | translate}}">
       <ion-input type="text" name="address" [(ngModel)]="currentAddress" value={{currentAddress}}></ion-input>
-  <button ion-button  (click)="saveAddresses()">{{ "SAVE" | translate}}</button>
-  <button ion-button (click)="deleteAddress()">{{ "DELETE" | translate}}</button>
+  <button ion-button  (tap)="saveAddresses()">{{ "SAVE" | translate}}</button>
+  <button ion-button (tap)="deleteAddress()">{{ "DELETE" | translate}}</button>
 </div>
 
 </ion-content>

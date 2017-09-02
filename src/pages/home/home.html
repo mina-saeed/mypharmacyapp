@@ -20,10 +20,10 @@
     </ion-title>
 
     <ion-buttons right>
-      <button ion-button icon-only (click)="goBasket()">
+      <button ion-button icon-only (tap)="goBasket()">
         <ion-icon name="cartCustom"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goMenu()">
+      <button ion-button icon-only (tap)="goMenu()">
         <ion-icon name="setting"></ion-icon>
       </button>
     </ion-buttons>
@@ -56,10 +56,10 @@
       <ion-item  *ngFor = "let res of searchResults.data">
 
         <div *ngIf="noResultsBool == true">
-      <img (click)="detailedProduct(res.id)" class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
+      <img (tap)="detailedProduct(res.id)" class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
 
-      <h3 (click)="detailedProduct(res.id)">{{res.name}}</h3>
-    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+      <h3 (tap)="detailedProduct(res.id)">{{res.name}}</h3>
+    <button  ion-button class="cart" name="add-circle" (tap)="addToCart(res)">
      <img src="assets/icon/ADD to activated.png">
   </button>
     <hr class="hrDetails">
@@ -78,9 +78,9 @@
     <div *ngIf="showPage">
   <hr>
   <div class="container">
-  <button ion-button class="round presc" (click)="goCamera()"><p class="p">{{"PRESCRIPTION" | translate }}</p></button>
-  <button ion-button class="round scan" (click)="scanBarcode()"><p class="p">{{ "SCAN" | translate }}</p></button>
-  <button (click) ="goToIllness()"ion-button class="round medi"><p class="p">{{ "SEARCH_ILLNESS" | translate }}</p></button>
+  <button ion-button class="round presc" (tap)="goCamera()"><p class="p">{{"PRESCRIPTION" | translate }}</p></button>
+  <button ion-button class="round scan" (tap)="scanBarcode()"><p class="p">{{ "SCAN" | translate }}</p></button>
+  <button (tap) ="goToIllness()"ion-button class="round medi"><p class="p">{{ "SEARCH_ILLNESS" | translate }}</p></button>
   </div>
   <hr>
 

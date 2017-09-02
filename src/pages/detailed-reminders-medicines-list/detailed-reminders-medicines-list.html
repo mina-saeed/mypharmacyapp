@@ -19,10 +19,10 @@
     </ion-title>
 
     <ion-buttons right>
-      <button ion-button icon-only (click)="goBasket()">
+      <button ion-button icon-only (tap)="goBasket()">
         <ion-icon name="cartCustom"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goMenu()">
+      <button ion-button icon-only (tap)="goMenu()">
         <ion-icon name="setting"></ion-icon>
       </button>
     </ion-buttons>
@@ -34,7 +34,7 @@
   <hr>
   <p class="text">{{currentMedicine.name}}</p> <br>
   <p class="text">{{ "REMIND_ME" | translate}}: {{currentMedicine.remindEvery}}</p><br>
-  <button class = "dark-button" ion-button (click)="addReminder('Daily')">{{ "DAILY" | translate}}</button>
-  <button class = "dark-button" ion-button (click)="addReminder('Weekly')">{{ "WEEKLY" | translate}}</button>
-  <button class = "dark-button" ion-button (click)="addReminder('Monthly')">{{ "MONTHLY" | translate}}</button>
+  <button class = "dark-button" ion-button (tap)="addReminder('Daily')">{{ "DAILY" | translate}}</button>
+  <button class = "dark-button" ion-button (tap)="addReminder('Weekly')">{{ "WEEKLY" | translate}}</button>
+  <button class = "dark-button" ion-button (tap)="addReminder('Monthly')">{{ "MONTHLY" | translate}}</button>
 </ion-content>

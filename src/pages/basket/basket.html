@@ -16,7 +16,7 @@
       <button ion-button icon-only>
         <ion-icon name="cartCustom"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goMenu()">
+      <button ion-button icon-only (tap)="goMenu()">
         <ion-icon name="setting"></ion-icon>
       </button>
     </ion-buttons>
@@ -52,9 +52,9 @@
 
    </div>
    <div class="amount {{ 'AMOUNTAR' | translate }}">
-   <ion-icon name="inc" (click)="increment(order.id)"></ion-icon>
+   <ion-icon name="inc" (tap)="increment(order.id)"></ion-icon>
     <p class=" quant {{ 'QUANTAR' | translate }}">{{ order.qty }}</p>
-    <ion-icon name="dec" (click)="decrement(order.id)"></ion-icon>
+    <ion-icon name="dec" (tap)="decrement(order.id)"></ion-icon>
     </div>
    <ion-icon class="centerVertical" name="delete" (click)="deleteButton(order.id)"></ion-icon>
 
@@ -86,7 +86,7 @@
 
 </div>
 <p class="p {{'SPACELANG' | translate}}" *ngIf="empty == true">{{ "EMPTY_ORDER" | translate}}</p>
-  <button ion-button class = "dark-button" (click)="clearPrescription()" *ngIf="empty == false">{{ "CLEAR_PRESC" | translate}}</button>
+  <button ion-button class = "dark-button" (tap)="clearPrescription()" *ngIf="empty == false">{{ "CLEAR_PRESC" | translate}}</button>
 
 <div dir="{{'LANG_DIR' | translate}}">
   <ion-label >
@@ -102,7 +102,7 @@
         <div class="{{'MARGINLANG' | translate}}" dir="{{'LANG_DIR' | translate}}">
         <ion-icon name="location"></ion-icon>
         <h4>{{ "TO" | translate }}</h4>
-        <ion-label (click)="changeAddress()" class="oval3">{{ currentAddress }}</ion-label>
+        <ion-label (tap)="changeAddress()" class="oval3">{{ currentAddress }}</ion-label>
     </div>
   </ion-label>
   </div>
@@ -118,8 +118,8 @@
 </div>
 
 -->
-<p class="promo" (click)="openPromo()" style="display: block;">{{ "PROMO" | translate}}</p>
+<p class="promo" (tap)="openPromo()" style="display: block;">{{ "PROMO" | translate}}</p>
 
-<button ion-button [disabled]="disableButton" class = "dark-button" (click)="confirm()">{{ "CONFIRM" | translate }}</button>
+<button ion-button [disabled]="disableButton" class = "dark-button" (tap)="confirm()">{{ "CONFIRM" | translate }}</button>
 </div>
 </ion-content>

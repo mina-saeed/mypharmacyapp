@@ -17,11 +17,11 @@
             <ion-content>
               <img class="image" src="assets/icon/logo.png"/>
               <h3 class="header"><span>{{ 'GUEST' | translate }}</span></h3>
-              <button ion-button [disabled]="disableButton" class = "dark-button" (click)="signIn()">{{ 'CONTINUE' | translate }}</button>
+              <button ion-button [disabled]="disableButton" class = "dark-button" (tap)="signIn()">{{ 'CONTINUE' | translate }}</button>
               <p class= "text">{{ 'TERMS' | translate }}</p>
               <h3 class="header"><span>{{ 'OR' | translate }}</span></h3>
-              <button ion-button [disabled]="disableButton" class = "dark-button" (click)="signInEmail()">{{ 'Email' | translate }}</button>
+              <button ion-button [disabled]="disableButton" class = "dark-button" (tap)="signInEmail()">{{ 'Email' | translate }}</button>
               <br>
-              <button ion-button [disabled]="disableButton" class = "dark-button" (click)="signInFB()">{{ 'FACEBOOK' | translate }}</button>
+              <button ion-button [disabled]="disableButton" class = "dark-button" (tap)="signInFB()">{{ 'FACEBOOK' | translate }}</button>
 
             </ion-content>

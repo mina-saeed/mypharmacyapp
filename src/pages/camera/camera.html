@@ -33,10 +33,10 @@
   <p>{{results.format}}</p>
   <p>{{results.cancelled}}</p>
 </div>
-<button ion-button class = "dark-button dark-button-smaller" full (click)="takePhoto()" dir="{{'LANG_DIR' | translate}}">
+<button ion-button class = "dark-button dark-button-smaller" full (tap)="takePhoto()" dir="{{'LANG_DIR' | translate}}">
   <ion-icon name="camera">  {{ "PHOTO" | translate }}</ion-icon>
 </button>
-<button ion-button class = "dark-button dark-button-smaller" full (click)="pickPhoto()" dir="{{'LANG_DIR' | translate}}">
+<button ion-button class = "dark-button dark-button-smaller" full (tap)="pickPhoto()" dir="{{'LANG_DIR' | translate}}">
   <ion-icon name="image">  {{ "GALLERY" | translate }}</ion-icon>
 </button>
 

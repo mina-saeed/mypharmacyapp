@@ -11,7 +11,7 @@
   <ion-navbar>
 <!--
     <ion-buttons left>
-      <button ion-button icon-only (click)="openModal()">
+      <button ion-button icon-only (tap)="openModal()">
         <ion-icon name="back"></ion-icon>
       </button>
     </ion-buttons>
@@ -21,10 +21,10 @@
     </ion-title>
 
     <ion-buttons right>
-      <button ion-button icon-only (click)="goBasket()">
+      <button ion-button icon-only (tap)="goBasket()">
         <ion-icon name="cartCustom"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goMenu()">
+      <button ion-button icon-only (tap)="goMenu()">
         <ion-icon name="setting"></ion-icon>
       </button>
     </ion-buttons>
@@ -36,11 +36,11 @@
 <ion-content padding>
   <hr>
   <div *ngFor="let res of members">
-    <p class="text" (click)="goToMedicines(res)">{{res.name}}</p><br>
-    <button class = "dark-button" ion-button (click)="deleteReminder(res)">{{ "DELETE" | translate}}</button>
+    <p class="text" (tap)="goToMedicines(res)">{{res.name}}</p><br>
+    <button class = "dark-button" ion-button (tap)="deleteReminder(res)">{{ "DELETE" | translate}}</button>
   </div> <br>
 
-  <form (ngSubmit)="addPatient()">
+  <form (tap)="addPatient()">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class = "text">{{ "Name" | translate}}:</ion-label>

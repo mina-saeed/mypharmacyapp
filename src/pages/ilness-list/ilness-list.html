@@ -20,8 +20,8 @@
   </div>
   <div *ngIf="zeroArr == false">
     <div  *ngFor="let cat of medicines" class="round">
-      <p (click)="detailedProduct(cat.id)" *ngIf="currentLanguage=='en'">{{cat.name_en}}</p>
-      <p (click)="detailedProduct(cat.id)" *ngIf="currentLanguage=='ar'">{{cat.name_ar}}</p>
+      <p (tap)="detailedProduct(cat.id)" *ngIf="currentLanguage=='en'">{{cat.name_en}}</p>
+      <p (tap)="detailedProduct(cat.id)" *ngIf="currentLanguage=='ar'">{{cat.name_ar}}</p>
     </div>
   </div>
 </ion-content>

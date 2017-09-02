@@ -19,10 +19,10 @@
     </ion-title>
 
     <ion-buttons right>
-      <button ion-button icon-only (click)="goBasket()">
+      <button ion-button icon-only (tap)="goBasket()">
         <ion-icon name="cartCustom"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goMenu()">
+      <button ion-button icon-only (tap)="goMenu()">
         <ion-icon name="setting"></ion-icon>
       </button>
     </ion-buttons>
@@ -35,13 +35,13 @@
   <hr>
 
   <div *ngFor="let res of currentMember.medicinces">
-    <p class="text" (click)="goToMedicineReminder(res)">{{res.name}}</p>
-    <br><button class = "dark-button" ion-button (click)="deleteMedicine(res)">{{ "DELETE" | translate}}</button>
+    <p class="text" (tap)="goToMedicineReminder(res)">{{res.name}}</p>
+    <br><button class = "dark-button" ion-button (tap)="deleteMedicine(res)">{{ "DELETE" | translate}}</button>
   </div>
 
 
 
-  <form (ngSubmit)="addMedicine()">
+  <form (tap)="addMedicine()">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class = "text">{{ "Name" | translate}}:</ion-label>

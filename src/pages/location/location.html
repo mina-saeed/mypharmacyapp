@@ -16,9 +16,9 @@
 
 
   <h3 class="header"><span>{{ "LOCATION" | translate}}</span></h3>
-  <form class = "form" [formGroup]="validations_form" (ngSubmit)="locationSubmit()">
+  <form class = "form" [formGroup]="validations_form" (tap)="locationSubmit()">
     <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-input #myInput disabled="true" class="oval" value="{{this.selectedCity}}" side = "right" [(ngModel)]="loc.location.city" formControlName="city" (click)="this.selectCity()" placeholder="{{ 'CITY' | translate}}"></ion-input>
+        <ion-input #myInput disabled="true" class="oval" value="{{this.selectedCity}}" side = "right" [(ngModel)]="loc.location.city" formControlName="city" (tap)="this.selectCity()" placeholder="{{ 'CITY' | translate}}"></ion-input>
         </ion-item>
 
      <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
@@ -29,7 +29,7 @@
       </ng-container>
     </div>
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-input disabled="true" class="oval"  value="{{this.selectedLocation}}" [(ngModel)]="loc.location.location" formControlName="location" (click)="this.selectLocation()" placeholder="{{ 'LOC' | translate}}"></ion-input>
+        <ion-input disabled="true" class="oval"  value="{{this.selectedLocation}}" [(ngModel)]="loc.location.location" formControlName="location" (tap)="this.selectLocation()" placeholder="{{ 'LOC' | translate}}"></ion-input>
         </ion-item>
       <div class="validation-errors" dir="{{'LANG_DIR' | translate}}">
       <ng-container *ngFor="let validation of validation_messages.location">
@@ -58,7 +58,7 @@
         </div>
       </ng-container>
     </div>
-    
+
         <!--<div class="div wid APPA" > -->
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-input class="small oval AP" type="number" min="1" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="loc.location.App_no" formControlName="app" placeholder="{{ 'APPA' | translate}}"></ion-input>
@@ -67,7 +67,7 @@
 
          <!-- </div> -->
          <!-- <div class="div wid second" > -->
- 
+
         <!-- </div>-->
       <div class="validation-errors {{ 'APPAR' | translate}}" dir="{{'LANG_DIR' | translate}}">
       <ng-container *ngFor="let validation of validation_messages.app">

@@ -19,10 +19,10 @@
     </ion-title>
 
     <ion-buttons right>
-      <button ion-button icon-only (click)="goBasket()">
+      <button ion-button icon-only (tap)="goBasket()">
         <ion-icon name="cartCustom"></ion-icon>
       </button>
-      <button ion-button icon-only (click)="goMenu()">
+      <button ion-button icon-only (tap)="goMenu()">
         <ion-icon name="setting"></ion-icon>
       </button>
     </ion-buttons>
@@ -95,9 +95,9 @@
 <ion-label  class="round products paddingLeft">
     <ng-container  *ngFor="let cat of categories; let i = index">
     <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
-			<img (click)="goToSubCategories(cat._id)" class="img" [attr.src]="cat.CategoryImage"/>
-			<p *ngIf="currentLanguage == 'en'" (click)="goToSubCategories(cat._id)" class="p">{{cat.name_en}}</p>
-      <p *ngIf="currentLanguage == 'ar'" (click)="goToSubCategories(cat._id)" class="p">{{cat.name_ar}}</p>
+			<img (tap)="goToSubCategories(cat._id)" class="img" [attr.src]="cat.CategoryImage"/>
+			<p *ngIf="currentLanguage == 'en'" (tap)="goToSubCategories(cat._id)" class="p">{{cat.name_en}}</p>
+      <p *ngIf="currentLanguage == 'ar'" (tap)="goToSubCategories(cat._id)" class="p">{{cat.name_ar}}</p>
 		</ion-label>
     <br *ngIf="i%2 != 0">
   </ng-container>

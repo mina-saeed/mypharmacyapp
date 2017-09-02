@@ -15,7 +15,7 @@
 
 <ion-content padding>
   <div  *ngFor="let cat of illnesses" class="round">
-    <p (click)="goToMedicines(cat.name.name_english)" *ngIf="currentLanguage=='en'">{{cat.name.name_english}}</p>
-    <p (click)="goToMedicines(cat.name.name_english)" *ngIf="currentLanguage=='ar'">{{cat.name.name_ar}}</p>
+    <p (tap)="goToMedicines(cat.name.name_english)" *ngIf="currentLanguage=='en'">{{cat.name.name_english}}</p>
+    <p (tap)="goToMedicines(cat.name.name_english)" *ngIf="currentLanguage=='ar'">{{cat.name.name_ar}}</p>
   </div>
 </ion-content>

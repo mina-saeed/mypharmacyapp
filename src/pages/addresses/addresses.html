@@ -19,14 +19,14 @@
   <div *ngFor = "let res of addresses" dir="{{'LANG_DIR' | translate}}">
     <p>{{res}}</p>
 
-      <button ion-button (click)="selectAddress(res)">{{ "SELECT" | translate}}</button>
-      <button ion-button (click)="editAddresses(res)">{{ "EDIT" | translate}}</button>
+      <button ion-button (tap)="selectAddress(res)">{{ "SELECT" | translate}}</button>
+      <button ion-button (tap)="editAddresses(res)">{{ "EDIT" | translate}}</button>
 
 
 
   </div>
 
-  <form (ngSubmit)="addAddress()" dir="{{'LANG_DIR' | translate}}">
+  <form (tap)="addAddress()" dir="{{'LANG_DIR' | translate}}">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class = "text">{{ "ADDRESS" | translate}}:</ion-label>
