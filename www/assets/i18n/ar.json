@@ -115,5 +115,8 @@
   "EMPTY_ORDER": "سلة فارغة",
   "CLEAR_PRESC": "إزالة الوصفات الطبية",
   "CHANGE_LANGUAGE": "تغيير اللغة",
-  "REMINDME": "ذكرني"
+  "REMINDME": "ذكرني",
+  "EDIT": "تصحيح",
+  "SELECT": "اختار",
+  "SAVE": "حفظ"
 }

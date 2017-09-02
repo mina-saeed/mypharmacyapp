@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>addresses</ion-title>
+    <ion-title>{{ "ADDRESS" | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -16,20 +16,20 @@
 <ion-content padding>
 
 
-  <div *ngFor = "let res of addresses">
+  <div *ngFor = "let res of addresses" dir="{{'LANG_DIR' | translate}}">
     <p>{{res}}</p>
 
-      <button ion-button (click)="selectAddress(res)">Select</button>
-      <button ion-button (click)="editAddresses(res)">Edit</button>
+      <button ion-button (click)="selectAddress(res)">{{ "SELECT" | translate}}</button>
+      <button ion-button (click)="editAddresses(res)">{{ "EDIT" | translate}}</button>
 
 
 
   </div>
 
-  <form (ngSubmit)="addAddress()">
+  <form (ngSubmit)="addAddress()" dir="{{'LANG_DIR' | translate}}">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "Address" | translate}}:</ion-label>
+        <ion-label class = "text">{{ "ADDRESS" | translate}}:</ion-label>
         <ion-input class="oval" type="text"  [(ngModel)]="userData.address" name="street"></ion-input>
         </ion-item>
 

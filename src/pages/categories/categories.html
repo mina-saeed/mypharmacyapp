@@ -51,8 +51,13 @@
                  placeholder="{{'SEARCH_NAME' | translate}}">
    <img class="image" src="assets/icon/White Loop.png"/>
     </ion-input>
-        <ion-list *ngIf="showSearchResult">
+
+
+    <ion-list *ngIf="showSearchResult">
+
       <ion-item  *ngFor = "let res of searchResults.data">
+
+        <div *ngIf="noResultsBool == true">
       <img (click)="detailedProduct(res.id)" class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
 
       <h3 (click)="detailedProduct(res.id)">{{res.name}}</h3>
@@ -60,10 +65,16 @@
      <img src="assets/icon/ADD to activated.png">
   </button>
     <hr class="hrDetails">
-    <p class="p textDetails">{{'DESCRIPTION' | translate}}: {{res.description}}</p>
+    <p class="p textDetails">{{"DESCRIPTION" | translate }}: {{res.description_ar}}</p>
   <hr class="hrDetails">
-
+  </div>
+  <h3 *ngIf="noResultsBool == false && currentLanguage=='en'">No results found!</h3>
+   <h3 *ngIf="noResultsBool == false && currentLanguage=='ar'">لا توجد نتائج</h3>
       </ion-item>
+
+
+
+
     </ion-list>
         <div *ngIf="showPage">
 

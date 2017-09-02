@@ -7,16 +7,17 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detailedAddress</ion-title>
+    <ion-title>{{ "ADDRESS" | translate}}</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-
+<div dir="{{'LANG_DIR' | translate}}">
       <ion-input type="text" name="address" [(ngModel)]="currentAddress" value={{currentAddress}}></ion-input>
-  <button ion-button  (click)="saveAddresses()">Save</button>
-  <button ion-button (click)="deleteAddress()">Delete</button>
+  <button ion-button  (click)="saveAddresses()">{{ "SAVE" | translate}}</button>
+  <button ion-button (click)="deleteAddress()">{{ "DELETE" | translate}}</button>
+</div>
 
 </ion-content>

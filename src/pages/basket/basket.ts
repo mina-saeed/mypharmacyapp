@@ -48,6 +48,7 @@ export class BasketPage {
   url:string;
   totalPrice = 0;
   currentAddress:string;
+  currentLanguage: string;
   private translate: TranslateService;
 
   constructor(translate: TranslateService,
@@ -57,13 +58,24 @@ export class BasketPage {
                private nativeStorage: NativeStorage) {
                  this.promoMessage = "No promocode added!";
     this.translate = translate;
+    if (this.translate.currentLang =='ar') {
+      this.currentLanguage = "ar";
+    }
+    else {
+      this.currentLanguage = "en";
+    }
     this.promo=false;
     //this.translate.use('ar');
     this.url = 'http://146.185.148.66:3009/';
     if(this.navParams.get('defaultOrNot') == 1){ //kda hwa selected an addres
       this.currentAddress = this.navParams.get('currentAddress');
     }else{ //hatly el default
-      this.currentAddress = "Default Address";
+      if(this.currentLanguage == "en"){
+        this.currentAddress = "Default Address";
+      }else if(this.currentLanguage =="ar"){
+        this.currentAddress = "العنوان الثابت";
+      }
+
     }
 
     console.log(this.currentAddress);
@@ -130,7 +142,11 @@ export class BasketPage {
     for(var x = 0; x<current.length; x++){
       if(current[x]["id"] == id){
         if(current[x]["qty"] == 1){
-          console.log("cannot decrement below 1!");
+          if(this.currentLanguage == "en"){
+            console.log("Cannot decrement below 1!");
+          }else if(this.currentLanguage =="ar"){
+            console.log("لا يمكن أن تنخفض تحت واحد");
+          }
           break;
         }else{
           current[x]["qty"]--;

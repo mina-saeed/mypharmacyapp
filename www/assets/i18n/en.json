@@ -108,5 +108,8 @@
   "CHANGE_LANGUAGE": "Change Language",
   "REMINDME": "REMIND ME",
   "DELETE": "Delete",
-  "ADD": "Add"
+  "ADD": "Add",
+  "EDIT": "Edit",
+  "SELECT": "Select",
+  "SAVE": "Save"
 }

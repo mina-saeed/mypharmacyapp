@@ -30,7 +30,7 @@ import {  OnInit, TemplateRef, ViewChild } from '@angular/core';
 })
 export class CategoriesPage implements OnInit{
 //
-
+    noResultsBool = false;
   categories:any;
   subCategories:any;
   searchResults= {  //change default data according to mahmoud, or figure out a better way of doing deault ad empty values
@@ -93,41 +93,45 @@ export class CategoriesPage implements OnInit{
 
     ngOnInit() {
     }
-      updateListByName(ev) {
-    this.showPage = false;
-    this.showSearchResult = true; //when start searching, show the list
-    //if statement make it false when deleted all characters!!
-    //break if backspace and emtpy 3shan el requests
+    updateListByName(ev) {
+      //this.noResultsBool = true;
+      this.showPage = false;
+      this.showSearchResult = true; //when start searching, show the list
+      //if statement make it false when deleted all characters!!
+      //break if backspace and emtpy 3shan el requests
 
-    if(ev.keyCode == 8)
-    {
-      if(ev.target.value.toString() == ""){
-        this.showSearchResult = false; //and true to show other components
-        this.showPage = true;
-      }
-    }
+      if(ev.keyCode == 8)
+      {
+        if(ev.target.value.toString() == ""){
+          this.showSearchResult = false; //and true to show other components
+          this.showPage = true;
 
-    this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
-      .map(res => res).subscribe(data => {
-      console.log(this.url + 'search/' + ev.target.value.toString());
-
-        //this.orderTest["data"] = JSON.parse(data["_body"].toString());
-        if(data["_body"].toString() == "No results found"){
-          this.searchResults["data"] = [{id:-1, name:"No results found", description:"", category:"", barcode:-1, milligrams:0, price:0}]; //empty ot message
-        }else{
-          this.searchResults["data"] = JSON.parse(data["_body"].toString());
         }
-        console.log(data);
-      });
+      }
+      this.url = 'http://146.185.148.66:3003/';
+      this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
+        .map(res => res).subscribe(data => {
+        console.log(this.url + 'search/' + ev.target.value.toString());
 
-  //  console.log(ev.target.value);
-    //console.log(this.searchResults["data"][0]["name"]);
-    //this.orderTest["data"].pop();
-  }
-  onCancelByName(ev){
-    this.showSearchResult = false; //and true to show other components
-    this.showPage = true;
-  }
+          //this.orderTest["data"] = JSON.parse(data["_body"].toString());
+          if(data["_body"].toString() == "No results found"){
+            this.noResultsBool = false;
+            this.searchResults["data"] = [{id:-1, name:"No results found", description:"", category:"", barcode:-1, milligrams:0, price:0}]; //empty ot message
+          }else{
+            this.noResultsBool = true;
+            this.searchResults["data"] = JSON.parse(data["_body"].toString());
+          }
+          console.log(data);
+        });
+
+    //  console.log(ev.target.value);
+      //console.log(this.searchResults["data"][0]["name"]);
+      //this.orderTest["data"].pop();
+    }
+    onCancelByName(ev){
+      this.showSearchResult = false; //and true to show other components
+      this.showPage = true;
+    }
 
   addToCart(medicine){
     //get what in local storage put it in a json object
