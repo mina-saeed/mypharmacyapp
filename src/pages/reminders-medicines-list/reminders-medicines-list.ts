@@ -43,7 +43,7 @@ export class RemindersMedicinesListPage {
 
 
   addMedicine(){
-    if(this.medicine == null || this.medicine == "")
+    if(!(/\S/.test(this.medicine)))
     {
             alert("cannot be empty");
 

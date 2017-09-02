@@ -53,7 +53,7 @@ export class ReminderPage {
   }
 
   addPatient(){
-    if(this.patient != null)
+    if((/\S/.test(this.patient)))
     {
       if (this.checkDuplicates(this.members, this.patient.toString())){
         alert("Name already in the list");
@@ -71,7 +71,7 @@ export class ReminderPage {
       }
 
     }else{
-      alert("cannot be empty");
+      alert("Cannot be empty");
     }
 
   }

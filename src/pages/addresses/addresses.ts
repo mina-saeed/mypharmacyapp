@@ -50,10 +50,15 @@ export class AddressesPage {
   addAddress(){
 
 
+      if(!(/\S/.test(this.userData.address))){
+        alert("Cannot be empty");
+      }else{
+        this.addresses.push(this.userData.address);
+        this.userData.address = "";
+          this.updateAddressesToDB();
+      }
 
-    this.addresses.push(this.userData.address);
-    this.userData.address = "";
-      this.updateAddressesToDB();
+
   }
 
     editAddresses(elem){
