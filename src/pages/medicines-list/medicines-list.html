@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Medicines</ion-title>
+    <ion-title>{{ "PRODUCTS" | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,8 +15,8 @@
 
 <ion-content padding>
   <div *ngIf="zeroArr == true"  class="round">
-      <p *ngIf="currentLanguage == 'en'">No medicines found in this category</p>
-      <p *ngIf="currentLanguage == 'ar'">لا توجد أدوية في هذه الفئة</p>
+      <p *ngIf="currentLanguage == 'en'">No products found in this category.</p>
+      <p *ngIf="currentLanguage == 'ar'">لا توجد منتجات وجدت في هذه الفئة.</p>
   </div>
   <div *ngIf="zeroArr == false">
     <div  *ngFor="let cat of subProdcuts" class="round">

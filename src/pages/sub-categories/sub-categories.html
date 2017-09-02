@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Categories</ion-title>
+    <ion-title>{{ "CATEGORIES" | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,7 +15,8 @@
 
 <ion-content padding>
   <div *ngIf="zeroArr == true"  class="round">
-      <p (click)="goToMedicines(cat._id)">No categories found!</p>
+    <p *ngIf="currentLanguage == 'en'"  class="p">No categories found.</p>
+    <p *ngIf="currentLanguage == 'ar'"  class="p">لم يتم العثور على فئات</p>
   </div>
 
 

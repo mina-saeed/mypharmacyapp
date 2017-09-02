@@ -9,7 +9,7 @@
   <ion-navbar>
 
     <ion-title class="navTitle">
-     <p class="{{'TITLELANG' | translate}} title">Orders History</p>
+     <p class="{{'TITLELANG' | translate}} title">{{ "ORDERS" | translate }}</p>
     </ion-title>
 
     <ion-buttons right>
@@ -29,7 +29,6 @@
 
 <ion-content padding>
   <div *ngFor="let order of orderHistory" class="round">
-  <p>{{order}}</p>
     <p>{{order.order}}</p>
     <p>{{order.location}}</p>
   </div>
