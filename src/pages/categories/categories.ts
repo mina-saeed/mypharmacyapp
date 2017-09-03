@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
@@ -65,7 +65,7 @@ export class CategoriesPage implements OnInit{
     url:string;
 
     currentLanguage:string;
-  constructor(translate: TranslateService,public navCtrl: NavController, private nativeStorage: NativeStorage, public navParams: NavParams,public http:Http) {
+  constructor(private alertCtrl: AlertController, public loadingCtrl: LoadingController, translate: TranslateService,public navCtrl: NavController, private nativeStorage: NativeStorage, public navParams: NavParams,public http:Http) {
 
       this.translate=translate;
     if (this.translate.currentLang =='ar') {
@@ -252,14 +252,29 @@ export class CategoriesPage implements OnInit{
     headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
     headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
+    let loading = this.loadingCtrl.create({
+      content: 'Loading...'
+    });
+
+    loading.present();
+
     this.url = 'http://146.185.148.66:3007/';
     this.http.get(this.url + 'all', new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
+
+       loading.dismiss(); //dismiss loading..
+
       this.categories = JSON.parse(data["_body"]);
     //  console.log(this.categories);
     }, err => {
-      console.log(err);
+    //  console.log(err);
+
+      //dismiss loading with an error
+      loading.dismiss();
+      loading.onDidDismiss(() => {
+       alert("Please check your internet connection!")
+     });
     });
 
   }
@@ -287,6 +302,19 @@ export class CategoriesPage implements OnInit{
   goToSubCategories(id){
   //  this.getSubCategories(id);
     this.navCtrl.push(SubCategoriesPage, id);
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 
 }
