@@ -56,7 +56,7 @@ export class DetailedRemindersMedicinesListPage {
       {
         this.localNotifications.schedule({
           id: this.maxReminderID,
-          text: 'Reminder to take:' + this.currentMedicine["name"],
+          text: 'Reminder to take: ' + this.currentMedicine["name"],
           every: "day"
         });
       }else if( duration.toString() == "Weekly"){
@@ -68,7 +68,7 @@ export class DetailedRemindersMedicinesListPage {
       }else if( duration.toString() == "Monthly"){
         this.localNotifications.schedule({
           id: this.maxReminderID,
-          text: 'Reminder to take:' + this.currentMedicine["name"],
+          text: 'Reminder to take: ' + this.currentMedicine["name"],
           every: "month"
         });
       }
