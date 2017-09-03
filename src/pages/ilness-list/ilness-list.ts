@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { DetailedProductPage } from '../detailed-product/detailed-product';
 import { TranslateService } from 'ng2-translate';
@@ -23,7 +23,7 @@ export class IlnessListPage {
     private translate: TranslateService;
     currentLanguage:string;
 
-  constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+  constructor(private alertCtrl: AlertController,translate: TranslateService, public navCtrl: NavController, public navParams: NavParams, public http:Http) {
     this.url = 'http://146.185.148.66:3006/';
 
     this.translate=translate;
@@ -86,14 +86,27 @@ export class IlnessListPage {
       //  console.log(data);
       //  console.log("yey no error", pdata);
         if(pdata["_body"] == "no data"){
-          alert("Invalid barcode!")
+          alert("Invalid Product!")
         }else{
           console.log(JSON.parse(pdata["_body"]));
           this.navCtrl.push(DetailedProductPage, {_body: pdata["_body"]});
         }
 
     },err =>{
-      alert("Invalid barcode!");
+      alert("An error occured!");
     });
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

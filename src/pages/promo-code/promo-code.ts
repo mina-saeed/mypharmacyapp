@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { BasketPage } from '../basket/basket';
@@ -22,7 +22,7 @@ export class PromoCodePage {
     url:string;
     promoInput = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams,public http:Http) {
     this.url = 'http://146.185.148.66:3009/';
   }
 
@@ -69,5 +69,18 @@ export class PromoCodePage {
         alert("Invalid Promocode!")
       console.log(err);
     });
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

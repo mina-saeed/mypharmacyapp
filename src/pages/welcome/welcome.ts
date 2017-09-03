@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams ,Platform} from 'ionic-angular';
+import { IonicPage, NavController, NavParams ,Platform, AlertController} from 'ionic-angular';
 import { LocationPage } from '../location/location';
 import { TabsPage } from '../tabs/tabs';
 import { LoginEmailPage } from '../login-email/login-email';
@@ -157,9 +157,22 @@ export class WelcomePage {
 
     console.log('Logged into Facebook!', res);
 
-
     //end point, send res data to mahmoud
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
+    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
+
+    this.url = 'http://146.185.148.66:3000/fbLogin';
+    this.http.post(this.url, res["authResponse"], new RequestOptions({headers:headers}))
+    .map(res => res).subscribe(data => {
+      console.log(data);
+    //  console.log(this.subProdcuts);
+    }, err => {
+      console.log(err);
+    });
 
     this.navCtrl.push(LocationPage);
     this.disableButton = false;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -29,7 +29,7 @@ export class DetailedAddressPage {
 
     }
     index:number;
-  constructor(public http:Http, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private alertCtrl: AlertController,public http:Http, public navCtrl: NavController, public navParams: NavParams) {
     this.url = 'http://146.185.148.66:3000/';
     this.addresses = this.navParams.get('addresses');
     this.userData = this.navParams.get('userData');
@@ -90,7 +90,7 @@ export class DetailedAddressPage {
 
           }, err =>{
             console.log(err);
-            alert(err["_body"]);
+            //alert(err["_body"]);
           });
   }
 

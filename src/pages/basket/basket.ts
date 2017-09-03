@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 //import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -51,7 +51,7 @@ export class BasketPage {
   currentLanguage: string;
   private translate: TranslateService;
 
-  constructor(translate: TranslateService,
+  constructor(private alertCtrl: AlertController,translate: TranslateService,
                public navCtrl: NavController,
                public navParams: NavParams,
                public http:Http,
@@ -243,5 +243,18 @@ export class BasketPage {
     this.orderData["prescription"] = null;
     this.checkEmptyOrder();
     this.saveOrder();
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { DetailedRemindersMedicinesListPage } from '../detailed-reminders-medicines-list/detailed-reminders-medicines-list';
 
@@ -21,7 +21,7 @@ export class RemindersMedicinesListPage {
   members:any;
   currentMember =[];
 
-  constructor(private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private alertCtrl: AlertController,private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams) {
 
     this.index = this.navParams.get('index');
     this.currentMember = this.navParams.get('current');
@@ -43,9 +43,10 @@ export class RemindersMedicinesListPage {
 
 
   addMedicine(){
-    if(!(/\S/.test(this.medicine)))
+    if(!(/\S/.test(this.medicine)) || this.medicine == null)
     {
-            alert("cannot be empty");
+        //    alert("cannot be empty");
+        this.customAlert("Error", "Please write a medicine name.", "Ok");
 
     }else{
 
@@ -92,5 +93,17 @@ export class RemindersMedicinesListPage {
     console.log(res);
     this.navCtrl.push(DetailedRemindersMedicinesListPage, {indexOfMember:this.index, all:this.members, current: res, indexOfMedicine: this.currentMember["medicinces"].indexOf(res)});
   }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
 
+          }
+        ]
+      });
+      alert.present();
+  }
 }

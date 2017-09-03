@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 
 import { TabsPage } from '../tabs/tabs';
 import { RegisterEmailPage } from '../register-email/register-email';
@@ -29,7 +29,7 @@ export class LoginEmailPage {
   //    token: "",
     }
 
-  constructor(private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams,
+  constructor(private alertCtrl: AlertController,private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams,
   public http:Http) {
     this.url = 'http://146.185.148.66:3000/';
   }
@@ -85,5 +85,18 @@ export class LoginEmailPage {
   }
   register(){
     this.navCtrl.push(RegisterEmailPage);
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { RemindersMedicinesListPage } from '../reminders-medicines-list/reminders-medicines-list';
@@ -30,7 +30,7 @@ export class ReminderPage {
 //  }
 ]
 
-  constructor(private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams, private localNotifications: LocalNotifications) {
+  constructor(private alertCtrl: AlertController,private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams, private localNotifications: LocalNotifications) {
 
 
     this.getOrSetReminders();
@@ -53,7 +53,7 @@ export class ReminderPage {
   }
 
   addPatient(){
-    if((/\S/.test(this.patient)))
+    if((/\S/.test(this.patient)) && this.patient != null)
     {
       if (this.checkDuplicates(this.members, this.patient.toString())){
         alert("Name already in the list");
@@ -118,5 +118,17 @@ export class ReminderPage {
       this.nativeStorage.setItem('reminders', this.members)} //if no lssa mafeesh, e3ml new one! tkoon members fadya 5ales
   );
   }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
 
+          }
+        ]
+      });
+      alert.present();
+  }
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
@@ -72,7 +72,7 @@ export class UpdateLocationPage {
       mobile: ""
     }
   private translate: TranslateService;
-    constructor(private selector: WheelSelector,private remoteService : RemoteServiceProvider,translate: TranslateService, public navCtrl: NavController, public navParams: NavParams,
+    constructor(private alertCtrl: AlertController,private selector: WheelSelector,private remoteService : RemoteServiceProvider,translate: TranslateService, public navCtrl: NavController, public navParams: NavParams,
       private uniqueDeviceID: UniqueDeviceID, public http:Http,public formBuilder: FormBuilder) {
         this.translate=translate;
        // this.translate.use('en');
@@ -130,7 +130,7 @@ export class UpdateLocationPage {
      result => {
        console.log(result[0].name);
        this.selectedCity = result[0].name;
-     },  
+     },
      err => console.log('Error: ', err)
      );
 
@@ -155,7 +155,7 @@ export class UpdateLocationPage {
      result => {
        console.log(result[0].name);
        this.selectedLocation = result[0].name;
-     },  
+     },
      err => console.log('Error: ', err)
      );
 }
@@ -208,6 +208,19 @@ export class UpdateLocationPage {
     });
 
 
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 
 }

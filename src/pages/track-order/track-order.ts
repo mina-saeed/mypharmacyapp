@@ -51,7 +51,7 @@ export class TrackOrderPage {
 
       this.socket.on("pharmacyConfirmed", (data) =>{
         console.log("recieved data ", data);
-        alert(data);
+      //  alert(data);
 
         this.zone.run(() =>{
          console.log("recieved data", data);

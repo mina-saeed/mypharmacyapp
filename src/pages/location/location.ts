@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams} from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import { UniqueDeviceID } from '@ionic-native/unique-device-id';
 import { TranslateService } from 'ng2-translate';
 import { Http, Headers, RequestOptions} from '@angular/http';
@@ -85,7 +85,7 @@ export class LocationPage {
     ],
     };
 
-  constructor( private nativeStorage: NativeStorage, private selector: WheelSelector,private remoteService : RemoteServiceProvider, translate: TranslateService, public lang: TestStorageProvider,public navCtrl: NavController, public navParams: NavParams, public http:Http,
+  constructor(private alertCtrl: AlertController, private nativeStorage: NativeStorage, private selector: WheelSelector,private remoteService : RemoteServiceProvider, translate: TranslateService, public lang: TestStorageProvider,public navCtrl: NavController, public navParams: NavParams, public http:Http,
               private uniqueDeviceID: UniqueDeviceID,public formBuilder: FormBuilder) {
                 this.translate = translate;
 
@@ -141,7 +141,7 @@ export class LocationPage {
 }); */
 //alert(JSON.stringify(this.x.value));
 }
-  
+
   selectCity() {
    this.getPosts();
    this.selector.show({
@@ -258,5 +258,18 @@ export class LocationPage {
     console.log(JSON.stringify(this.loc.location.city));
     console.log(body);*/
 
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

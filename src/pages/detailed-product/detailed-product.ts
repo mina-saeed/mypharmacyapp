@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { Http, Headers} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -56,7 +56,7 @@ export class DetailedProductPage {
 
 
   private translate: TranslateService;
-  constructor( private datePicker: DatePicker, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http, private nativeStorage: NativeStorage,private localNotifications: LocalNotifications) {
+  constructor( private alertCtrl: AlertController,private datePicker: DatePicker, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http, private nativeStorage: NativeStorage,private localNotifications: LocalNotifications) {
    this.translate = translate;
            this.url = 'http://146.185.148.66:3003/';
         this.product.data = JSON.parse(this.navParams.get("_body")); //nav controller
@@ -275,5 +275,18 @@ export class DetailedProductPage {
         return false;
       }
     }
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

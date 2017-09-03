@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 
@@ -22,7 +22,7 @@ export class DetailedRemindersMedicinesListPage {
   indexOfMedicine: number;
   indexOfMember: number;
 
-  constructor(private localNotifications: LocalNotifications, private nativeStorage: NativeStorage,public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private alertCtrl: AlertController,private localNotifications: LocalNotifications, private nativeStorage: NativeStorage,public navCtrl: NavController, public navParams: NavParams) {
     this.members = this.navParams.get('all');
     this.currentMedicine = this.navParams.get('current');
     this.indexOfMedicine = this.navParams.get('indexOfMedicine');
@@ -101,5 +101,18 @@ export class DetailedRemindersMedicinesListPage {
   updateMaxReminderID(){
     this.maxReminderID = this.maxReminderID + 1;
     this.nativeStorage.setItem('maxReminderID', this.maxReminderID);
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

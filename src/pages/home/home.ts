@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { CameraPage } from '../camera/camera';
 import { BasketPage } from '../basket/basket';
 import { TranslateService } from 'ng2-translate';
@@ -51,7 +51,7 @@ export class HomePage {
   currentLanguage:string;
 
   private translate: TranslateService;
-  constructor( private barcodeScanner: BarcodeScanner,translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
+  constructor(private alertCtrl: AlertController, private barcodeScanner: BarcodeScanner,translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
 
     this.translate=translate;
   if (this.translate.currentLang =='ar') {
@@ -282,5 +282,18 @@ export class HomePage {
   }
   goToIllness(){
     this.navCtrl.push(IllnessPage);
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }

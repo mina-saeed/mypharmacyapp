@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController} from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import { DetailedAddressPage } from '../detailed-address/detailed-address';
@@ -35,7 +35,7 @@ export class AddressesPage {
   //    token: "",
     }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams, public http:Http) {
     this.url = 'http://146.185.148.66:3000/';
     this.email = "mail@mail.com";  //let it dynamic later!
     this.userData.email="mail@mail.com";
@@ -50,7 +50,7 @@ export class AddressesPage {
   addAddress(){
 
 
-      if(!(/\S/.test(this.userData.address))){
+      if(!(/\S/.test(this.userData.address)) || this.userData.address ==null){
         alert("Cannot be empty");
       }else{
         this.addresses.push(this.userData.address);
@@ -127,5 +127,19 @@ export class AddressesPage {
       this.navCtrl.push(BasketPage, {currentAddress: this.selectedAddress, defaultOrNot: 1});
 
       //set da lel default?
+    }
+
+    customAlert(title, message, buttonText){
+      let alert = this.alertCtrl.create({
+          title: title,
+          message: message,
+          buttons: [
+            {
+              text: buttonText,
+
+            }
+          ]
+        });
+        alert.present();
     }
 }

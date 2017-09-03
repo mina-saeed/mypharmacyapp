@@ -211,5 +211,18 @@ export class CameraPage {
              }
            );
      }
+     customAlert(title, message, buttonText){
+       let alert = this.alertCtrl.create({
+           title: title,
+           message: message,
+           buttons: [
+             {
+               text: buttonText,
+
+             }
+           ]
+         });
+         alert.present();
+     }
 
 }

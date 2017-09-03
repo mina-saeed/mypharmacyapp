@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
 
 import { LocationPage } from '../location/location';
 import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
@@ -52,7 +52,7 @@ export class RegisterEmailPage {
     };
   private translate: TranslateService;
 
-  constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,
+  constructor(private alertCtrl: AlertController,translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,
   public http:Http,public formBuilder: FormBuilder) {
     this.url = 'http://146.185.148.66:3000/';
                     this.translate = translate;
@@ -126,5 +126,18 @@ export class RegisterEmailPage {
       });
     }
 
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 }
