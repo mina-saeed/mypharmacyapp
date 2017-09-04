@@ -86,14 +86,22 @@ export class IlnessListPage {
       //  console.log(data);
       //  console.log("yey no error", pdata);
         if(pdata["_body"] == "no data"){
-          alert("Invalid Product!")
+          if(this.currentLanguage == "en"){
+            this.customAlert("Error", "Invalid Product", "Close");
+          }else if(this.currentLanguage =="ar"){
+            this.customAlert("أغلق", "منتج غير صالح", "خطأ");
+          }
         }else{
           console.log(JSON.parse(pdata["_body"]));
           this.navCtrl.push(DetailedProductPage, {_body: pdata["_body"]});
         }
 
     },err =>{
-      alert("An error occured!");
+      if(this.currentLanguage == "en"){
+        this.customAlert("Error", "An error occurred", "Close");
+      }else if(this.currentLanguage =="ar"){
+        this.customAlert("خطأ", "حدث خطأ", "أغلق");
+      }
     });
   }
   customAlert(title, message, buttonText){

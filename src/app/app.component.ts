@@ -74,36 +74,42 @@ export class MyApp {
   subscribeNoConnection(){
     let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
     // alert('Network was disconnected!');
-      let alert = this.alertCtrl.create({
-    title: 'Network',
-    message: 'Network Disconnected',
-    buttons: [
-      {
-        text: 'Ok',
-
-      }
-    ]
-  });
-  alert.present();
+    if (this.translate.currentLang =='ar') {
+      this.customAlert("شبكة الاتصال","تم قطع الاتصال بالشبكة","أغلق");
+    }
+    else {
+      this.customAlert("Network","Network Disconnected","Close");
+    }
 //      this.subcribeConnection();
     });
   }
   subcribeConnection(){
+
+
+
+
     let connectSubscription = this.network.onConnect().subscribe(() => {
       console.log('network connected!');
-      let alert = this.alertCtrl.create({
-    title: 'Network',
-    message: 'Network Connected',
-    buttons: [
-      {
-        text: 'Ok',
-
+      if (this.translate.currentLang =='ar') {
+        this.customAlert("شبكة الاتصال","الشبكة متصلة","أغلق");
       }
-    ]
-  });
-  alert.present();
+      else {
+        this.customAlert("Network","Network Connected","Close");
+      }
     //  this.subscribeNoConnection();
     });
   }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
 
+          }
+        ]
+      });
+      alert.present();
+  }
 }

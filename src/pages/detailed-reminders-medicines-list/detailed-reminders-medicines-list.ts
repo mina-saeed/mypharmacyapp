@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { LocalNotifications } from '@ionic-native/local-notifications';
-
+import { TranslateService } from 'ng2-translate';
 /**
  * Generated class for the DetailedRemindersMedicinesListPage page.
  *
@@ -22,7 +22,18 @@ export class DetailedRemindersMedicinesListPage {
   indexOfMedicine: number;
   indexOfMember: number;
 
-  constructor(private alertCtrl: AlertController,private localNotifications: LocalNotifications, private nativeStorage: NativeStorage,public navCtrl: NavController, public navParams: NavParams) {
+    private translate: TranslateService;
+    currentLanguage: string;
+
+  constructor(translate: TranslateService, private alertCtrl: AlertController,private localNotifications: LocalNotifications, private nativeStorage: NativeStorage,public navCtrl: NavController, public navParams: NavParams) {
+    this.translate=translate;
+  if (this.translate.currentLang =='ar') {
+    this.currentLanguage = "ar";
+  }
+  else {
+    this.currentLanguage = "en";
+  }
+
     this.members = this.navParams.get('all');
     this.currentMedicine = this.navParams.get('current');
     this.indexOfMedicine = this.navParams.get('indexOfMedicine');
@@ -49,26 +60,36 @@ export class DetailedRemindersMedicinesListPage {
   //use firstAt... example using at at: 1503429522.. make it tomorrow at time he specifies
 
   if(this.currentMedicine["remindID"] > -1){
-    alert("Already has a reminder! Go away!");
+    if(this.currentLanguage == "en"){
+      this.customAlert("Error", "Reminder already set", "Close");
+    }else if(this.currentLanguage =="ar"){
+      this.customAlert("خطأ", "تم تعيينه من قبل", "أغلق");
+    }
   }else{
     //.....
+    let text = "";
+    if(this.currentLanguage == "en"){
+      text = "Reminder to take:";
+    }else if(this.currentLanguage =="ar"){
+      text = "أذكر لي أن تأخذ: ";
+    }
      if( duration.toString() == "Daily")
       {
         this.localNotifications.schedule({
           id: this.maxReminderID,
-          text: 'Reminder to take: ' + this.currentMedicine["name"],
+          text: text + this.currentMedicine["name"],
           every: "day"
         });
       }else if( duration.toString() == "Weekly"){
         this.localNotifications.schedule({
           id: this.maxReminderID,
-          text: 'Reminder to take:' + this.currentMedicine["name"],
+          text: text + this.currentMedicine["name"],
           every: "week"
         });
       }else if( duration.toString() == "Monthly"){
         this.localNotifications.schedule({
           id: this.maxReminderID,
-          text: 'Reminder to take: ' + this.currentMedicine["name"],
+          text: text + this.currentMedicine["name"],
           every: "month"
         });
       }

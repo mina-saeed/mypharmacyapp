@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angu
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { RemindersMedicinesListPage } from '../reminders-medicines-list/reminders-medicines-list';
+import { TranslateService } from 'ng2-translate';
 
 /**
  * Generated class for the ReminderPage page.
@@ -30,8 +31,17 @@ export class ReminderPage {
 //  }
 ]
 
-  constructor(private alertCtrl: AlertController,private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams, private localNotifications: LocalNotifications) {
+private translate: TranslateService;
+currentLanguage: string;
 
+  constructor(translate: TranslateService, private alertCtrl: AlertController,private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams, private localNotifications: LocalNotifications) {
+    this.translate=translate;
+  if (this.translate.currentLang =='ar') {
+    this.currentLanguage = "ar";
+  }
+  else {
+    this.currentLanguage = "en";
+  }
 
     this.getOrSetReminders();
     this.getOrSetMaxReminderID();
@@ -56,7 +66,11 @@ export class ReminderPage {
     if((/\S/.test(this.patient)) && this.patient != null)
     {
       if (this.checkDuplicates(this.members, this.patient.toString())){
-        alert("Name already in the list");
+        if(this.currentLanguage == "en"){
+          this.customAlert("Error", "Name already in the list", "Close");
+        }else if(this.currentLanguage =="ar"){
+          this.customAlert("خطأ", "تم تعيينه من قبل", "أغلق");
+        }
       }else{
         let body = {
           name: this.patient,  //should check to be unique
@@ -71,7 +85,11 @@ export class ReminderPage {
       }
 
     }else{
-      alert("Cannot be empty");
+      if(this.currentLanguage == "en"){
+        this.customAlert("Error", "Do not leave any field empty!", "Close");
+      }else if(this.currentLanguage =="ar"){
+        this.customAlert("خطأ", "لا تترك أي مساحة فارغة", "أغلق");
+      }
     }
 
   }
