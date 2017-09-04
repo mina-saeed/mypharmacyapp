@@ -166,6 +166,7 @@ export class WelcomePage {
 
 
     this.url = 'http://146.185.148.66:3000/fbLogin';
+    console.log("RESSS", res["authResponse"]);
     this.http.post(this.url, res["authResponse"], new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
