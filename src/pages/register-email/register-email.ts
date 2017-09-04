@@ -139,6 +139,13 @@ export class RegisterEmailPage {
 
       },  err =>{
         console.log(err);
+        if(err["_body"] == "user already exists"){
+          if(this.currentLanguage == "en"){
+            this.customAlert("Error", "Email already registered", "Close");
+          }else if(this.currentLanguage =="ar"){
+           this.customAlert("خطأ", "البريد الإلكتروني مسجل مسبقا", "أغلق");
+          }
+        }
       });
     }
 
