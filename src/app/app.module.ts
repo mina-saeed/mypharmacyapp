@@ -66,9 +66,9 @@ import { NgCalendarModule  } from 'ionic2-calendar';
 import { ForgetPasswordPage } from '../pages/forget-password/forget-password';
 import { RedeemPointsPage } from '../pages/redeem-points/redeem-points';
 import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/reminders-medicines-list';
-import { MedicineReminderPage } from '../pages/medicine-reminder/medicine-reminder';    
-import { PersonReminderPage } from '../pages/person-reminder/person-reminder';    
-import { TimeReminderPage } from '../pages/time-reminder/time-reminder';    
+import { MedicineReminderPage } from '../pages/medicine-reminder/medicine-reminder';
+import { PersonReminderPage } from '../pages/person-reminder/person-reminder';
+import { TimeReminderPage } from '../pages/time-reminder/time-reminder';
 
 import { DetailedRemindersMedicinesListPage } from '../pages/detailed-reminders-medicines-list/detailed-reminders-medicines-list';
 import { MedicinesListPage } from '../pages/medicines-list/medicines-list';

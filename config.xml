@@ -3,7 +3,7 @@
     <name>My Pharmacy</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.43.200:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-navigation href="http://ionic.local/*" />
     <allow-navigation href="http://192.168.1.7:8100" />
@@ -107,7 +107,7 @@
     </plugin>
     <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
     <plugin name="cordova-plugin-device" spec="^1.1.6" />
-    <plugin name="cordova-plugin-facebook4" spec="^1.9.1">
+    <plugin name="cordova-plugin-facebook4" spec="^1.7.4">
         <variable name="APP_ID" value="1568720839858802" />
         <variable name="APP_NAME" value="Mypharmacy" />
     </plugin>

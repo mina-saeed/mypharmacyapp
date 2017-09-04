@@ -40,7 +40,7 @@ export class SubCategoriesPage {
 
       this.url = 'http://146.185.148.66:3003/';
       this.id = this.navParams.get("id");
-      this.imageURL = this.navParams.get("image");
+      this.imageURL = this.navParams.get("imageURL");
       this.name = this.navParams.get("name");
       alert(this.name)
       this.zeroArr = true;
