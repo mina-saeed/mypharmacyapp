@@ -1,13 +1,139 @@
 page-illness {
-  .round {
-      padding: 4%;
-      font-family: "Helvetica";
-      font-size: 12px;
-      font-weight: 700;
-      color: #0F6196;
-      border-radius: 22px;
-      background-color: #cdebf9;
-      width: 90%;
-      margin-bottom: 10px;
-  }
+    .ion-ios-cartCustom-outline,
+    .ion-ios-cartCustom,
+    .ion-md-cartCustom,
+    .ion-md-cartCustom-outline {
+        content: url('../assets/icon/deactivited cart.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    .ion-ios-setting-outline,
+    .ion-ios-setting,
+    .ion-md-setting,
+    .ion-md-setting-outline {
+        content: url('../assets/icon/deactivated menu.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    p {
+        display: block
+    }
+    .oval {
+        line-height: 2;
+        text-align: center;
+        color: #3CABE3;
+        width: 150px !important;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        margin-top: -6px;
+        margin-bottom: 4%;
+        background-color: #EBF7FC;
+        border-radius: 50px;
+        display: inline-block;
+        font-family: "Helvetica";
+        font-size: 20px;
+        height: 40px;
+        position: absolute;
+
+    }
+    .title {
+        font-size: 23px;
+        font-family: Highland;
+    }
+
+    .toolbar-background-md{
+    background: #fff;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+    margin-bottom:0px;
+    }
+    .toolbar-background{
+    height: 60%;
+    }
+    .scroll-content  {
+    margin-top: 55px !important
+    }
+        .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+    background: #fff;
+    }
+
+    h2{
+    text-align: center;
+    color: #0F6196;
+    font-weight: 700;
+    }
+    .dark-button {
+        width: 95px;
+        height: 40px;
+        display: block;
+        background-color: #0F6196;
+        color: white;
+        border-radius: 25px;
+        font-family: "Helvetica";
+        font-size: 20px;
+        letter-spacing: .5px;
+        font-weight: 500;
+        line-height: 1.5;
+        text-align: center;
+        margin-left: 65%;
+        text-transform: capitalize;
+    }
+
+    .toolbar-ios ion-title{
+    width: 119%;
+    margin-left: -7% !important;
+    }
+    .md,.navTitle {
+    margin-left: 0px !important;
+    }
+    @media (max-width:320px) {
+      .title{
+      font-size: 21px;
+      margin-left: -20px;
+      }
+    }
+    li{
+      list-style: none;
+      margin-bottom: -15px;
+    }
+    p{
+    display: inline-block;
+    font-family: "Helvetica";
+    font-size: 20px;
+    color: #0F6196;
+    font-weight: bold;
+
+    }
+    .name{
+    margin-right: 28%;
+    margin-left: -10%;
+    }
+    hr{
+    width: 110%;
+    margin-left: -12%;
+    }
+    .input {
+    width: 60.03px;
+    line-height: 1;
+    }
+ @media (max-width:320px){
+     .name{
+    margin-right: 15%;
+    }
+ }
+  @media (min-width:700px){
+     .name{
+     text-align: center;
+    margin-left: 0%;
+    }
+    li{
+    width: 90%;
+    text-align: center;
+   }
+}
 }

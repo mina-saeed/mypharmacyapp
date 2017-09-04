@@ -438,4 +438,9 @@ p{
   color: #3CABE3;
   font-weight: normal;
 }
+    @media (max-width:320px) {
+      .title{
+      font-size: 21px;
+      }
+    }
     }

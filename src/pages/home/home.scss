@@ -278,4 +278,9 @@ page-home {
     .toolbar .toolbar-ios{
     padding-top: 10px;
     }
+    @media (max-width:320px) {
+      .title{
+      font-size: 21px;
+      }
+    }
 }

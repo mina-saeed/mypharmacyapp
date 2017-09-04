@@ -111,4 +111,9 @@
     width: 110%;
     margin-left: -3%;
     }
+    @media (max-width:320px) {
+      .title{
+      font-size: 21px;
+      }
+    }
 }
