@@ -5,7 +5,7 @@
   <img class="image" src="assets/icon/logo.png"/>
 
   <h3 class="header"><span>{{ "LOGIN" | translate}}</span></h3>
-  <form (tap)="login()">
+  <form (ngSubmit)="login()">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-input class="oval" type="text"  [(ngModel)]="userData.email" name="location" placeholder="{{ 'Email' | translate}}"></ion-input>
