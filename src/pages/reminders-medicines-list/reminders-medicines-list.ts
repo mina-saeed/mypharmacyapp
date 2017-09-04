@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { DetailedRemindersMedicinesListPage } from '../detailed-reminders-medicines-list/detailed-reminders-medicines-list';
-
+import { TranslateService } from 'ng2-translate';
 
 /**
  * Generated class for the RemindersMedicinesListPage page.
@@ -20,8 +20,21 @@ export class RemindersMedicinesListPage {
   medicine: string;
   members:any;
   currentMember =[];
+  currentLanguage: string;
+  private translate: TranslateService;
+  text:string;
 
-  constructor(private alertCtrl: AlertController,private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams) {
+  constructor(translate: TranslateService, private alertCtrl: AlertController,private nativeStorage: NativeStorage, public navCtrl: NavController, public navParams: NavParams) {
+
+    this.translate = translate;
+    if (this.translate.currentLang =='ar') {
+      this.currentLanguage = "ar";
+      this.text = "لا تذكير حتى الآن";
+    }
+    else {
+      this.currentLanguage = "en";
+      this.text = "No reminders yet";
+    }
 
     this.index = this.navParams.get('index');
     this.currentMember = this.navParams.get('current');
@@ -46,16 +59,24 @@ export class RemindersMedicinesListPage {
     if(!(/\S/.test(this.medicine)) || this.medicine == null)
     {
         //    alert("cannot be empty");
-        this.customAlert("Error", "Please write a medicine name.", "Ok");
+        if(this.currentLanguage == "en"){
+          this.customAlert("Error", "Do not leave any field empty!", "Close");
+        }else if(this.currentLanguage =="ar"){
+          this.customAlert("خطأ", "لا تترك أي مساحة فارغة", "أغلق");
+        }
 
     }else{
 
       if (this.checkDuplicates(this.currentMember["medicinces"], this.medicine.toString())){
-        alert("Name already in the list");
+        if(this.currentLanguage == "en"){
+          this.customAlert("Error", "Medicine is already in the list", "Close");
+        }else if(this.currentLanguage =="ar"){
+          this.customAlert("خطأ", "تم تعيينه من قبل", "أغلق");
+        }
       }else{
         let body = {
           name: this.medicine,  //should check to be unique
-          remindEvery: "no reminder yet",
+          remindEvery: this.text,
           remindID: -1,
           remindObject: null
         }

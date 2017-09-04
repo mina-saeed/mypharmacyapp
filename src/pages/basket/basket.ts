@@ -143,9 +143,9 @@ export class BasketPage {
       if(current[x]["id"] == id){
         if(current[x]["qty"] == 1){
           if(this.currentLanguage == "en"){
-            console.log("Cannot decrement below 1!");
+            this.customAlert("Error", "Cannot decrement below 1", "Close");
           }else if(this.currentLanguage =="ar"){
-            console.log("لا يمكن أن تنخفض تحت واحد");
+            this.customAlert("خطأ", "لا يمكن أن تنخفض تحت واحد", "أغلق");
           }
           break;
         }else{
@@ -160,7 +160,7 @@ export class BasketPage {
   //everything is done! now confirm order
   confirm(){
     if(this.empty == true){
-      alert("No orders to confirm");
+      //alert("No orders to confirm");
     }else
     {
       this.orderData.userInfo.writtenAddress = this.currentAddress;

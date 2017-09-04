@@ -85,9 +85,17 @@ export class LocationPage {
     ],
     };
 
+    currentLanguage: string;
   constructor(private alertCtrl: AlertController, private nativeStorage: NativeStorage, private selector: WheelSelector,private remoteService : RemoteServiceProvider, translate: TranslateService, public lang: TestStorageProvider,public navCtrl: NavController, public navParams: NavParams, public http:Http,
               private uniqueDeviceID: UniqueDeviceID,public formBuilder: FormBuilder) {
-                this.translate = translate;
+
+                this.translate=translate;
+              if (this.translate.currentLang =='ar') {
+                this.currentLanguage = "ar";
+              }
+              else {
+                this.currentLanguage = "en";
+              }
 
            this.translate.get('CITYVAL').subscribe((result: string) => {
                 this.validation_messages.city[0].message = result;
@@ -160,7 +168,11 @@ export class LocationPage {
  }
    selectLocation() {
    if(!this.selectedCity){
-   alert(" please select your City first ");
+     if(this.currentLanguage == "en"){
+       this.customAlert("Error", "Please select the city first", "Close");
+     }else if(this.currentLanguage =="ar"){
+      this.customAlert("أغلق", "يرجى تحديد المدينة أولا", "خطأ");
+     }
    }
    else {
    this.getPosts();

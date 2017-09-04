@@ -58,6 +58,13 @@ export class DetailedProductPage {
   private translate: TranslateService;
   constructor( private alertCtrl: AlertController,private datePicker: DatePicker, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http, private nativeStorage: NativeStorage,private localNotifications: LocalNotifications) {
    this.translate = translate;
+   this.translate=translate;
+   if (this.translate.currentLang =='ar') {
+     this.currentLanguage = "ar";
+   }
+   else {
+     this.currentLanguage = "en";
+   }
            this.url = 'http://146.185.148.66:3003/';
         this.product.data = JSON.parse(this.navParams.get("_body")); //nav controller
         console.log(this.product.data);
@@ -199,29 +206,40 @@ export class DetailedProductPage {
   addSchedule(duration){
 
 
-    if(this.checkScheduled(this.schedules, "defs1fs") == true){
-      alert("Already has a schedule!");
+    if(this.checkScheduled(this.schedules, this.currentSchedule.scheduleID) == true){
+    //  alert("Already has a schedule!");
+      if(this.currentLanguage == "en"){
+        this.customAlert("Error", "Schedule already set", "Close");
+      }else if(this.currentLanguage =="ar"){
+        this.customAlert("خطأ", "تم تعيينه من قبل", "أغلق");
+      }
     }else{
       //.....
+        let text = "";
+        if(this.currentLanguage == "en"){
+          text = "Reminder to order: ";
+        }else if(this.currentLanguage =="ar"){
+          text = "تذكير لي أن طلب: ";
+        }
        if( duration.toString() == "Daily")
         {
           this.localNotifications.schedule({
             id: this.maxReminderID,
-            text: 'Reminder to order:' + this.currentSchedule.medicineName,
+            text: text + this.currentSchedule.medicineName,
             at: this.chosenDate,
             every: "day"
           });
         }else if( duration.toString() == "Weekly"){
           this.localNotifications.schedule({
             id: this.maxReminderID,
-            text: 'Reminder to order:' + this.currentSchedule.medicineName,
+            text: text + this.currentSchedule.medicineName,
             at: this.chosenDate,
             every: "week"
           });
         }else if( duration.toString() == "Monthly"){
           this.localNotifications.schedule({
             id: this.maxReminderID,
-            text: 'Reminder to order:' + this.currentSchedule.medicineName,
+            text: text + this.currentSchedule.medicineName,
             at: this.chosenDate,
             every: "month"
           });
@@ -241,7 +259,11 @@ export class DetailedProductPage {
 
         this.nativeStorage.setItem('schedules', this.schedules);
         this.updateMaxReminderID();
-        alert("Schedule set successfully!")
+        if(this.currentLanguage == "en"){
+          this.customAlert("Done", "Schedule set successfully", "Close");
+        }else if(this.currentLanguage =="ar"){
+          this.customAlert("ناجح", "جدولة مجموعة بنجاح", "أغلق");
+        }
 
       }
       this.timePicked = false;

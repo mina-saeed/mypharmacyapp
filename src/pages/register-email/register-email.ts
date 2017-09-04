@@ -51,10 +51,18 @@ export class RegisterEmailPage {
     ],
     };
   private translate: TranslateService;
+  currentLanguage: string;
 
   constructor(private alertCtrl: AlertController,translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,
   public http:Http,public formBuilder: FormBuilder) {
     this.url = 'http://146.185.148.66:3000/';
+        this.translate=translate;
+      if (this.translate.currentLang =='ar') {
+        this.currentLanguage = "ar";
+      }
+      else {
+        this.currentLanguage = "en";
+  }
                     this.translate = translate;
                     //this.translate.use('ar');
                this.translate.get('NAMEVAL').subscribe((result: string) => {
@@ -111,9 +119,17 @@ export class RegisterEmailPage {
 
     if(this.userData.email == "" || this.userData.password == "")
     {
-      alert("Do not leave any field empty!");
+      if(this.currentLanguage == "en"){
+        this.customAlert("Error", "Do not leave any field empty", "Close");
+      }else if(this.currentLanguage =="ar"){
+       this.customAlert("خطأ", "لا تترك أي مساحة فارغة", "أغلق");
+      }
     }else if (this.userData.password != this.confirmPassword){
-        alert("Passwords must match!")
+      if(this.currentLanguage == "en"){
+        this.customAlert("Error", "Passwords must match", "Close");
+      }else if(this.currentLanguage =="ar"){
+       this.customAlert("خطأ", "كلمات السر يجب أن تكون هي نفسها", "أغلق");
+      }
     }else{
       this.http.post(this.url + 'register', JSON.stringify(body), new RequestOptions({headers:headers}))
       .map(res => res).subscribe(data => {

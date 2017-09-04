@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { DetailedAddressPage } from '../detailed-address/detailed-address';
 import { BasketPage } from '../basket/basket';
 import { TabsPage } from '../tabs/tabs';
+import { TranslateService } from 'ng2-translate';
 
 /**
  * Generated class for the AddressesPage page.
@@ -34,8 +35,17 @@ export class AddressesPage {
       address: "",
   //    token: "",
     }
+    currentLanguage: string;
+    private translate: TranslateService;
+  constructor(translate: TranslateService, private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams, public http:Http) {
 
-  constructor(private alertCtrl: AlertController,public navCtrl: NavController, public navParams: NavParams, public http:Http) {
+    this.translate = translate;
+    if (this.translate.currentLang =='ar') {
+      this.currentLanguage = "ar";
+    }
+    else {
+      this.currentLanguage = "en";
+    }
     this.url = 'http://146.185.148.66:3000/';
     this.email = "mail@mail.com";  //let it dynamic later!
     this.userData.email="mail@mail.com";
@@ -51,7 +61,11 @@ export class AddressesPage {
 
 
       if(!(/\S/.test(this.userData.address)) || this.userData.address ==null){
-        alert("Cannot be empty");
+        if(this.currentLanguage == "en"){
+          this.customAlert("Error", "Do not leave any field empty!", "Close");
+        }else if(this.currentLanguage =="ar"){
+          this.customAlert("خطأ", "لا تترك أي مساحة فارغة", "أغلق");
+        }
       }else{
         this.addresses.push(this.userData.address);
         this.userData.address = "";

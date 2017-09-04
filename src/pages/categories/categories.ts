@@ -234,14 +234,22 @@ export class CategoriesPage implements OnInit{
       //  console.log(data);
       //  console.log("yey no error", pdata);
         if(pdata["_body"] == "no data"){
-          alert("Invalid barcode!")
+          if(this.currentLanguage == "en"){
+            this.customAlert("Error", "Invalid Product", "Close");
+          }else if(this.currentLanguage =="ar"){
+            this.customAlert("خطأ", "منتج غير صحيح", "أغلق");
+          }
         }else{
           console.log(JSON.parse(pdata["_body"]));
           this.navCtrl.push(DetailedProductPage, {_body: pdata["_body"]});
         }
 
     },err =>{
-      alert("Invalid barcode!");
+      if(this.currentLanguage == "en"){
+        this.customAlert("Error", "Invalid Product", "Close");
+      }else if(this.currentLanguage =="ar"){
+        this.customAlert("خطأ", "منتج غير صحيح", "أغلق");
+      }
     });
   }
 
@@ -252,8 +260,16 @@ export class CategoriesPage implements OnInit{
     headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
     headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
+    let loadingText = "Loading...";
+    if(this.currentLanguage == "en"){
+      loadingText = "Loading";
+    }else if(this.currentLanguage =="ar"){
+      loadingText = "جار التحميل";
+    }
+
+
     let loading = this.loadingCtrl.create({
-      content: 'Loading...'
+      content: loadingText
     });
 
     loading.present();

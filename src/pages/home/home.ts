@@ -85,14 +85,22 @@ export class HomePage {
               //  console.log("yey no error", pdata);
               //the error depends on mahmoud result, error in response wala body fih no results
                 if(pdata["_body"] == "No medicines match this barcode" || pdata["_body"] == "sorry , no results match this barcode"){
-                  alert("Invalid barcode!")
+                  if(this.currentLanguage == "en"){
+                    this.customAlert("Error", "Invalid barcode", "Close");
+                  }else if(this.currentLanguage =="ar"){
+                    this.customAlert("خطأ", "الباركود غير صحيحة", "أغلق");
+                  }
                 }else{
                   console.log(JSON.parse(pdata["_body"]));
                   this.navCtrl.push(DetailedProductPage, {_body: pdata["_body"]});
                 }
 
             },err =>{
-              alert("Invalid barcode!");
+              if(this.currentLanguage == "en"){
+                this.customAlert("Error", "Invalid barcode", "Close");
+              }else if(this.currentLanguage =="ar"){
+                this.customAlert("خطأ", "الباركود غير صحيحة", "أغلق");
+              }
             });
 
 
@@ -101,11 +109,10 @@ export class HomePage {
         }, (err) => {
             // An error occurred
             console.log(this.translate.currentLang =='en');
-            if (this.translate.currentLang =='en') {
-              alert("Cannot scan barcodes");
-            }
-            else {
-            alert("لا يستطيع مسح الباركود");
+            if(this.currentLanguage == "en"){
+              this.customAlert("Error", "Cannot scan barcode", "Close");
+            }else if(this.currentLanguage =="ar"){
+              this.customAlert("خطأ", "لا يمكن مسح الباركود", "أغلق");
             }
         });
    }
