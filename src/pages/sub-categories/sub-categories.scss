@@ -64,7 +64,7 @@ page-sub-categories {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        height: 40%
+        height: 50%
     }
     .img {
         display: block;
@@ -133,13 +133,18 @@ page-sub-categories {
     .p {
         margin-top: 2%;
         text-align: center;
-        font-size: 11px;
+        font-size: 13px;
         white-space: normal;
         word-break: break-word;
     }
     .heightPharm {
-        height: 115px;
-        padding-top: 6%;
+<<<<<<< Updated upstream
+        height: 90px;
+        padding-top: 10%;
+=======
+        height: 100px;
+        padding-top: 12%;
+>>>>>>> Stashed changes
         padding-bottom: -2%
     }
     .paddingLeft {

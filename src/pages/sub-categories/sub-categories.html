@@ -38,8 +38,32 @@
     <p *ngIf="currentLanguage == 'en'"  class="p">No categories found.</p>
     <p *ngIf="currentLanguage == 'ar'"  class="p">لم يتم العثور على فئات</p>
   </div>
+  <ion-label class="round products pharm">
+  <ion-label align="middle" class="first roundPharm products heightPharm pharmacy" style="display: inline-block;">
+    <img class="imgP" src="assets/toBeRemoved/seif.png"/>
+  </ion-label>
+  <ion-label align="middle" class="roundPharm products heightPharm pharmacy" style="display: inline-block;">
+    <img class="imgP" src="assets/toBeRemoved/elezaby.png"/>
 
+  </ion-label>
+  <ion-label align="middle" class="roundPharm products heightPharm pharmacy" style="display: inline-block;">
+    <img class="imgP" src="assets/toBeRemoved/Almasry.png"/>
 
+  </ion-label>
+</ion-label>
+ <div style="text-align: center">
+    <!--  <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
+          <img (tap)="goToMedicines(cat._id)" style="margin-top: 0%;" class="img" [attr.src]="cat.subImage"/>
+          <p *ngIf="currentLanguage == 'en'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_en}}</p>
+          <p *ngIf="currentLanguage == 'ar'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_ar}}</p>
+
+    </ion-label> -->
+        <ion-label align="middle" class="roundProd products height" style="height: 110px; width: 25%; display: inline-block;">
+      <img class="img" style="height: 75%;" src="assets/toBeRemoved/shampoo.png"/>
+      <p class="p" style= "margin-top: -2%; color: #0F6196;font-weight: 600; font-size: 13px;white-space: normal;
+        word-break: break-word;">Shampoo</p>
+    </ion-label>
+ </div>
   <div *ngIf="zeroArr == false">
   <!--  <div  *ngFor="let cat of subCategories" class="round">
       <p (tap)="goToMedicines(cat._id)" *ngIf="currentLanguage=='en'">{{cat.name_en}}</p>
@@ -47,7 +71,7 @@
     </div> -->
 
 
-    <ion-label  class="round products paddingLeft">
+    <ion-label  class="round products paddingLeft" style=" margin-top: 3%;">
         <ng-container  *ngFor="let cat of subCategories; let i = index">
         <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
     			<img (tap)="goToMedicines(cat._id)" style="margin-top: 0%;" class="img" [attr.src]="cat.subImage"/>
