@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
@@ -28,7 +28,7 @@ export class SubCategoriesPage {
   private translate: TranslateService;
   imageURL:any;
   name:any;
-  constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams,public http:Http) {
+  constructor(private alertCtrl: AlertController, public loadingCtrl: LoadingController, translate: TranslateService, public navCtrl: NavController, public navParams: NavParams,public http:Http) {
     this.translate=translate;
   if (this.translate.currentLang =='ar') {
     this.currentLanguage = "ar";
@@ -42,7 +42,6 @@ export class SubCategoriesPage {
       this.id = this.navParams.get("id");
       this.imageURL = this.navParams.get("imageURL");
       this.name = this.navParams.get("name");
-      alert(this.name)
       this.zeroArr = true;
       this.getSubCategories(this.id);
       console.log(this.subCategories);
@@ -61,14 +60,44 @@ export class SubCategoriesPage {
 
     this.url = 'http://146.185.148.66:3007/';
 
+
+    let loadingText = "Loading...";
+    if(this.currentLanguage == "en"){
+      loadingText = "Loading";
+    }else if(this.currentLanguage =="ar"){
+      loadingText = "جار التحميل";
+    }
+
+
+    let loading = this.loadingCtrl.create({
+      content: loadingText
+    });
+
+    loading.present();
+
     this.http.get(this.url + 'allSubCategories/' + id, new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {
       console.log(data);
       this.subCategories = JSON.parse(data["_body"]);
       this.zeroArr = this.checkLength(this.subCategories);
       console.log(this.subCategories);
+      loading.dismiss(); //dismiss loading..
     }, err => {
       console.log(err);
+      loading.dismiss();
+      loading.onDidDismiss(() => {
+        if (err["status"]!= 404){
+          loading.onDidDismiss(() => {
+            if(this.currentLanguage == "en"){
+              this.customAlert("Error","Please check your internet connection","Close");
+
+            }else if(this.currentLanguage =="ar"){
+              this.customAlert("خطأ", "يرجى التحقق من الاتصال بالإنترنت", "أغلق");
+            }
+         });
+        }
+
+     });
     });
 
   }
@@ -88,6 +117,19 @@ export class SubCategoriesPage {
     }else{
       return false;
     }
+  }
+  customAlert(title, message, buttonText){
+    let alert = this.alertCtrl.create({
+        title: title,
+        message: message,
+        buttons: [
+          {
+            text: buttonText,
+
+          }
+        ]
+      });
+      alert.present();
   }
 
 }

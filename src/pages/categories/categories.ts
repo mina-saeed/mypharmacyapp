@@ -295,9 +295,17 @@ export class CategoriesPage implements OnInit{
 
       //dismiss loading with an error
       loading.dismiss();
-      loading.onDidDismiss(() => {
-       alert("Please check your internet connection!")
-     });
+      if (err["status"]!= 404){
+        loading.onDidDismiss(() => {
+          if(this.currentLanguage == "en"){
+            this.customAlert("Error","Please check your internet connection","Close");
+
+          }else if(this.currentLanguage =="ar"){
+            this.customAlert("خطأ", "يرجى التحقق من الاتصال بالإنترنت", "أغلق");
+          }
+       });
+      }
+
     });
 
   }
