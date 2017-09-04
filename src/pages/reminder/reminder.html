@@ -40,7 +40,7 @@
     <button class = "dark-button" ion-button (tap)="deleteReminder(res)">{{ "DELETE" | translate}}</button>
   </div> <br>
 
-  <form (tap)="addPatient()">
+  <form (ngSubmit)="addPatient()">
 
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-label class = "text">{{ "Name" | translate}}:</ion-label>

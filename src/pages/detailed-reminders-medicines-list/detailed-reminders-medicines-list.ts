@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams , AlertController} from 'ionic-angu
 import { NativeStorage } from '@ionic-native/native-storage';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { TranslateService } from 'ng2-translate';
+import { DatePicker } from '@ionic-native/date-picker';
 /**
  * Generated class for the DetailedRemindersMedicinesListPage page.
  *
@@ -25,7 +26,10 @@ export class DetailedRemindersMedicinesListPage {
     private translate: TranslateService;
     currentLanguage: string;
 
-  constructor(translate: TranslateService, private alertCtrl: AlertController,private localNotifications: LocalNotifications, private nativeStorage: NativeStorage,public navCtrl: NavController, public navParams: NavParams) {
+    timePicked = false;
+    chosenDate:Date;
+
+  constructor(private datePicker: DatePicker, translate: TranslateService, private alertCtrl: AlertController,private localNotifications: LocalNotifications, private nativeStorage: NativeStorage,public navCtrl: NavController, public navParams: NavParams) {
     this.translate=translate;
   if (this.translate.currentLang =='ar') {
     this.currentLanguage = "ar";
@@ -69,7 +73,7 @@ export class DetailedRemindersMedicinesListPage {
     //.....
     let text = "";
     if(this.currentLanguage == "en"){
-      text = "Reminder to take:";
+      text = "Reminder to take: ";
     }else if(this.currentLanguage =="ar"){
       text = "أذكر لي أن تأخذ: ";
     }
@@ -78,19 +82,22 @@ export class DetailedRemindersMedicinesListPage {
         this.localNotifications.schedule({
           id: this.maxReminderID,
           text: text + this.currentMedicine["name"],
-          every: "day"
+          every: "day",
+          at: this.chosenDate
         });
       }else if( duration.toString() == "Weekly"){
         this.localNotifications.schedule({
           id: this.maxReminderID,
           text: text + this.currentMedicine["name"],
-          every: "week"
+          every: "week",
+          at: this.chosenDate
         });
       }else if( duration.toString() == "Monthly"){
         this.localNotifications.schedule({
           id: this.maxReminderID,
           text: text + this.currentMedicine["name"],
-          every: "month"
+          every: "month",
+          at: this.chosenDate
         });
       }
       //done for all cases
@@ -135,5 +142,23 @@ export class DetailedRemindersMedicinesListPage {
         ]
       });
       alert.present();
+  }
+  pickSchedule(){
+        this.datePicker.show({
+      date: new Date(),
+      mode: 'datetime',
+      androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+      }).then(
+      date => {  console.log('Got date: ', date)
+    this.chosenDate = date
+  console.log(this.chosenDate);
+  this.timePicked = true;
+  },
+
+      err => {console.log('Error occurred while getting date: ', err);
+    this.timePicked = false;
+  }
+      );
+
   }
 }
