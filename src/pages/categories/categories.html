@@ -96,8 +96,8 @@
     <ng-container  *ngFor="let cat of categories; let i = index">
     <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
 			<img (tap)="goToSubCategories(cat._id)" class="img" [attr.src]="cat.CategoryImage"/>
-			<p *ngIf="currentLanguage == 'en'" (tap)="goToSubCategories(cat._id, cat.CategoryImage)" class="p">{{cat.name_en}}</p>
-      <p *ngIf="currentLanguage == 'ar'" (tap)="goToSubCategories(cat._id, cat.CategoryImage)" class="p">{{cat.name_ar}}</p>
+			<p *ngIf="currentLanguage == 'en'" (tap)="goToSubCategories(cat._id, cat.CategoryImage, cat.name_en)" class="p">{{cat.name_en}}</p>
+      <p *ngIf="currentLanguage == 'ar'" (tap)="goToSubCategories(cat._id, cat.CategoryImage, cat.name_ar)" class="p">{{cat.name_ar}}</p>
 		</ion-label>
     <br *ngIf="i%2 != 0">
   </ng-container>

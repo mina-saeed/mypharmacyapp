@@ -52,7 +52,6 @@
         "cordova-android": "^6.2.3",
         "cordova-browser": "^4.1.0",
         "cordova-ios": "^4.4.0",
-        "cordova-plugin-app-event": "file:node_modules/cordova-plugin-app-event",
         "cordova-plugin-calendar": "git+https://github.com/EddyVerbruggen/Calendar-PhoneGap-Plugin.git",
         "cordova-plugin-camera": "^2.4.1",
         "cordova-plugin-compat": "^1.1.0",

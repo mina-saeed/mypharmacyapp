@@ -320,9 +320,9 @@ export class CategoriesPage implements OnInit{
 
   }
 
-  goToSubCategories(id, imageURL){
+  goToSubCategories(id, imageURL, name){
   //  this.getSubCategories(id);
-    this.navCtrl.push(SubCategoriesPage, {id:id, image: imageURL});
+    this.navCtrl.push(SubCategoriesPage, {id:id, image: imageURL, name:name});
   }
   customAlert(title, message, buttonText){
     let alert = this.alertCtrl.create({
