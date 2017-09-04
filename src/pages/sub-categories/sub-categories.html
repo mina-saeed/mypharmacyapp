@@ -52,15 +52,12 @@
         <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
     			<img (tap)="goToMedicines(cat._id)" style="margin-top: 0%;" class="img" [attr.src]="cat.subImage"/>
           <div style="height: 35px">
-    			<p *ngIf="currentLanguage == 'en'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_en}}</p>
-          <p *ngIf="currentLanguage == 'ar'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_ar}}</p>
+    			<p *ngIf="currentLanguage == 'en'" (tap)="goToMedicines(cat._id, cat.name_en)"  class="p">{{cat.name_en}}</p>
+          <p *ngIf="currentLanguage == 'ar'" (tap)="goToMedicines(cat._id, cat.name_ar)"  class="p">{{cat.name_ar}}</p>
           </div>
      <!--  <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
           <img src="assets/icon/ADD to activated.png">
         </button> -->
-      <button ion-button class="cart" name="add-circle" (click)="addToCart(res)">
-        <ion-icon name="addCart" style="margin-top: -3px"></ion-icon>
-    </button>
     		</ion-label>
         <br *ngIf="i%2 != 0">
       </ng-container>
