@@ -16,6 +16,7 @@ import { TranslateService } from 'ng2-translate';
 export class MedicinesListPage {
   url:string;
   id:any;
+  name:any;
   subProdcuts: any;
     zeroArr:boolean;
 
@@ -34,7 +35,8 @@ export class MedicinesListPage {
         }
 
     this.url = 'http://146.185.148.66:3003/';
-    this.id = this.navParams.data;
+    this.id = this.navParams.get('id');
+    this.name = this.navParams.get('name');
     this.zeroArr = true;
     this.getMedicinesOrProducts(this.id);
 

@@ -74,8 +74,8 @@ export class SubCategoriesPage {
     goMenu(){
     this.navCtrl.push(MenuPage);
   }
-  goToMedicines(id){
-    this.navCtrl.push(MedicinesListPage, id);
+  goToMedicines(id, name){
+    this.navCtrl.push(MedicinesListPage, {id: id, name: name});
   }
   checkLength(arr){
     if(arr.length == 0)
