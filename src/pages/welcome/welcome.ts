@@ -15,6 +15,8 @@ import 'rxjs/add/operator/map';
 import { TranslateService } from 'ng2-translate';
 import {  availableLanguages, sysOptions } from './welcome.constants';
 import { NativeStorage } from '@ionic-native/native-storage';
+
+import {Md5} from 'ts-md5/dist/md5';
 /**
  * Generated class for the WelcomePage page.
  *
@@ -167,8 +169,9 @@ export class WelcomePage {
         body.name = data["name"];
         body.email = data["email"];
         body.fbID = res["authResponse"]["userID"];
-        body.token = res["authResponse"]["accessToken"];
-
+      //  body.token = res["authResponse"]["accessToken"];
+        body.token = Md5.hashStr(data["email"]).toString();
+        console.log(body);
         //end point, send res data to mahmoud
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
