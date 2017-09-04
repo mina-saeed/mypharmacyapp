@@ -53,6 +53,13 @@ export class HomePage {
   private translate: TranslateService;
   constructor(private alertCtrl: AlertController, private barcodeScanner: BarcodeScanner,translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
 
+    this.nativeStorage.getItem('rememberUser')
+    .then(
+    data => this.emptyOrderData.userInfo = data,
+    error => console.log("error")
+  );
+
+
     this.translate=translate;
   if (this.translate.currentLang =='ar') {
     this.currentLanguage = "ar";

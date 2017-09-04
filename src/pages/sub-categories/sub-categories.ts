@@ -26,7 +26,7 @@ export class SubCategoriesPage {
 
   currentLanguage:string;
   private translate: TranslateService;
-
+  imageURL:any;
   constructor(translate: TranslateService, public navCtrl: NavController, public navParams: NavParams,public http:Http) {
     this.translate=translate;
   if (this.translate.currentLang =='ar') {
@@ -38,7 +38,8 @@ export class SubCategoriesPage {
 
 
       this.url = 'http://146.185.148.66:3003/';
-      this.id = this.navParams.data;
+      this.id = this.navParams.get("id");
+      this.imageURL = this.navParams.get("image");
       this.zeroArr = true;
       this.getSubCategories(this.id);
       console.log(this.subCategories);

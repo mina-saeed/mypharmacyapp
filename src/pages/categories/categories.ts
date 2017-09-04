@@ -66,6 +66,11 @@ export class CategoriesPage implements OnInit{
 
     currentLanguage:string;
   constructor(private alertCtrl: AlertController, public loadingCtrl: LoadingController, translate: TranslateService,public navCtrl: NavController, private nativeStorage: NativeStorage, public navParams: NavParams,public http:Http) {
+    this.nativeStorage.getItem('rememberUser')
+    .then(
+    data => this.emptyOrderData.userInfo = data,
+    error => console.log("error")
+  );
 
       this.translate=translate;
     if (this.translate.currentLang =='ar') {
@@ -315,9 +320,9 @@ export class CategoriesPage implements OnInit{
 
   }
 
-  goToSubCategories(id){
+  goToSubCategories(id, imageURL){
   //  this.getSubCategories(id);
-    this.navCtrl.push(SubCategoriesPage, id);
+    this.navCtrl.push(SubCategoriesPage, {id:id, image: imageURL});
   }
   customAlert(title, message, buttonText){
     let alert = this.alertCtrl.create({
