@@ -44,6 +44,13 @@ export class DetailedRemindersMedicinesListPage {
     this.indexOfMember = this.navParams.get('indexOfMember');
     this.getMaxReminderID();
 
+    if(this.currentMedicine["remindEvery"] == null){
+
+        this.currentMedicine["remindEveryAr"] = "لا تذكير حتى الآن";
+        this.currentMedicine["remindEvery"]= "No reminders yet";
+
+    }
+
     console.log(this.indexOfMember);
   //  this.addReminder();
 
@@ -101,7 +108,18 @@ export class DetailedRemindersMedicinesListPage {
         });
       }
       //done for all cases
+      let durationTextAr = duration.toString();
+
+        if (duration.toString() == "Daily"){
+          durationTextAr = "يوميا";
+        }else if (duration.toString() == "Weekly"){
+          durationTextAr = "أسبوعيا";
+        } else if (duration.toString() == "Monthly"){
+          durationTextAr = "شهريا";
+        }
+
       this.currentMedicine["remindEvery"] = duration.toString();
+      this.currentMedicine["remindEveryAr"] = durationTextAr;
       this.currentMedicine["remindID"] = this.maxReminderID;
       this.currentMedicine["remindObject"] = this.localNotifications.get(this.maxReminderID);
       this.members[this.indexOfMember]["medicinces"][this.indexOfMedicine] = this.currentMedicine;

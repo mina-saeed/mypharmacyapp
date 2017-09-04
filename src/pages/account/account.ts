@@ -6,7 +6,7 @@ import { MenuPage } from '../menu/menu';
 import { WelcomePage } from '../welcome/welcome';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { OrderHistoryPage } from '../order-history/order-history';
-
+import { UpdateLocationPage } from '../update-location/update-location';
 
 /**
  * Generated class for the AccountPage page.
@@ -60,5 +60,8 @@ export class AccountPage {
     this.name = data["name"];},
     error => {  this.name =  "error"}
   );
+  }
+  goToUpdateAddress(){
+    this.navCtrl.push(UpdateLocationPage);
   }
 }

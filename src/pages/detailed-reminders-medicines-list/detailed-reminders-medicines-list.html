@@ -33,7 +33,8 @@
 <ion-content padding>
   <hr>
   <p class="text">{{currentMedicine.name}}</p> <br>
-  <p class="text">{{ "REMIND_ME" | translate}}: {{currentMedicine.remindEvery}}</p><br>
+  <p class="text" *ngIf="currentLanguage == 'en'">{{ "REMIND_ME" | translate}}: {{currentMedicine.remindEvery}}</p><br>
+  <p class="text" *ngIf="currentLanguage == 'ar'">{{ "REMIND_ME" | translate}}: {{currentMedicine.remindEveryAr}}</p><br>
 
     <button ion-button (tap)="pickSchedule()">Pick Time</button>
 

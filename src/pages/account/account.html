@@ -39,8 +39,8 @@
 <hr>
 <div style="margin-top: 10%;">
 
-<p class="oval" style="display: block;">{{ "PHONE" | translate}}</p>
-<p class="oval" style="display: block;">{{ "ADDRESS" | translate}}</p>
+
+<p class="oval" style="display: block;" (tap)="goToUpdateAddress()">{{ "ADDRESS" | translate}}</p>
 
 <p (tap)="goToHistory()" class="oval" style="display: block;">{{ "ORDERS" | translate}}</p>
 <p (tap)="logout()" class="oval " style="display: block;">{{ "LOGOUT" | translate}}</p>

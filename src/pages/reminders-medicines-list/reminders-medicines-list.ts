@@ -76,7 +76,7 @@ export class RemindersMedicinesListPage {
       }else{
         let body = {
           name: this.medicine,  //should check to be unique
-          remindEvery: this.text,
+          remindEvery: null,
           remindID: -1,
           remindObject: null
         }
