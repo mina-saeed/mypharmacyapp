@@ -22,9 +22,12 @@ import { OrderHistoryPage } from '../order-history/order-history';
 export class AccountPage {
   private translate: TranslateService;
 
+  name:any;
+
   constructor(private app: App,private nativeStorage: NativeStorage, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
    this.translate = translate;
     //this.translate.use('en');
+    this.getData();
   }
   goBasket(){
     this.navCtrl.push(BasketPage, {defaultOrNot: 0}); //kda hatly el default!! hwa ma3mlsh select
@@ -49,5 +52,13 @@ export class AccountPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AccountPage');
   }
-
+  getData(){
+    this.nativeStorage.getItem('rememberUser')
+    .then(
+    data => {
+      console.log(data["name"]);
+    this.name = data["name"];},
+    error => {  this.name =  "error"}
+  );
+  }
 }

@@ -64,7 +64,7 @@ export class LoginEmailPage {
     //  name: this.userData.name,
       email: this.userData.email,
       password: this.userData.password,
-      token: "aadsffsfv",
+    //  token: "aadsffsfv",
     };
 
 
@@ -78,8 +78,13 @@ export class LoginEmailPage {
     }else{
       this.http.post(this.url + 'login', JSON.stringify(body), new RequestOptions({headers:headers}))
       .map(res => res).subscribe(data => {
-
-        console.log(data);
+        let body = {
+          name: JSON.parse(data["_body"])["username"],
+          email: this.userData.email,
+          password: this.userData.password,
+        //  token: "aadsffsfv",
+        };
+        console.log(body.name);
         this.nativeStorage.setItem('rememberUser', body)
       .then(
         () => console.log('Stored item!'),

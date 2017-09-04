@@ -135,7 +135,7 @@ export class RegisterEmailPage {
       .map(res => res).subscribe(data => {
 
         console.log(data);
-        this.navCtrl.push(LocationPage); //roo7 kamel el form beta3t el 3enwan
+        this.navCtrl.push(LocationPage, this.userData.name); //roo7 kamel el form beta3t el 3enwan
 
       },  err =>{
         console.log(err);

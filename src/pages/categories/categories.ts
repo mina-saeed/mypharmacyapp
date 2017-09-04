@@ -68,10 +68,12 @@ export class CategoriesPage implements OnInit{
   constructor(private alertCtrl: AlertController, public loadingCtrl: LoadingController, translate: TranslateService,public navCtrl: NavController, private nativeStorage: NativeStorage, public navParams: NavParams,public http:Http) {
     this.nativeStorage.getItem('rememberUser')
     .then(
-    data => this.emptyOrderData.userInfo = data,
+    data => {this.emptyOrderData.userInfo = data;
+    console.log("data", this.emptyOrderData.userInfo);},
     error => console.log("error")
   );
 
+  console.log("data", this.emptyOrderData.userInfo);
       this.translate=translate;
     if (this.translate.currentLang =='ar') {
       this.currentLanguage = "ar";

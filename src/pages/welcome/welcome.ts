@@ -108,7 +108,7 @@ export class WelcomePage {
       deviceID: this.deviceID
     };
 
-
+    console.log(this.deviceID);
 //should check internet connection and other errors
 //if any error keep in this page and enable button again
 //otherwise error of no userId.. go to locationpage aw ayan kan
@@ -135,15 +135,15 @@ export class WelcomePage {
       this.navCtrl.setRoot(TabsPage);
       this.disableButton = false; //raga3ha lel state el tabi3ya 3shan law daas back msln
 
-      console.log(data);
-      console.log(this.url + 'userHome/50');
+    //  console.log(data);
+      //console.log(this.url + 'userHome/50');
     }, err => {
       //no data, go to registeration form!!
       console.log(err);
       if(this.lang.load() !== undefined){
         this.translate.use(this.lang.load());
         }
-      this.navCtrl.push(LocationPage); //w wadilo device id as parameter
+      this.navCtrl.push(LocationPage, 1); //1 is guest
       this.disableButton = false; //raga3ha lel state el tabi3ya
     });
 

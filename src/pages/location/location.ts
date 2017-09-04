@@ -216,10 +216,16 @@ export class LocationPage {
     headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
     headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
-
+    let name = "Guest";
+    if(this.navParams.data == 1){
+        name = "Guest";
+    }else{
+        name = this.navParams.data;
+    }
     //add more, eli homa device id w kol 7aga
     let body = {
       //deviceID: this.deviceID,   //if device!
+      name: name,
       deviceID: this.deviceID,
       location: {
         city: this.loc.location.city,
@@ -234,7 +240,7 @@ export class LocationPage {
       mobile: this.loc.mobile
     };
 
-
+console.log("bnaaaame", body.name)
 
     this.http.post(this.url + 'user/submit', JSON.stringify(body), new RequestOptions({headers:headers}))
     .map(res => res).subscribe(data => {

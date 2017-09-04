@@ -28,7 +28,7 @@ export class OrderHistoryPage {
      this.translate = translate;
 
     this.url = 'http://146.185.148.66:3000/';
-    this.userID = 50;
+    this.userID = 1;
     this.getHistory();
   }
 
@@ -54,7 +54,7 @@ export class OrderHistoryPage {
     console.log("done");
   }
   goBasket(){
-    this.navCtrl.push(BasketPage, {defaultOrNot: 0}); 
+    this.navCtrl.push(BasketPage, {defaultOrNot: 0});
   }
   goMenu(){
     this.navCtrl.push(MenuPage);
