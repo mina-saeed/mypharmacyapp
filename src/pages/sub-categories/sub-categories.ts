@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Http, Headers, RequestOptions} from '@angular/http';
-
+import { BasketPage } from '../basket/basket';
+import { MenuPage } from '../menu/menu';
 import { MedicinesListPage } from '../medicines-list/medicines-list';
 import { TranslateService } from 'ng2-translate';
+
 /**
  * Generated class for the SubCategoriesPage page.
  *
@@ -66,7 +68,12 @@ export class SubCategoriesPage {
     });
 
   }
-
+  goBasket(){
+    this.navCtrl.push(BasketPage, {defaultOrNot: 0}); //kda hatly el default!! hwa ma3mlsh select
+  }
+    goMenu(){
+    this.navCtrl.push(MenuPage);
+  }
   goToMedicines(id){
     this.navCtrl.push(MedicinesListPage, id);
   }

@@ -7,13 +7,33 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ "CATEGORIES" | translate }}</ion-title>
+
+    <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title"> {{"CATEGORIES" | translate }} </p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (click)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
+                 (keyup)="updateListByName($event)"
+                 (ionCancel)="onCancelByName($event)"
+                 show-cancel="true"
+                 showCancelButton="true"
+                 placeholder="Search By Name">
+   <img class="image" src="assets/icon/White Loop.png"/>
+    </ion-input>
   <div *ngIf="zeroArr == true"  class="round">
     <p *ngIf="currentLanguage == 'en'"  class="p">No categories found.</p>
     <p *ngIf="currentLanguage == 'ar'"  class="p">لم يتم العثور على فئات</p>
@@ -30,9 +50,17 @@
     <ion-label  class="round products paddingLeft">
         <ng-container  *ngFor="let cat of subCategories; let i = index">
         <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
-    			<img (tap)="goToMedicines(cat._id)"  class="img" [attr.src]="cat.subImage"/>
+    			<img (tap)="goToMedicines(cat._id)" style="margin-top: 0%;" class="img" [attr.src]="cat.subImage"/>
+          <div style="height: 35px">
     			<p *ngIf="currentLanguage == 'en'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_en}}</p>
           <p *ngIf="currentLanguage == 'ar'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_ar}}</p>
+          </div>
+     <!--  <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+          <img src="assets/icon/ADD to activated.png">
+        </button> -->
+      <button ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+        <ion-icon name="addCart" style="margin-top: -3px"></ion-icon>
+    </button>
     		</ion-label>
         <br *ngIf="i%2 != 0">
       </ng-container>

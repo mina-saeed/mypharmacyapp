@@ -1,271 +1,273 @@
 page-sub-categories {
-  .round {
-      padding: 4%;
-      font-family: "Helvetica";
-      font-size: 12px;
-      font-weight: 700;
-      color: #0F6196;
-      border-radius: 22px;
-      background-color: #cdebf9;
-      width: 90%;
-      margin-bottom: 10px;
-  }
-  .ion-ios-cartCustom-outline,
-  .ion-ios-cartCustom,
-  .ion-md-cartCustom,
-  .ion-md-cartCustom-outline {
-      content: url('../assets/icon/deactivited cart.png');
-      margin-left: 0;
-      max-width: 35px;
-      max-height: 150px
-  }
-  .ion-ios-back-outline,
-  .ion-ios-back,
-  .ion-md-back,
-  .ion-md-back-outline {
-      content: url('../assets/icon/Blue Back.png');
-      max-width: 28px;
-      max-height: 130px
-  }
-  .ion-ios-setting-outline,
-  .ion-ios-setting,
-  .ion-md-setting,
-  .ion-md-setting-outline {
-      content: url('../assets/icon/deactivated menu.png');
-      margin-left: 0;
-      max-width: 35px;
-      max-height: 150px
-  }
-  p {
-      display: block
-  }
-  .oval2 {
-      line-height: 2;
-      text-align: center;
-      color: #3CABE3;
-      max-width: 85%;
-      margin-right: auto;
-      margin-left: auto;
-      padding: 0;
-      margin-top: 0;
-      margin-bottom: 4%;
-      background-color: #CFEAF8;
-      border-radius: 50px;
-      display: inline-block;
-      font-family: "Helvetica";
-      font-size: 20px;
-      height: 40px
-  }
-  .oval {
-      width: 93%;
-      padding-left: 10px;
-      background-image: url("../assets/icon/White Loop.png");
-      background-size: 10% 80%;
-      background-repeat: no-repeat;
-      background-position: 95%;
-      margin-left: auto;
-      background-color: #cdebf9;
-      border-radius: 50px;
-      display: inline-block;
-      font-family: "Helvetica";
-      font-size: 20px;
-      margin-left: 4.5%
-  }
-  .imgP {
-      margin-top: 15%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      height: 40%
-  }
-  .img {
-      margin-top: 15%;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      height: 55%
-  }
-  .title {
-      font-size: 23px;
-      text-transform: uppercase;
-      font-family: Highland
-  }
-  hr {
-      display: block;
-      margin-bottom: .5em;
-      margin-left: auto;
-      margin-right: auto;
-      border-width: 1.5px;
-      border-top: 2px solid #3CABE3;
-      width: 80%;
-      margin-top: -4%
-  }
-  .round {
-      padding: 4%;
-      font-family: "Helvetica";
-      font-size: 12px;
-      font-weight: 700;
-      color: #0F6196;
-      border-radius: 22px;
-      background-color: #EBF7FC;
-      width: 90%
-  }
-  .roundPharm {
-      border-radius: 22px;
-      background-color: #cdebf9;
-      width: 30%
-  }
-  .roundProd {
-      border-radius: 22px;
-      background-color: #cdebf9;
-      width: 45%
-  }
-  .products {
-      margin-right: 0%;
-      margin-left: 2.5%;
-      margin-top: 6%;
-      margin-left: auto;
-      margin-right: 4%;
-      padding-left: 5%;
-      padding-right: 5%
-  }
-  .pharmacy {
-   margin-right: 1%;
-  }
-  .first {
-      margin-left: 3%;
-  }
-  ion-content {
-      left: -8.5%;
-      width: 115%
-  }
-  .pharm {
-      width: 95%;
-      margin-left: 3%;
-      margin-right: 0%;
-  }
-  .height {
-      height: 150px;
-      padding-top: 4%
-  }
-  .p {
-      margin-top: 2%;
-      text-align: center;
-      font-weight: 600;
-      font-size: 17px;
-      white-space: normal;
-      word-break: break-word;
-  }
-  .heightPharm {
-      height: 115px;
-      padding-top: 6%;
-      padding-bottom: -2%
-  }
-  .paddingLeft {
-      padding-left: 8%
-  }
-  @media (max-width:320px) {
-      .title {
-          width: 100%;
-          margin-left: -6%
-      }
-      .navTitle {
-          width: 110%
-      }
-      .heightPharm {
-      height: 95px;
-      padding-top: 6%;
-      padding-bottom: -2%
-  }
-  }
- @media (min-width:768px){
-   .heightPharm {
-      height: 150px;
-      padding-top: 6%;
-      padding-bottom: -2%
-  }
-  }
-  .toolbar-background-md{
-  background: #fff;
-  }
-  .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
-  background-image: none;
-  margin-bottom:0px;
-  }
-  .toolbar-background{
-  height: 60%;
-  }
-  .scroll-content  {
-  margin-top: 55px !important
-  }
-  .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
-  border-style: none;
-  background: #fff;
-  }
-  @media (min-width: 760px){
-      .imgP {
-      height: 55%;
-      margin-top: 0%;
-      }
-      .img{
-      margin-top: 0%;
-      height: 60%;
-      }
-      .oval{
-      width: 89%;
-      margin-left: 6.5%;
-      }
-  }
-      h3,
-  h4 {
-   //   font-family: Highland;
-      text-align: center;
-      margin-top: 7%
-  }
-  h3 {
-      color: #0F6196
-  }
-  .medicine-image {
-      display: block;
-      margin: auto;
-      width: 15%
-  }
-  .ion-ios-addCart-outline,
+     .ion-ios-cartCustom-outline,
+    .ion-ios-cartCustom,
+    .ion-md-cartCustom,
+    .ion-md-cartCustom-outline {
+        content: url('../assets/icon/deactivited cart.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    .ion-ios-back-outline,
+    .ion-ios-back,
+    .ion-md-back,
+    .ion-md-back-outline {
+        content: url('../assets/icon/Blue Back.png');
+        max-width: 28px;
+        max-height: 130px
+    }
+    .ion-ios-setting-outline,
+    .ion-ios-setting,
+    .ion-md-setting,
+    .ion-md-setting-outline {
+        content: url('../assets/icon/deactivated menu.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    p {
+        display: block
+    }
+    .oval2 {
+        line-height: 2;
+        text-align: center;
+        color: #3CABE3;
+        max-width: 85%;
+        margin-right: auto;
+        margin-left: auto;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 4%;
+        background-color: #CFEAF8;
+        border-radius: 50px;
+        display: inline-block;
+        font-family: "Helvetica";
+        font-size: 20px;
+        height: 40px
+    }
+    .oval {
+        width: 93%;
+        padding-left: 10px;
+        background-image: url("../assets/icon/White Loop.png");
+        background-size: 10% 80%;
+        background-repeat: no-repeat;
+        background-position: 95%;
+        margin-left: auto;
+        background-color: #cdebf9;
+        border-radius: 50px;
+        display: inline-block;
+        font-family: "Helvetica";
+        font-size: 20px;
+        margin-left: 4.5%
+    }
+    .imgP {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40%
+    }
+    .img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 55%;
+    }
+    .title {
+        font-size: 23px;
+        margin-left: -20%;
+        font-family: Highland
+    }
+    hr {
+        display: block;
+        margin-bottom: .5em;
+        margin-left: auto;
+        margin-right: auto;
+        border-width: 1.5px;
+        border-top: 2px solid #3CABE3;
+        width: 80%;
+        margin-top: -4%
+    }
+    .round {
+        padding: 4%;
+        font-family: "Helvetica";
+        font-size: 12px;
+        font-weight: 700;
+        color: #0F6196;
+        border-radius: 22px;
+        background-color: #EBF7FC;
+        width: 90%
+    }
+    .roundPharm {
+        border-radius: 22px;
+        background-color: #cdebf9;
+        width: 30%
+    }
+    .roundProd {
+        border-radius: 22px;
+        background-color: #cdebf9;
+        width: 45%
+    }
+    .products {
+        margin-right: 0%;
+        margin-left: 2.5%;
+        margin-top: 6%;
+        margin-left: auto;
+        margin-right: 4%;
+        padding-left: 5%;
+        padding-right: 5%
+    }
+    .pharmacy {
+     margin-right: 1%;
+    }
+    .first {
+        margin-left: 3%;
+    }
+    ion-content {
+        left: -8.5%;
+        width: 115%
+    }
+    .height {
+        height: 150px;
+        padding-top: 2%
+    }
+    .p {
+        margin-top: 2%;
+        text-align: center;
+        font-size: 11px;
+        white-space: normal;
+        word-break: break-word;
+    }
+    .heightPharm {
+        height: 115px;
+        padding-top: 6%;
+        padding-bottom: -2%
+    }
+    .paddingLeft {
+        padding-left: 8%
+    }
+    @media (max-width:320px) {
+        .title {
+            width: 100%;
+            margin-left: -6%
+        }
+        .navTitle {
+            width: 110%
+        }
+        .md,.navTitle{
+        margin-left: 0px !important;
+        }
+        .heightPharm {
+        height: 95px;
+        padding-top: 6%;
+        padding-bottom: -2%
+    }
+    }
+   @media (min-width:768px){
+     .heightPharm {
+        height: 150px;
+        padding-top: 6%;
+        padding-bottom: -2%
+    }
+    }
+    .toolbar-background-md{
+    background: #fff;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+    margin-bottom:0px;
+    }
+    .toolbar-background{
+    height: 60%;
+    }
+    .scroll-content  {
+    margin-top: 55px !important
+    }
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+    background: #fff;
+    }
+    @media (min-width: 760px){
+        .imgP {
+        height: 55%;
+        margin-top: 0%;
+        }
+        .img{
+        margin-top: 0%;
+        height: 60%;
+        }
+        .oval{
+        width: 89%;
+        margin-left: 6.5%;
+        }
+    }
+        h3,
+    h4 {
+     //   font-family: Highland;
+        text-align: center;
+        margin-top: 7%
+    }
+    h3 {
+        color: #0F6196
+    }
+    .medicine-image {
+        display: block;
+        margin: auto;
+        width: 15%
+    }
+    .ion-ios-addCart-outline,
+    .ion-ios-addCart,.ion-md-addCart,.ion-md-addCart-outline {
+    content: url('../assets/icon/ADD to activated.png');
+    margin: auto;
+    max-width: 20px;
+    max-height: 150px;
+}
+    .cart {
+        display: block;
+        background-color: #fff;
+        max-width: 8%;
+        margin-bottom: .5%;
+        margin: auto;
+    }
+    .button-md{
+        box-shadow: none;
+    }
+    .textDetails {
+        text-align: center;
+        padding-top: 0;
+        color: #0F6193;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: "Helvetica";
+        font-size: 18.2px;
+        letter-spacing: .25px
+    }
+    .hrDetails {
+        display: block;
+        margin-top: .5%;
+        margin-bottom: 0%;
+        margin-left: auto;
+        margin-right: auto;
+        border-width: 1.5px;
+        border-top: 2px solid #0F6196;
+        width: 55%
+    }
+    .ion-ios-addCart-outline,
   .ion-ios-addCart,.ion-md-addCart,.ion-md-addCart-outline {
   content: url('../assets/icon/ADD to activated.png');
   margin: auto;
-  max-width: 50px;
+  max-width: 20px;
   max-height: 150px;
 }
-  .cart {
-      display: block;
-      background-color: #fff;
-      max-width: 8%;
-      margin-bottom: .5%;
-      margin: auto;
-  }
-  .button-md{
+    .cart {
+        display: block;
+        background-color: #fff;
+        max-width: 8%;
+        margin-bottom: .5%;
+        margin: auto;
+    }
+    .button-md{
       box-shadow: none;
-  }
-  .textDetails {
-      text-align: center;
-      padding-top: 0;
-      color: #0F6193;
-      margin-left: 10%;
-      margin-right: 10%;
-      font-family: "Helvetica";
-      font-size: 18.2px;
-      letter-spacing: .25px
-  }
-  .hrDetails {
-      display: block;
-      margin-top: .5%;
-      margin-bottom: 0%;
-      margin-left: auto;
-      margin-right: auto;
-      border-width: 1.5px;
-      border-top: 2px solid #0F6196;
-      width: 55%
-  }
+      background-color: #cdebf9;
+    }
 
 }
