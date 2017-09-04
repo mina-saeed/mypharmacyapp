@@ -156,27 +156,49 @@ export class WelcomePage {
   .then((res: FacebookLoginResponse) => {
 
     console.log('Logged into Facebook!', res);
+    let body = {
+      fbID: "",
+      name: "",
+      email: "",
+      token: ""
+    };
+    this.fb.api(res["authResponse"]["userID"] + "/?fields=id,email,name",['public_profile', 'email']).then((data) => {
+        console.log(data);
+        body.name = data["name"];
+        body.email = data["email"];
+        body.fbID = res["authResponse"]["userID"];
+        body.token = res["authResponse"]["accessToken"];
 
-    //end point, send res data to mahmoud
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    headers.append('Access-Control-Allow-Origin', '*');
-    headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
-    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
+        //end point, send res data to mahmoud
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        headers.append('Access-Control-Allow-Origin', '*');
+        headers.append('Access-Control-Allow-Methods', 'POST, GET, PUT');
+        headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
+
+        //after done, save to local storage el esm
+        this.url = 'http://146.185.148.66:3000/fbLogin';
+
+        this.http.post(this.url, body, new RequestOptions({headers:headers}))
+        .map(res => res).subscribe(data => {
+          console.log(data);   ///IF ALREADY REGISTERED, GO TO TABS PAGE
+        //  console.log(this.subProdcuts);
+
+        this.navCtrl.push(LocationPage);
+        this.disableButton = false;
 
 
-    this.url = 'http://146.185.148.66:3000/fbLogin';
-    console.log("RESSS", res["authResponse"]);
-    this.http.post(this.url, res["authResponse"], new RequestOptions({headers:headers}))
-    .map(res => res).subscribe(data => {
-      console.log(data);
-    //  console.log(this.subProdcuts);
-    }, err => {
-      console.log(err);
-    });
 
-    this.navCtrl.push(LocationPage);
-    this.disableButton = false;
+        }, err => {
+          console.log(err);
+          alert("An error occured!");
+        });
+
+
+    })
+
+
+
     })
   .catch(e => {console.log('Error logging into Facebook', e);
 this.disableButton = false;});
