@@ -93,12 +93,16 @@ export class CameraPage {
         this.camera.getPicture(options).then((imageData) => {
 
             this.base64Image = 'data:image/jpeg;base64,' + imageData;
-          //  this.currentImageMessage = "A prescription inserted from camera!";
+          //  this.currentImageMessage = "A prescription inserted from camera!"
+          console.log(  this.base64Image);
+
+          this.orderTest["prescription"] = this.base64Image;
           if (this.translate.currentLang =='en') {
             this.currentImageMessage = "A prescription inserted from camera!";
           }
           else {
           this.currentImageMessage = "تم تحميل وصفة طبية";
+          this.nativeStorage.setItem('order', this.orderTest);
           }
         }, (err) => {
             // Handle error

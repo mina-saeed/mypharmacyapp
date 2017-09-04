@@ -78,7 +78,10 @@ export class LoginEmailPage {
     }else{
       this.http.post(this.url + 'login', JSON.stringify(body), new RequestOptions({headers:headers}))
       .map(res => res).subscribe(data => {
+        console.log("login data", data)
         let body = {
+          //userID lma mahmoud yeb3tholi 3shan nesta5dmo
+          userID: JSON.parse(data["_body"])["userID"],
           name: JSON.parse(data["_body"])["username"],
           email: this.userData.email,
           password: this.userData.password,
@@ -90,7 +93,7 @@ export class LoginEmailPage {
         () => console.log('Stored item!'),
         error => console.error('Error storing item', error)
       );
-        this.navCtrl.push(TabsPage);
+        this.navCtrl.setRoot(TabsPage);
 
       }, err =>{
         console.log(err);

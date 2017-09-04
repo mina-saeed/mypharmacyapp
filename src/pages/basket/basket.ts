@@ -173,7 +173,15 @@ export class BasketPage {
 
   console.log(this.orderData);
 
-      this.http.post(this.url + 'order/submit', JSON.stringify(this.orderData), new RequestOptions({headers:headers}))
+    let body = {
+      city:  this.orderData.userInfo.city,
+      location: this.orderData.userInfo.location,
+      street:this.orderData.userInfo.street,
+      type: "order",
+      order: this.orderData.order,
+      userID:this.orderData.userInfo.userID
+    }
+      this.http.post(this.url + 'order/submit', body, new RequestOptions({headers:headers}))
       .map(res => res).subscribe(data => {
         console.log(data);
 
