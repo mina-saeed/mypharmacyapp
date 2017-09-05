@@ -35,19 +35,28 @@
 
 <ion-content padding>
   <hr>
-  <div *ngFor="let res of members">
-    <p class="text" (tap)="goToMedicines(res)">{{res.name}}</p><br>
-    <button class = "dark-button" ion-button (tap)="deleteReminder(res)">{{ "DELETE" | translate}}</button>
-  </div> <br>
-
+  <ul *ngFor="let res of members">
+    <Li><p class="name" (tap)="goToMedicines(res)">{{res.name}}</p><p>
+    <button class = "dark-button" ion-button (tap)="deleteReminder(res)">{{ "DELETE" | translate}}</button></p></Li>
+    <hr>
+ 
+  </ul>
   <form (ngSubmit)="addPatient()">
-
-        <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "Name" | translate}}:</ion-label>
-        <ion-input class="oval" type="text"  [(ngModel)]="patient" name="patient"></ion-input>
-        </ion-item>
-
-      <button ion-button type="submit" class = "dark-button" dir="{{'LANG_DIR' | translate}}">{{ "ADD" | translate}}</button>
-      <br>
+  <ul>
+    <li><p class="name input">
+        <ion-input class="oval" placeholder="Name"  [(ngModel)]="patient" name="patient"></ion-input>
+        </p><p>
+      <button ion-button type="submit" class = "dark-button" dir="{{'LANG_DIR' | translate}}">{{ "ADD" | translate}}</button></p></li>
+       </ul>
   </form>
+<!--  <ul>
+
+<li><p class="name">Daniel</p><p><button ion-button class = "dark-button">{{ 'DELETE' | translate }}</button></p></li>
+<hr>
+<li><p class="name">Daniel</p><p><button ion-button class = "dark-button">{{ 'DELETE' | translate }}</button></p></li>
+<hr>
+<li><p class="name">Daniel</p><p><button ion-button class = "dark-button">{{ 'DELETE' | translate }}</button></p></li>
+<hr>
+<li><p class="name input"><ion-input class= "oval" placeholder="Name"></ion-input></p><p><button ion-button class = "dark-button">{{ 'ADD' | translate }}</button></p></li>
+</ul> -->
 </ion-content>

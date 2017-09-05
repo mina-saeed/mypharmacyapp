@@ -4,6 +4,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
 import { NativeStorage } from '@ionic-native/native-storage';
 import { RemindersMedicinesListPage } from '../reminders-medicines-list/reminders-medicines-list';
 import { TranslateService } from 'ng2-translate';
+import { BasketPage } from '../basket/basket';
+import { MenuPage } from '../menu/menu';
 
 /**
  * Generated class for the ReminderPage page.
@@ -148,5 +150,11 @@ currentLanguage: string;
         ]
       });
       alert.present();
+  }
+    goBasket(){
+    this.navCtrl.push(BasketPage, {defaultOrNot: 0}); 
+  }
+  goMenu(){
+    this.navCtrl.push(MenuPage);
   }
 }
