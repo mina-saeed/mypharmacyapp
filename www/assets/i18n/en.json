@@ -111,5 +111,6 @@
   "ADD": "Add",
   "EDIT": "Edit",
   "SELECT": "Select",
-  "SAVE": "Save"
+  "SAVE": "Save",
+  "ORDERDETAILS": "Order details"
 }

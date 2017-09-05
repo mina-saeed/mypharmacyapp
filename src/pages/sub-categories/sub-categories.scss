@@ -74,7 +74,7 @@ page-sub-categories {
     }
     .title {
         font-size: 23px;
-        margin-left: -20%;
+       // margin-left: -20%;
         font-family: Highland
     }
     hr {
@@ -127,7 +127,7 @@ page-sub-categories {
         width: 115%
     }
     .height {
-        height: 150px;
+        height: 35vw;
         padding-top: 2%
     }
     .p {
@@ -269,5 +269,7 @@ page-sub-categories {
       box-shadow: none;
       background-color: #cdebf9;
     }
-
+        .md,.navTitle{
+        margin-left: 0px !important;
+        }
 }

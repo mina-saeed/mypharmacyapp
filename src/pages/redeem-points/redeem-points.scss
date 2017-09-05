@@ -63,7 +63,7 @@ page-redeem-points {
     }
 
  	.content-ios hr{
- 	margin-top: -5%;
+ 	//margin-top: -5%;
  	}
  	h1{
  	text-align: center;
@@ -132,5 +132,8 @@ page-redeem-points {
         margin-bottom: 45px;
         line-height: 2;
         text-align: center;
+    }
+    .md,.navTitle {
+    margin-left: 0px !important;
     }
 }

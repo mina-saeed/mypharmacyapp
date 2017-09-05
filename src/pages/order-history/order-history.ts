@@ -4,6 +4,9 @@ import { Http, Headers, RequestOptions} from '@angular/http';
 import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
+import { DetailedOrderPage } from '../detailed-order/detailed-order';
+
+
 //import 'rxjs/add/operator/map';
 
 /**
@@ -23,12 +26,15 @@ export class OrderHistoryPage {
   userID:any;
   orderHistory = [];
   url:string;
+  order =[];
+  //mena =[{1,2,3,4},{1,2,3,4}];
 
   constructor(translate: TranslateService,public http:Http, public navCtrl: NavController, public navParams: NavParams) {
      this.translate = translate;
 
     this.url = 'http://146.185.148.66:3000/';
-    this.userID = 1;
+ //   this.userID = 1;
+    this.userID = 654564654454;
     this.getHistory();
   }
 
@@ -47,6 +53,14 @@ export class OrderHistoryPage {
       console.log(data);
 
       this.orderHistory = JSON.parse(data["_body"]);
+
+//let list: string[] = [];
+
+/*this.orderHistory.forEach(element => {
+    element.forEach(
+    list.push(element));
+}); */
+//console.log(list);
       console.log(this.orderHistory);
     }, err => {
       console.log(err);
@@ -59,4 +73,10 @@ export class OrderHistoryPage {
   goMenu(){
     this.navCtrl.push(MenuPage);
   }
+  goDetailedOrder(){
+    this.navCtrl.push(DetailedOrderPage);
+  }
+goToDetails(){
+   this.navCtrl.push(DetailedOrderPage);
+}
 }

@@ -133,8 +133,8 @@ page-categories {
         margin-right: 0%;
     }
     .height {
-        height: 150px;
-        padding-top: 4%
+        height: 35vw;
+    //    padding-top: 4%
     }
     .p {
         margin-top: 2%;
@@ -255,9 +255,18 @@ page-categories {
         border-top: 2px solid #0F6196;
         width: 55%
     }
+        .md,.navTitle{
+    margin-left: 75px !important;
+    }
     @media (max-width:320px) {
       .title{
       font-size: 21px;
       }
+     .md,.navTitle{
+    margin-left: 0px !important;
     }
+    }
+    .title-ios{
+    margin-left: 0px !important;
+}
 }

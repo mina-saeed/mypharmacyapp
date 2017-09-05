@@ -3,6 +3,15 @@ page-home {
         margin: 0;
         padding: 0
     }
+    .ion-ios-cartCustom-outline,
+    .ion-ios-cartCustom,
+    .ion-md-cartCustom,
+    .ion-md-cartCustom-outline {
+        content: url('../assets/icon/deactivited cart.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
     .dark-button {
         padding: 20px;
         width: 90%;
@@ -45,7 +54,7 @@ page-home {
      .scan {
         margin-left: 0%;
         width: 33%;
-        background-image: url(../assets/icon/barcode.png);
+        background-image: url(../assets/icon/bar-code.png);
         background-position: 50% 21%;
         background-size: 65%;
         background-repeat: no-repeat
@@ -165,15 +174,7 @@ page-home {
         margin-top: -6%;
         margin-right: 9%
     }
-    .ion-ios-cartCustom-outline,
-    .ion-ios-cartCustom,
-    .ion-md-cartCustom,
-    .ion-md-cartCustom-outline {
-        content: url('../assets/icon/deactivited Cart.png');
-        margin-left: 0;
-        max-width: 40px;
-        max-height: 150px
-    }
+
     .ion-ios-back-outline,
     .ion-ios-back,
     .ion-md-back,

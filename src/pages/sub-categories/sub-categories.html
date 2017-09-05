@@ -52,13 +52,11 @@
   </ion-label>
 </ion-label>
  <div style="text-align: center">
-    <!--  <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
-          <img (tap)="goToMedicines(cat._id)" style="margin-top: 0%;" class="img" [attr.src]="cat.subImage"/>
-          <p *ngIf="currentLanguage == 'en'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_en}}</p>
-          <p *ngIf="currentLanguage == 'ar'" (tap)="goToMedicines(cat._id)"  class="p">{{cat.name_ar}}</p>
-
-    </ion-label> -->
-      
+        <ion-label align="middle" class="roundProd products height" style="height: 110px; width: 25%; display: inline-block;">
+      <img class="img" style="height: 75%;" [attr.src]="imageURL"/>
+      <p class="p" style= "margin-top: -2%; color: #0F6196;font-weight: 600; font-size: 13px;white-space: normal;
+        word-break: break-word;">{{name}}</p>
+    </ion-label>
  </div>
   <div *ngIf="zeroArr == false">
   <!--  <div  *ngFor="let cat of subCategories" class="round">
@@ -70,7 +68,7 @@
     <ion-label  class="round products paddingLeft" style=" margin-top: 3%;">
         <ng-container  *ngFor="let cat of subCategories; let i = index">
         <ion-label align="middle" class="roundProd products height" style="display: inline-block;">
-    			<img (tap)="goToMedicines(cat._id)" style="margin-top: 0%;" class="img" [attr.src]="cat.subImage"/>
+    			<img (tap)="goToMedicines(cat._id)" style="margin-top: 5%;" class="img" [attr.src]="cat.subImage"/>
          <!-- <div style="height: 35px"> -->
     			<p *ngIf="currentLanguage == 'en'" (tap)="goToMedicines(cat._id, cat.name_en)"  class="p">{{cat.name_en}}</p>
           <p *ngIf="currentLanguage == 'ar'" (tap)="goToMedicines(cat._id, cat.name_ar)"  class="p">{{cat.name_ar}}</p>

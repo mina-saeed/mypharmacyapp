@@ -48,6 +48,8 @@ import { MenuPage } from '../pages/menu/menu'
 import { CategoriesPage } from '../pages/categories/categories';
 import { SubCategoriesPage } from '../pages/sub-categories/sub-categories';
 import { AddressesPage } from '../pages/addresses/addresses';
+import { DetailedOrderPage } from '../pages/detailed-order/detailed-order';
+
 
 import { RemindmePage } from '../pages/remindme/remindme';
 
@@ -129,7 +131,9 @@ export function createTranslateLoader(http: Http) {
     PromoCodePage,
     MedicineReminderPage,
     PersonReminderPage,
-    TimeReminderPage
+    TimeReminderPage,
+    DetailedOrderPage
+
 
   ],
   imports: [
@@ -204,7 +208,8 @@ export function createTranslateLoader(http: Http) {
     PromoCodePage,
     MedicineReminderPage,
     PersonReminderPage,
-    TimeReminderPage
+    TimeReminderPage,
+    DetailedOrderPage
 
   ],
 

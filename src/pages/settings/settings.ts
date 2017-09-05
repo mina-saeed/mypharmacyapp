@@ -36,7 +36,7 @@ export class SettingsPage {
     this.navCtrl.push(BasketPage, {defaultOrNot: 0}); //kda hatly el default!! hwa ma3mlsh select
   }
     goMenu(){
-    this.navCtrl.push(TimeReminderPage);
+    this.navCtrl.push(MenuPage);
   }
   goToReminderPage(){
     this.navCtrl.push(ReminderPage);
