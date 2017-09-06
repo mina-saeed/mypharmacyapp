@@ -29,6 +29,8 @@ export class OrderHistoryPage {
   order =[];
   //mena =[{1,2,3,4},{1,2,3,4}];
 
+  orderHistoryFirstOrders=[];
+
   constructor(translate: TranslateService,public http:Http, public navCtrl: NavController, public navParams: NavParams) {
      this.translate = translate;
 
@@ -53,6 +55,12 @@ export class OrderHistoryPage {
       console.log(data);
 
       this.orderHistory = JSON.parse(data["_body"]);
+
+      for (let x = 0; x < this.orderHistory.length; x++){
+        this.orderHistoryFirstOrders.push(JSON.parse(this.orderHistory[x]["order"])[0]);
+      }
+
+      console.log(this.orderHistoryFirstOrders);
 
 //let list: string[] = [];
 
