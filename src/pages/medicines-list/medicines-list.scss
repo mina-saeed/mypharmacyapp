@@ -1,4 +1,63 @@
 page-medicines-list {
+    .ion-ios-cartCustom-outline,
+    .ion-ios-cartCustom,
+    .ion-md-cartCustom,
+    .ion-md-cartCustom-outline {
+        content: url('../assets/icon/deactivited cart.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    .ion-ios-setting-outline,
+    .ion-ios-setting,
+    .ion-md-setting,
+    .ion-md-setting-outline {
+        content: url('../assets/icon/deactivated menu.png');
+        margin-left: 0;
+        max-width: 35px;
+        max-height: 150px
+    }
+    p {
+        display: block
+    }
+    .title {
+        font-size: 18px;
+        font-family: Highland;
+        margin-left: 10px;
+    }
+
+    .toolbar-background-md{
+    background: #fff;
+    }
+    .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before {
+    background-image: none;
+    margin-bottom:0px;
+    }
+    .toolbar-background{
+    height: 60%;
+    }
+    .scroll-content  {
+    margin-top: 55px !important
+    }
+        .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+    border-style: none;
+    background: #fff;
+    }
+
+
+    .toolbar-ios ion-title{
+    width: 119%;
+    margin-left: -7% !important;
+    }
+    .md,.navTitle {
+    margin-left: 0px !important;
+    }
+    @media (max-width:320px) {
+      .title{
+      font-size: 15px;
+        //margin-left: -10px;
+      }
+    }
   .round {
       padding: 4%;
       font-family: "Helvetica";
@@ -9,5 +68,12 @@ page-medicines-list {
       background-color: #cdebf9;
       width: 90%;
       margin-bottom: 10px;
+  }
+  p{
+  text-align: center;
+  }
+  div{
+  margin-left: auto;
+  margin-right: auto;
   }
 }
