@@ -41,6 +41,7 @@ export class AccountPage {
   logout(){
 
     this.nativeStorage.remove('rememberUser');
+    this.nativeStorage.remove('order');
   //  this.navCtrl.push(WelcomePage);
     this.app.getRootNav().setRoot(WelcomePage);
   //  this.ionicBootstrap(MyApp,null, {tabsHideOnSubPages:"true"});

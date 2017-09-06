@@ -55,7 +55,9 @@ export class HomePage {
 
     this.nativeStorage.getItem('rememberUser')
     .then(
-    data => this.emptyOrderData.userInfo = data,
+    data => {
+      this.emptyOrderData["userInfo"] = data;
+    console.log("data when home: ", this.emptyOrderData)},
     error => console.log("error")
   );
 
@@ -266,9 +268,11 @@ export class HomePage {
   getOrder(){ //get from local sotrage
          this.nativeStorage.getItem('order')
         .then(data =>{
-                  console.log(data);
+                  console.log("got order:", data);
                   //console.log("got data 5alas: ",data);
                   //alert(data);
+                  this.emptyOrderData.order = data;
+                  console.log("current", this.emptyOrderData);
                   } ,
           error => {
             this.saveOrder(this.emptyOrderData);

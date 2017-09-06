@@ -1,12 +1,12 @@
 { "cities": [{"name":"Cairo"}, {"name":"Giza"},
 {"name":"Alexandria"}, {"name":"Suez"}, {"name":"Ismailia"},
 {"name":"Port Said"}, {"name":"Damietta"}, {"name":"Sharqia"},
-{"name":"Qaliubiya"}, {"name":"El-Beheira"}, {"name":"Kafr El-Shaeikh"},
+{"name":"Qaliubiya"}, {"name":"El Beheira"}, {"name":"Kafr El Shaeikh"},
 {"name":"Gharbia"}, {"name":"Monofia"}, {"name":"Qena"}, {"name":"Menia"},
 {"name":"Fayoum"}, {"name":"Beni Swaif"}, {"name":"Sohag"},
 {"name":"Assiut"}, {"name":"Marsa Matrouh"}, {"name":"New Valley"}, {"name":"Red Sea"},
 {"name":"Luxor"}, {"name":"Aswan"}, {"name":"North Sinai"},
-{"name":"South Sinai"}]  ,
+{"name":"South Sinai"}] ,
 
  "Cairo": [ {"name":"Abbassia"}, {"name":"Abdeen"},
 {"name":"Ain Shams"}, {"name":"Al-Matariyyah"}, {"name":"Azbakeya"},
@@ -126,34 +126,5 @@
 
 "South Sinai":[{"name":"Abou Redis"},{"name":"Abou Zanima"},{"name":"Newibaa"},
 {"name":"Dahab"},{"name":"Ras Sedr"},{"name":"Sharm El Sheikh"},{"name":"Saint Catherine"},{"name":"Tour Sinai"},{"name":"Taba"}],
-
-"BuildingList":[{"name":"All","name":"Installations"},{"name":"Electrical Installation"},{"name":"Plumbing and Sanitary systems"},{"name":"Air Conditioning"},
-{"name":"Construction"},{"name":"Infrastructure"},{"name":"Carpentry"},{"name":"Blacksmithing"},{"name":"Tiles and ceramics"},{"name":"Gypsum decoration"}],
-
-"CategoryList":[{"name":"Building"},{"name":"Maintenance"},{"name":"Industry"},
-{"name":"Facility Management"},{"name":"Managerial"},{"name":"Health and Care"},{"name":"Agriculture"},{"name":"Tourism"},{"name":"Logistics"},{"name":"Creative"}],
-
-"MaintenanceList":[{"name":"All","name":"Electrical"},{"name":"Plumping and Sanitary systems "},{"name":"Air Conditioning"},{"name":"Carpentry"},
-{"name":"Electrical"},{"name":"Mechanical"},{"name":"Blacksmithing"}],
-
-"IndustryList":[{"name":"All","name":"Operation"},{"name":"Automation and CNC"},{"name":"Manufacturing"},{"name":"Food and Beverage"},
-{"name":"Engineering Industries"},{"name":"furnishing & carpentry"},{"name":"Textile"},{"name":"Readymade clothing"},{"name":"Marble and Granite"},{"name":"Chemical Industry"},{"name":"Leather Industry"}],
-
-"FacilityList":[{"name":"All","name":"Electrical"},{"name":"Plumbing & sanitary systems"},{"name":"Air Conditioning"},{"name":"Carpentry"},
-{"name":"House Keeping"},{"name":"Security"},{"name":"Catering"}],
-
-"ManagerialList":[{"name":"All","name":"Salesperson"},{"name":"Secretariat"},{"name":"IT"}],
-
-"HealthList":[{"name":"All","name":"Beauty and Complementary therapies"},{"name":"Hairdressing"},{"name":"Nursing"},{"name":"Dental Nursing"},
-{"name":"Disability Nursing"},{"name":"Psychiatric nursing"},{"name":"Private Nursing"},{"name":"Physiotherapy"},{"name":"Child care"},{"name":"Elder care"}],
-
-"AgricultureList":[{"name":"All","name":"Landscaping"},{"name":"Irrigation"}],
-
-"TourismList":[{"name":"All","name":"Housekeeping"},{"name":"Reception"},{"name":"Public Relations"},{"name":"Public Areas"},
-{"name":"Cuisine"},{"name":"Tour Guide"},{"name":"Salesperson"}],
-
-"LogisticsList":[{"name":"All","name":"Taxi"},{"name":"Driver"},{"name":"Truck driver"},{"name":"Warehousing"}],
-
-"CreativeList":[{"name":"All","name":"Calligrapher"},{"name":"Photographer"},{"name":"Ornament designer "}]
 
 }
