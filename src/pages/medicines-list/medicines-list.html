@@ -7,11 +7,23 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{ name }}</ion-title>
+
+    <ion-title class="navTitle">
+     <p class="{{'TITLELANG' | translate}} title">{{name}}</p>
+    </ion-title>
+
+    <ion-buttons right>
+      <button ion-button icon-only (tap)="goBasket()">
+        <ion-icon name="cartCustom"></ion-icon>
+      </button>
+      <button ion-button icon-only (tap)="goMenu()">
+        <ion-icon name="setting"></ion-icon>
+
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
-
 
 <ion-content padding>
   <div *ngIf="zeroArr == true"  class="round">

@@ -29,9 +29,9 @@ export class MedicineReminderPage {
     console.log('ionViewDidLoad MedicineReminderPage');
   }
   goBasket(){
-    this.navCtrl.push(PersonReminderPage, {defaultOrNot: 0}); 
+    this.navCtrl.push(BasketPage, {defaultOrNot: 0}); 
   }
   goMenu(){
-    this.navCtrl.push(TimeReminderPage);
+    this.navCtrl.push(MenuPage);
   }
 }
