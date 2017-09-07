@@ -52,15 +52,15 @@ export class MyApp {
 
           this.nativeStorage.getItem('rememberUser')
           .then(
-          data => this.rootPage=LocationPage,
-          error => this.rootPage=LocationPage
+          data => this.rootPage=TabsPage,
+          error => this.rootPage=TabsPage
         );
 
           //this.language = data;
                  } ,
           error => {
 
-          this.rootPage=LocationPage;
+          this.rootPage=TabsPage;
 
 
           }

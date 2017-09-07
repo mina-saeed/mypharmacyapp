@@ -42,15 +42,7 @@ export class DetailedProductPage {
 
       data: [
       {
-        "id":"5973c9e890adc82244231977",
-        "name_ar":"بانادول اكسترا",
-        "description_ar":"Description",
-        "category":null,
-        "barcode":"6223002142369",
-        "milligrams":"10",
-        "price":5,
-        "name_en":"Panadol Extra",
-        "description_en":"No "
+        
       }
 
 
@@ -68,7 +60,7 @@ export class DetailedProductPage {
      this.currentLanguage = "en";
    }
            this.url = 'http://146.185.148.66:3003/';
-    //    this.product.data = JSON.parse(this.navParams.get("_body")); //nav controller
+        this.product.data = JSON.parse(this.navParams.get("_body")); //nav controller
         console.log(this.product.data);
    //this.translate.use('en'); // to be commented
    this.getOrSetSchedules();
