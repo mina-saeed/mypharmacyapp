@@ -9,6 +9,8 @@ import { MenuPage } from '../menu/menu';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { IllnessPage } from '../illness/illness';
 import { DetailedProductPage } from '../detailed-product/detailed-product';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 import { Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -21,7 +23,7 @@ import 'rxjs/add/operator/map';
 export class HomePage {
 
   noResultsBool = false;
-
+  public base64Image: string;
   searchResults= {  //change default data according to mahmoud, or figure out a better way of doing deault ad empty values
 
     data: [
@@ -49,9 +51,10 @@ export class HomePage {
   url:string;
 
   currentLanguage:string;
+    requirePrescription = "No";
 
   private translate: TranslateService;
-  constructor(private alertCtrl: AlertController, private barcodeScanner: BarcodeScanner,translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
+  constructor(private camera: Camera, private imagePicker: ImagePicker,private alertCtrl: AlertController, private barcodeScanner: BarcodeScanner,translate: TranslateService,  private nativeStorage: NativeStorage, public lang: TestStorageProvider, public navCtrl: NavController,  public http:Http) {
 
     this.nativeStorage.getItem('rememberUser')
     .then(
@@ -186,66 +189,139 @@ export class HomePage {
   }
 
   addToCart(medicine){
-    //get what in local storage put it in a json object
-    //push new object in array
-    //set it back!
+   //get what in local storage put it in a json object
+   //push new object in array
+   //set it back!
 
-    this.nativeStorage.getItem('order')
-    .then(data =>{
+   this.requirePrescription = medicine["requirePrescription"]; //medicine["required"]
 
-              console.log("current data::", data);
-              let medicineTobeAdded = {
-                id:medicine["id"], name:medicine["name"], price:medicine["price"], qty:1
-              }
+   if(this.requirePrescription == "Yes"){
 
+         let alert = this.alertCtrl.create({
+       title: 'Prescription Required',
+       message: 'This medicine requires a prescription.',
+       buttons: [
+         {
+           text: 'Camera',
+           handler: () => {
+               console.log('camera upload');
+               const options: CameraOptions = {
+               quality: 100,
+               destinationType: this.camera.DestinationType.FILE_URI, //this depends on mahmoud, file type! if he wants base64!
+               encodingType: this.camera.EncodingType.JPEG,
+               mediaType: this.camera.MediaType.PICTURE
+             }
 
-              //if same, just increment qty!
-              var userExists = false;
-              var found = false;
-              for(var x = 0; x< data["order"].length; x ++)
-              {
-                if(!userExists){
-                  if (data["order"][x]["id"] == medicineTobeAdded.id){
-                    data["order"][x]["qty"] = data["order"][x]["qty"] + 1;
-                    userExists = true;
-                    found = true;
-                  }
-                }
-              }
-              if(!found)
-              {
-                data["order"].push(medicineTobeAdded);
-
-              }
-
-            //  console.log("To be added:", medicineTobeAdded);
-
-            //  data["order"].push(medicineTobeAdded);
-
-            //  console.log("Current data from local storage:", data)
-
-              this.saveOrder(data);
+             this.camera.getPicture(options).then((imageData) => {
+              // imageData is either a base64 encoded string or a file URI
+              // If it's base64:
+              //let base64Image = 'data:image/jpeg;base64,' + imageData;
+              this.base64Image = imageData;
+              console.log(this.base64Image);
+              this.addToCartHelper(medicine, this.base64Image);
 
 
-              //just to test
-              this.nativeStorage.getItem('order')
-              .then(data =>{
-                        console.log("now in local", data);
-                        //console.log("got data 5alas: ",data);
-                        //alert(data);
-                        } ,
-                error => console.error(error)
-              );
+             }, (err) => {
+              // Handle error
+             });
+           }
+         },
+         {
+           text: 'Gallery',
+           handler: () => {
+             console.log('gallery upload');
+             let options = {
+               maximumImagesCount: 1, //how many pictures to pick??!
+               width: 300,
+               height: 300,
+               quality : 75
+             };
 
-          //    console.log("Now data in local:", this.getOrder());
-              } ,
-      error => console.error(error)
-    );
+             this.imagePicker.getPictures(options).then((results) => {
+               for (var i = 0; i < results.length; i++) {
+                 this.base64Image = results[i];
+                 console.log('Image URI: ' + results[i]);
+                 console.log(this.base64Image);
+                 this.addToCartHelper(medicine, this.base64Image);
+               }
+             }, (err) => {
+
+             });
+           }
+         },
+         {
+           text: 'Cancel',
+           role: 'cancel',
+           handler: () => {
+             console.log('Cancel clicked');
+           }
+         }
+       ]
+     });
+     alert.present();
+
+   }else{
+     this.addToCartHelper(medicine, ""); //empty prescription
+   }
 
 
 
-  }
 
+ }
+ addToCartHelper(medicine, prescription){
+   this.nativeStorage.getItem('order')
+   .then(data =>{
+
+             console.log("current data::", data);
+             let medicineTobeAdded = {
+               id:medicine["id"], name:medicine["name_en"], price:medicine["price"], qty:1, prescription: prescription
+             }
+
+
+             //if same, just increment qty!
+             var userExists = false;
+             var found = false;
+             for(var x = 0; x< data["order"].length; x ++)
+             {
+               if(!userExists){
+                 if (data["order"][x]["id"] == medicineTobeAdded.id){
+                   data["order"][x]["qty"] = data["order"][x]["qty"] + 1;
+                   userExists = true;
+                   found = true;
+                 }
+               }
+             }
+             if(!found)
+             {
+               data["order"].push(medicineTobeAdded);
+
+             }
+
+           //  console.log("To be added:", medicineTobeAdded);
+
+           //  data["order"].push(medicineTobeAdded);
+
+           //  console.log("Current data from local storage:", data)
+
+             this.saveOrder(data);
+
+
+             //just to test
+             this.nativeStorage.getItem('order')
+             .then(data =>{
+                       console.log("now in local", data);
+                       //console.log("got data 5alas: ",data);
+                       //alert(data);
+                       } ,
+               error => console.error(error)
+             );
+
+         //    console.log("Now data in local:", this.getOrder());
+             } ,
+     error => console.error(error)
+   );
+
+ }
 
 
 

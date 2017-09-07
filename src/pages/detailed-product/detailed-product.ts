@@ -42,7 +42,7 @@ export class DetailedProductPage {
 
       data: [
       {
-        
+
       }
 
 
@@ -76,7 +76,7 @@ export class DetailedProductPage {
 
   }
 
-  requirePrescription = true;
+  requirePrescription = "No";
 
 
     ///LATER MOVE IT TO HOME PAGE + MEDICINES PAGE
@@ -85,10 +85,9 @@ export class DetailedProductPage {
     //push new object in array
     //set it back!
 
-    //this.requirePrescription = false; //medicine["required"]
+    this.requirePrescription = medicine["requirePrescription"]; //medicine["required"]
 
-    if(this.requirePrescription == true){
-
+    if(this.requirePrescription == "Yes"){
 
           let alert = this.alertCtrl.create({
         title: 'Prescription Required',
