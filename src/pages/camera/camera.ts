@@ -82,19 +82,19 @@ export class CameraPage {
         this.photos = [];
     }
     takePhoto() {
-        const options: CameraOptions = {
-            quality: 100, //original 100!
-            destinationType: this.camera.DestinationType.DATA_URL,
-            encodingType: this.camera.EncodingType.JPEG,
-            mediaType: this.camera.MediaType.PICTURE,
-            saveToPhotoAlbum: true
+          const options: CameraOptions = {
+          quality: 100,
+          destinationType: this.camera.DestinationType.FILE_URI, //this depends on mahmoud, file type! if he wants base64!
+          encodingType: this.camera.EncodingType.JPEG,
+          mediaType: this.camera.MediaType.PICTURE
         }
 
         this.camera.getPicture(options).then((imageData) => {
-
-            this.base64Image = 'data:image/jpeg;base64,' + imageData;
-          //  this.currentImageMessage = "A prescription inserted from camera!"
-          console.log(  this.base64Image);
+         // imageData is either a base64 encoded string or a file URI
+         // If it's base64:
+         //let base64Image = 'data:image/jpeg;base64,' + imageData;
+         this.base64Image = imageData;
+         console.log(this.base64Image);
 
           this.orderTest["prescription"] = this.base64Image;
           if (this.translate.currentLang =='en') {
