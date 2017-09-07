@@ -18,7 +18,7 @@ import 'rxjs/add/operator/catch';
 export class RemoteServiceProvider {
 	//headers:Headers;
   constructor(public http: Http) {
- 
+
   }
 
 getPosts() {
@@ -27,5 +27,10 @@ getPosts() {
 			.do((res : Response ) => console.log(res.json()))
             .map((res : Response ) => res.json());
 
+}
+updateFile(json){
+  return this.http.post('settings.json',json)
+    .do((res : Response ) => console.log(res.json()))
+          .map((res : Response ) => res.json());
 }
 }

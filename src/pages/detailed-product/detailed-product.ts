@@ -8,6 +8,8 @@ import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
 import { LocalNotifications } from '@ionic-native/local-notifications';
 import { DatePicker } from '@ionic-native/date-picker';
+import { ImagePicker } from '@ionic-native/image-picker';
+import { Camera, CameraOptions } from '@ionic-native/camera';
 
 /**
  * Generated class for the DetailedProductPage page.
@@ -46,7 +48,7 @@ export class DetailedProductPage {
         "category":null,
         "barcode":"6223002142369",
         "milligrams":"10",
-        "price":null,
+        "price":5,
         "name_en":"Panadol Extra",
         "description_en":"No "
       }
@@ -54,9 +56,9 @@ export class DetailedProductPage {
 
     ]};
 
-
+    public base64Image: string;
   private translate: TranslateService;
-  constructor( private alertCtrl: AlertController,private datePicker: DatePicker, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http, private nativeStorage: NativeStorage,private localNotifications: LocalNotifications) {
+  constructor(private camera: Camera, private imagePicker: ImagePicker, private alertCtrl: AlertController,private datePicker: DatePicker, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http, private nativeStorage: NativeStorage,private localNotifications: LocalNotifications) {
    this.translate = translate;
    this.translate=translate;
    if (this.translate.currentLang =='ar') {
@@ -66,7 +68,7 @@ export class DetailedProductPage {
      this.currentLanguage = "en";
    }
            this.url = 'http://146.185.148.66:3003/';
-        this.product.data = JSON.parse(this.navParams.get("_body")); //nav controller
+    //    this.product.data = JSON.parse(this.navParams.get("_body")); //nav controller
         console.log(this.product.data);
    //this.translate.use('en'); // to be commented
    this.getOrSetSchedules();
@@ -77,18 +79,103 @@ export class DetailedProductPage {
     console.log('ionViewDidLoad DetailedProductPage');
   }
 
+  pickPhoto() {
 
-  addToCart(medicine){
+
+  }
+
+  requirePrescription = true;
+
+
+    ///LATER MOVE IT TO HOME PAGE + MEDICINES PAGE
+   addToCart(medicine){
     //get what in local storage put it in a json object
     //push new object in array
     //set it back!
 
+    //this.requirePrescription = false; //medicine["required"]
+
+    if(this.requirePrescription == true){
+
+
+          let alert = this.alertCtrl.create({
+        title: 'Prescription Required',
+        message: 'This medicine requires a prescription.',
+        buttons: [
+          {
+            text: 'Camera',
+            handler: () => {
+                console.log('camera upload');
+                const options: CameraOptions = {
+                quality: 100,
+                destinationType: this.camera.DestinationType.FILE_URI, //this depends on mahmoud, file type! if he wants base64!
+                encodingType: this.camera.EncodingType.JPEG,
+                mediaType: this.camera.MediaType.PICTURE
+              }
+
+              this.camera.getPicture(options).then((imageData) => {
+               // imageData is either a base64 encoded string or a file URI
+               // If it's base64:
+               //let base64Image = 'data:image/jpeg;base64,' + imageData;
+               this.base64Image = imageData;
+               console.log(this.base64Image);
+               this.addToCartHelper(medicine, this.base64Image);
+
+
+              }, (err) => {
+               // Handle error
+              });
+            }
+          },
+          {
+            text: 'Gallery',
+            handler: () => {
+              console.log('gallery upload');
+              let options = {
+                maximumImagesCount: 1, //how many pictures to pick??!
+                width: 300,
+                height: 300,
+                quality : 75
+              };
+
+              this.imagePicker.getPictures(options).then((results) => {
+                for (var i = 0; i < results.length; i++) {
+                  this.base64Image = results[i];
+                  console.log('Image URI: ' + results[i]);
+                  console.log(this.base64Image);
+                  this.addToCartHelper(medicine, this.base64Image);
+                }
+              }, (err) => {
+
+              });
+            }
+          },
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            handler: () => {
+              console.log('Cancel clicked');
+            }
+          }
+        ]
+      });
+      alert.present();
+
+    }else{
+      this.addToCartHelper(medicine, ""); //empty prescription
+    }
+
+
+
+
+  }
+  addToCartHelper(medicine, prescription){
     this.nativeStorage.getItem('order')
     .then(data =>{
 
               console.log("current data::", data);
               let medicineTobeAdded = {
-                id:medicine["id"], name:medicine["name_en"], price:medicine["price"], qty:1
+                id:medicine["id"], name:medicine["name_en"], price:medicine["price"], qty:1, prescription: prescription
               }
 
 
@@ -134,8 +221,6 @@ export class DetailedProductPage {
               } ,
       error => console.error(error)
     );
-
-
 
   }
   saveOrder(localData){  //save to local storage, //later, save each time add to cart,and deleter w kda

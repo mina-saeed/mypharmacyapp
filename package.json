@@ -103,7 +103,6 @@
             "cordova-plugin-device": {},
             "cordova-plugin-splashscreen": {},
             "cordova-plugin-statusbar": {},
-            "cordova-plugin-whitelist": {},
             "ionic-plugin-keyboard": {},
             "cordova-plugin-camera": {
                 "CAMERA_USAGE_DESCRIPTION": " ",
@@ -133,7 +132,8 @@
             "cordova-plugin-facebook4": {
                 "APP_ID": "1568720839858802",
                 "APP_NAME": "Mypharmacy"
-            }
+            },
+            "cordova-plugin-whitelist": {}
         },
         "platforms": [
             "android",
