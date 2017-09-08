@@ -24,6 +24,7 @@ import { OrderHistoryPage } from '../pages/order-history/order-history';
 import { AccountPage } from '../pages/account/account';
 import { IllnessPage } from '../pages/illness/illness';
 import { PersonReminderPage } from '../pages/person-reminder/person-reminder';
+import { ToastController } from 'ionic-angular';
 
 import { RemindmePage } from '../pages/remindme/remindme';
 
@@ -35,7 +36,7 @@ import { LocationPage } from '../pages/location/location';
 export class MyApp {
     rootPage:any;
     language:any;
-  constructor(private alertCtrl: AlertController, private network: Network, statusBar: StatusBar,private translate: TranslateService, splashScreen: SplashScreen,private nativeStorage: NativeStorage,platform: Platform){
+  constructor(public toastCtrl: ToastController, private alertCtrl: AlertController, private network: Network, statusBar: StatusBar,private translate: TranslateService, splashScreen: SplashScreen,private nativeStorage: NativeStorage,platform: Platform){
 
 
     this.subscribeNoConnection();
@@ -53,7 +54,7 @@ export class MyApp {
           this.nativeStorage.getItem('rememberUser')
           .then(
           data => this.rootPage=TabsPage,
-          error => this.rootPage=TabsPage
+          error => this.rootPage=WelcomePage
         );
 
           //this.language = data;
@@ -75,10 +76,12 @@ export class MyApp {
     let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
     // alert('Network was disconnected!');
     if (this.translate.currentLang =='ar') {
-      this.customAlert("شبكة الاتصال","تم قطع الاتصال بالشبكة","أغلق");
+    //  this.customAlert("شبكة الاتصال","تم قطع الاتصال بالشبكة","أغلق");
+    this.presentToast("تم قطع الاتصال بالشبكة");
     }
     else {
-      this.customAlert("Network","Network Disconnected","Close");
+    //  this.customAlert("Network","Network Disconnected","Close");
+    this.presentToast("Network Disconnected");
     }
 //      this.subcribeConnection();
     });
@@ -91,10 +94,12 @@ export class MyApp {
     let connectSubscription = this.network.onConnect().subscribe(() => {
       console.log('network connected!');
       if (this.translate.currentLang =='ar') {
-        this.customAlert("شبكة الاتصال","الشبكة متصلة","أغلق");
+      //  this.customAlert("شبكة الاتصال","الشبكة متصلة","أغلق");
+        this.presentToast("الشبكة متصلة");
       }
       else {
-        this.customAlert("Network","Network Connected","Close");
+      //  this.customAlert("Network","Network Connected","Close");
+        this.presentToast("Network Connected");
       }
     //  this.subscribeNoConnection();
     });
@@ -112,4 +117,14 @@ export class MyApp {
       });
       alert.present();
   }
+
+  presentToast(message) {
+    let toast = this.toastCtrl.create({
+      message: message,
+      duration: 3000,
+      position: 'top'
+    });
+    toast.present();
+  }
+
 }
