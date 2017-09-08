@@ -6,6 +6,7 @@ import { ContactusPage } from '../contactus/contactus';
 import { TermsPage } from '../terms/terms';
 import { PrivacyPage } from '../privacy/privacy';
 import { RedeemPointsPage } from '../redeem-points/redeem-points';
+import { ReceiptPage } from '../receipt/receipt';
 
 /**
  * Generated class for the MenuPage page.
@@ -33,6 +34,10 @@ export class MenuPage {
   goRedeem(){
 
     this.navCtrl.push(RedeemPointsPage);
+  }
+    goReceipt(){
+
+    this.navCtrl.push(ReceiptPage);
   }
     goContact(){
 

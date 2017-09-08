@@ -60,7 +60,7 @@ export class MyApp {
                  } ,
           error => {
 
-          this.rootPage=TabsPage;
+          this.rootPage=LanguagePage;
 
 
           }

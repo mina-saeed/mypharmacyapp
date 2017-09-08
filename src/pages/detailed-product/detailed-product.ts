@@ -52,7 +52,6 @@ export class DetailedProductPage {
   private translate: TranslateService;
   constructor(private camera: Camera, private imagePicker: ImagePicker, private alertCtrl: AlertController,private datePicker: DatePicker, translate: TranslateService,public navCtrl: NavController, public navParams: NavParams,public http:Http, private nativeStorage: NativeStorage,private localNotifications: LocalNotifications) {
    this.translate = translate;
-   this.translate=translate;
    if (this.translate.currentLang =='ar') {
      this.currentLanguage = "ar";
    }

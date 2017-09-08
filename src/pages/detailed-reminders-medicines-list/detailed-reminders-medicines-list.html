@@ -34,9 +34,9 @@
   <hr>
   <p class="name">{{currentMedicine.name}}</p><p><button ion-button class = "dark-button margin">{{ 'DELETE' | translate }}</button></p>
 <hr>
-  <p style="color: #bfbfbf; font-weight: 500;margin-bottom: -2px;margin-top:10px;" *ngIf="currentLanguage == 'en'">{{ "REMIND_ME" | translate}}: {{currentMedicine.remindEvery}}</p><br>
-  <p style="color: #bfbfbf; font-weight: 500;margin-bottom: -2px;margin-top:10px;" *ngIf="currentLanguage == 'ar'">{{ "REMIND_ME" | translate}}: {{currentMedicine.remindEveryAr}}</p><br>
-<!-- <p style="width: 95%;text-align: center">No reminder yet</p> -->
+  <p style="color: #bfbfbf; font-weight: 500;margin-bottom: -2px;margin-top:10px;" >{{ "REMIND_ME" | translate}}: </p><br>
+  <p *ngIf="currentLanguage == 'en'" style="width: 95%;text-align: center">{{currentMedicine.remindEvery}}</p> 
+  <p *ngIf="currentLanguage == 'ar'" style="width: 95%;text-align: center">{{currentMedicine.remindEveryAr}}</p> 
     <button ion-button class = "dark-button" style="margin:auto;display: block;" (tap)="pickSchedule()">Pick Time</button>
 
     <div  style="width: 120%;margin-left: -6%;" *ngIf="timePicked == true">

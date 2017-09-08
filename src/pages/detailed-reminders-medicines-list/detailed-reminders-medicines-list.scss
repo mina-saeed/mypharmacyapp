@@ -82,7 +82,7 @@ page-detailed-reminders-medicines-list {
         font-weight: 500;
         line-height: 1.5;
         text-align: center;
-        margin-left: 65%;
+        //margin-left: 65%;
         text-transform: capitalize;
     }
 
@@ -112,7 +112,8 @@ page-detailed-reminders-medicines-list {
 
     }
     .name{
-    margin-right: 28%;
+    width: 55%;
+    margin-right: 10%;
     vertical-align: middle;
     }
 
@@ -123,7 +124,6 @@ page-detailed-reminders-medicines-list {
     }
  @media (max-width:320px){
      .name{
-    margin-right: 15%;
     vertical-align: bottom;
     }
  }
@@ -143,7 +143,5 @@ page-detailed-reminders-medicines-list {
   width: 22%;
 
 }
-.margin{
-    margin-bottom: -10px;
-}
+
 }

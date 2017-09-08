@@ -14,7 +14,7 @@
 <ion-content padding >
     <img class="image" src="assets/icon/logo.png"/>
 
-<button ion-button (click)="getLocation()">get</button>
+
   <h3 class="header"><span>{{ "LOCATION" | translate}}</span></h3>
   <form class = "form" [formGroup]="validations_form" (ngSubmit)="locationSubmit()">
     <ion-item dir="{{'LANG_DIR' | translate}}">
@@ -38,6 +38,7 @@
         </div>
       </ng-container>
     </div>
+    <ion-label type="text" class = "dark-button" style="padding:10px;margin-bottom: 10px;" (click)="getLocation()">Automatically set location</ion-label>
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-input class="oval" type="text"  [(ngModel)]="loc.location.street" formControlName="street" placeholder="{{ 'STREET' | translate}}"></ion-input>
         </ion-item>

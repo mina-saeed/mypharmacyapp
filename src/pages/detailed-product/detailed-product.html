@@ -9,13 +9,6 @@
   <ion-navbar>
   <!-- missing buttons not showing because of styling-->
 
-
-    <ion-buttons left>
-      <button ion-button icon-only>
-        <ion-icon name="back"></ion-icon>
-      </button>
-    </ion-buttons>
-
     <ion-title class="navTitle">
       <!--<p class= "title"> -->
      <p class="{{'TITLELANG' | translate}} title"> {{"MEDICINE" | translate }} </p>
@@ -41,9 +34,9 @@
     <div  *ngFor = "let res of product.data" >
     <h3>{{res.name_en}}</h3>
 
-    <img class="medicine-image" src = "assets/icon/panadol.jpg"/>
+    <img class="medicine-image" src = "assets/icon/panadol.png"/>
     <button  ion-button class="cart" name="add-circle" (tap)="addToCart(res)">
-     <img src="assets/icon/ADD to activated.png">
+     <img style="max-width: 120%;" src="assets/icon/ADD to activated.png">
   </button>
     <hr>
 
@@ -52,9 +45,9 @@
   </div>
 
 
-  <h1>Schedule Order</h1>
-  <p>Date: {{chosenDate}}</p>
-  <button ion-button (tap)="pickSchedule()">Pick Time</button>
+  <h3 style="font-family:'Helvetica';">Schedule Order</h3>
+  <p>{{chosenDate}}</p>
+  <button class= "dark-button" style="margin-left: auto;margin-right: auto;display:block;" ion-button (tap)="pickSchedule()">Pick Time</button>
 
 
 <div *ngIf="timePicked == true">

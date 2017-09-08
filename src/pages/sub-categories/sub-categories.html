@@ -34,7 +34,7 @@
                  placeholder="Search By Name">
    <img class="image" src="assets/icon/White Loop.png"/>
     </ion-input>
-  <div *ngIf="zeroArr == true"  class="round">
+  <div *ngIf="zeroArr == true"  class="round" style="margin-left: auto; margin-right: auto; margin-top: 15px;">
     <p *ngIf="currentLanguage == 'en'"  class="p">No categories found.</p>
     <p *ngIf="currentLanguage == 'ar'"  class="p">لم يتم العثور على فئات</p>
   </div>
@@ -51,11 +51,11 @@
 
   </ion-label>
 </ion-label>
- <div style="text-align: center">
+ <div *ngIf="zeroArr == false" style="text-align: center">
         <ion-label align="middle" class="roundProd products height" style="height: 110px; width: 25%; display: inline-block;">
-      <img class="img" style="height: 75%;" [attr.src]="imageURL"/>
+      <img class="img" style="height: 65%;" src="assets/icon/shampoo.png"> <!-- [attr.src]="imageURL" -->
       <p class="p" style= "margin-top: -2%; color: #0F6196;font-weight: 600; font-size: 13px;white-space: normal;
-        word-break: break-word;">{{name}}</p>
+        word-break: break-word;">Body Products</p> <!--{{name}} -->
     </ion-label>
  </div>
   <div *ngIf="zeroArr == false">

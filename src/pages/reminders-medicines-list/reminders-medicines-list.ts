@@ -3,7 +3,8 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { NativeStorage } from '@ionic-native/native-storage';
 import { DetailedRemindersMedicinesListPage } from '../detailed-reminders-medicines-list/detailed-reminders-medicines-list';
 import { TranslateService } from 'ng2-translate';
-
+import { BasketPage } from '../basket/basket';
+import { MenuPage } from '../menu/menu';
 /**
  * Generated class for the RemindersMedicinesListPage page.
  *
@@ -126,5 +127,11 @@ export class RemindersMedicinesListPage {
         ]
       });
       alert.present();
+  }
+ goBasket(){
+    this.navCtrl.push(BasketPage);
+  }
+  goMenu(){
+    this.navCtrl.push(MenuPage);
   }
 }
