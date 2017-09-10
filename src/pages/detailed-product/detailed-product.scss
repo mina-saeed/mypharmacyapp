@@ -31,7 +31,7 @@ h4 {
 .oval{
 	width:97%;
 	background-image: url("../assets/icon/White Loop.png") ;
-	background-size: 10% 80%;
+    background-size: 30px 30px;
 	background-repeat: no-repeat;
 	background-position: 95%;
 	margin-left: 2%;
@@ -117,7 +117,7 @@ hr {
         line-height: 1.5;
         text-align: center;
         //margin-left: 65%;
-        //text-transform: capitalize;
+        text-transform: capitalize;
     }
     .toolbar-ios,ion-title {
     left: unset !important;

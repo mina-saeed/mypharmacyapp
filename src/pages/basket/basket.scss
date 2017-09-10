@@ -214,7 +214,7 @@ page-basket {
         width: 107%;
         padding-left: 10px;
         background-image: url("../assets/icon/White Loop.png");
-        background-size: 10% 80%;
+        background-size: 30px 30px;
         background-repeat: no-repeat;
         background-position: 95%;
         margin-left: -3%;
@@ -223,7 +223,7 @@ page-basket {
         display: inline-block;
         font-family: "Helvetica";
         font-size: 20px;
-        margin-bottom: 8%;
+        margin-bottom: 4%;
 
     }
    .medicine-image{
@@ -442,5 +442,50 @@ p{
       .title{
       font-size: 21px;
       }
+    }
+        .ion-ios-addCart-outline,
+    .ion-ios-addCart,.ion-md-addCart,.ion-md-addCart-outline {
+    content: url('../assets/icon/ADD to activated.png');
+    margin: auto;
+    max-width: 50px;
+    max-height: 150px;
+}
+    .cart {
+        display: block;
+        background-color: #fff;
+        max-width: 8%;
+        margin-bottom: .5%;
+        margin: auto;
+    }
+    .button-md{
+        box-shadow: none;
+    }
+    .textDetails {
+        text-align: center;
+        padding-top: 0;
+        color: #0F6193;
+        margin-left: 10%;
+        margin-right: 10%;
+        font-family: "Helvetica";
+        font-size: 18.2px;
+        letter-spacing: .25px
+    }
+    .hrDetails {
+        display: block;
+        margin-top: .5%;
+        margin-bottom: 0%;
+        margin-left: auto;
+        margin-right: auto;
+        border-width: 1.5px;
+        border-top: 2px solid #0F6196;
+        width: 55%
+    }
+        h3 {
+        color: #0F6196
+    }
+    .medicine-image {
+        display: block;
+        margin: auto;
+        width: 15%
     }
     }

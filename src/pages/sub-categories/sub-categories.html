@@ -26,14 +26,14 @@
 
 
 <ion-content padding>
-    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
+  <!--  <ion-input class="oval" primary [(ngModel)]="searchQuery2"
                  (keyup)="updateListByName($event)"
                  (ionCancel)="onCancelByName($event)"
                  show-cancel="true"
                  showCancelButton="true"
                  placeholder="Search By Name">
    <img class="image" src="assets/icon/White Loop.png"/>
-    </ion-input>
+    </ion-input>-->
   <div *ngIf="zeroArr == true"  class="round" style="margin-left: auto; margin-right: auto; margin-top: 15px;">
     <p *ngIf="currentLanguage == 'en'"  class="p">No categories found.</p>
     <p *ngIf="currentLanguage == 'ar'"  class="p">لم يتم العثور على فئات</p>

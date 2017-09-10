@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TranslateService } from 'ng2-translate';
 import { BasketPage } from '../basket/basket';
 import { MenuPage } from '../menu/menu';
+import { NativeStorage } from '@ionic-native/native-storage';
 /**
  * Generated class for the RedeemPointsPage page.
  *
@@ -16,10 +17,11 @@ import { MenuPage } from '../menu/menu';
 })
 export class RedeemPointsPage {
   private translate: TranslateService;
-
-  constructor(translate: TranslateService,public navCtrl: NavController, public navParams: NavParams) {
-    /////// this.translate = translate;
+  name:any;
+  constructor(translate: TranslateService,private nativeStorage: NativeStorage,public navCtrl: NavController, public navParams: NavParams) {
+  this.translate = translate;
        ///////////////this.translate.use('ar');
+           this.getData();
   }
 
   ionViewDidLoad() {
@@ -31,5 +33,13 @@ export class RedeemPointsPage {
   goMenu(){
     this.navCtrl.push(MenuPage);
   }
-
+  getData(){
+    this.nativeStorage.getItem('rememberUser')
+    .then(
+    data => {
+      console.log(data["name"]);
+    this.name = data["name"];},
+    error => {  this.name =  "error"}
+  );
+  }
 }

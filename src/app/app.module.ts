@@ -64,7 +64,7 @@ import { WheelSelector } from '@ionic-native/wheel-selector';
 import {RoundProgressModule} from 'angular-svg-round-progressbar';
 
 import { Ionic2RatingModule } from 'ionic2-rating';
-import { NgCalendarModule  } from 'ionic2-calendar';
+//import { NgCalendarModule  } from 'ionic2-calendar';
 import { ForgetPasswordPage } from '../pages/forget-password/forget-password';
 import { RedeemPointsPage } from '../pages/redeem-points/redeem-points';
 import { RemindersMedicinesListPage } from '../pages/reminders-medicines-list/reminders-medicines-list';
@@ -137,7 +137,7 @@ export function createTranslateLoader(http: Http) {
 
   ],
   imports: [
-    NgCalendarModule,
+  //  NgCalendarModule,
   LocalStorageModule.withConfig({
             prefix: 'my-app',
             storageType: 'localStorage'

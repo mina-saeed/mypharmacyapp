@@ -26,8 +26,31 @@ export class BasketPage {
  // languages = availableLanguages;
   public promo: boolean;
   promoMessage:string;
+  noResultsBool = false;
   promoInput = "";
   selectedLanguage = sysOptions.systemLanguage;
+  public showSearchResult: boolean;
+  public showPage: boolean;
+    searchResults= {  //change default data according to mahmoud, or figure out a better way of doing deault ad empty values
+
+    data: [
+
+    {id:-1, name:"", description:"", category:"", barcode:-1, milligrams:0, price:0},
+
+
+  ]};
+
+  emptyOrderData = {
+     //unique id and evey data
+    userInfo: {
+    userID: 4654,
+      location : {
+        city : "cairo",
+        street : "streetvalue",
+        location: "zamalek" ,
+      }
+    },
+    order:[]};
   orderData = {
     userInfo: {
       userID: -1,
@@ -91,7 +114,54 @@ export class BasketPage {
   ionViewDidLoad() {
 
   }
+    setGetHeaders(){
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT');
+    headers.append('Authorization', 'Basic YWRtaW46MTIzNDU2');
 
+    return headers;
+  }
+    updateListByName(ev) {
+      //this.noResultsBool = true;
+      this.showPage = false;
+      this.showSearchResult = true; //when start searching, show the list
+      //if statement make it false when deleted all characters!!
+      //break if backspace and emtpy 3shan el requests
+
+      if(ev.keyCode == 8)
+      {
+        if(ev.target.value.toString() == ""){
+          this.showSearchResult = false; //and true to show other components
+          this.showPage = true;
+
+        }
+      }
+      this.url = 'http://146.185.148.66:3003/';
+      this.http.get(this.url + 'search/' + ev.target.value.toString(), new RequestOptions({headers: this.setGetHeaders()}))
+        .map(res => res).subscribe(data => {
+        console.log(this.url + 'search/' + ev.target.value.toString());
+
+          //this.orderTest["data"] = JSON.parse(data["_body"].toString());
+          if(data["_body"].toString() == "No results found"){
+            this.noResultsBool = false;
+            this.searchResults["data"] = [{id:-1, name:"No results found", description:"", category:"", barcode:-1, milligrams:0, price:0}]; //empty ot message
+          }else{
+            this.noResultsBool = true;
+            this.searchResults["data"] = JSON.parse(data["_body"].toString());
+          }
+          console.log(data);
+        });
+
+    //  console.log(ev.target.value);
+      //console.log(this.searchResults["data"][0]["name"]);
+      //this.orderTest["data"].pop();
+    }
+    onCancelByName(ev){
+      this.showSearchResult = false; //and true to show other components
+      this.showPage = true;
+    }
   //code rewritten beta3 getIndex... 3shan msh 3aref a7oto f function, always return undefined
   //get index of array, by the order ID
   removeByID(i){

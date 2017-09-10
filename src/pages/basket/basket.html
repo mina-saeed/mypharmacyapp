@@ -28,15 +28,40 @@
 <ion-content padding dir=" {{'LANG_DIR' | translate}}">
 
 <div>
-    <ion-input class="oval marg" primary [(ngModel)]="searchQuery2"
+    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
                  (keyup)="updateListByName($event)"
                  (ionCancel)="onCancelByName($event)"
                  show-cancel="true"
-                 showCancelButton="true">
+                 showCancelButton="true"
+                 placeholder="{{'SEARCH_NAME' | translate}}">
    <img class="image" src="assets/icon/White Loop.png"/>
     </ion-input>
+        <ion-list *ngIf="showSearchResult">
+
+      <ion-item  *ngFor = "let res of searchResults.data">
+
+        <div *ngIf="noResultsBool == true">
+      <img (click)="detailedProduct(res.id)" class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
+
+      <h3 (click)="detailedProduct(res.id)">{{res.name}}</h3>
+    <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
+     <img src="assets/icon/ADD to activated.png">
+  </button>
+    <hr class="hrDetails">
+    <p class="p textDetails">{{"DESCRIPTION" | translate }}: {{res.description_ar}}</p>
+  <hr class="hrDetails">
+  </div>
+  <h3 *ngIf="noResultsBool == false && currentLanguage=='en'">No results found!</h3>
+   <h3 *ngIf="noResultsBool == false && currentLanguage=='ar'">لا توجد نتائج</h3>
+      </ion-item>
+
+
+
+
+    </ion-list>
 <!-- custom color applied for all classes.. changed accordingly -->
 <!--loop of each item in my basket -->
+{{orderData.order}}
 <div class="parentdiv" *ngFor="let order of orderData.order" dir="{{'LANG_DIR' | translate}}">
 <ion-label class="round products paddingLeft">
 <div class="image">

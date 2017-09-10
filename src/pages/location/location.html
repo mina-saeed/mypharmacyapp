@@ -38,7 +38,7 @@
         </div>
       </ng-container>
     </div>
-    <ion-label type="text" class = "dark-button" style="padding:10px;margin-bottom: 10px;" (click)="getLocation()">Automatically set location</ion-label>
+    <ion-label type="text" class = "dark-button" style="padding:10px;margin-bottom: 10px;text-align: center;" (click)="getLocation()">Automatically set location</ion-label>
         <ion-item dir="{{'LANG_DIR' | translate}}">
         <ion-input class="oval" type="text"  [(ngModel)]="loc.location.street" formControlName="street" placeholder="{{ 'STREET' | translate}}"></ion-input>
         </ion-item>
@@ -96,8 +96,8 @@
         <ion-input class="oval" type="number" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="loc.telephone" formControlName="tel" placeholder="{{ 'TEL' | translate}}"></ion-input>
         </ion-item>
 
-      <button ion-button type="submit" [disabled]="!validations_form.valid" class = "dark-button">{{ "SUBMIT" | translate}}</button>
+      <button ion-button type="submit" class = "dark-button">{{ "SUBMIT" | translate}}</button>
     </form>
 
-
+<!--[disabled]="!validations_form.valid" -->
 </ion-content>

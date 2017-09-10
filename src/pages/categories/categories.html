@@ -58,14 +58,14 @@
       <ion-item  *ngFor = "let res of searchResults.data">
 
         <div *ngIf="noResultsBool == true">
-      <img (click)="detailedProduct(res.id)" class="medicine-image" src = "assets/icon/panadol.png"/> <!-- static to be updated -->
+      <img (click)="detailedProduct(res.id)" class="medicine-image" src = {{res.image}} /> <!-- static to be updated -->
 
       <h3 (click)="detailedProduct(res.id)">{{res.name}}</h3>
     <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
      <img src="assets/icon/ADD to activated.png">
   </button>
     <hr class="hrDetails">
-    <p class="p textDetails">{{"DESCRIPTION" | translate }}: {{res.description_ar}}</p>
+    <p class="p textDetails" style="font-weight: 500;font-size: 1.2rem">{{"DESCRIPTION" | translate }}: {{res.description}}</p>
   <hr class="hrDetails">
   </div>
   <h3 *ngIf="noResultsBool == false && currentLanguage=='en'">No results found!</h3>

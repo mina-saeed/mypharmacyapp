@@ -148,8 +148,10 @@ export class CategoriesPage implements OnInit{
      //get what in local storage put it in a json object
      //push new object in array
      //set it back!
-
+     console.log(medicine);
+     console.log(medicine["requirePrescription"]);
      this.requirePrescription = medicine["requirePrescription"]; //medicine["required"]
+     console.log(this.requirePrescription=="Yes");
 
      if(this.requirePrescription == "Yes"){
 
@@ -217,6 +219,7 @@ export class CategoriesPage implements OnInit{
        alert.present();
 
      }else{
+       console.log("d5al");
        this.addToCartHelper(medicine, ""); //empty prescription
      }
 
@@ -230,7 +233,7 @@ export class CategoriesPage implements OnInit{
 
                console.log("current data::", data);
                let medicineTobeAdded = {
-                 id:medicine["id"], name:medicine["name_en"], price:medicine["price"], qty:1, prescription: prescription
+                 id:medicine["id"], name:medicine["name"], price:medicine["price"], qty:1, prescription: prescription
                }
 
 

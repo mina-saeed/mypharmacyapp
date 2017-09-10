@@ -85,7 +85,7 @@ page-home {
         width: 107%;
         padding-left: 10px;
         background-image: url("../assets/icon/White Loop.png");
-        background-size: 10% 80%;
+        background-size: 30px 30px;
         background-repeat: no-repeat;
         background-position: 95%;
         margin-left: -3%;
@@ -284,4 +284,18 @@ page-home {
       font-size: 21px;
       }
     }
+    .text-input::-moz-placeholder {
+  color: #3CABE3;
+}
+
+.text-input:-ms-input-placeholder {
+  color: #3CABE3;
+
+}
+
+.text-input::-webkit-input-placeholder {
+  text-indent: 0;
+  color: #3CABE3;
+  font-weight: normal;
+}
 }

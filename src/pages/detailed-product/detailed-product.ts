@@ -160,6 +160,7 @@ export class DetailedProductPage {
 
   }
   addToCartHelper(medicine, prescription){
+  console.log(medicine);
     this.nativeStorage.getItem('order')
     .then(data =>{
 
