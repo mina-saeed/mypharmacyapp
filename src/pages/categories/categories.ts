@@ -321,6 +321,9 @@ export class CategoriesPage implements OnInit{
     .map(res => res).subscribe(pdata => {
       //  console.log(data);
       //  console.log("yey no error", pdata);
+      console.log(id);
+      console.log(pdata);
+      console.log(pdata["_body"]);
         if(pdata["_body"] == "no data"){
           if(this.currentLanguage == "en"){
             this.customAlert("Error", "Invalid Product", "Close");
