@@ -274,7 +274,7 @@ export class HomePage {
 
              console.log("current data::", data);
              let medicineTobeAdded = {
-               id:medicine["id"], name:medicine["name_en"], price:medicine["price"], qty:1, prescription: prescription
+               id:medicine["id"], name:medicine["name_english"], price:medicine["price"], qty:1, image: prescription
              }
 
 
@@ -334,7 +334,7 @@ export class HomePage {
 
     return headers;
   }
-  saveOrder(localData){  //save to local storage, //later, save each time add to cart,and deleter w kda
+  saveOrder(localData){  //save to local storage, //later, save each time add to cart,and deleter
         this.nativeStorage.setItem('order', localData)
         .then(
           () => console.log('Stored item!'),

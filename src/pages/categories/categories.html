@@ -43,7 +43,7 @@
   <mwl-calendar-month-view [viewDate]="date" [headerTemplate]="headerTemp">
   </mwl-calendar-month-view>
 </div> -->
-    <ion-input class="oval" primary [(ngModel)]="searchQuery2"
+    <ion-input dir="{{'LANG_DIR' | translate}}"  class="oval" primary [(ngModel)]="searchQuery2"
                  (keyup)="updateListByName($event)"
                  (ionCancel)="onCancelByName($event)"
                  show-cancel="true"
@@ -60,12 +60,12 @@
         <div *ngIf="noResultsBool == true">
       <img (click)="detailedProduct(res.id)" class="medicine-image" src = {{res.image}} /> <!-- static to be updated -->
 
-      <h3 (click)="detailedProduct(res.id)">{{res.name}}</h3>
+      <h3 (click)="detailedProduct(res.id)">{{res.name_english}}</h3>
     <button  ion-button class="cart" name="add-circle" (click)="addToCart(res)">
      <img src="assets/icon/ADD to activated.png">
   </button>
     <hr class="hrDetails">
-    <p class="p textDetails" style="font-weight: 500;font-size: 1.2rem">{{"DESCRIPTION" | translate }}: {{res.description}}</p>
+    <p class="p textDetails" style="font-weight: 500;font-size: 1.2rem">{{"DESCRIPTION" | translate }}: {{res.english_description}}</p>
   <hr class="hrDetails">
   </div>
   <h3 *ngIf="noResultsBool == false && currentLanguage=='en'">No results found!</h3>

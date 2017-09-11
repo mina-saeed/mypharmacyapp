@@ -65,6 +65,7 @@ export class IllnessPage {
 
   }
   goToMedicines(id){
+  console.log(id);
     this.navCtrl.push(IlnessListPage, id);
   }
 

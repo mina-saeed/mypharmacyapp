@@ -10,6 +10,8 @@ import { TrackOrderPage } from '../track-order/track-order';
 import { MenuPage } from '../menu/menu';
 import { AddressesPage } from '../addresses/addresses';
 import { PromoCodePage } from '../promo-code/promo-code';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { ImagePicker } from '@ionic-native/image-picker';
 
 /**
  * Generated class for the BasketPage page.
@@ -24,6 +26,7 @@ import { PromoCodePage } from '../promo-code/promo-code';
 })
 export class BasketPage {
  // languages = availableLanguages;
+     public base64Image: string;
   public promo: boolean;
   promoMessage:string;
   noResultsBool = false;
@@ -58,7 +61,11 @@ export class BasketPage {
         city : "",
         street : "",
         location: "" ,
-        writtenAddress: ""
+        writtenAddress: "",
+        username: "",
+        date: "",
+        time:"",
+        mobile:""
 
     },
     order:[
@@ -74,7 +81,7 @@ export class BasketPage {
   currentLanguage: string;
   private translate: TranslateService;
 
-  constructor(private alertCtrl: AlertController,translate: TranslateService,
+  constructor(private camera: Camera, private imagePicker: ImagePicker,private alertCtrl: AlertController,translate: TranslateService,
                public navCtrl: NavController,
                public navParams: NavParams,
                public http:Http,
@@ -170,7 +177,7 @@ export class BasketPage {
 
         this.orderData.order.splice(x,1); //proper way to remove by index
         this.updateTotalPrice();
-        this.saveOrder();
+        //this.saveOrder();
         break;
       }
     }
@@ -188,7 +195,7 @@ export class BasketPage {
   deleteButton(id){
     this.removeByID(id);
     this.updateTotalPrice();
-    this.saveOrder();
+    //this.saveOrder();
   }
   increment(id){
 
@@ -199,7 +206,7 @@ export class BasketPage {
 
         current[x]["qty"]++;
         this.updateTotalPrice(); //udate the price
-        this.saveOrder();
+       // this.saveOrder();
         break;
       }
     }
@@ -221,7 +228,7 @@ export class BasketPage {
         }else{
           current[x]["qty"]--;
           this.updateTotalPrice(); //udate the price
-          this.saveOrder();
+          //this.saveOrder();
           break;
         }
       }
@@ -229,10 +236,10 @@ export class BasketPage {
   }
   //everything is done! now confirm order
   confirm(){
-    if(this.empty == true){
+ /*   if(this.empty == true){
       //alert("No orders to confirm");
     }else
-    {
+    { */
       this.orderData.userInfo.writtenAddress = this.currentAddress;
 
       let headers = new Headers();
@@ -249,8 +256,13 @@ export class BasketPage {
       street:this.orderData.userInfo.street,
       type: "order",
       order: this.orderData.order,
-      userID:this.orderData.userInfo.userID
+      userID:this.orderData.userInfo.userID,
+      username:this.orderData.userInfo.username,
+      date: this.orderData.userInfo.date,
+      time: this.orderData.userInfo.time,  
+      mobile: this.orderData.userInfo.mobile
     }
+    console.log(body);
       this.http.post(this.url + 'order/submit', body, new RequestOptions({headers:headers}))
       .map(res => res).subscribe(data => {
         console.log(data);
@@ -260,7 +272,7 @@ export class BasketPage {
         console.log(err);
       });
       console.log("done");
-    }
+  //  }
 
   }
 
@@ -269,8 +281,8 @@ export class BasketPage {
   //if it is empty!! if not empty mate3mlsh initialize
   //then when continue guest, get the data, update it then set the order local storage back
   //smae when new order, get it, push an order to the array and put it back
-  saveOrder(){  //save to local storage, //later, save each time add to cart,and deleter w kda
-        this.nativeStorage.setItem('order', this.orderData)
+  saveOrder(localData){  //save to local storage, //later, save each time add to cart,and deleter w kda
+        this.nativeStorage.setItem('order', localData)
         .then(
           () => console.log('Stored item!'),
           error => console.error('Error storing item', error)
@@ -320,7 +332,7 @@ export class BasketPage {
   clearPrescription(){
     this.orderData["prescription"] = null;
     this.checkEmptyOrder();
-    this.saveOrder();
+   // this.saveOrder();
   }
   customAlert(title, message, buttonText){
     let alert = this.alertCtrl.create({
@@ -335,4 +347,143 @@ export class BasketPage {
       });
       alert.present();
   }
+        requirePrescription = "No";
+    addToCart(medicine){
+     //get what in local storage put it in a json object
+     //push new object in array
+     //set it back!
+     console.log(medicine);
+     console.log(medicine["requirePrescription"]);
+     this.requirePrescription = medicine["requirePrescription"]; //medicine["required"]
+     console.log(this.requirePrescription=="Yes");
+
+     if(this.requirePrescription == "Yes"){
+
+           let alert = this.alertCtrl.create({
+         title: 'Prescription Required',
+         message: 'This medicine requires a prescription.',
+         buttons: [
+           {
+             text: 'Camera',
+             handler: () => {
+                 console.log('camera upload');
+                 const options: CameraOptions = {
+                 quality: 100,
+                 destinationType: this.camera.DestinationType.FILE_URI, //this depends on mahmoud, file type! if he wants base64!
+                 encodingType: this.camera.EncodingType.JPEG,
+                 mediaType: this.camera.MediaType.PICTURE
+               }
+
+               this.camera.getPicture(options).then((imageData) => {
+                // imageData is either a base64 encoded string or a file URI
+                // If it's base64:
+                //let base64Image = 'data:image/jpeg;base64,' + imageData;
+                this.base64Image = imageData;
+                console.log(this.base64Image);
+                this.addToCartHelper(medicine, this.base64Image);
+
+
+               }, (err) => {
+                // Handle error
+               });
+             }
+           },
+           {
+             text: 'Gallery',
+             handler: () => {
+               console.log('gallery upload');
+               let options = {
+                 maximumImagesCount: 1, //how many pictures to pick??!
+                 width: 300,
+                 height: 300,
+                 quality : 75
+               };
+
+               this.imagePicker.getPictures(options).then((results) => {
+                 for (var i = 0; i < results.length; i++) {
+                   this.base64Image = results[i];
+                   console.log('Image URI: ' + results[i]);
+                   console.log(this.base64Image);
+                   this.addToCartHelper(medicine, this.base64Image);
+                 }
+               }, (err) => {
+
+               });
+             }
+           },
+           {
+             text: 'Cancel',
+             role: 'cancel',
+             handler: () => {
+               console.log('Cancel clicked');
+             }
+           }
+         ]
+       });
+       alert.present();
+
+     }else{
+       console.log("d5al");
+       this.addToCartHelper(medicine, ""); //empty prescription
+     }
+
+
+
+
+    }
+    addToCartHelper(medicine, prescription){
+     this.nativeStorage.getItem('order')
+     .then(data =>{
+
+               console.log("current data::", data);
+               let medicineTobeAdded = {
+                 id:medicine["id"], name:medicine["name_english"], price:medicine["price"], qty:1, prescription: prescription
+               }
+
+
+               //if same, just increment qty!
+               var userExists = false;
+               var found = false;
+               for(var x = 0; x< data["order"].length; x ++)
+               {
+                 if(!userExists){
+                   if (data["order"][x]["id"] == medicineTobeAdded.id){
+                     data["order"][x]["qty"] = data["order"][x]["qty"] + 1;
+                     userExists = true;
+                     found = true;
+                   }
+                 }
+               }
+               if(!found)
+               {
+                 data["order"].push(medicineTobeAdded);
+
+               }
+
+             //  console.log("To be added:", medicineTobeAdded);
+
+             //  data["order"].push(medicineTobeAdded);
+
+             //  console.log("Current data from local storage:", data)
+
+               this.saveOrder(data);
+
+
+               //just to test
+               this.nativeStorage.getItem('order')
+               .then(data =>{
+                         console.log("now in local", data);
+                         //console.log("got data 5alas: ",data);
+                         //alert(data);
+                         } ,
+                 error => console.error(error)
+               );
+
+           //    console.log("Now data in local:", this.getOrder());
+               } ,
+       error => console.error(error)
+     );
+
+    }
+
 }

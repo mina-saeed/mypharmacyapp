@@ -58,8 +58,7 @@
 
         <div class="div wid APPA" >
         <ion-item dir="{{'LANG_DIR' | translate}}">
-        <ion-label class = "text">{{ "APPA" | translate}}</ion-label>
-        <ion-input class="small oval AP" type="number" min="1" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="loc.location.App_no" formControlName="app"></ion-input>
+        <ion-input class="small oval AP" type="number" min="1" inputmode="numeric" pattern="[0-9]*" [(ngModel)]="loc.location.App_no" formControlName="app" placeholder="{{ 'APPA' | translate}}"></ion-input>
 
          </ion-item>
 

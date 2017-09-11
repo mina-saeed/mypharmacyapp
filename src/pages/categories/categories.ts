@@ -233,7 +233,7 @@ export class CategoriesPage implements OnInit{
 
                console.log("current data::", data);
                let medicineTobeAdded = {
-                 id:medicine["id"], name:medicine["name"], price:medicine["price"], qty:1, prescription: prescription
+                 id:medicine["id"], name:medicine["name_english"], price:medicine["price"], qty:1, image: prescription
                }
 
 
@@ -294,7 +294,7 @@ export class CategoriesPage implements OnInit{
 
     return headers;
   }
-  saveOrder(localData){  //save to local storage, //later, save each time add to cart,and deleter w kda
+  saveOrder(localData){  //save to local storage, //later, save each time add to cart,and deleter w 
         this.nativeStorage.setItem('order', localData)
         .then(
           () => console.log('Stored item!'),
